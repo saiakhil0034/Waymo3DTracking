@@ -29,6 +29,10 @@ kubectl describe pods ${POD_NAME} # jobs if job
 ```bash
 kubectl exec ${POD_NAME} -it -- /bin/bash
 ```
+- Obtain logs from a pod (NOT a job) and store in a file
+```bash
+kubectl logs -f ${POD_NAME} > ${FILE_NAME}
+```
 - To delete a pod/job
 ```bash
 kubectl delete pod ${POD_NAME} # jobs if job
