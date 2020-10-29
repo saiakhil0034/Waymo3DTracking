@@ -25,6 +25,10 @@ kubectl get pods ${POD_NAME} # jobs if job
 ```bash
 kubectl describe pods ${POD_NAME} # jobs if job
 ```
+- Shell into or reconnect to shell of pod
+```bash
+kubectl exec ${POD_NAME} -it -- /bin/bash
+```
 - To delete a pod/job
 ```bash
 kubectl delete pod ${POD_NAME} # jobs if job

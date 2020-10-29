@@ -8,7 +8,7 @@ spec:
   containers:
   - name: ani-gpu-container
     # image from gitlab-registry.nautilus.optiputer.net, or some official ones provided
-    image: pytorch/pytorch:1.2-cuda-10.0-cudnn7-runtime
+    image: pytorch/pytorch:1.3-cuda10.1-cudnn7-runtime 
     args: ["sleep", "infinity"]
     resources:
       requests:
