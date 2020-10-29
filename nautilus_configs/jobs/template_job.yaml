@@ -18,7 +18,7 @@ spec:
         - -c
         args:
         # Replace with required commands for the job
-        - "python -c 'import torch;print(torch.__version)'"
+        - "python -c 'import torch;print(torch.__version__)'"
         resources:
         # can request and limit 8 CPUs, each 32Gi and upto 4 GPUs, I think
           requests:
@@ -67,4 +67,4 @@ spec:
               #  operator: In # Use NotIn for other types
               # values:
               # - 2080Ti
-    backoffLimit: 1
+  backoffLimit: 1
