@@ -1,0 +1,52 @@
+# Please look at job template for more comments and explanations
+apiVersion: v1
+kind: Pod
+metadata:
+  # team${TEAM_ID}-${USER_NAME}-{EXP_NAME}
+  name: team1-ani-template
+spec:
+  containers:
+  - name: ani-gpu-container
+    # image from gitlab-registry.nautilus.optiputer.net, or some official ones provided
+    image: pytorch/pytorch:1.2-cuda-10.0-cudnn7-runtime
+    args: ["sleep", "infinity"]
+    resources:
+      requests:
+        cpu: "1"
+        memory: "8Gi"
+        nvidia.com/gpu: 1
+      limits:
+        cpu: "2"
+        memory: "8Gi"
+        nvidia.com/gpu: 1
+    volumeMounts:
+    - name: dshm
+      mountPath: /dev/shm
+    - name: cephfs-shared
+      mountPath: /shared
+    - name: cephfs-team1
+      mountPath: /team1
+  # restartPolicy: Never
+  volumes:
+    - name: dshm
+      emptyDir:
+        medium: Memory
+    - name: cephfs-shared
+      persistentVolumeClaim:
+        claimName: cephfs-shared
+    - name: cephfs-team1
+      persistentVolumeClaim:
+        claimName: cephfs-team1
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: nautilus.io/group
+            operator: In
+            values:
+            - haosu
+       #  - key: gpu-type
+       #    operator: In # Use NotIn for other types
+       #    values:
+       #    - 2080Ti

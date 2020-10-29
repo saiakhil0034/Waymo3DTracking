@@ -1,0 +1,70 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  # team${TEAM_ID}-${USER_NAME}-{EXP_NAME}
+  name: team1-ani-template
+  namespace: ucsd-haosulab-dev
+spec:
+  # Wait one day to delete completed jobs
+  ttlSecondsAfterFinished: 86400
+  template:
+    spec:
+      containers:
+      - name: ani-gpu-container
+        # docker image: can build own and host on gitlab-registry.nautilus.optiputer.net/<USER_NAME>/<REPO_NAME> on GitLab
+        image: pytorch/pytorch:1.2-cuda10.0-cudnn7-runtime
+        command:
+        - sh
+        - -c
+        args:
+        # Replace with required commands for the job
+        - "python -c 'import torch;print(torch.__version)'"
+        resources:
+        # can request and limit 8 CPUs, each 32Gi and upto 4 GPUs, I think
+          requests:
+            cpu: "1"
+            memory: "8Gi"
+            nvidia.com/gpu: 1
+          limits:
+            cpu: "2"
+            memory: "8Gi"
+            nvidia.com/gpu: 1
+        # the volume names must match the volumes described below
+        # Can change the name of path mounted to inside container though
+        volumeMounts:
+        - name: dshm
+          mountPath: /dev/shm 
+        - name: cephfs-shared
+          mountPath: /shared
+        - name: cephfs-team1
+          mountPath: /team1
+      # can change the names below to match names of volumeMount but cannot change claimName as these are created already for us
+      volumes:
+        # shared memory
+        - name: dshm
+          emptyDir:
+            medium: Memory
+        - name: cephfs-shared
+          persistentVolumeClaim:
+            claimName: cephfs-shared
+        - name: cephfs-team1
+          persistentVolumeClaim:
+             claimName: cephfs-team1
+      restartPolicy: Never
+      # may select specific GPU types if required
+      # but need to be in haosu, so additional constraint required
+      # More constraints => harder to schedule
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: nautilus.io/group
+                operator: In
+                values:
+                - haosu
+              #- key: gpu-type
+              #  operator: In # Use NotIn for other types
+              # values:
+              # - 2080Ti
+    backoffLimit: 1
