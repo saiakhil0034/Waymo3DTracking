@@ -1,0 +1,97 @@
+eval: 100%|███████████████████████████████████████████████████████████████| 377/377 [25:44<00:00,  4.10s/it, recall_0.3=(17004, 17006) / 17558]
+2020-10-30 20:00:53,822   INFO  *************** Performance of EPOCH 8369 *****************
+2020-10-30 20:00:53,951   INFO  Generate label finished(sec_per_example: 0.4099 second).
+2020-10-30 20:00:53,951   INFO  recall_roi_0.3: 0.968447
+2020-10-30 20:00:53,951   INFO  recall_rcnn_0.3: 0.968561
+2020-10-30 20:00:53,951   INFO  recall_roi_0.5: 0.928466
+2020-10-30 20:00:53,951   INFO  recall_rcnn_0.5: 0.934389
+2020-10-30 20:00:53,951   INFO  recall_roi_0.7: 0.717394
+2020-10-30 20:00:53,951   INFO  recall_rcnn_0.7: 0.759483
+2020-10-30 20:00:53,955   INFO  Average predicted number of objects(3769 samples): 9.230
+/usr/local/lib/python3.6/dist-packages/numba-0.52.0rc2-py3.6-linux-x86_64.egg/numba/core/typed_passes.py:316: NumbaPerformanceWarning:
+The keyword argument 'parallel=True' was specified but no transformation for parallel execution was possible.
+
+To find out why, try turning on parallel diagnostics, see https://numba.pydata.org/numba-doc/latest/user/parallel.html#diagnostics for help.
+
+File "../pcdet/datasets/kitti/kitti_object_eval_python/eval.py", line 122:
+@numba.jit(nopython=True, parallel=True)
+def d3_box_overlap_kernel(boxes, qboxes, rinc, criterion=-1):
+^
+
+  state.func_ir.loc))
+/usr/local/lib/python3.6/dist-packages/numba-0.52.0rc2-py3.6-linux-x86_64.egg/numba/core/typed_passes.py:316: NumbaPerformanceWarning:
+The keyword argument 'parallel=True' was specified but no transformation for parallel execution was possible.
+
+To find out why, try turning on parallel diagnostics, see https://numba.pydata.org/numba-doc/latest/user/parallel.html#diagnostics for help.
+
+File "../pcdet/datasets/kitti/kitti_object_eval_python/eval.py", line 122:
+@numba.jit(nopython=True, parallel=True)
+def d3_box_overlap_kernel(boxes, qboxes, rinc, criterion=-1):
+^
+
+  state.func_ir.loc))
+2020-10-30 20:01:51,451   INFO  Car AP@0.70, 0.70, 0.70:
+bbox AP:96.2470, 89.4992, 89.2430
+bev  AP:90.0894, 87.9004, 87.4072
+3d   AP:89.3476, 83.6901, 78.7028
+aos  AP:96.22, 89.39, 89.07
+Car AP_R40@0.70, 0.70, 0.70:
+bbox AP:98.2662, 94.4210, 92.2765
+bev  AP:93.0239, 90.3255, 88.5319
+3d   AP:92.1047, 84.3605, 82.4830
+aos  AP:98.25, 94.26, 92.07
+Car AP@0.70, 0.50, 0.50:
+bbox AP:96.2470, 89.4992, 89.2430
+bev  AP:96.2811, 89.4982, 89.2886
+3d   AP:96.2342, 89.4774, 89.2535
+aos  AP:96.22, 89.39, 89.07
+Car AP_R40@0.70, 0.50, 0.50:
+bbox AP:98.2662, 94.4210, 92.2765
+bev  AP:98.2607, 94.5896, 94.4319
+3d   AP:98.2422, 94.5277, 94.3272
+aos  AP:98.25, 94.26, 92.07
+Pedestrian AP@0.50, 0.50, 0.50:
+bbox AP:73.1477, 68.0799, 64.3542
+bev  AP:65.1821, 59.4169, 54.5101
+3d   AP:63.1230, 54.8428, 51.7816
+aos  AP:67.84, 62.49, 58.73
+Pedestrian AP_R40@0.50, 0.50, 0.50:
+bbox AP:73.6837, 68.2715, 64.3622
+bev  AP:65.9365, 58.5166, 54.1258
+3d   AP:62.7110, 54.4902, 49.8798
+aos  AP:67.82, 62.17, 58.07
+Pedestrian AP@0.50, 0.25, 0.25:
+bbox AP:73.1477, 68.0799, 64.3542
+bev  AP:76.2555, 71.8445, 69.4931
+3d   AP:76.2398, 71.8001, 69.4345
+aos  AP:67.84, 62.49, 58.73
+Pedestrian AP_R40@0.50, 0.25, 0.25:
+bbox AP:73.6837, 68.2715, 64.3622
+bev  AP:78.2616, 73.1740, 69.9717
+3d   AP:78.2458, 73.0349, 69.8725
+aos  AP:67.82, 62.17, 58.07
+Cyclist AP@0.50, 0.50, 0.50:
+bbox AP:96.1222, 81.3613, 76.4936
+bev  AP:88.5292, 73.3251, 70.3690
+3d   AP:86.0637, 69.4789, 64.5046
+aos  AP:95.98, 81.07, 76.17
+Cyclist AP_R40@0.50, 0.50, 0.50:
+bbox AP:97.1514, 82.4180, 78.2196
+bev  AP:93.4584, 74.5322, 70.1025
+3d   AP:89.1011, 70.3809, 66.0168
+aos  AP:97.04, 82.12, 77.88
+Cyclist AP@0.50, 0.25, 0.25:
+bbox AP:96.1222, 81.3613, 76.4936
+bev  AP:95.0958, 78.2760, 73.3191
+3d   AP:95.0958, 78.2670, 73.3121
+aos  AP:95.98, 81.07, 76.17
+Cyclist AP_R40@0.50, 0.25, 0.25:
+bbox AP:97.1514, 82.4180, 78.2196
+bev  AP:96.2402, 79.1335, 75.8222
+3d   AP:96.2402, 79.1278, 75.7990
+aos  AP:97.04, 82.12, 77.88
+
+2020-10-30 20:01:51,461   INFO  Result is save to /team1/codes/3dObjDet/OpenPCDet/output/cfgs/kitti_models/pv_rcnn/default/eval/epoch_8369/val/default
+2020-10-30 20:01:51,461   INFO  ****************Evaluation done.*****************
+
+[3]+  Done                    python test.py --cfg_file ./cfgs/kitti_models/pv_rcnn.yaml --batch_size 10 --ckpt /team1/codes/3dObjDet/OpenPCDet/checkpoints/online/pv_rcnn_8369.pth  (wd: /team1/codes/3dObjDet/OpenPCDet/tools)
