@@ -1,0 +1,18 @@
+After setting offscreen for QT, and mlab.options.offscreen = True for mlab, getting the below error
+
+
+X Error of failed request:  BadValue (integer parameter out of range for operation)
+  Major opcode of failed request:  151 (GLX)
+  Minor opcode of failed request:  3 (X_GLXCreateContext)
+  Value in failed request:  0x0
+  Serial number of failed request:  51
+  Current serial number in output stream:  52
+
+On running glxinfo, gives the following error:
+name of display: :0
+X Error of failed request:  BadValue (integer parameter out of range for operation)
+  Major opcode of failed request:  151 (GLX)
+  Minor opcode of failed request:  24 (X_GLXCreateNewContext)
+  Value in failed request:  0x0
+  Serial number of failed request:  37
+  Current serial number in output stream:  38
