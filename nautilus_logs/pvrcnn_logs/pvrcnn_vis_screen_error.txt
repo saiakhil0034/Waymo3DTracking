@@ -1,0 +1,13 @@
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-root'
+/usr/local/lib/python3.6/dist-packages/traits/etsconfig/etsconfig.py:415: UserWarning: Environment variable "HOME" not set, setting home directory to /tmp
+  % (environment_variable, parent_directory)
+2020-11-01 03:28:26,342   INFO  -----------------Quick Demo of OpenPCDet-------------------------
+2020-11-01 03:28:26,384   INFO  Total number of samples: 	1
+2020-11-01 03:28:30,123   INFO  ==> Loading parameters from checkpoint ../checkpoints/online/pv_rcnn_8369.pth to CPU
+2020-11-01 03:28:31,373   INFO  ==> Done (loaded 367/367)
+2020-11-01 03:28:31,406   INFO  Visualized sample index: 	1
+X Error of failed request:  BadWindow (invalid Window parameter)
+  Major opcode of failed request:  3 (X_GetWindowAttributes)
+  Resource id in failed request:  0x4
+  Serial number of failed request:  7
+  Current serial number in output stream:  8
