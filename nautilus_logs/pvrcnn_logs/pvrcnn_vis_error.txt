@@ -1,0 +1,27 @@
+/usr/local/lib/python3.6/dist-packages/traits/etsconfig/etsconfig.py:415: UserWarning: Environment variable "HOME" not set, setting home directory to /tmp
+  % (environment_variable, parent_directory)
+2020-11-01 03:08:43,885   INFO  -----------------Quick Demo of OpenPCDet-------------------------
+2020-11-01 03:08:43,928   INFO  Total number of samples: 	1
+2020-11-01 03:08:47,618   INFO  ==> Loading parameters from checkpoint ../checkpoints/online/pv_rcnn_8369.pth to CPU
+2020-11-01 03:08:50,072   INFO  ==> Done (loaded 367/367)
+2020-11-01 03:08:50,367   INFO  Visualized sample index: 	1
+Traceback (most recent call last):
+  File "demo.py", line 108, in <module>
+    main()
+  File "demo.py", line 96, in main
+    ref_scores=pred_dicts[0]['pred_scores'], ref_labels=pred_dicts[0]['pred_labels']
+  File "/team1/codes/3dObjDet/OpenPCDet/tools/visual_utils/visualize_utils.py", line 154, in draw_scenes
+    fig = visualize_pts(points)
+  File "/team1/codes/3dObjDet/OpenPCDet/tools/visual_utils/visualize_utils.py", line 77, in visualize_pts
+    fig = mlab.figure(figure=None, bgcolor=bgcolor, fgcolor=fgcolor, engine=None, size=size)
+  File "/usr/local/lib/python3.6/dist-packages/mayavi/tools/figure.py", line 64, in figure
+    engine = get_engine()
+  File "/usr/local/lib/python3.6/dist-packages/mayavi/tools/engine_manager.py", line 92, in get_engine
+    return self.new_engine()
+  File "/usr/local/lib/python3.6/dist-packages/mayavi/tools/engine_manager.py", line 137, in new_engine
+    check_backend()
+  File "/usr/local/lib/python3.6/dist-packages/mayavi/tools/engine_manager.py", line 40, in check_backend
+    raise ImportError(msg)
+ImportError: Could not import backend for traitsui.  Make sure you
+        have a suitable UI toolkit like PyQt/PySide or wxPython
+        installed.
