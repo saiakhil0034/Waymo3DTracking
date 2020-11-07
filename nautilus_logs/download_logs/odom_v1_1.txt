@@ -1,0 +1,292 @@
+1.1.0
+Get:1 http://ppa.launchpad.net/deadsnakes/ppa/ubuntu xenial InRelease [18.0 kB]
+Get:2 http://security.ubuntu.com/ubuntu xenial-security InRelease [109 kB]
+Get:3 http://archive.ubuntu.com/ubuntu xenial InRelease [247 kB]
+Get:4 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [1841 kB]
+Get:5 http://ppa.launchpad.net/deadsnakes/ppa/ubuntu xenial/main amd64 Packages [41.4 kB]
+Get:6 http://archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
+Get:7 http://security.ubuntu.com/ubuntu xenial-security/restricted amd64 Packages [15.9 kB]
+Get:8 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [969 kB]
+Get:9 http://security.ubuntu.com/ubuntu xenial-security/multiverse amd64 Packages [9249 B]
+Get:10 http://archive.ubuntu.com/ubuntu xenial-backports InRelease [107 kB]
+Get:11 http://archive.ubuntu.com/ubuntu xenial/main amd64 Packages [1558 kB]
+Get:12 http://archive.ubuntu.com/ubuntu xenial/restricted amd64 Packages [14.1 kB]
+Get:13 http://archive.ubuntu.com/ubuntu xenial/universe amd64 Packages [9827 kB]
+Get:14 http://archive.ubuntu.com/ubuntu xenial/multiverse amd64 Packages [176 kB]
+Get:15 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [2353 kB]
+Get:16 http://archive.ubuntu.com/ubuntu xenial-updates/restricted amd64 Packages [16.4 kB]
+Get:17 http://archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [1513 kB]
+Get:18 http://archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 Packages [26.7 kB]
+Get:19 http://archive.ubuntu.com/ubuntu xenial-backports/main amd64 Packages [10.9 kB]
+Get:20 http://archive.ubuntu.com/ubuntu xenial-backports/universe amd64 Packages [12.6 kB]
+Fetched 19.0 MB in 3s (5047 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages were automatically installed and are no longer required:
+  cmake-data libarchive13 libcurl3 libicu55 libjsoncpp1 liblzo2-2 libxml2
+Use 'apt autoremove' to remove them.
+Suggested packages:
+  zip
+The following NEW packages will be installed:
+  unzip
+0 upgraded, 1 newly installed, 0 to remove and 77 not upgraded.
+Need to get 158 kB of archives.
+After this operation, 530 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu xenial/main amd64 unzip amd64 6.0-20ubuntu1 [158 kB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 158 kB in 0s (197 kB/s)
+Selecting previously unselected package unzip.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 21821 files and directories currently installed.)
+Preparing to unpack .../unzip_6.0-20ubuntu1_amd64.deb ...
+Unpacking unzip (6.0-20ubuntu1) ...
+Processing triggers for mime-support (3.59ubuntu1) ...
+Setting up unzip (6.0-20ubuntu1) ...
+Archive:  data_tracking_oxts.zip
+ extracting: ../kitti-odometry/training/oxts/0005.txt  
+ extracting: ../kitti-odometry/training/oxts/0014.txt  
+ extracting: ../kitti-odometry/training/oxts/0001.txt  
+ extracting: ../kitti-odometry/training/oxts/0007.txt  
+ extracting: ../kitti-odometry/training/oxts/0009.txt  
+ extracting: ../kitti-odometry/training/oxts/0019.txt  
+ extracting: ../kitti-odometry/training/oxts/0016.txt  
+ extracting: ../kitti-odometry/training/oxts/0002.txt  
+ extracting: ../kitti-odometry/training/oxts/0020.txt  
+ extracting: ../kitti-odometry/training/oxts/0015.txt  
+ extracting: ../kitti-odometry/training/oxts/0006.txt  
+ extracting: ../kitti-odometry/training/oxts/0017.txt  
+ extracting: ../kitti-odometry/training/oxts/0018.txt  
+ extracting: ../kitti-odometry/training/oxts/0004.txt  
+ extracting: ../kitti-odometry/training/oxts/0008.txt  
+ extracting: ../kitti-odometry/training/oxts/0000.txt  
+ extracting: ../kitti-odometry/training/oxts/0010.txt  
+ extracting: ../kitti-odometry/training/oxts/0012.txt  
+ extracting: ../kitti-odometry/training/oxts/0013.txt  
+ extracting: ../kitti-odometry/training/oxts/0003.txt  
+ extracting: ../kitti-odometry/training/oxts/0011.txt  
+ extracting: ../kitti-odometry/testing/oxts/0005.txt  
+ extracting: ../kitti-odometry/testing/oxts/0014.txt  
+ extracting: ../kitti-odometry/testing/oxts/0021.txt  
+ extracting: ../kitti-odometry/testing/oxts/0001.txt  
+ extracting: ../kitti-odometry/testing/oxts/0007.txt  
+ extracting: ../kitti-odometry/testing/oxts/0009.txt  
+ extracting: ../kitti-odometry/testing/oxts/0024.txt  
+ extracting: ../kitti-odometry/testing/oxts/0027.txt  
+ extracting: ../kitti-odometry/testing/oxts/0019.txt  
+ extracting: ../kitti-odometry/testing/oxts/0028.txt  
+ extracting: ../kitti-odometry/testing/oxts/0016.txt  
+ extracting: ../kitti-odometry/testing/oxts/0002.txt  
+ extracting: ../kitti-odometry/testing/oxts/0025.txt  
+ extracting: ../kitti-odometry/testing/oxts/0020.txt  
+ extracting: ../kitti-odometry/testing/oxts/0023.txt  
+ extracting: ../kitti-odometry/testing/oxts/0015.txt  
+ extracting: ../kitti-odometry/testing/oxts/0006.txt  
+ extracting: ../kitti-odometry/testing/oxts/0017.txt  
+ extracting: ../kitti-odometry/testing/oxts/0018.txt  
+ extracting: ../kitti-odometry/testing/oxts/0026.txt  
+ extracting: ../kitti-odometry/testing/oxts/0004.txt  
+ extracting: ../kitti-odometry/testing/oxts/0008.txt  
+ extracting: ../kitti-odometry/testing/oxts/0022.txt  
+ extracting: ../kitti-odometry/testing/oxts/0000.txt  
+ extracting: ../kitti-odometry/testing/oxts/0010.txt  
+ extracting: ../kitti-odometry/testing/oxts/0012.txt  
+ extracting: ../kitti-odometry/testing/oxts/0013.txt  
+ extracting: ../kitti-odometry/testing/oxts/0003.txt  
+ extracting: ../kitti-odometry/testing/oxts/0011.txt  
+Archive:  devkit_tracking.zip
+  inflating: ../kitti-odometry/devkit/cs_overview.pdf  
+  inflating: ../kitti-odometry/devkit/cs_overview.svg  
+  inflating: ../kitti-odometry/devkit/matlab/computeBox3D.m  
+  inflating: ../kitti-odometry/devkit/matlab/computeOrientation3D.m  
+  inflating: ../kitti-odometry/devkit/matlab/drawBox2D.m  
+  inflating: ../kitti-odometry/devkit/matlab/drawBox3D.m  
+  inflating: ../kitti-odometry/devkit/matlab/projectToImage.m  
+  inflating: ../kitti-odometry/devkit/matlab/readCalibration.m  
+  inflating: ../kitti-odometry/devkit/matlab/readLabels.m  
+  inflating: ../kitti-odometry/devkit/matlab/run_demo.m  
+  inflating: ../kitti-odometry/devkit/matlab/run_readWriteDemo.m  
+  inflating: ../kitti-odometry/devkit/matlab/visualization.m  
+  inflating: ../kitti-odometry/devkit/matlab/writeLabels.m  
+  inflating: ../kitti-odometry/devkit/python/data/tracking/evaluate_tracking.seqmap  
+  inflating: ../kitti-odometry/devkit/python/data/tracking/evaluate_tracking.seqmap.test  
+  inflating: ../kitti-odometry/devkit/python/data/tracking/evaluate_tracking.seqmap.training  
+  inflating: ../kitti-odometry/devkit/python/evaluate_tracking.py  
+  inflating: ../kitti-odometry/devkit/python/mailpy.py  
+  inflating: ../kitti-odometry/devkit/python/munkres.py  
+  inflating: ../kitti-odometry/devkit/readme.txt  
+Archive:  data_tracking_calib.zip
+ extracting: ../kitti-odometry/training/calib/0005.txt  
+ extracting: ../kitti-odometry/training/calib/0014.txt  
+ extracting: ../kitti-odometry/training/calib/0001.txt  
+ extracting: ../kitti-odometry/training/calib/0007.txt  
+ extracting: ../kitti-odometry/training/calib/0009.txt  
+ extracting: ../kitti-odometry/training/calib/0019.txt  
+ extracting: ../kitti-odometry/training/calib/0016.txt  
+ extracting: ../kitti-odometry/training/calib/0002.txt  
+ extracting: ../kitti-odometry/training/calib/0020.txt  
+ extracting: ../kitti-odometry/training/calib/0015.txt  
+ extracting: ../kitti-odometry/training/calib/0006.txt  
+ extracting: ../kitti-odometry/training/calib/0017.txt  
+ extracting: ../kitti-odometry/training/calib/0018.txt  
+ extracting: ../kitti-odometry/training/calib/0004.txt  
+ extracting: ../kitti-odometry/training/calib/0008.txt  
+ extracting: ../kitti-odometry/training/calib/0000.txt  
+ extracting: ../kitti-odometry/training/calib/0010.txt  
+ extracting: ../kitti-odometry/training/calib/0012.txt  
+ extracting: ../kitti-odometry/training/calib/0013.txt  
+ extracting: ../kitti-odometry/training/calib/0003.txt  
+ extracting: ../kitti-odometry/training/calib/0011.txt  
+ extracting: ../kitti-odometry/testing/calib/0005.txt  
+ extracting: ../kitti-odometry/testing/calib/0014.txt  
+ extracting: ../kitti-odometry/testing/calib/0021.txt  
+ extracting: ../kitti-odometry/testing/calib/0001.txt  
+ extracting: ../kitti-odometry/testing/calib/0007.txt  
+ extracting: ../kitti-odometry/testing/calib/0009.txt  
+ extracting: ../kitti-odometry/testing/calib/0024.txt  
+ extracting: ../kitti-odometry/testing/calib/0027.txt  
+ extracting: ../kitti-odometry/testing/calib/0019.txt  
+ extracting: ../kitti-odometry/testing/calib/0028.txt  
+ extracting: ../kitti-odometry/testing/calib/0016.txt  
+ extracting: ../kitti-odometry/testing/calib/0002.txt  
+ extracting: ../kitti-odometry/testing/calib/0025.txt  
+ extracting: ../kitti-odometry/testing/calib/0020.txt  
+ extracting: ../kitti-odometry/testing/calib/0023.txt  
+ extracting: ../kitti-odometry/testing/calib/0015.txt  
+ extracting: ../kitti-odometry/testing/calib/0006.txt  
+ extracting: ../kitti-odometry/testing/calib/0017.txt  
+ extracting: ../kitti-odometry/testing/calib/0018.txt  
+ extracting: ../kitti-odometry/testing/calib/0026.txt  
+ extracting: ../kitti-odometry/testing/calib/0004.txt  
+ extracting: ../kitti-odometry/testing/calib/0008.txt  
+ extracting: ../kitti-odometry/testing/calib/0022.txt  
+ extracting: ../kitti-odometry/testing/calib/0000.txt  
+ extracting: ../kitti-odometry/testing/calib/0010.txt  
+ extracting: ../kitti-odometry/testing/calib/0012.txt  
+ extracting: ../kitti-odometry/testing/calib/0013.txt  
+ extracting: ../kitti-odometry/testing/calib/0003.txt  
+ extracting: ../kitti-odometry/testing/calib/0011.txt  
+Archive:  data_tracking_label_2.zip
+  inflating: ../kitti-odometry/training/label_02/0000.txt  
+  inflating: ../kitti-odometry/training/label_02/0001.txt  
+  inflating: ../kitti-odometry/training/label_02/0002.txt  
+  inflating: ../kitti-odometry/training/label_02/0003.txt  
+  inflating: ../kitti-odometry/training/label_02/0004.txt  
+  inflating: ../kitti-odometry/training/label_02/0005.txt  
+  inflating: ../kitti-odometry/training/label_02/0006.txt  
+  inflating: ../kitti-odometry/training/label_02/0007.txt  
+  inflating: ../kitti-odometry/training/label_02/0008.txt  
+  inflating: ../kitti-odometry/training/label_02/0009.txt  
+  inflating: ../kitti-odometry/training/label_02/0010.txt  
+  inflating: ../kitti-odometry/training/label_02/0011.txt  
+  inflating: ../kitti-odometry/training/label_02/0012.txt  
+  inflating: ../kitti-odometry/training/label_02/0013.txt  
+  inflating: ../kitti-odometry/training/label_02/0014.txt  
+  inflating: ../kitti-odometry/training/label_02/0015.txt  
+  inflating: ../kitti-odometry/training/label_02/0016.txt  
+  inflating: ../kitti-odometry/training/label_02/0017.txt  
+  inflating: ../kitti-odometry/training/label_02/0018.txt  
+  inflating: ../kitti-odometry/training/label_02/0019.txt  
+  inflating: ../kitti-odometry/training/label_02/0020.txt  
+Archive:  data_tracking_det_2_lsvm.zip
+  inflating: ../kitti-odometry/testing/det_02/0000.txt  
+  inflating: ../kitti-odometry/testing/det_02/0001.txt  
+  inflating: ../kitti-odometry/testing/det_02/0002.txt  
+  inflating: ../kitti-odometry/testing/det_02/0003.txt  
+  inflating: ../kitti-odometry/testing/det_02/0004.txt  
+  inflating: ../kitti-odometry/testing/det_02/0005.txt  
+  inflating: ../kitti-odometry/testing/det_02/0006.txt  
+  inflating: ../kitti-odometry/testing/det_02/0007.txt  
+  inflating: ../kitti-odometry/testing/det_02/0008.txt  
+  inflating: ../kitti-odometry/testing/det_02/0009.txt  
+  inflating: ../kitti-odometry/testing/det_02/0010.txt  
+  inflating: ../kitti-odometry/testing/det_02/0011.txt  
+  inflating: ../kitti-odometry/testing/det_02/0012.txt  
+  inflating: ../kitti-odometry/testing/det_02/0013.txt  
+  inflating: ../kitti-odometry/testing/det_02/0014.txt  
+  inflating: ../kitti-odometry/testing/det_02/0015.txt  
+  inflating: ../kitti-odometry/testing/det_02/0016.txt  
+  inflating: ../kitti-odometry/testing/det_02/0017.txt  
+  inflating: ../kitti-odometry/testing/det_02/0018.txt  
+  inflating: ../kitti-odometry/testing/det_02/0019.txt  
+  inflating: ../kitti-odometry/testing/det_02/0020.txt  
+  inflating: ../kitti-odometry/testing/det_02/0021.txt  
+  inflating: ../kitti-odometry/testing/det_02/0022.txt  
+  inflating: ../kitti-odometry/testing/det_02/0023.txt  
+  inflating: ../kitti-odometry/testing/det_02/0024.txt  
+  inflating: ../kitti-odometry/testing/det_02/0025.txt  
+  inflating: ../kitti-odometry/testing/det_02/0026.txt  
+  inflating: ../kitti-odometry/testing/det_02/0027.txt  
+  inflating: ../kitti-odometry/testing/det_02/0028.txt  
+  inflating: ../kitti-odometry/training/det_02/0000.txt  
+  inflating: ../kitti-odometry/training/det_02/0001.txt  
+  inflating: ../kitti-odometry/training/det_02/0002.txt  
+  inflating: ../kitti-odometry/training/det_02/0003.txt  
+  inflating: ../kitti-odometry/training/det_02/0004.txt  
+  inflating: ../kitti-odometry/training/det_02/0005.txt  
+  inflating: ../kitti-odometry/training/det_02/0006.txt  
+  inflating: ../kitti-odometry/training/det_02/0007.txt  
+  inflating: ../kitti-odometry/training/det_02/0008.txt  
+  inflating: ../kitti-odometry/training/det_02/0009.txt  
+  inflating: ../kitti-odometry/training/det_02/0010.txt  
+  inflating: ../kitti-odometry/training/det_02/0011.txt  
+  inflating: ../kitti-odometry/training/det_02/0012.txt  
+  inflating: ../kitti-odometry/training/det_02/0013.txt  
+  inflating: ../kitti-odometry/training/det_02/0014.txt  
+  inflating: ../kitti-odometry/training/det_02/0015.txt  
+  inflating: ../kitti-odometry/training/det_02/0016.txt  
+  inflating: ../kitti-odometry/training/det_02/0017.txt  
+  inflating: ../kitti-odometry/training/det_02/0018.txt  
+  inflating: ../kitti-odometry/training/det_02/0019.txt  
+  inflating: ../kitti-odometry/training/det_02/0020.txt  
+Archive:  data_tracking_det_2_regionlets.zip
+  inflating: ../kitti-odometry/testing/det_02/0000.txt  
+  inflating: ../kitti-odometry/testing/det_02/0001.txt  
+  inflating: ../kitti-odometry/testing/det_02/0002.txt  
+  inflating: ../kitti-odometry/testing/det_02/0003.txt  
+  inflating: ../kitti-odometry/testing/det_02/0004.txt  
+  inflating: ../kitti-odometry/testing/det_02/0005.txt  
+  inflating: ../kitti-odometry/testing/det_02/0006.txt  
+  inflating: ../kitti-odometry/testing/det_02/0007.txt  
+  inflating: ../kitti-odometry/testing/det_02/0008.txt  
+  inflating: ../kitti-odometry/testing/det_02/0009.txt  
+  inflating: ../kitti-odometry/testing/det_02/0010.txt  
+  inflating: ../kitti-odometry/testing/det_02/0011.txt  
+  inflating: ../kitti-odometry/testing/det_02/0012.txt  
+  inflating: ../kitti-odometry/testing/det_02/0013.txt  
+  inflating: ../kitti-odometry/testing/det_02/0014.txt  
+  inflating: ../kitti-odometry/testing/det_02/0015.txt  
+  inflating: ../kitti-odometry/testing/det_02/0016.txt  
+  inflating: ../kitti-odometry/testing/det_02/0017.txt  
+  inflating: ../kitti-odometry/testing/det_02/0018.txt  
+  inflating: ../kitti-odometry/testing/det_02/0019.txt  
+  inflating: ../kitti-odometry/testing/det_02/0020.txt  
+  inflating: ../kitti-odometry/testing/det_02/0021.txt  
+  inflating: ../kitti-odometry/testing/det_02/0022.txt  
+  inflating: ../kitti-odometry/testing/det_02/0023.txt  
+  inflating: ../kitti-odometry/testing/det_02/0024.txt  
+  inflating: ../kitti-odometry/testing/det_02/0025.txt  
+  inflating: ../kitti-odometry/testing/det_02/0026.txt  
+  inflating: ../kitti-odometry/testing/det_02/0027.txt  
+  inflating: ../kitti-odometry/testing/det_02/0028.txt  
+  inflating: ../kitti-odometry/training/det_02/0000.txt  
+  inflating: ../kitti-odometry/training/det_02/0001.txt  
+  inflating: ../kitti-odometry/training/det_02/0002.txt  
+  inflating: ../kitti-odometry/training/det_02/0003.txt  
+  inflating: ../kitti-odometry/training/det_02/0004.txt  
+  inflating: ../kitti-odometry/training/det_02/0005.txt  
+  inflating: ../kitti-odometry/training/det_02/0006.txt  
+  inflating: ../kitti-odometry/training/det_02/0007.txt  
+  inflating: ../kitti-odometry/training/det_02/0008.txt  
+  inflating: ../kitti-odometry/training/det_02/0009.txt  
+  inflating: ../kitti-odometry/training/det_02/0010.txt  
+  inflating: ../kitti-odometry/training/det_02/0011.txt  
+  inflating: ../kitti-odometry/training/det_02/0012.txt  
+  inflating: ../kitti-odometry/training/det_02/0013.txt  
+  inflating: ../kitti-odometry/training/det_02/0014.txt  
+  inflating: ../kitti-odometry/training/det_02/0015.txt  
+  inflating: ../kitti-odometry/training/det_02/0016.txt  
+  inflating: ../kitti-odometry/training/det_02/0017.txt  
+  inflating: ../kitti-odometry/training/det_02/0018.txt  
+  inflating: ../kitti-odometry/training/det_02/0019.txt  
+  inflating: ../kitti-odometry/training/det_02/0020.txt  
