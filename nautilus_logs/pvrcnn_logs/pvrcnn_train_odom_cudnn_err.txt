@@ -1,0 +1,2255 @@
+.
+..
+.empty
+.git
+.gitignore
+.ipynb_checkpoints
+LICENSE
+README.md
+build
+checkpoints
+core.31979
+data
+demo_notebook.ipynb
+docs
+install
+kitti-dataset.ipynb
+mayavi demo.ipynb
+output
+output_backup
+pcdet
+pcdet.egg-info
+requirements.txt
+saved_pred
+setup.py
+test.png
+test_space.py
+tools
+/usr/local/lib/python3.6/dist-packages/spconv:/usr/local/nvidia/lib:/usr/local/nvidia/lib64
+1.1.0
+Requirement already satisfied: numpy in /usr/local/lib/python3.6/dist-packages (from -r requirements.txt (line 1)) (1.18.2)
+Requirement already satisfied: torch>=1.1 in /usr/local/lib/python3.6/dist-packages (from -r requirements.txt (line 2)) (1.1.0)
+Collecting numba
+  Downloading numba-0.51.2-cp36-cp36m-manylinux2014_x86_64.whl (3.1 MB)
+Requirement already satisfied: tensorboardX in /usr/local/lib/python3.6/dist-packages (from -r requirements.txt (line 4)) (2.0)
+Requirement already satisfied: easydict in /usr/local/lib/python3.6/dist-packages (from -r requirements.txt (line 5)) (1.9)
+Requirement already satisfied: pyyaml in /usr/local/lib/python3.6/dist-packages (from -r requirements.txt (line 6)) (5.3.1)
+Requirement already satisfied: scikit-image in /usr/local/lib/python3.6/dist-packages (from -r requirements.txt (line 7)) (0.16.2)
+Requirement already satisfied: tqdm in /usr/local/lib/python3.6/dist-packages (from -r requirements.txt (line 8)) (4.45.0)
+Requirement already satisfied: setuptools in /usr/local/lib/python3.6/dist-packages (from numba->-r requirements.txt (line 3)) (46.1.3)
+Collecting llvmlite<0.35,>=0.34.0.dev0
+  Downloading llvmlite-0.34.0-cp36-cp36m-manylinux2010_x86_64.whl (24.6 MB)
+Requirement already satisfied: six in /usr/local/lib/python3.6/dist-packages (from tensorboardX->-r requirements.txt (line 4)) (1.14.0)
+Requirement already satisfied: protobuf>=3.8.0 in /usr/local/lib/python3.6/dist-packages (from tensorboardX->-r requirements.txt (line 4)) (3.11.3)
+Requirement already satisfied: imageio>=2.3.0 in /usr/local/lib/python3.6/dist-packages (from scikit-image->-r requirements.txt (line 7)) (2.8.0)
+Requirement already satisfied: networkx>=2.0 in /usr/local/lib/python3.6/dist-packages (from scikit-image->-r requirements.txt (line 7)) (2.4)
+Requirement already satisfied: matplotlib!=3.0.0,>=2.0.0 in /usr/local/lib/python3.6/dist-packages (from scikit-image->-r requirements.txt (line 7)) (3.2.1)
+Requirement already satisfied: pillow>=4.3.0 in /usr/local/lib/python3.6/dist-packages (from scikit-image->-r requirements.txt (line 7)) (7.0.0)
+Requirement already satisfied: PyWavelets>=0.4.0 in /usr/local/lib/python3.6/dist-packages (from scikit-image->-r requirements.txt (line 7)) (1.1.1)
+Requirement already satisfied: scipy>=0.19.0 in /usr/local/lib/python3.6/dist-packages (from scikit-image->-r requirements.txt (line 7)) (1.4.1)
+Requirement already satisfied: decorator>=4.3.0 in /usr/local/lib/python3.6/dist-packages (from networkx>=2.0->scikit-image->-r requirements.txt (line 7)) (4.4.2)
+Requirement already satisfied: kiwisolver>=1.0.1 in /usr/local/lib/python3.6/dist-packages (from matplotlib!=3.0.0,>=2.0.0->scikit-image->-r requirements.txt (line 7)) (1.2.0)
+Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=2.0.1 in /usr/local/lib/python3.6/dist-packages (from matplotlib!=3.0.0,>=2.0.0->scikit-image->-r requirements.txt (line 7)) (2.4.6)
+Requirement already satisfied: python-dateutil>=2.1 in /usr/local/lib/python3.6/dist-packages (from matplotlib!=3.0.0,>=2.0.0->scikit-image->-r requirements.txt (line 7)) (2.8.1)
+Requirement already satisfied: cycler>=0.10 in /usr/local/lib/python3.6/dist-packages (from matplotlib!=3.0.0,>=2.0.0->scikit-image->-r requirements.txt (line 7)) (0.10.0)
+Installing collected packages: llvmlite, numba
+Successfully installed llvmlite-0.34.0 numba-0.51.2
+WARNING: You are using pip version 20.0.2; however, version 20.2.4 is available.
+You should consider upgrading via the '/usr/bin/python3.6 -m pip install --upgrade pip' command.
+running develop
+running egg_info
+writing pcdet.egg-info/PKG-INFO
+writing dependency_links to pcdet.egg-info/dependency_links.txt
+writing requirements to pcdet.egg-info/requires.txt
+writing top-level names to pcdet.egg-info/top_level.txt
+reading manifest file 'pcdet.egg-info/SOURCES.txt'
+writing manifest file 'pcdet.egg-info/SOURCES.txt'
+running build_ext
+copying build/lib.linux-x86_64-3.6/pcdet/ops/iou3d_nms/iou3d_nms_cuda.cpython-36m-x86_64-linux-gnu.so -> pcdet/ops/iou3d_nms
+copying build/lib.linux-x86_64-3.6/pcdet/ops/roiaware_pool3d/roiaware_pool3d_cuda.cpython-36m-x86_64-linux-gnu.so -> pcdet/ops/roiaware_pool3d
+copying build/lib.linux-x86_64-3.6/pcdet/ops/roipoint_pool3d/roipoint_pool3d_cuda.cpython-36m-x86_64-linux-gnu.so -> pcdet/ops/roipoint_pool3d
+copying build/lib.linux-x86_64-3.6/pcdet/ops/pointnet2/pointnet2_stack/pointnet2_stack_cuda.cpython-36m-x86_64-linux-gnu.so -> pcdet/ops/pointnet2/pointnet2_stack
+copying build/lib.linux-x86_64-3.6/pcdet/ops/pointnet2/pointnet2_batch/pointnet2_batch_cuda.cpython-36m-x86_64-linux-gnu.so -> pcdet/ops/pointnet2/pointnet2_batch
+Creating /usr/local/lib/python3.6/dist-packages/pcdet.egg-link (link to .)
+Adding pcdet 0.3.0+2b8ca11 to easy-install.pth file
+
+Installed /team1/codes/3dObjDet/OpenPCDet_ravi
+Processing dependencies for pcdet==0.3.0+2b8ca11
+Searching for PyYAML==5.3.1
+Best match: PyYAML 5.3.1
+Adding PyYAML 5.3.1 to easy-install.pth file
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for easydict==1.9
+Best match: easydict 1.9
+Adding easydict 1.9 to easy-install.pth file
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for tensorboardX==2.0
+Best match: tensorboardX 2.0
+Adding tensorboardX 2.0 to easy-install.pth file
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for numba==0.51.2
+Best match: numba 0.51.2
+Adding numba 0.51.2 to easy-install.pth file
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for spconv==1.0
+Best match: spconv 1.0
+Adding spconv 1.0 to easy-install.pth file
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for torch==1.1.0
+Best match: torch 1.1.0
+Adding torch 1.1.0 to easy-install.pth file
+Installing convert-caffe2-to-onnx script to /usr/local/bin
+Installing convert-onnx-to-caffe2 script to /usr/local/bin
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for numpy==1.18.2
+Best match: numpy 1.18.2
+Adding numpy 1.18.2 to easy-install.pth file
+Installing f2py script to /usr/local/bin
+Installing f2py3 script to /usr/local/bin
+Installing f2py3.6 script to /usr/local/bin
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for six==1.14.0
+Best match: six 1.14.0
+Adding six 1.14.0 to easy-install.pth file
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for protobuf==3.11.3
+Best match: protobuf 3.11.3
+Adding protobuf 3.11.3 to easy-install.pth file
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for llvmlite==0.34.0
+Best match: llvmlite 0.34.0
+Adding llvmlite 0.34.0 to easy-install.pth file
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for setuptools==46.1.3
+Best match: setuptools 46.1.3
+Adding setuptools 46.1.3 to easy-install.pth file
+Installing easy_install script to /usr/local/bin
+Installing easy_install-3.8 script to /usr/local/bin
+
+Using /usr/local/lib/python3.6/dist-packages
+Finished processing dependencies for pcdet==0.3.0+2b8ca11
+---------------Start to generate data infos---------------
+train sample_idx: ['0012', '000053']
+train sample_idx: ['0012', '000018']
+train sample_idx: ['0012', '000010']
+train sample_idx: ['0012', '000059']
+train sample_idx: ['0012', '000011']
+train sample_idx: ['0012', '000028']
+train sample_idx: ['0012', '000001']
+train sample_idx: ['0012', '000061']
+train sample_idx: ['0012', '000032']
+train sample_idx: ['0012', '000038']
+train sample_idx: ['0012', '000024']
+train sample_idx: ['0012', '000033']
+train sample_idx: ['0012', '000008']
+train sample_idx: ['0012', '000026']
+train sample_idx: ['0012', '000064']
+train sample_idx: ['0012', '000040']
+train sample_idx: ['0012', '000046']
+train sample_idx: ['0012', '000056']
+train sample_idx: ['0012', '000017']
+train sample_idx: ['0012', '000019']
+train sample_idx: ['0012', '000005']
+train sample_idx: ['0012', '000071']
+train sample_idx: ['0012', '000009']
+train sample_idx: ['0012', '000034']
+train sample_idx: ['0012', '000000']
+train sample_idx: ['0012', '000050']
+train sample_idx: ['0012', '000074']
+train sample_idx: ['0012', '000055']
+train sample_idx: ['0012', '000058']
+train sample_idx: ['0012', '000070']
+train sample_idx: ['0012', '000073']
+train sample_idx: ['0012', '000004']
+train sample_idx: ['0012', '000052']
+train sample_idx: ['0012', '000031']
+train sample_idx: ['0012', '000013']
+train sample_idx: ['0012', '000060']
+train sample_idx: ['0012', '000042']
+train sample_idx: ['0012', '000014']
+train sample_idx: ['0012', '000057']
+train sample_idx: ['0012', '000063']
+train sample_idx: ['0012', '000065']
+train sample_idx: ['0012', '000021']
+train sample_idx: ['0012', '000069']
+train sample_idx: ['0012', '000025']
+train sample_idx: ['0012', '000007']
+train sample_idx: ['0012', '000047']
+train sample_idx: ['0012', '000023']
+train sample_idx: ['0012', '000043']
+train sample_idx: ['0012', '000039']
+train sample_idx: ['0012', '000044']
+train sample_idx: ['0012', '000072']
+train sample_idx: ['0012', '000027']
+train sample_idx: ['0012', '000003']
+train sample_idx: ['0012', '000022']
+train sample_idx: ['0012', '000049']
+train sample_idx: ['0012', '000054']
+train sample_idx: ['0012', '000077']
+train sample_idx: ['0012', '000075']
+train sample_idx: ['0012', '000030']
+train sample_idx: ['0012', '000002']
+train sample_idx: ['0012', '000037']
+train sample_idx: ['0012', '000035']
+train sample_idx: ['0012', '000051']
+train sample_idx: ['0012', '000076']
+train sample_idx: ['0012', '000020']
+train sample_idx: ['0012', '000015']
+train sample_idx: ['0012', '000006']
+train sample_idx: ['0012', '000048']
+train sample_idx: ['0012', '000045']
+train sample_idx: ['0012', '000066']
+train sample_idx: ['0012', '000036']
+train sample_idx: ['0012', '000016']
+train sample_idx: ['0012', '000012']
+train sample_idx: ['0012', '000067']
+train sample_idx: ['0012', '000029']
+train sample_idx: ['0012', '000062']
+train sample_idx: ['0012', '000041']
+train sample_idx: ['0012', '000068']
+train sample_idx: ['0000', '000053']
+train sample_idx: ['0000', '000119']
+train sample_idx: ['0000', '000087']
+train sample_idx: ['0000', '000018']
+train sample_idx: ['0000', '000010']
+train sample_idx: ['0000', '000059']
+train sample_idx: ['0000', '000107']
+train sample_idx: ['0000', '000139']
+train sample_idx: ['0000', '000149']
+train sample_idx: ['0000', '000111']
+train sample_idx: ['0000', '000141']
+train sample_idx: ['0000', '000146']
+train sample_idx: ['0000', '000088']
+train sample_idx: ['0000', '000011']
+train sample_idx: ['0000', '000028']
+train sample_idx: ['0000', '000108']
+train sample_idx: ['0000', '000001']
+train sample_idx: ['0000', '000125']
+train sample_idx: ['0000', '000123']
+train sample_idx: ['0000', '000106']
+train sample_idx: ['0000', '000061']
+train sample_idx: ['0000', '000138']
+train sample_idx: ['0000', '000032']
+train sample_idx: ['0000', '000135']
+train sample_idx: ['0000', '000038']
+train sample_idx: ['0000', '000024']
+train sample_idx: ['0000', '000033']
+train sample_idx: ['0000', '000008']
+train sample_idx: ['0000', '000026']
+train sample_idx: ['0000', '000064']
+train sample_idx: ['0000', '000144']
+train sample_idx: ['0000', '000147']
+train sample_idx: ['0000', '000133']
+train sample_idx: ['0000', '000040']
+train sample_idx: ['0000', '000079']
+train sample_idx: ['0000', '000091']
+train sample_idx: ['0000', '000046']
+train sample_idx: ['0000', '000096']
+train sample_idx: ['0000', '000056']
+train sample_idx: ['0000', '000017']
+train sample_idx: ['0000', '000019']
+train sample_idx: ['0000', '000142']
+train sample_idx: ['0000', '000005']
+train sample_idx: ['0000', '000071']
+train sample_idx: ['0000', '000117']
+train sample_idx: ['0000', '000118']
+train sample_idx: ['0000', '000009']
+train sample_idx: ['0000', '000152']
+train sample_idx: ['0000', '000129']
+train sample_idx: ['0000', '000034']
+train sample_idx: ['0000', '000000']
+train sample_idx: ['0000', '000098']
+train sample_idx: ['0000', '000050']
+train sample_idx: ['0000', '000074']
+train sample_idx: ['0000', '000080']
+train sample_idx: ['0000', '000113']
+train sample_idx: ['0000', '000122']
+train sample_idx: ['0000', '000100']
+train sample_idx: ['0000', '000090']
+train sample_idx: ['0000', '000055']
+train sample_idx: ['0000', '000115']
+train sample_idx: ['0000', '000127']
+train sample_idx: ['0000', '000140']
+train sample_idx: ['0000', '000058']
+train sample_idx: ['0000', '000070']
+train sample_idx: ['0000', '000153']
+train sample_idx: ['0000', '000073']
+train sample_idx: ['0000', '000004']
+train sample_idx: ['0000', '000052']
+train sample_idx: ['0000', '000082']
+train sample_idx: ['0000', '000110']
+train sample_idx: ['0000', '000031']
+train sample_idx: ['0000', '000095']
+train sample_idx: ['0000', '000092']
+train sample_idx: ['0000', '000013']
+train sample_idx: ['0000', '000060']
+train sample_idx: ['0000', '000042']
+train sample_idx: ['0000', '000014']
+train sample_idx: ['0000', '000057']
+train sample_idx: ['0000', '000105']
+train sample_idx: ['0000', '000145']
+train sample_idx: ['0000', '000097']
+train sample_idx: ['0000', '000121']
+train sample_idx: ['0000', '000063']
+train sample_idx: ['0000', '000065']
+train sample_idx: ['0000', '000021']
+train sample_idx: ['0000', '000069']
+train sample_idx: ['0000', '000025']
+train sample_idx: ['0000', '000084']
+train sample_idx: ['0000', '000007']
+train sample_idx: ['0000', '000151']
+train sample_idx: ['0000', '000124']
+train sample_idx: ['0000', '000047']
+train sample_idx: ['0000', '000023']
+train sample_idx: ['0000', '000102']
+train sample_idx: ['0000', '000132']
+train sample_idx: ['0000', '000143']
+train sample_idx: ['0000', '000043']
+train sample_idx: ['0000', '000094']
+train sample_idx: ['0000', '000089']
+train sample_idx: ['0000', '000099']
+train sample_idx: ['0000', '000039']
+train sample_idx: ['0000', '000109']
+train sample_idx: ['0000', '000044']
+train sample_idx: ['0000', '000072']
+train sample_idx: ['0000', '000027']
+train sample_idx: ['0000', '000003']
+train sample_idx: ['0000', '000022']
+train sample_idx: ['0000', '000049']
+train sample_idx: ['0000', '000083']
+train sample_idx: ['0000', '000054']
+train sample_idx: ['0000', '000077']
+train sample_idx: ['0000', '000112']
+train sample_idx: ['0000', '000075']
+train sample_idx: ['0000', '000150']
+train sample_idx: ['0000', '000030']
+train sample_idx: ['0000', '000002']
+train sample_idx: ['0000', '000131']
+train sample_idx: ['0000', '000037']
+train sample_idx: ['0000', '000035']
+train sample_idx: ['0000', '000051']
+train sample_idx: ['0000', '000076']
+train sample_idx: ['0000', '000101']
+train sample_idx: ['0000', '000020']
+train sample_idx: ['0000', '000093']
+train sample_idx: ['0000', '000015']
+train sample_idx: ['0000', '000078']
+train sample_idx: ['0000', '000120']
+train sample_idx: ['0000', '000006']
+train sample_idx: ['0000', '000048']
+train sample_idx: ['0000', '000045']
+train sample_idx: ['0000', '000066']
+train sample_idx: ['0000', '000114']
+train sample_idx: ['0000', '000137']
+train sample_idx: ['0000', '000126']
+train sample_idx: ['0000', '000136']
+train sample_idx: ['0000', '000036']
+train sample_idx: ['0000', '000016']
+train sample_idx: ['0000', '000134']
+train sample_idx: ['0000', '000104']
+train sample_idx: ['0000', '000128']
+train sample_idx: ['0000', '000012']
+train sample_idx: ['0000', '000148']
+train sample_idx: ['0000', '000103']
+train sample_idx: ['0000', '000081']
+train sample_idx: ['0000', '000067']
+train sample_idx: ['0000', '000130']
+train sample_idx: ['0000', '000116']
+train sample_idx: ['0000', '000029']
+train sample_idx: ['0000', '000062']
+train sample_idx: ['0000', '000085']
+train sample_idx: ['0000', '000041']
+train sample_idx: ['0000', '000086']
+train sample_idx: ['0000', '000068']
+Kitti info train file is saved to /team1/codes/3dObjDet/OpenPCDet_ravi/data/kitti-odometry/splits/seq_train_0,12_seq_val_10_seq_test_19/kitti_infos_train.pkl
+val sample_idx: ['0012', '000053']
+val sample_idx: ['0012', '000018']
+val sample_idx: ['0012', '000010']
+val sample_idx: ['0012', '000059']
+val sample_idx: ['0012', '000011']
+val sample_idx: ['0012', '000028']
+val sample_idx: ['0012', '000001']
+val sample_idx: ['0012', '000061']
+val sample_idx: ['0012', '000032']
+val sample_idx: ['0012', '000038']
+val sample_idx: ['0012', '000024']
+val sample_idx: ['0012', '000033']
+val sample_idx: ['0012', '000008']
+val sample_idx: ['0012', '000026']
+val sample_idx: ['0012', '000064']
+val sample_idx: ['0012', '000040']
+val sample_idx: ['0012', '000046']
+val sample_idx: ['0012', '000056']
+val sample_idx: ['0012', '000017']
+val sample_idx: ['0012', '000019']
+val sample_idx: ['0012', '000005']
+val sample_idx: ['0012', '000071']
+val sample_idx: ['0012', '000009']
+val sample_idx: ['0012', '000034']
+val sample_idx: ['0012', '000000']
+val sample_idx: ['0012', '000050']
+val sample_idx: ['0012', '000074']
+val sample_idx: ['0012', '000055']
+val sample_idx: ['0012', '000058']
+val sample_idx: ['0012', '000070']
+val sample_idx: ['0012', '000073']
+val sample_idx: ['0012', '000004']
+val sample_idx: ['0012', '000052']
+val sample_idx: ['0012', '000031']
+val sample_idx: ['0012', '000013']
+val sample_idx: ['0012', '000060']
+val sample_idx: ['0012', '000042']
+val sample_idx: ['0012', '000014']
+val sample_idx: ['0012', '000057']
+val sample_idx: ['0012', '000063']
+val sample_idx: ['0012', '000065']
+val sample_idx: ['0012', '000021']
+val sample_idx: ['0012', '000069']
+val sample_idx: ['0012', '000025']
+val sample_idx: ['0012', '000007']
+val sample_idx: ['0012', '000047']
+val sample_idx: ['0012', '000023']
+val sample_idx: ['0012', '000043']
+val sample_idx: ['0012', '000039']
+val sample_idx: ['0012', '000044']
+val sample_idx: ['0012', '000072']
+val sample_idx: ['0012', '000027']
+val sample_idx: ['0012', '000003']
+val sample_idx: ['0012', '000022']
+val sample_idx: ['0012', '000049']
+val sample_idx: ['0012', '000054']
+val sample_idx: ['0012', '000077']
+val sample_idx: ['0012', '000075']
+val sample_idx: ['0012', '000030']
+val sample_idx: ['0012', '000002']
+val sample_idx: ['0012', '000037']
+val sample_idx: ['0012', '000035']
+val sample_idx: ['0012', '000051']
+val sample_idx: ['0012', '000076']
+val sample_idx: ['0012', '000020']
+val sample_idx: ['0012', '000015']
+val sample_idx: ['0012', '000006']
+val sample_idx: ['0012', '000048']
+val sample_idx: ['0012', '000045']
+val sample_idx: ['0012', '000066']
+val sample_idx: ['0012', '000036']
+val sample_idx: ['0012', '000016']
+val sample_idx: ['0012', '000012']
+val sample_idx: ['0012', '000067']
+val sample_idx: ['0012', '000029']
+val sample_idx: ['0012', '000062']
+val sample_idx: ['0012', '000041']
+val sample_idx: ['0012', '000068']
+Kitti info val file is saved to /team1/codes/3dObjDet/OpenPCDet_ravi/data/kitti-odometry/splits/seq_train_0,12_seq_val_10_seq_test_19/kitti_infos_val.pkl
+Kitti info trainval file is saved to /team1/codes/3dObjDet/OpenPCDet_ravi/data/kitti-odometry/splits/seq_train_0,12_seq_val_10_seq_test_19/kitti_infos_trainval.pkl
+test sample_idx: ['0012', '000053']
+test sample_idx: ['0012', '000018']
+test sample_idx: ['0012', '000010']
+test sample_idx: ['0012', '000059']
+test sample_idx: ['0012', '000011']
+test sample_idx: ['0012', '000028']
+test sample_idx: ['0012', '000001']
+test sample_idx: ['0012', '000061']
+test sample_idx: ['0012', '000032']
+test sample_idx: ['0012', '000038']
+test sample_idx: ['0012', '000024']
+test sample_idx: ['0012', '000033']
+test sample_idx: ['0012', '000008']
+test sample_idx: ['0012', '000026']
+test sample_idx: ['0012', '000064']
+test sample_idx: ['0012', '000040']
+test sample_idx: ['0012', '000046']
+test sample_idx: ['0012', '000056']
+test sample_idx: ['0012', '000017']
+test sample_idx: ['0012', '000019']
+test sample_idx: ['0012', '000005']
+test sample_idx: ['0012', '000071']
+test sample_idx: ['0012', '000009']
+test sample_idx: ['0012', '000034']
+test sample_idx: ['0012', '000000']
+test sample_idx: ['0012', '000050']
+test sample_idx: ['0012', '000074']
+test sample_idx: ['0012', '000055']
+test sample_idx: ['0012', '000058']
+test sample_idx: ['0012', '000070']
+test sample_idx: ['0012', '000073']
+test sample_idx: ['0012', '000004']
+test sample_idx: ['0012', '000052']
+test sample_idx: ['0012', '000031']
+test sample_idx: ['0012', '000013']
+test sample_idx: ['0012', '000060']
+test sample_idx: ['0012', '000042']
+test sample_idx: ['0012', '000014']
+test sample_idx: ['0012', '000057']
+test sample_idx: ['0012', '000063']
+test sample_idx: ['0012', '000065']
+test sample_idx: ['0012', '000021']
+test sample_idx: ['0012', '000069']
+test sample_idx: ['0012', '000025']
+test sample_idx: ['0012', '000007']
+test sample_idx: ['0012', '000047']
+test sample_idx: ['0012', '000023']
+test sample_idx: ['0012', '000043']
+test sample_idx: ['0012', '000039']
+test sample_idx: ['0012', '000044']
+test sample_idx: ['0012', '000072']
+test sample_idx: ['0012', '000027']
+test sample_idx: ['0012', '000003']
+test sample_idx: ['0012', '000022']
+test sample_idx: ['0012', '000049']
+test sample_idx: ['0012', '000054']
+test sample_idx: ['0012', '000077']
+test sample_idx: ['0012', '000075']
+test sample_idx: ['0012', '000030']
+test sample_idx: ['0012', '000002']
+test sample_idx: ['0012', '000037']
+test sample_idx: ['0012', '000035']
+test sample_idx: ['0012', '000051']
+test sample_idx: ['0012', '000076']
+test sample_idx: ['0012', '000020']
+test sample_idx: ['0012', '000015']
+test sample_idx: ['0012', '000006']
+test sample_idx: ['0012', '000048']
+test sample_idx: ['0012', '000045']
+test sample_idx: ['0012', '000066']
+test sample_idx: ['0012', '000036']
+test sample_idx: ['0012', '000016']
+test sample_idx: ['0012', '000012']
+test sample_idx: ['0012', '000067']
+test sample_idx: ['0012', '000029']
+test sample_idx: ['0012', '000062']
+test sample_idx: ['0012', '000041']
+test sample_idx: ['0012', '000068']
+Kitti info test file is saved to /team1/codes/3dObjDet/OpenPCDet_ravi/data/kitti-odometry/splits/seq_train_0,12_seq_val_10_seq_test_19/kitti_infos_test.pkl
+---------------Start create groundtruth database for data augmentation---------------
+gt_database sample: 1/232
+filename 0012_000053_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000053
+filename 0012_000053_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000053
+filename 0012_000053_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000053
+gt_database sample: 2/232
+filename 0012_000018_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000018
+filename 0012_000018_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000018
+filename 0012_000018_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000018
+gt_database sample: 3/232
+filename 0012_000010_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000010
+filename 0012_000010_Car_1.bin sample_idx[0] 0012 sample_idx[1] 000010
+gt_database sample: 4/232
+filename 0012_000059_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000059
+filename 0012_000059_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000059
+filename 0012_000059_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000059
+gt_database sample: 5/232
+filename 0012_000011_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000011
+filename 0012_000011_Car_1.bin sample_idx[0] 0012 sample_idx[1] 000011
+gt_database sample: 6/232
+filename 0012_000028_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000028
+filename 0012_000028_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000028
+filename 0012_000028_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000028
+gt_database sample: 7/232
+filename 0012_000001_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000001
+filename 0012_000001_Car_1.bin sample_idx[0] 0012 sample_idx[1] 000001
+gt_database sample: 8/232
+filename 0012_000061_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000061
+filename 0012_000061_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000061
+filename 0012_000061_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000061
+gt_database sample: 9/232
+filename 0012_000032_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000032
+filename 0012_000032_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000032
+filename 0012_000032_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000032
+gt_database sample: 10/232
+filename 0012_000038_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000038
+filename 0012_000038_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000038
+filename 0012_000038_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000038
+gt_database sample: 11/232
+filename 0012_000024_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000024
+filename 0012_000024_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000024
+filename 0012_000024_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000024
+gt_database sample: 12/232
+filename 0012_000033_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000033
+filename 0012_000033_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000033
+filename 0012_000033_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000033
+gt_database sample: 13/232
+filename 0012_000008_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000008
+filename 0012_000008_Car_1.bin sample_idx[0] 0012 sample_idx[1] 000008
+gt_database sample: 14/232
+filename 0012_000026_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000026
+filename 0012_000026_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000026
+filename 0012_000026_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000026
+gt_database sample: 15/232
+filename 0012_000064_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000064
+filename 0012_000064_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000064
+filename 0012_000064_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000064
+gt_database sample: 16/232
+filename 0012_000040_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000040
+filename 0012_000040_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000040
+filename 0012_000040_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000040
+gt_database sample: 17/232
+filename 0012_000046_Pedestrian_0.bin sample_idx[0] 0012 sample_idx[1] 000046
+filename 0012_000046_Car_1.bin sample_idx[0] 0012 sample_idx[1] 000046
+gt_database sample: 18/232
+filename 0012_000056_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000056
+filename 0012_000056_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000056
+filename 0012_000056_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000056
+gt_database sample: 19/232
+filename 0012_000017_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000017
+filename 0012_000017_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000017
+filename 0012_000017_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000017
+gt_database sample: 20/232
+filename 0012_000019_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000019
+filename 0012_000019_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000019
+filename 0012_000019_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000019
+gt_database sample: 21/232
+filename 0012_000005_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000005
+filename 0012_000005_Car_1.bin sample_idx[0] 0012 sample_idx[1] 000005
+gt_database sample: 22/232
+filename 0012_000071_Pedestrian_0.bin sample_idx[0] 0012 sample_idx[1] 000071
+filename 0012_000071_Car_1.bin sample_idx[0] 0012 sample_idx[1] 000071
+gt_database sample: 23/232
+filename 0012_000009_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000009
+filename 0012_000009_Car_1.bin sample_idx[0] 0012 sample_idx[1] 000009
+gt_database sample: 24/232
+filename 0012_000034_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000034
+filename 0012_000034_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000034
+filename 0012_000034_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000034
+gt_database sample: 25/232
+filename 0012_000000_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000000
+filename 0012_000000_Car_1.bin sample_idx[0] 0012 sample_idx[1] 000000
+gt_database sample: 26/232
+filename 0012_000050_Pedestrian_0.bin sample_idx[0] 0012 sample_idx[1] 000050
+filename 0012_000050_Car_1.bin sample_idx[0] 0012 sample_idx[1] 000050
+gt_database sample: 27/232
+filename 0012_000074_Pedestrian_0.bin sample_idx[0] 0012 sample_idx[1] 000074
+filename 0012_000074_Car_1.bin sample_idx[0] 0012 sample_idx[1] 000074
+gt_database sample: 28/232
+filename 0012_000055_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000055
+filename 0012_000055_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000055
+filename 0012_000055_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000055
+gt_database sample: 29/232
+filename 0012_000058_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000058
+filename 0012_000058_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000058
+filename 0012_000058_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000058
+gt_database sample: 30/232
+filename 0012_000070_Pedestrian_0.bin sample_idx[0] 0012 sample_idx[1] 000070
+filename 0012_000070_Car_1.bin sample_idx[0] 0012 sample_idx[1] 000070
+gt_database sample: 31/232
+filename 0012_000073_Pedestrian_0.bin sample_idx[0] 0012 sample_idx[1] 000073
+filename 0012_000073_Car_1.bin sample_idx[0] 0012 sample_idx[1] 000073
+gt_database sample: 32/232
+filename 0012_000004_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000004
+filename 0012_000004_Car_1.bin sample_idx[0] 0012 sample_idx[1] 000004
+gt_database sample: 33/232
+filename 0012_000052_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000052
+filename 0012_000052_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000052
+filename 0012_000052_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000052
+gt_database sample: 34/232
+filename 0012_000031_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000031
+filename 0012_000031_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000031
+filename 0012_000031_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000031
+gt_database sample: 35/232
+filename 0012_000013_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000013
+filename 0012_000013_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000013
+filename 0012_000013_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000013
+gt_database sample: 36/232
+filename 0012_000060_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000060
+filename 0012_000060_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000060
+filename 0012_000060_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000060
+gt_database sample: 37/232
+filename 0012_000042_Pedestrian_0.bin sample_idx[0] 0012 sample_idx[1] 000042
+filename 0012_000042_Car_1.bin sample_idx[0] 0012 sample_idx[1] 000042
+gt_database sample: 38/232
+filename 0012_000014_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000014
+filename 0012_000014_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000014
+filename 0012_000014_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000014
+gt_database sample: 39/232
+filename 0012_000057_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000057
+filename 0012_000057_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000057
+filename 0012_000057_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000057
+gt_database sample: 40/232
+filename 0012_000063_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000063
+filename 0012_000063_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000063
+filename 0012_000063_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000063
+gt_database sample: 41/232
+filename 0012_000065_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000065
+filename 0012_000065_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000065
+filename 0012_000065_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000065
+gt_database sample: 42/232
+filename 0012_000021_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000021
+filename 0012_000021_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000021
+filename 0012_000021_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000021
+gt_database sample: 43/232
+filename 0012_000069_Pedestrian_0.bin sample_idx[0] 0012 sample_idx[1] 000069
+filename 0012_000069_Car_1.bin sample_idx[0] 0012 sample_idx[1] 000069
+gt_database sample: 44/232
+filename 0012_000025_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000025
+filename 0012_000025_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000025
+filename 0012_000025_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000025
+gt_database sample: 45/232
+filename 0012_000007_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000007
+filename 0012_000007_Car_1.bin sample_idx[0] 0012 sample_idx[1] 000007
+gt_database sample: 46/232
+filename 0012_000047_Pedestrian_0.bin sample_idx[0] 0012 sample_idx[1] 000047
+filename 0012_000047_Car_1.bin sample_idx[0] 0012 sample_idx[1] 000047
+gt_database sample: 47/232
+filename 0012_000023_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000023
+filename 0012_000023_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000023
+filename 0012_000023_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000023
+gt_database sample: 48/232
+filename 0012_000043_Pedestrian_0.bin sample_idx[0] 0012 sample_idx[1] 000043
+filename 0012_000043_Car_1.bin sample_idx[0] 0012 sample_idx[1] 000043
+gt_database sample: 49/232
+filename 0012_000039_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000039
+filename 0012_000039_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000039
+filename 0012_000039_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000039
+gt_database sample: 50/232
+filename 0012_000044_Pedestrian_0.bin sample_idx[0] 0012 sample_idx[1] 000044
+filename 0012_000044_Car_1.bin sample_idx[0] 0012 sample_idx[1] 000044
+gt_database sample: 51/232
+filename 0012_000072_Pedestrian_0.bin sample_idx[0] 0012 sample_idx[1] 000072
+filename 0012_000072_Car_1.bin sample_idx[0] 0012 sample_idx[1] 000072
+gt_database sample: 52/232
+filename 0012_000027_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000027
+filename 0012_000027_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000027
+filename 0012_000027_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000027
+gt_database sample: 53/232
+filename 0012_000003_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000003
+filename 0012_000003_Car_1.bin sample_idx[0] 0012 sample_idx[1] 000003
+gt_database sample: 54/232
+filename 0012_000022_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000022
+filename 0012_000022_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000022
+filename 0012_000022_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000022
+gt_database sample: 55/232
+filename 0012_000049_Pedestrian_0.bin sample_idx[0] 0012 sample_idx[1] 000049
+filename 0012_000049_Car_1.bin sample_idx[0] 0012 sample_idx[1] 000049
+gt_database sample: 56/232
+filename 0012_000054_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000054
+filename 0012_000054_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000054
+filename 0012_000054_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000054
+gt_database sample: 57/232
+filename 0012_000077_DontCare_0.bin sample_idx[0] 0012 sample_idx[1] 000077
+gt_database sample: 58/232
+filename 0012_000075_Pedestrian_0.bin sample_idx[0] 0012 sample_idx[1] 000075
+filename 0012_000075_Car_1.bin sample_idx[0] 0012 sample_idx[1] 000075
+gt_database sample: 59/232
+filename 0012_000030_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000030
+filename 0012_000030_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000030
+filename 0012_000030_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000030
+gt_database sample: 60/232
+filename 0012_000002_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000002
+filename 0012_000002_Car_1.bin sample_idx[0] 0012 sample_idx[1] 000002
+gt_database sample: 61/232
+filename 0012_000037_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000037
+filename 0012_000037_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000037
+filename 0012_000037_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000037
+gt_database sample: 62/232
+filename 0012_000035_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000035
+filename 0012_000035_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000035
+filename 0012_000035_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000035
+gt_database sample: 63/232
+filename 0012_000051_Pedestrian_0.bin sample_idx[0] 0012 sample_idx[1] 000051
+filename 0012_000051_Car_1.bin sample_idx[0] 0012 sample_idx[1] 000051
+gt_database sample: 64/232
+filename 0012_000076_Pedestrian_0.bin sample_idx[0] 0012 sample_idx[1] 000076
+filename 0012_000076_Car_1.bin sample_idx[0] 0012 sample_idx[1] 000076
+gt_database sample: 65/232
+filename 0012_000020_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000020
+filename 0012_000020_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000020
+filename 0012_000020_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000020
+gt_database sample: 66/232
+filename 0012_000015_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000015
+filename 0012_000015_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000015
+filename 0012_000015_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000015
+gt_database sample: 67/232
+filename 0012_000006_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000006
+filename 0012_000006_Car_1.bin sample_idx[0] 0012 sample_idx[1] 000006
+gt_database sample: 68/232
+filename 0012_000048_Pedestrian_0.bin sample_idx[0] 0012 sample_idx[1] 000048
+filename 0012_000048_Car_1.bin sample_idx[0] 0012 sample_idx[1] 000048
+gt_database sample: 69/232
+filename 0012_000045_Pedestrian_0.bin sample_idx[0] 0012 sample_idx[1] 000045
+filename 0012_000045_Car_1.bin sample_idx[0] 0012 sample_idx[1] 000045
+gt_database sample: 70/232
+filename 0012_000066_Pedestrian_0.bin sample_idx[0] 0012 sample_idx[1] 000066
+filename 0012_000066_Car_1.bin sample_idx[0] 0012 sample_idx[1] 000066
+gt_database sample: 71/232
+filename 0012_000036_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000036
+filename 0012_000036_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000036
+filename 0012_000036_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000036
+gt_database sample: 72/232
+filename 0012_000016_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000016
+filename 0012_000016_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000016
+filename 0012_000016_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000016
+gt_database sample: 73/232
+filename 0012_000012_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000012
+filename 0012_000012_Car_1.bin sample_idx[0] 0012 sample_idx[1] 000012
+gt_database sample: 74/232
+filename 0012_000067_Pedestrian_0.bin sample_idx[0] 0012 sample_idx[1] 000067
+filename 0012_000067_Car_1.bin sample_idx[0] 0012 sample_idx[1] 000067
+gt_database sample: 75/232
+filename 0012_000029_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000029
+filename 0012_000029_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000029
+filename 0012_000029_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000029
+gt_database sample: 76/232
+filename 0012_000062_Car_0.bin sample_idx[0] 0012 sample_idx[1] 000062
+filename 0012_000062_Pedestrian_1.bin sample_idx[0] 0012 sample_idx[1] 000062
+filename 0012_000062_Car_2.bin sample_idx[0] 0012 sample_idx[1] 000062
+gt_database sample: 77/232
+filename 0012_000041_Pedestrian_0.bin sample_idx[0] 0012 sample_idx[1] 000041
+filename 0012_000041_Car_1.bin sample_idx[0] 0012 sample_idx[1] 000041
+gt_database sample: 78/232
+filename 0012_000068_Pedestrian_0.bin sample_idx[0] 0012 sample_idx[1] 000068
+filename 0012_000068_Car_1.bin sample_idx[0] 0012 sample_idx[1] 000068
+gt_database sample: 79/232
+filename 0000_000053_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000053
+filename 0000_000053_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000053
+filename 0000_000053_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000053
+gt_database sample: 80/232
+filename 0000_000119_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000119
+filename 0000_000119_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000119
+filename 0000_000119_DontCare_2.bin sample_idx[0] 0000 sample_idx[1] 000119
+filename 0000_000119_Van_3.bin sample_idx[0] 0000 sample_idx[1] 000119
+filename 0000_000119_Cyclist_4.bin sample_idx[0] 0000 sample_idx[1] 000119
+gt_database sample: 81/232
+filename 0000_000087_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000087
+filename 0000_000087_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000087
+filename 0000_000087_DontCare_2.bin sample_idx[0] 0000 sample_idx[1] 000087
+gt_database sample: 82/232
+filename 0000_000018_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000018
+filename 0000_000018_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000018
+gt_database sample: 83/232
+filename 0000_000010_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000010
+filename 0000_000010_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000010
+gt_database sample: 84/232
+filename 0000_000059_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000059
+filename 0000_000059_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000059
+filename 0000_000059_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000059
+gt_database sample: 85/232
+filename 0000_000107_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000107
+filename 0000_000107_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000107
+filename 0000_000107_DontCare_2.bin sample_idx[0] 0000 sample_idx[1] 000107
+gt_database sample: 86/232
+filename 0000_000139_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000139
+filename 0000_000139_Car_1.bin sample_idx[0] 0000 sample_idx[1] 000139
+filename 0000_000139_Car_2.bin sample_idx[0] 0000 sample_idx[1] 000139
+filename 0000_000139_Car_3.bin sample_idx[0] 0000 sample_idx[1] 000139
+filename 0000_000139_Van_4.bin sample_idx[0] 0000 sample_idx[1] 000139
+filename 0000_000139_Car_5.bin sample_idx[0] 0000 sample_idx[1] 000139
+filename 0000_000139_Car_6.bin sample_idx[0] 0000 sample_idx[1] 000139
+filename 0000_000139_Car_7.bin sample_idx[0] 0000 sample_idx[1] 000139
+filename 0000_000139_Pedestrian_8.bin sample_idx[0] 0000 sample_idx[1] 000139
+filename 0000_000139_Car_9.bin sample_idx[0] 0000 sample_idx[1] 000139
+filename 0000_000139_Car_10.bin sample_idx[0] 0000 sample_idx[1] 000139
+gt_database sample: 87/232
+filename 0000_000149_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000149
+filename 0000_000149_Car_1.bin sample_idx[0] 0000 sample_idx[1] 000149
+filename 0000_000149_Car_2.bin sample_idx[0] 0000 sample_idx[1] 000149
+filename 0000_000149_Van_3.bin sample_idx[0] 0000 sample_idx[1] 000149
+filename 0000_000149_Car_4.bin sample_idx[0] 0000 sample_idx[1] 000149
+filename 0000_000149_Car_5.bin sample_idx[0] 0000 sample_idx[1] 000149
+filename 0000_000149_Car_6.bin sample_idx[0] 0000 sample_idx[1] 000149
+filename 0000_000149_Pedestrian_7.bin sample_idx[0] 0000 sample_idx[1] 000149
+filename 0000_000149_Car_8.bin sample_idx[0] 0000 sample_idx[1] 000149
+filename 0000_000149_Car_9.bin sample_idx[0] 0000 sample_idx[1] 000149
+gt_database sample: 88/232
+filename 0000_000111_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000111
+filename 0000_000111_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000111
+filename 0000_000111_DontCare_2.bin sample_idx[0] 0000 sample_idx[1] 000111
+filename 0000_000111_DontCare_3.bin sample_idx[0] 0000 sample_idx[1] 000111
+gt_database sample: 89/232
+filename 0000_000141_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000141
+filename 0000_000141_Car_1.bin sample_idx[0] 0000 sample_idx[1] 000141
+filename 0000_000141_Car_2.bin sample_idx[0] 0000 sample_idx[1] 000141
+filename 0000_000141_Car_3.bin sample_idx[0] 0000 sample_idx[1] 000141
+filename 0000_000141_Van_4.bin sample_idx[0] 0000 sample_idx[1] 000141
+filename 0000_000141_Car_5.bin sample_idx[0] 0000 sample_idx[1] 000141
+filename 0000_000141_Car_6.bin sample_idx[0] 0000 sample_idx[1] 000141
+filename 0000_000141_Car_7.bin sample_idx[0] 0000 sample_idx[1] 000141
+filename 0000_000141_Pedestrian_8.bin sample_idx[0] 0000 sample_idx[1] 000141
+filename 0000_000141_Car_9.bin sample_idx[0] 0000 sample_idx[1] 000141
+filename 0000_000141_Car_10.bin sample_idx[0] 0000 sample_idx[1] 000141
+gt_database sample: 90/232
+filename 0000_000146_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000146
+filename 0000_000146_Car_1.bin sample_idx[0] 0000 sample_idx[1] 000146
+filename 0000_000146_Car_2.bin sample_idx[0] 0000 sample_idx[1] 000146
+filename 0000_000146_Van_3.bin sample_idx[0] 0000 sample_idx[1] 000146
+filename 0000_000146_Car_4.bin sample_idx[0] 0000 sample_idx[1] 000146
+filename 0000_000146_Car_5.bin sample_idx[0] 0000 sample_idx[1] 000146
+filename 0000_000146_Car_6.bin sample_idx[0] 0000 sample_idx[1] 000146
+filename 0000_000146_Pedestrian_7.bin sample_idx[0] 0000 sample_idx[1] 000146
+filename 0000_000146_Car_8.bin sample_idx[0] 0000 sample_idx[1] 000146
+filename 0000_000146_Car_9.bin sample_idx[0] 0000 sample_idx[1] 000146
+gt_database sample: 91/232
+filename 0000_000088_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000088
+filename 0000_000088_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000088
+filename 0000_000088_DontCare_2.bin sample_idx[0] 0000 sample_idx[1] 000088
+gt_database sample: 92/232
+filename 0000_000011_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000011
+filename 0000_000011_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000011
+gt_database sample: 93/232
+filename 0000_000028_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000028
+filename 0000_000028_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000028
+filename 0000_000028_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000028
+gt_database sample: 94/232
+filename 0000_000108_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000108
+filename 0000_000108_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000108
+filename 0000_000108_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000108
+gt_database sample: 95/232
+filename 0000_000001_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000001
+filename 0000_000001_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000001
+filename 0000_000001_Pedestrian_2.bin sample_idx[0] 0000 sample_idx[1] 000001
+gt_database sample: 96/232
+filename 0000_000125_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000125
+filename 0000_000125_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000125
+filename 0000_000125_Car_2.bin sample_idx[0] 0000 sample_idx[1] 000125
+filename 0000_000125_Car_3.bin sample_idx[0] 0000 sample_idx[1] 000125
+filename 0000_000125_Car_4.bin sample_idx[0] 0000 sample_idx[1] 000125
+filename 0000_000125_Car_5.bin sample_idx[0] 0000 sample_idx[1] 000125
+filename 0000_000125_Car_6.bin sample_idx[0] 0000 sample_idx[1] 000125
+gt_database sample: 97/232
+filename 0000_000123_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000123
+filename 0000_000123_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000123
+filename 0000_000123_Cyclist_2.bin sample_idx[0] 0000 sample_idx[1] 000123
+filename 0000_000123_Car_3.bin sample_idx[0] 0000 sample_idx[1] 000123
+filename 0000_000123_Car_4.bin sample_idx[0] 0000 sample_idx[1] 000123
+filename 0000_000123_Car_5.bin sample_idx[0] 0000 sample_idx[1] 000123
+gt_database sample: 98/232
+filename 0000_000106_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000106
+filename 0000_000106_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000106
+filename 0000_000106_DontCare_2.bin sample_idx[0] 0000 sample_idx[1] 000106
+gt_database sample: 99/232
+filename 0000_000061_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000061
+filename 0000_000061_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000061
+gt_database sample: 100/232
+filename 0000_000138_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000138
+filename 0000_000138_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000138
+filename 0000_000138_Car_2.bin sample_idx[0] 0000 sample_idx[1] 000138
+filename 0000_000138_Car_3.bin sample_idx[0] 0000 sample_idx[1] 000138
+filename 0000_000138_Car_4.bin sample_idx[0] 0000 sample_idx[1] 000138
+filename 0000_000138_Van_5.bin sample_idx[0] 0000 sample_idx[1] 000138
+filename 0000_000138_Car_6.bin sample_idx[0] 0000 sample_idx[1] 000138
+filename 0000_000138_Car_7.bin sample_idx[0] 0000 sample_idx[1] 000138
+filename 0000_000138_Car_8.bin sample_idx[0] 0000 sample_idx[1] 000138
+filename 0000_000138_Pedestrian_9.bin sample_idx[0] 0000 sample_idx[1] 000138
+filename 0000_000138_Car_10.bin sample_idx[0] 0000 sample_idx[1] 000138
+filename 0000_000138_Car_11.bin sample_idx[0] 0000 sample_idx[1] 000138
+gt_database sample: 101/232
+filename 0000_000032_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000032
+filename 0000_000032_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000032
+filename 0000_000032_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000032
+gt_database sample: 102/232
+filename 0000_000135_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000135
+filename 0000_000135_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000135
+filename 0000_000135_Car_2.bin sample_idx[0] 0000 sample_idx[1] 000135
+filename 0000_000135_Car_3.bin sample_idx[0] 0000 sample_idx[1] 000135
+filename 0000_000135_Car_4.bin sample_idx[0] 0000 sample_idx[1] 000135
+filename 0000_000135_Van_5.bin sample_idx[0] 0000 sample_idx[1] 000135
+filename 0000_000135_Car_6.bin sample_idx[0] 0000 sample_idx[1] 000135
+filename 0000_000135_Car_7.bin sample_idx[0] 0000 sample_idx[1] 000135
+filename 0000_000135_Car_8.bin sample_idx[0] 0000 sample_idx[1] 000135
+filename 0000_000135_Car_9.bin sample_idx[0] 0000 sample_idx[1] 000135
+gt_database sample: 103/232
+filename 0000_000038_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000038
+filename 0000_000038_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000038
+filename 0000_000038_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000038
+gt_database sample: 104/232
+filename 0000_000024_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000024
+filename 0000_000024_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000024
+filename 0000_000024_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000024
+gt_database sample: 105/232
+filename 0000_000033_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000033
+filename 0000_000033_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000033
+filename 0000_000033_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000033
+gt_database sample: 106/232
+filename 0000_000008_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000008
+filename 0000_000008_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000008
+gt_database sample: 107/232
+filename 0000_000026_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000026
+filename 0000_000026_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000026
+filename 0000_000026_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000026
+gt_database sample: 108/232
+filename 0000_000064_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000064
+filename 0000_000064_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000064
+gt_database sample: 109/232
+filename 0000_000144_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000144
+filename 0000_000144_Car_1.bin sample_idx[0] 0000 sample_idx[1] 000144
+filename 0000_000144_Car_2.bin sample_idx[0] 0000 sample_idx[1] 000144
+filename 0000_000144_Van_3.bin sample_idx[0] 0000 sample_idx[1] 000144
+filename 0000_000144_Car_4.bin sample_idx[0] 0000 sample_idx[1] 000144
+filename 0000_000144_Car_5.bin sample_idx[0] 0000 sample_idx[1] 000144
+filename 0000_000144_Car_6.bin sample_idx[0] 0000 sample_idx[1] 000144
+filename 0000_000144_Pedestrian_7.bin sample_idx[0] 0000 sample_idx[1] 000144
+filename 0000_000144_Car_8.bin sample_idx[0] 0000 sample_idx[1] 000144
+filename 0000_000144_Car_9.bin sample_idx[0] 0000 sample_idx[1] 000144
+gt_database sample: 110/232
+filename 0000_000147_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000147
+filename 0000_000147_Car_1.bin sample_idx[0] 0000 sample_idx[1] 000147
+filename 0000_000147_Car_2.bin sample_idx[0] 0000 sample_idx[1] 000147
+filename 0000_000147_Van_3.bin sample_idx[0] 0000 sample_idx[1] 000147
+filename 0000_000147_Car_4.bin sample_idx[0] 0000 sample_idx[1] 000147
+filename 0000_000147_Car_5.bin sample_idx[0] 0000 sample_idx[1] 000147
+filename 0000_000147_Car_6.bin sample_idx[0] 0000 sample_idx[1] 000147
+filename 0000_000147_Pedestrian_7.bin sample_idx[0] 0000 sample_idx[1] 000147
+filename 0000_000147_Car_8.bin sample_idx[0] 0000 sample_idx[1] 000147
+filename 0000_000147_Car_9.bin sample_idx[0] 0000 sample_idx[1] 000147
+gt_database sample: 111/232
+filename 0000_000133_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000133
+filename 0000_000133_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000133
+filename 0000_000133_Car_2.bin sample_idx[0] 0000 sample_idx[1] 000133
+filename 0000_000133_Car_3.bin sample_idx[0] 0000 sample_idx[1] 000133
+filename 0000_000133_Car_4.bin sample_idx[0] 0000 sample_idx[1] 000133
+filename 0000_000133_Van_5.bin sample_idx[0] 0000 sample_idx[1] 000133
+filename 0000_000133_Car_6.bin sample_idx[0] 0000 sample_idx[1] 000133
+filename 0000_000133_Car_7.bin sample_idx[0] 0000 sample_idx[1] 000133
+filename 0000_000133_Car_8.bin sample_idx[0] 0000 sample_idx[1] 000133
+filename 0000_000133_Car_9.bin sample_idx[0] 0000 sample_idx[1] 000133
+gt_database sample: 112/232
+filename 0000_000040_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000040
+filename 0000_000040_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000040
+gt_database sample: 113/232
+filename 0000_000079_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000079
+filename 0000_000079_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000079
+filename 0000_000079_Cyclist_2.bin sample_idx[0] 0000 sample_idx[1] 000079
+gt_database sample: 114/232
+filename 0000_000091_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000091
+filename 0000_000091_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000091
+filename 0000_000091_DontCare_2.bin sample_idx[0] 0000 sample_idx[1] 000091
+gt_database sample: 115/232
+filename 0000_000046_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000046
+filename 0000_000046_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000046
+gt_database sample: 116/232
+filename 0000_000096_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000096
+filename 0000_000096_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000096
+filename 0000_000096_DontCare_2.bin sample_idx[0] 0000 sample_idx[1] 000096
+gt_database sample: 117/232
+filename 0000_000056_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000056
+filename 0000_000056_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000056
+filename 0000_000056_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000056
+gt_database sample: 118/232
+filename 0000_000017_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000017
+filename 0000_000017_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000017
+gt_database sample: 119/232
+filename 0000_000019_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000019
+filename 0000_000019_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000019
+gt_database sample: 120/232
+filename 0000_000142_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000142
+filename 0000_000142_Car_1.bin sample_idx[0] 0000 sample_idx[1] 000142
+filename 0000_000142_Car_2.bin sample_idx[0] 0000 sample_idx[1] 000142
+filename 0000_000142_Car_3.bin sample_idx[0] 0000 sample_idx[1] 000142
+filename 0000_000142_Van_4.bin sample_idx[0] 0000 sample_idx[1] 000142
+filename 0000_000142_Car_5.bin sample_idx[0] 0000 sample_idx[1] 000142
+filename 0000_000142_Car_6.bin sample_idx[0] 0000 sample_idx[1] 000142
+filename 0000_000142_Car_7.bin sample_idx[0] 0000 sample_idx[1] 000142
+filename 0000_000142_Pedestrian_8.bin sample_idx[0] 0000 sample_idx[1] 000142
+filename 0000_000142_Car_9.bin sample_idx[0] 0000 sample_idx[1] 000142
+filename 0000_000142_Car_10.bin sample_idx[0] 0000 sample_idx[1] 000142
+gt_database sample: 121/232
+filename 0000_000005_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000005
+filename 0000_000005_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000005
+filename 0000_000005_Pedestrian_2.bin sample_idx[0] 0000 sample_idx[1] 000005
+filename 0000_000005_Van_3.bin sample_idx[0] 0000 sample_idx[1] 000005
+gt_database sample: 122/232
+filename 0000_000071_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000071
+filename 0000_000071_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000071
+filename 0000_000071_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000071
+gt_database sample: 123/232
+filename 0000_000117_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000117
+filename 0000_000117_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000117
+filename 0000_000117_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000117
+filename 0000_000117_Cyclist_3.bin sample_idx[0] 0000 sample_idx[1] 000117
+filename 0000_000117_Car_4.bin sample_idx[0] 0000 sample_idx[1] 000117
+gt_database sample: 124/232
+filename 0000_000118_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000118
+filename 0000_000118_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000118
+filename 0000_000118_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000118
+filename 0000_000118_Cyclist_3.bin sample_idx[0] 0000 sample_idx[1] 000118
+filename 0000_000118_Car_4.bin sample_idx[0] 0000 sample_idx[1] 000118
+gt_database sample: 125/232
+filename 0000_000009_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000009
+filename 0000_000009_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000009
+gt_database sample: 126/232
+filename 0000_000152_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000152
+filename 0000_000152_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000152
+filename 0000_000152_Car_2.bin sample_idx[0] 0000 sample_idx[1] 000152
+filename 0000_000152_Car_3.bin sample_idx[0] 0000 sample_idx[1] 000152
+filename 0000_000152_Van_4.bin sample_idx[0] 0000 sample_idx[1] 000152
+filename 0000_000152_Car_5.bin sample_idx[0] 0000 sample_idx[1] 000152
+filename 0000_000152_Car_6.bin sample_idx[0] 0000 sample_idx[1] 000152
+filename 0000_000152_Car_7.bin sample_idx[0] 0000 sample_idx[1] 000152
+filename 0000_000152_Pedestrian_8.bin sample_idx[0] 0000 sample_idx[1] 000152
+filename 0000_000152_Car_9.bin sample_idx[0] 0000 sample_idx[1] 000152
+filename 0000_000152_Car_10.bin sample_idx[0] 0000 sample_idx[1] 000152
+gt_database sample: 127/232
+filename 0000_000129_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000129
+filename 0000_000129_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000129
+filename 0000_000129_Car_2.bin sample_idx[0] 0000 sample_idx[1] 000129
+filename 0000_000129_Car_3.bin sample_idx[0] 0000 sample_idx[1] 000129
+filename 0000_000129_Car_4.bin sample_idx[0] 0000 sample_idx[1] 000129
+filename 0000_000129_Van_5.bin sample_idx[0] 0000 sample_idx[1] 000129
+filename 0000_000129_Car_6.bin sample_idx[0] 0000 sample_idx[1] 000129
+filename 0000_000129_Car_7.bin sample_idx[0] 0000 sample_idx[1] 000129
+filename 0000_000129_Car_8.bin sample_idx[0] 0000 sample_idx[1] 000129
+gt_database sample: 128/232
+filename 0000_000034_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000034
+filename 0000_000034_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000034
+filename 0000_000034_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000034
+gt_database sample: 129/232
+filename 0000_000000_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000000
+filename 0000_000000_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000000
+filename 0000_000000_Pedestrian_2.bin sample_idx[0] 0000 sample_idx[1] 000000
+gt_database sample: 130/232
+filename 0000_000098_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000098
+filename 0000_000098_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000098
+filename 0000_000098_DontCare_2.bin sample_idx[0] 0000 sample_idx[1] 000098
+gt_database sample: 131/232
+filename 0000_000050_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000050
+filename 0000_000050_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000050
+filename 0000_000050_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000050
+gt_database sample: 132/232
+filename 0000_000074_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000074
+filename 0000_000074_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000074
+filename 0000_000074_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000074
+gt_database sample: 133/232
+filename 0000_000080_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000080
+filename 0000_000080_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000080
+filename 0000_000080_Cyclist_2.bin sample_idx[0] 0000 sample_idx[1] 000080
+gt_database sample: 134/232
+filename 0000_000113_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000113
+filename 0000_000113_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000113
+filename 0000_000113_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000113
+filename 0000_000113_Cyclist_3.bin sample_idx[0] 0000 sample_idx[1] 000113
+filename 0000_000113_Van_4.bin sample_idx[0] 0000 sample_idx[1] 000113
+gt_database sample: 135/232
+filename 0000_000122_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000122
+filename 0000_000122_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000122
+filename 0000_000122_Cyclist_2.bin sample_idx[0] 0000 sample_idx[1] 000122
+filename 0000_000122_Car_3.bin sample_idx[0] 0000 sample_idx[1] 000122
+filename 0000_000122_Car_4.bin sample_idx[0] 0000 sample_idx[1] 000122
+filename 0000_000122_Car_5.bin sample_idx[0] 0000 sample_idx[1] 000122
+gt_database sample: 136/232
+filename 0000_000100_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000100
+filename 0000_000100_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000100
+filename 0000_000100_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000100
+gt_database sample: 137/232
+filename 0000_000090_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000090
+filename 0000_000090_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000090
+filename 0000_000090_DontCare_2.bin sample_idx[0] 0000 sample_idx[1] 000090
+gt_database sample: 138/232
+filename 0000_000055_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000055
+filename 0000_000055_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000055
+filename 0000_000055_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000055
+gt_database sample: 139/232
+filename 0000_000115_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000115
+filename 0000_000115_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000115
+filename 0000_000115_DontCare_2.bin sample_idx[0] 0000 sample_idx[1] 000115
+filename 0000_000115_Van_3.bin sample_idx[0] 0000 sample_idx[1] 000115
+gt_database sample: 140/232
+filename 0000_000127_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000127
+filename 0000_000127_Car_1.bin sample_idx[0] 0000 sample_idx[1] 000127
+filename 0000_000127_Car_2.bin sample_idx[0] 0000 sample_idx[1] 000127
+filename 0000_000127_Car_3.bin sample_idx[0] 0000 sample_idx[1] 000127
+filename 0000_000127_Van_4.bin sample_idx[0] 0000 sample_idx[1] 000127
+filename 0000_000127_Car_5.bin sample_idx[0] 0000 sample_idx[1] 000127
+filename 0000_000127_Car_6.bin sample_idx[0] 0000 sample_idx[1] 000127
+filename 0000_000127_Car_7.bin sample_idx[0] 0000 sample_idx[1] 000127
+gt_database sample: 141/232
+filename 0000_000140_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000140
+filename 0000_000140_Car_1.bin sample_idx[0] 0000 sample_idx[1] 000140
+filename 0000_000140_Car_2.bin sample_idx[0] 0000 sample_idx[1] 000140
+filename 0000_000140_Car_3.bin sample_idx[0] 0000 sample_idx[1] 000140
+filename 0000_000140_Van_4.bin sample_idx[0] 0000 sample_idx[1] 000140
+filename 0000_000140_Car_5.bin sample_idx[0] 0000 sample_idx[1] 000140
+filename 0000_000140_Car_6.bin sample_idx[0] 0000 sample_idx[1] 000140
+filename 0000_000140_Car_7.bin sample_idx[0] 0000 sample_idx[1] 000140
+filename 0000_000140_Pedestrian_8.bin sample_idx[0] 0000 sample_idx[1] 000140
+filename 0000_000140_Car_9.bin sample_idx[0] 0000 sample_idx[1] 000140
+filename 0000_000140_Car_10.bin sample_idx[0] 0000 sample_idx[1] 000140
+gt_database sample: 142/232
+filename 0000_000058_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000058
+filename 0000_000058_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000058
+filename 0000_000058_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000058
+gt_database sample: 143/232
+filename 0000_000070_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000070
+filename 0000_000070_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000070
+filename 0000_000070_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000070
+gt_database sample: 144/232
+filename 0000_000153_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000153
+filename 0000_000153_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000153
+filename 0000_000153_Car_2.bin sample_idx[0] 0000 sample_idx[1] 000153
+filename 0000_000153_Car_3.bin sample_idx[0] 0000 sample_idx[1] 000153
+filename 0000_000153_Car_4.bin sample_idx[0] 0000 sample_idx[1] 000153
+filename 0000_000153_Pedestrian_5.bin sample_idx[0] 0000 sample_idx[1] 000153
+filename 0000_000153_Car_6.bin sample_idx[0] 0000 sample_idx[1] 000153
+filename 0000_000153_Car_7.bin sample_idx[0] 0000 sample_idx[1] 000153
+gt_database sample: 145/232
+filename 0000_000073_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000073
+filename 0000_000073_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000073
+filename 0000_000073_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000073
+gt_database sample: 146/232
+filename 0000_000004_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000004
+filename 0000_000004_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000004
+filename 0000_000004_Pedestrian_2.bin sample_idx[0] 0000 sample_idx[1] 000004
+gt_database sample: 147/232
+filename 0000_000052_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000052
+filename 0000_000052_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000052
+filename 0000_000052_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000052
+gt_database sample: 148/232
+filename 0000_000082_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000082
+filename 0000_000082_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000082
+filename 0000_000082_Cyclist_2.bin sample_idx[0] 0000 sample_idx[1] 000082
+gt_database sample: 149/232
+filename 0000_000110_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000110
+filename 0000_000110_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000110
+filename 0000_000110_DontCare_2.bin sample_idx[0] 0000 sample_idx[1] 000110
+filename 0000_000110_DontCare_3.bin sample_idx[0] 0000 sample_idx[1] 000110
+gt_database sample: 150/232
+filename 0000_000031_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000031
+filename 0000_000031_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000031
+filename 0000_000031_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000031
+gt_database sample: 151/232
+filename 0000_000095_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000095
+filename 0000_000095_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000095
+filename 0000_000095_DontCare_2.bin sample_idx[0] 0000 sample_idx[1] 000095
+gt_database sample: 152/232
+filename 0000_000092_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000092
+filename 0000_000092_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000092
+filename 0000_000092_DontCare_2.bin sample_idx[0] 0000 sample_idx[1] 000092
+gt_database sample: 153/232
+filename 0000_000013_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000013
+filename 0000_000013_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000013
+gt_database sample: 154/232
+filename 0000_000060_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000060
+filename 0000_000060_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000060
+gt_database sample: 155/232
+filename 0000_000042_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000042
+filename 0000_000042_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000042
+gt_database sample: 156/232
+filename 0000_000014_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000014
+filename 0000_000014_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000014
+gt_database sample: 157/232
+filename 0000_000057_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000057
+filename 0000_000057_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000057
+filename 0000_000057_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000057
+gt_database sample: 158/232
+filename 0000_000105_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000105
+filename 0000_000105_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000105
+filename 0000_000105_DontCare_2.bin sample_idx[0] 0000 sample_idx[1] 000105
+gt_database sample: 159/232
+filename 0000_000145_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000145
+filename 0000_000145_Car_1.bin sample_idx[0] 0000 sample_idx[1] 000145
+filename 0000_000145_Car_2.bin sample_idx[0] 0000 sample_idx[1] 000145
+filename 0000_000145_Van_3.bin sample_idx[0] 0000 sample_idx[1] 000145
+filename 0000_000145_Car_4.bin sample_idx[0] 0000 sample_idx[1] 000145
+filename 0000_000145_Car_5.bin sample_idx[0] 0000 sample_idx[1] 000145
+filename 0000_000145_Car_6.bin sample_idx[0] 0000 sample_idx[1] 000145
+filename 0000_000145_Pedestrian_7.bin sample_idx[0] 0000 sample_idx[1] 000145
+filename 0000_000145_Car_8.bin sample_idx[0] 0000 sample_idx[1] 000145
+filename 0000_000145_Car_9.bin sample_idx[0] 0000 sample_idx[1] 000145
+gt_database sample: 160/232
+filename 0000_000097_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000097
+filename 0000_000097_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000097
+filename 0000_000097_DontCare_2.bin sample_idx[0] 0000 sample_idx[1] 000097
+gt_database sample: 161/232
+filename 0000_000121_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000121
+filename 0000_000121_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000121
+filename 0000_000121_DontCare_2.bin sample_idx[0] 0000 sample_idx[1] 000121
+filename 0000_000121_Van_3.bin sample_idx[0] 0000 sample_idx[1] 000121
+filename 0000_000121_Cyclist_4.bin sample_idx[0] 0000 sample_idx[1] 000121
+filename 0000_000121_Car_5.bin sample_idx[0] 0000 sample_idx[1] 000121
+gt_database sample: 162/232
+filename 0000_000063_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000063
+filename 0000_000063_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000063
+gt_database sample: 163/232
+filename 0000_000065_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000065
+filename 0000_000065_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000065
+gt_database sample: 164/232
+filename 0000_000021_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000021
+filename 0000_000021_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000021
+gt_database sample: 165/232
+filename 0000_000069_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000069
+filename 0000_000069_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000069
+filename 0000_000069_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000069
+gt_database sample: 166/232
+filename 0000_000025_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000025
+filename 0000_000025_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000025
+filename 0000_000025_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000025
+gt_database sample: 167/232
+filename 0000_000084_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000084
+filename 0000_000084_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000084
+filename 0000_000084_DontCare_2.bin sample_idx[0] 0000 sample_idx[1] 000084
+gt_database sample: 168/232
+filename 0000_000007_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000007
+filename 0000_000007_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000007
+gt_database sample: 169/232
+filename 0000_000151_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000151
+filename 0000_000151_Car_1.bin sample_idx[0] 0000 sample_idx[1] 000151
+filename 0000_000151_Car_2.bin sample_idx[0] 0000 sample_idx[1] 000151
+filename 0000_000151_Van_3.bin sample_idx[0] 0000 sample_idx[1] 000151
+filename 0000_000151_Car_4.bin sample_idx[0] 0000 sample_idx[1] 000151
+filename 0000_000151_Car_5.bin sample_idx[0] 0000 sample_idx[1] 000151
+filename 0000_000151_Car_6.bin sample_idx[0] 0000 sample_idx[1] 000151
+filename 0000_000151_Pedestrian_7.bin sample_idx[0] 0000 sample_idx[1] 000151
+filename 0000_000151_Car_8.bin sample_idx[0] 0000 sample_idx[1] 000151
+filename 0000_000151_Car_9.bin sample_idx[0] 0000 sample_idx[1] 000151
+gt_database sample: 170/232
+filename 0000_000124_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000124
+filename 0000_000124_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000124
+filename 0000_000124_Cyclist_2.bin sample_idx[0] 0000 sample_idx[1] 000124
+filename 0000_000124_Car_3.bin sample_idx[0] 0000 sample_idx[1] 000124
+filename 0000_000124_Car_4.bin sample_idx[0] 0000 sample_idx[1] 000124
+filename 0000_000124_Car_5.bin sample_idx[0] 0000 sample_idx[1] 000124
+filename 0000_000124_Car_6.bin sample_idx[0] 0000 sample_idx[1] 000124
+gt_database sample: 171/232
+filename 0000_000047_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000047
+filename 0000_000047_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000047
+filename 0000_000047_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000047
+gt_database sample: 172/232
+filename 0000_000023_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000023
+filename 0000_000023_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000023
+filename 0000_000023_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000023
+gt_database sample: 173/232
+filename 0000_000102_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000102
+filename 0000_000102_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000102
+filename 0000_000102_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000102
+gt_database sample: 174/232
+filename 0000_000132_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000132
+filename 0000_000132_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000132
+filename 0000_000132_Car_2.bin sample_idx[0] 0000 sample_idx[1] 000132
+filename 0000_000132_Car_3.bin sample_idx[0] 0000 sample_idx[1] 000132
+filename 0000_000132_Car_4.bin sample_idx[0] 0000 sample_idx[1] 000132
+filename 0000_000132_Van_5.bin sample_idx[0] 0000 sample_idx[1] 000132
+filename 0000_000132_Car_6.bin sample_idx[0] 0000 sample_idx[1] 000132
+filename 0000_000132_Car_7.bin sample_idx[0] 0000 sample_idx[1] 000132
+filename 0000_000132_Car_8.bin sample_idx[0] 0000 sample_idx[1] 000132
+filename 0000_000132_Car_9.bin sample_idx[0] 0000 sample_idx[1] 000132
+gt_database sample: 175/232
+filename 0000_000143_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000143
+filename 0000_000143_Car_1.bin sample_idx[0] 0000 sample_idx[1] 000143
+filename 0000_000143_Car_2.bin sample_idx[0] 0000 sample_idx[1] 000143
+filename 0000_000143_Car_3.bin sample_idx[0] 0000 sample_idx[1] 000143
+filename 0000_000143_Van_4.bin sample_idx[0] 0000 sample_idx[1] 000143
+filename 0000_000143_Car_5.bin sample_idx[0] 0000 sample_idx[1] 000143
+filename 0000_000143_Car_6.bin sample_idx[0] 0000 sample_idx[1] 000143
+filename 0000_000143_Car_7.bin sample_idx[0] 0000 sample_idx[1] 000143
+filename 0000_000143_Pedestrian_8.bin sample_idx[0] 0000 sample_idx[1] 000143
+filename 0000_000143_Car_9.bin sample_idx[0] 0000 sample_idx[1] 000143
+filename 0000_000143_Car_10.bin sample_idx[0] 0000 sample_idx[1] 000143
+gt_database sample: 176/232
+filename 0000_000043_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000043
+filename 0000_000043_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000043
+gt_database sample: 177/232
+filename 0000_000094_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000094
+filename 0000_000094_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000094
+filename 0000_000094_DontCare_2.bin sample_idx[0] 0000 sample_idx[1] 000094
+gt_database sample: 178/232
+filename 0000_000089_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000089
+filename 0000_000089_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000089
+filename 0000_000089_DontCare_2.bin sample_idx[0] 0000 sample_idx[1] 000089
+gt_database sample: 179/232
+filename 0000_000099_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000099
+filename 0000_000099_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000099
+filename 0000_000099_DontCare_2.bin sample_idx[0] 0000 sample_idx[1] 000099
+gt_database sample: 180/232
+filename 0000_000039_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000039
+filename 0000_000039_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000039
+filename 0000_000039_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000039
+gt_database sample: 181/232
+filename 0000_000109_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000109
+filename 0000_000109_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000109
+filename 0000_000109_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000109
+filename 0000_000109_Cyclist_3.bin sample_idx[0] 0000 sample_idx[1] 000109
+gt_database sample: 182/232
+filename 0000_000044_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000044
+filename 0000_000044_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000044
+gt_database sample: 183/232
+filename 0000_000072_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000072
+filename 0000_000072_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000072
+filename 0000_000072_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000072
+gt_database sample: 184/232
+filename 0000_000027_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000027
+filename 0000_000027_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000027
+filename 0000_000027_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000027
+gt_database sample: 185/232
+filename 0000_000003_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000003
+filename 0000_000003_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000003
+filename 0000_000003_Pedestrian_2.bin sample_idx[0] 0000 sample_idx[1] 000003
+gt_database sample: 186/232
+filename 0000_000022_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000022
+filename 0000_000022_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000022
+gt_database sample: 187/232
+filename 0000_000049_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000049
+filename 0000_000049_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000049
+filename 0000_000049_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000049
+gt_database sample: 188/232
+filename 0000_000083_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000083
+filename 0000_000083_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000083
+filename 0000_000083_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000083
+gt_database sample: 189/232
+filename 0000_000054_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000054
+filename 0000_000054_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000054
+filename 0000_000054_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000054
+gt_database sample: 190/232
+filename 0000_000077_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000077
+filename 0000_000077_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000077
+filename 0000_000077_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000077
+gt_database sample: 191/232
+filename 0000_000112_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000112
+filename 0000_000112_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000112
+filename 0000_000112_DontCare_2.bin sample_idx[0] 0000 sample_idx[1] 000112
+filename 0000_000112_Van_3.bin sample_idx[0] 0000 sample_idx[1] 000112
+gt_database sample: 192/232
+filename 0000_000075_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000075
+filename 0000_000075_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000075
+filename 0000_000075_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000075
+gt_database sample: 193/232
+filename 0000_000150_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000150
+filename 0000_000150_Car_1.bin sample_idx[0] 0000 sample_idx[1] 000150
+filename 0000_000150_Car_2.bin sample_idx[0] 0000 sample_idx[1] 000150
+filename 0000_000150_Van_3.bin sample_idx[0] 0000 sample_idx[1] 000150
+filename 0000_000150_Car_4.bin sample_idx[0] 0000 sample_idx[1] 000150
+filename 0000_000150_Car_5.bin sample_idx[0] 0000 sample_idx[1] 000150
+filename 0000_000150_Car_6.bin sample_idx[0] 0000 sample_idx[1] 000150
+filename 0000_000150_Pedestrian_7.bin sample_idx[0] 0000 sample_idx[1] 000150
+filename 0000_000150_Car_8.bin sample_idx[0] 0000 sample_idx[1] 000150
+filename 0000_000150_Car_9.bin sample_idx[0] 0000 sample_idx[1] 000150
+gt_database sample: 194/232
+filename 0000_000030_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000030
+filename 0000_000030_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000030
+filename 0000_000030_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000030
+gt_database sample: 195/232
+filename 0000_000002_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000002
+filename 0000_000002_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000002
+filename 0000_000002_Pedestrian_2.bin sample_idx[0] 0000 sample_idx[1] 000002
+gt_database sample: 196/232
+filename 0000_000131_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000131
+filename 0000_000131_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000131
+filename 0000_000131_Car_2.bin sample_idx[0] 0000 sample_idx[1] 000131
+filename 0000_000131_Car_3.bin sample_idx[0] 0000 sample_idx[1] 000131
+filename 0000_000131_Car_4.bin sample_idx[0] 0000 sample_idx[1] 000131
+filename 0000_000131_Van_5.bin sample_idx[0] 0000 sample_idx[1] 000131
+filename 0000_000131_Car_6.bin sample_idx[0] 0000 sample_idx[1] 000131
+filename 0000_000131_Car_7.bin sample_idx[0] 0000 sample_idx[1] 000131
+filename 0000_000131_Car_8.bin sample_idx[0] 0000 sample_idx[1] 000131
+filename 0000_000131_Car_9.bin sample_idx[0] 0000 sample_idx[1] 000131
+gt_database sample: 197/232
+filename 0000_000037_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000037
+filename 0000_000037_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000037
+filename 0000_000037_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000037
+gt_database sample: 198/232
+filename 0000_000035_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000035
+filename 0000_000035_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000035
+filename 0000_000035_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000035
+gt_database sample: 199/232
+filename 0000_000051_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000051
+filename 0000_000051_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000051
+filename 0000_000051_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000051
+gt_database sample: 200/232
+filename 0000_000076_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000076
+filename 0000_000076_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000076
+filename 0000_000076_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000076
+gt_database sample: 201/232
+filename 0000_000101_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000101
+filename 0000_000101_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000101
+filename 0000_000101_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000101
+gt_database sample: 202/232
+filename 0000_000020_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000020
+filename 0000_000020_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000020
+gt_database sample: 203/232
+filename 0000_000093_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000093
+filename 0000_000093_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000093
+filename 0000_000093_DontCare_2.bin sample_idx[0] 0000 sample_idx[1] 000093
+gt_database sample: 204/232
+filename 0000_000015_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000015
+filename 0000_000015_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000015
+gt_database sample: 205/232
+filename 0000_000078_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000078
+filename 0000_000078_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000078
+filename 0000_000078_Cyclist_2.bin sample_idx[0] 0000 sample_idx[1] 000078
+gt_database sample: 206/232
+filename 0000_000120_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000120
+filename 0000_000120_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000120
+filename 0000_000120_DontCare_2.bin sample_idx[0] 0000 sample_idx[1] 000120
+filename 0000_000120_DontCare_3.bin sample_idx[0] 0000 sample_idx[1] 000120
+filename 0000_000120_Van_4.bin sample_idx[0] 0000 sample_idx[1] 000120
+filename 0000_000120_Cyclist_5.bin sample_idx[0] 0000 sample_idx[1] 000120
+gt_database sample: 207/232
+filename 0000_000006_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000006
+filename 0000_000006_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000006
+filename 0000_000006_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000006
+gt_database sample: 208/232
+filename 0000_000048_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000048
+filename 0000_000048_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000048
+filename 0000_000048_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000048
+gt_database sample: 209/232
+filename 0000_000045_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000045
+filename 0000_000045_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000045
+gt_database sample: 210/232
+filename 0000_000066_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000066
+filename 0000_000066_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000066
+gt_database sample: 211/232
+filename 0000_000114_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000114
+filename 0000_000114_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000114
+filename 0000_000114_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000114
+filename 0000_000114_Cyclist_3.bin sample_idx[0] 0000 sample_idx[1] 000114
+filename 0000_000114_Van_4.bin sample_idx[0] 0000 sample_idx[1] 000114
+gt_database sample: 212/232
+filename 0000_000137_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000137
+filename 0000_000137_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000137
+filename 0000_000137_Car_2.bin sample_idx[0] 0000 sample_idx[1] 000137
+filename 0000_000137_Car_3.bin sample_idx[0] 0000 sample_idx[1] 000137
+filename 0000_000137_Car_4.bin sample_idx[0] 0000 sample_idx[1] 000137
+filename 0000_000137_Van_5.bin sample_idx[0] 0000 sample_idx[1] 000137
+filename 0000_000137_Car_6.bin sample_idx[0] 0000 sample_idx[1] 000137
+filename 0000_000137_Car_7.bin sample_idx[0] 0000 sample_idx[1] 000137
+filename 0000_000137_Car_8.bin sample_idx[0] 0000 sample_idx[1] 000137
+filename 0000_000137_Car_9.bin sample_idx[0] 0000 sample_idx[1] 000137
+gt_database sample: 213/232
+filename 0000_000126_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000126
+filename 0000_000126_Car_1.bin sample_idx[0] 0000 sample_idx[1] 000126
+filename 0000_000126_Car_2.bin sample_idx[0] 0000 sample_idx[1] 000126
+filename 0000_000126_Car_3.bin sample_idx[0] 0000 sample_idx[1] 000126
+filename 0000_000126_Van_4.bin sample_idx[0] 0000 sample_idx[1] 000126
+filename 0000_000126_Car_5.bin sample_idx[0] 0000 sample_idx[1] 000126
+filename 0000_000126_Car_6.bin sample_idx[0] 0000 sample_idx[1] 000126
+filename 0000_000126_Car_7.bin sample_idx[0] 0000 sample_idx[1] 000126
+gt_database sample: 214/232
+filename 0000_000136_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000136
+filename 0000_000136_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000136
+filename 0000_000136_Car_2.bin sample_idx[0] 0000 sample_idx[1] 000136
+filename 0000_000136_Car_3.bin sample_idx[0] 0000 sample_idx[1] 000136
+filename 0000_000136_Car_4.bin sample_idx[0] 0000 sample_idx[1] 000136
+filename 0000_000136_Van_5.bin sample_idx[0] 0000 sample_idx[1] 000136
+filename 0000_000136_Car_6.bin sample_idx[0] 0000 sample_idx[1] 000136
+filename 0000_000136_Car_7.bin sample_idx[0] 0000 sample_idx[1] 000136
+filename 0000_000136_Car_8.bin sample_idx[0] 0000 sample_idx[1] 000136
+filename 0000_000136_Car_9.bin sample_idx[0] 0000 sample_idx[1] 000136
+gt_database sample: 215/232
+filename 0000_000036_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000036
+filename 0000_000036_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000036
+filename 0000_000036_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000036
+gt_database sample: 216/232
+filename 0000_000016_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000016
+filename 0000_000016_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000016
+gt_database sample: 217/232
+filename 0000_000134_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000134
+filename 0000_000134_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000134
+filename 0000_000134_Car_2.bin sample_idx[0] 0000 sample_idx[1] 000134
+filename 0000_000134_Car_3.bin sample_idx[0] 0000 sample_idx[1] 000134
+filename 0000_000134_Car_4.bin sample_idx[0] 0000 sample_idx[1] 000134
+filename 0000_000134_Van_5.bin sample_idx[0] 0000 sample_idx[1] 000134
+filename 0000_000134_Car_6.bin sample_idx[0] 0000 sample_idx[1] 000134
+filename 0000_000134_Car_7.bin sample_idx[0] 0000 sample_idx[1] 000134
+filename 0000_000134_Car_8.bin sample_idx[0] 0000 sample_idx[1] 000134
+filename 0000_000134_Car_9.bin sample_idx[0] 0000 sample_idx[1] 000134
+gt_database sample: 218/232
+filename 0000_000104_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000104
+filename 0000_000104_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000104
+filename 0000_000104_DontCare_2.bin sample_idx[0] 0000 sample_idx[1] 000104
+gt_database sample: 219/232
+filename 0000_000128_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000128
+filename 0000_000128_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000128
+filename 0000_000128_Car_2.bin sample_idx[0] 0000 sample_idx[1] 000128
+filename 0000_000128_Car_3.bin sample_idx[0] 0000 sample_idx[1] 000128
+filename 0000_000128_Car_4.bin sample_idx[0] 0000 sample_idx[1] 000128
+filename 0000_000128_Van_5.bin sample_idx[0] 0000 sample_idx[1] 000128
+filename 0000_000128_Car_6.bin sample_idx[0] 0000 sample_idx[1] 000128
+filename 0000_000128_Car_7.bin sample_idx[0] 0000 sample_idx[1] 000128
+filename 0000_000128_Car_8.bin sample_idx[0] 0000 sample_idx[1] 000128
+gt_database sample: 220/232
+filename 0000_000012_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000012
+filename 0000_000012_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000012
+gt_database sample: 221/232
+filename 0000_000148_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000148
+filename 0000_000148_Car_1.bin sample_idx[0] 0000 sample_idx[1] 000148
+filename 0000_000148_Car_2.bin sample_idx[0] 0000 sample_idx[1] 000148
+filename 0000_000148_Van_3.bin sample_idx[0] 0000 sample_idx[1] 000148
+filename 0000_000148_Car_4.bin sample_idx[0] 0000 sample_idx[1] 000148
+filename 0000_000148_Car_5.bin sample_idx[0] 0000 sample_idx[1] 000148
+filename 0000_000148_Car_6.bin sample_idx[0] 0000 sample_idx[1] 000148
+filename 0000_000148_Pedestrian_7.bin sample_idx[0] 0000 sample_idx[1] 000148
+filename 0000_000148_Car_8.bin sample_idx[0] 0000 sample_idx[1] 000148
+filename 0000_000148_Car_9.bin sample_idx[0] 0000 sample_idx[1] 000148
+gt_database sample: 222/232
+filename 0000_000103_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000103
+filename 0000_000103_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000103
+filename 0000_000103_DontCare_2.bin sample_idx[0] 0000 sample_idx[1] 000103
+gt_database sample: 223/232
+filename 0000_000081_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000081
+filename 0000_000081_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000081
+filename 0000_000081_Cyclist_2.bin sample_idx[0] 0000 sample_idx[1] 000081
+gt_database sample: 224/232
+filename 0000_000067_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000067
+filename 0000_000067_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000067
+gt_database sample: 225/232
+filename 0000_000130_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000130
+filename 0000_000130_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000130
+filename 0000_000130_Car_2.bin sample_idx[0] 0000 sample_idx[1] 000130
+/usr/lib/python3.6/runpy.py:125: RuntimeWarning: 'pcdet.datasets.kitti.kitti_odometry_dataset' found in sys.modules after import of package 'pcdet.datasets.kitti', but prior to execution of 'pcdet.datasets.kitti.kitti_odometry_dataset'; this may result in unpredictable behaviour
+  warn(RuntimeWarning(msg))
+/team1/codes/3dObjDet/OpenPCDet_ravi/pcdet/datasets/kitti/kitti_odometry_dataset.py:463: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  dataset_cfg = EasyDict(yaml.load(open(sys.argv[2])))
+/team1/codes/3dObjDet/OpenPCDet_ravi/pcdet/utils/object3d_kitti.py:22: FutureWarning: in the future insert will treat boolean arrays and array-likes as boolean index instead of casting it to integer
+  nodcs = np.delete(lines, inds, 0)
+filename 0000_000130_Car_3.bin sample_idx[0] 0000 sample_idx[1] 000130
+filename 0000_000130_Car_4.bin sample_idx[0] 0000 sample_idx[1] 000130
+filename 0000_000130_Van_5.bin sample_idx[0] 0000 sample_idx[1] 000130
+filename 0000_000130_Car_6.bin sample_idx[0] 0000 sample_idx[1] 000130
+filename 0000_000130_Car_7.bin sample_idx[0] 0000 sample_idx[1] 000130
+filename 0000_000130_Car_8.bin sample_idx[0] 0000 sample_idx[1] 000130
+filename 0000_000130_Car_9.bin sample_idx[0] 0000 sample_idx[1] 000130
+gt_database sample: 226/232
+filename 0000_000116_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000116
+filename 0000_000116_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000116
+filename 0000_000116_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000116
+filename 0000_000116_Cyclist_3.bin sample_idx[0] 0000 sample_idx[1] 000116
+gt_database sample: 227/232
+filename 0000_000029_Van_0.bin sample_idx[0] 0000 sample_idx[1] 000029
+filename 0000_000029_Cyclist_1.bin sample_idx[0] 0000 sample_idx[1] 000029
+filename 0000_000029_Van_2.bin sample_idx[0] 0000 sample_idx[1] 000029
+gt_database sample: 228/232
+filename 0000_000062_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000062
+filename 0000_000062_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000062
+gt_database sample: 229/232
+filename 0000_000085_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000085
+filename 0000_000085_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000085
+filename 0000_000085_DontCare_2.bin sample_idx[0] 0000 sample_idx[1] 000085
+gt_database sample: 230/232
+filename 0000_000041_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000041
+filename 0000_000041_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000041
+gt_database sample: 231/232
+filename 0000_000086_DontCare_0.bin sample_idx[0] 0000 sample_idx[1] 000086
+filename 0000_000086_DontCare_1.bin sample_idx[0] 0000 sample_idx[1] 000086
+filename 0000_000086_DontCare_2.bin sample_idx[0] 0000 sample_idx[1] 000086
+gt_database sample: 232/232
+filename 0000_000068_Cyclist_0.bin sample_idx[0] 0000 sample_idx[1] 000068
+filename 0000_000068_Van_1.bin sample_idx[0] 0000 sample_idx[1] 000068
+Database Car: 346
+Database Pedestrian: 86
+Database DontCare: 118
+Database Van: 186
+Database Cyclist: 124
+---------------Data preparation Done---------------
+/team1/codes/3dObjDet/OpenPCDet_ravi/tools
+2020-11-14 10:12:59,178   INFO  **********************Start logging**********************
+2020-11-14 10:12:59,178   INFO  CUDA_VISIBLE_DEVICES=ALL
+2020-11-14 10:12:59,178   INFO  cfg_file         cfgs/kitti_models/pv_rcnn_ours.yaml
+2020-11-14 10:12:59,178   INFO  batch_size       2
+2020-11-14 10:12:59,178   INFO  epochs           2
+2020-11-14 10:12:59,178   INFO  workers          1
+2020-11-14 10:12:59,179   INFO  extra_tag        default
+2020-11-14 10:12:59,179   INFO  ckpt             None
+2020-11-14 10:12:59,179   INFO  pretrained_model None
+2020-11-14 10:12:59,179   INFO  launcher         none
+2020-11-14 10:12:59,179   INFO  tcp_port         18888
+2020-11-14 10:12:59,179   INFO  sync_bn          False
+2020-11-14 10:12:59,179   INFO  fix_random_seed  False
+2020-11-14 10:12:59,179   INFO  ckpt_save_interval 1
+2020-11-14 10:12:59,179   INFO  local_rank       0
+2020-11-14 10:12:59,179   INFO  max_ckpt_save_num 30
+2020-11-14 10:12:59,179   INFO  merge_all_iters_to_one_epoch False
+2020-11-14 10:12:59,179   INFO  set_cfgs         None
+2020-11-14 10:12:59,179   INFO  max_waiting_mins 0
+2020-11-14 10:12:59,179   INFO  start_epoch      0
+2020-11-14 10:12:59,179   INFO  save_to_file     False
+2020-11-14 10:12:59,179   INFO  cfg.ROOT_DIR: /team1/codes/3dObjDet/OpenPCDet_ravi
+2020-11-14 10:12:59,179   INFO  cfg.LOCAL_RANK: 0
+2020-11-14 10:12:59,179   INFO  cfg.CLASS_NAMES: ['Car', 'Pedestrian', 'Cyclist']
+2020-11-14 10:12:59,179   INFO  
+cfg.DATA_CONFIG = edict()
+2020-11-14 10:12:59,180   INFO  cfg.DATA_CONFIG.DATASET: KittiOdometryDataset
+2020-11-14 10:12:59,180   INFO  cfg.DATA_CONFIG.DATA_PATH: ../data/kitti-odometry
+2020-11-14 10:12:59,180   INFO  cfg.DATA_CONFIG.POINT_CLOUD_RANGE: [0, -40, -3, 70.4, 40, 1]
+2020-11-14 10:12:59,180   INFO  
+cfg.DATA_CONFIG.DATA_SPLIT = edict()
+2020-11-14 10:12:59,180   INFO  cfg.DATA_CONFIG.DATA_SPLIT.train: train
+2020-11-14 10:12:59,180   INFO  cfg.DATA_CONFIG.DATA_SPLIT.test: val
+2020-11-14 10:12:59,180   INFO  
+cfg.DATA_CONFIG.INFO_PATH = edict()
+2020-11-14 10:12:59,180   INFO  cfg.DATA_CONFIG.INFO_PATH.train: ['splits/@@@/kitti_infos_train.pkl']
+2020-11-14 10:12:59,180   INFO  cfg.DATA_CONFIG.INFO_PATH.test: ['splits/@@@/kitti_infos_val.pkl']
+2020-11-14 10:12:59,180   INFO  cfg.DATA_CONFIG.FOV_POINTS_ONLY: True
+2020-11-14 10:12:59,180   INFO  
+cfg.DATA_CONFIG.DATA_AUGMENTOR = edict()
+2020-11-14 10:12:59,180   INFO  cfg.DATA_CONFIG.DATA_AUGMENTOR.DISABLE_AUG_LIST: ['placeholder']
+2020-11-14 10:12:59,180   INFO  cfg.DATA_CONFIG.DATA_AUGMENTOR.AUG_CONFIG_LIST: [{'NAME': 'gt_sampling', 'USE_ROAD_PLANE': False, 'DB_INFO_PATH': ['splits/seq_train_0,12_seq_val_10_seq_test_19/kitti_dbinfos_train.pkl'], 'PREPARE': {'filter_by_min_points': ['Car:5', 'Pedestrian:5', 'Cyclist:5'], 'filter_by_difficulty': [-1]}, 'SAMPLE_GROUPS': ['Car:15', 'Pedestrian:10', 'Cyclist:10'], 'NUM_POINT_FEATURES': 4, 'DATABASE_WITH_FAKELIDAR': False, 'REMOVE_EXTRA_WIDTH': [0.0, 0.0, 0.0], 'LIMIT_WHOLE_SCENE': False}, {'NAME': 'random_world_flip', 'ALONG_AXIS_LIST': ['x']}, {'NAME': 'random_world_rotation', 'WORLD_ROT_ANGLE': [-0.78539816, 0.78539816]}, {'NAME': 'random_world_scaling', 'WORLD_SCALE_RANGE': [0.95, 1.05]}]
+2020-11-14 10:12:59,180   INFO  
+cfg.DATA_CONFIG.POINT_FEATURE_ENCODING = edict()
+2020-11-14 10:12:59,180   INFO  cfg.DATA_CONFIG.POINT_FEATURE_ENCODING.encoding_type: absolute_coordinates_encoding
+2020-11-14 10:12:59,180   INFO  cfg.DATA_CONFIG.POINT_FEATURE_ENCODING.used_feature_list: ['x', 'y', 'z', 'intensity']
+2020-11-14 10:12:59,180   INFO  cfg.DATA_CONFIG.POINT_FEATURE_ENCODING.src_feature_list: ['x', 'y', 'z', 'intensity']
+2020-11-14 10:12:59,180   INFO  cfg.DATA_CONFIG.DATA_PROCESSOR: [{'NAME': 'mask_points_and_boxes_outside_range', 'REMOVE_OUTSIDE_BOXES': True}, {'NAME': 'shuffle_points', 'SHUFFLE_ENABLED': {'train': True, 'test': False}}, {'NAME': 'transform_points_to_voxels', 'VOXEL_SIZE': [0.05, 0.05, 0.1], 'MAX_POINTS_PER_VOXEL': 5, 'MAX_NUMBER_OF_VOXELS': {'train': 16000, 'test': 40000}}]
+2020-11-14 10:12:59,181   INFO  cfg.DATA_CONFIG._BASE_CONFIG_: cfgs/dataset_configs/kitti_odometry_dataset.yaml
+2020-11-14 10:12:59,181   INFO  
+cfg.MODEL = edict()
+2020-11-14 10:12:59,181   INFO  cfg.MODEL.NAME: PVRCNN
+2020-11-14 10:12:59,181   INFO  
+cfg.MODEL.VFE = edict()
+2020-11-14 10:12:59,181   INFO  cfg.MODEL.VFE.NAME: MeanVFE
+2020-11-14 10:12:59,181   INFO  
+cfg.MODEL.BACKBONE_3D = edict()
+2020-11-14 10:12:59,181   INFO  cfg.MODEL.BACKBONE_3D.NAME: VoxelBackBone8x
+2020-11-14 10:12:59,181   INFO  
+cfg.MODEL.MAP_TO_BEV = edict()
+2020-11-14 10:12:59,181   INFO  cfg.MODEL.MAP_TO_BEV.NAME: HeightCompression
+2020-11-14 10:12:59,181   INFO  cfg.MODEL.MAP_TO_BEV.NUM_BEV_FEATURES: 256
+2020-11-14 10:12:59,181   INFO  
+cfg.MODEL.BACKBONE_2D = edict()
+2020-11-14 10:12:59,181   INFO  cfg.MODEL.BACKBONE_2D.NAME: BaseBEVBackbone
+2020-11-14 10:12:59,181   INFO  cfg.MODEL.BACKBONE_2D.LAYER_NUMS: [5, 5]
+2020-11-14 10:12:59,181   INFO  cfg.MODEL.BACKBONE_2D.LAYER_STRIDES: [1, 2]
+2020-11-14 10:12:59,181   INFO  cfg.MODEL.BACKBONE_2D.NUM_FILTERS: [128, 256]
+2020-11-14 10:12:59,181   INFO  cfg.MODEL.BACKBONE_2D.UPSAMPLE_STRIDES: [1, 2]
+2020-11-14 10:12:59,181   INFO  cfg.MODEL.BACKBONE_2D.NUM_UPSAMPLE_FILTERS: [256, 256]
+2020-11-14 10:12:59,181   INFO  
+cfg.MODEL.DENSE_HEAD = edict()
+2020-11-14 10:12:59,181   INFO  cfg.MODEL.DENSE_HEAD.NAME: AnchorHeadSingle
+2020-11-14 10:12:59,182   INFO  cfg.MODEL.DENSE_HEAD.CLASS_AGNOSTIC: False
+2020-11-14 10:12:59,182   INFO  cfg.MODEL.DENSE_HEAD.USE_DIRECTION_CLASSIFIER: True
+2020-11-14 10:12:59,182   INFO  cfg.MODEL.DENSE_HEAD.DIR_OFFSET: 0.78539
+2020-11-14 10:12:59,182   INFO  cfg.MODEL.DENSE_HEAD.DIR_LIMIT_OFFSET: 0.0
+2020-11-14 10:12:59,182   INFO  cfg.MODEL.DENSE_HEAD.NUM_DIR_BINS: 2
+2020-11-14 10:12:59,182   INFO  cfg.MODEL.DENSE_HEAD.ANCHOR_GENERATOR_CONFIG: [{'class_name': 'Car', 'anchor_sizes': [[3.9, 1.6, 1.56]], 'anchor_rotations': [0, 1.57], 'anchor_bottom_heights': [-1.78], 'align_center': False, 'feature_map_stride': 8, 'matched_threshold': 0.6, 'unmatched_threshold': 0.45}, {'class_name': 'Pedestrian', 'anchor_sizes': [[0.8, 0.6, 1.73]], 'anchor_rotations': [0, 1.57], 'anchor_bottom_heights': [-0.6], 'align_center': False, 'feature_map_stride': 8, 'matched_threshold': 0.5, 'unmatched_threshold': 0.35}, {'class_name': 'Cyclist', 'anchor_sizes': [[1.76, 0.6, 1.73]], 'anchor_rotations': [0, 1.57], 'anchor_bottom_heights': [-0.6], 'align_center': False, 'feature_map_stride': 8, 'matched_threshold': 0.5, 'unmatched_threshold': 0.35}]
+2020-11-14 10:12:59,182   INFO  
+cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG = edict()
+2020-11-14 10:12:59,182   INFO  cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG.NAME: AxisAlignedTargetAssigner
+2020-11-14 10:12:59,182   INFO  cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG.POS_FRACTION: -1.0
+2020-11-14 10:12:59,182   INFO  cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG.SAMPLE_SIZE: 512
+2020-11-14 10:12:59,182   INFO  cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG.NORM_BY_NUM_EXAMPLES: False
+2020-11-14 10:12:59,182   INFO  cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG.MATCH_HEIGHT: False
+2020-11-14 10:12:59,182   INFO  cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG.BOX_CODER: ResidualCoder
+2020-11-14 10:12:59,182   INFO  
+cfg.MODEL.DENSE_HEAD.LOSS_CONFIG = edict()
+2020-11-14 10:12:59,182   INFO  
+cfg.MODEL.DENSE_HEAD.LOSS_CONFIG.LOSS_WEIGHTS = edict()
+2020-11-14 10:12:59,182   INFO  cfg.MODEL.DENSE_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.cls_weight: 1.0
+2020-11-14 10:12:59,182   INFO  cfg.MODEL.DENSE_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.loc_weight: 2.0
+2020-11-14 10:12:59,182   INFO  cfg.MODEL.DENSE_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.dir_weight: 0.2
+2020-11-14 10:12:59,182   INFO  cfg.MODEL.DENSE_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.code_weights: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+2020-11-14 10:12:59,183   INFO  
+cfg.MODEL.PFE = edict()
+2020-11-14 10:12:59,183   INFO  cfg.MODEL.PFE.NAME: VoxelSetAbstraction
+2020-11-14 10:12:59,183   INFO  cfg.MODEL.PFE.POINT_SOURCE: raw_points
+2020-11-14 10:12:59,183   INFO  cfg.MODEL.PFE.NUM_KEYPOINTS: 2048
+2020-11-14 10:12:59,183   INFO  cfg.MODEL.PFE.NUM_OUTPUT_FEATURES: 128
+2020-11-14 10:12:59,183   INFO  cfg.MODEL.PFE.SAMPLE_METHOD: FPS
+2020-11-14 10:12:59,183   INFO  cfg.MODEL.PFE.FEATURES_SOURCE: ['bev', 'x_conv1', 'x_conv2', 'x_conv3', 'x_conv4', 'raw_points']
+2020-11-14 10:12:59,183   INFO  
+cfg.MODEL.PFE.SA_LAYER = edict()
+2020-11-14 10:12:59,183   INFO  
+cfg.MODEL.PFE.SA_LAYER.raw_points = edict()
+2020-11-14 10:12:59,183   INFO  cfg.MODEL.PFE.SA_LAYER.raw_points.MLPS: [[16, 16], [16, 16]]
+2020-11-14 10:12:59,183   INFO  cfg.MODEL.PFE.SA_LAYER.raw_points.POOL_RADIUS: [0.4, 0.8]
+2020-11-14 10:12:59,183   INFO  cfg.MODEL.PFE.SA_LAYER.raw_points.NSAMPLE: [16, 16]
+2020-11-14 10:12:59,183   INFO  
+cfg.MODEL.PFE.SA_LAYER.x_conv1 = edict()
+2020-11-14 10:12:59,183   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv1.DOWNSAMPLE_FACTOR: 1
+2020-11-14 10:12:59,183   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv1.MLPS: [[16, 16], [16, 16]]
+2020-11-14 10:12:59,183   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv1.POOL_RADIUS: [0.4, 0.8]
+2020-11-14 10:12:59,183   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv1.NSAMPLE: [16, 16]
+2020-11-14 10:12:59,183   INFO  
+cfg.MODEL.PFE.SA_LAYER.x_conv2 = edict()
+2020-11-14 10:12:59,183   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv2.DOWNSAMPLE_FACTOR: 2
+2020-11-14 10:12:59,184   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv2.MLPS: [[32, 32], [32, 32]]
+2020-11-14 10:12:59,184   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv2.POOL_RADIUS: [0.8, 1.2]
+2020-11-14 10:12:59,184   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv2.NSAMPLE: [16, 32]
+2020-11-14 10:12:59,184   INFO  
+cfg.MODEL.PFE.SA_LAYER.x_conv3 = edict()
+2020-11-14 10:12:59,184   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv3.DOWNSAMPLE_FACTOR: 4
+2020-11-14 10:12:59,184   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv3.MLPS: [[64, 64], [64, 64]]
+2020-11-14 10:12:59,184   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv3.POOL_RADIUS: [1.2, 2.4]
+2020-11-14 10:12:59,184   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv3.NSAMPLE: [16, 32]
+2020-11-14 10:12:59,184   INFO  
+cfg.MODEL.PFE.SA_LAYER.x_conv4 = edict()
+2020-11-14 10:12:59,184   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv4.DOWNSAMPLE_FACTOR: 8
+2020-11-14 10:12:59,184   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv4.MLPS: [[64, 64], [64, 64]]
+2020-11-14 10:12:59,184   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv4.POOL_RADIUS: [2.4, 4.8]
+2020-11-14 10:12:59,184   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv4.NSAMPLE: [16, 32]
+2020-11-14 10:12:59,184   INFO  
+cfg.MODEL.POINT_HEAD = edict()
+2020-11-14 10:12:59,184   INFO  cfg.MODEL.POINT_HEAD.NAME: PointHeadSimple
+2020-11-14 10:12:59,184   INFO  cfg.MODEL.POINT_HEAD.CLS_FC: [256, 256]
+2020-11-14 10:12:59,184   INFO  cfg.MODEL.POINT_HEAD.CLASS_AGNOSTIC: True
+2020-11-14 10:12:59,184   INFO  cfg.MODEL.POINT_HEAD.USE_POINT_FEATURES_BEFORE_FUSION: True
+2020-11-14 10:12:59,184   INFO  
+cfg.MODEL.POINT_HEAD.TARGET_CONFIG = edict()
+2020-11-14 10:12:59,185   INFO  cfg.MODEL.POINT_HEAD.TARGET_CONFIG.GT_EXTRA_WIDTH: [0.2, 0.2, 0.2]
+2020-11-14 10:12:59,185   INFO  
+cfg.MODEL.POINT_HEAD.LOSS_CONFIG = edict()
+2020-11-14 10:12:59,185   INFO  cfg.MODEL.POINT_HEAD.LOSS_CONFIG.LOSS_REG: smooth-l1
+2020-11-14 10:12:59,185   INFO  
+cfg.MODEL.POINT_HEAD.LOSS_CONFIG.LOSS_WEIGHTS = edict()
+2020-11-14 10:12:59,185   INFO  cfg.MODEL.POINT_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.point_cls_weight: 1.0
+2020-11-14 10:12:59,185   INFO  
+cfg.MODEL.ROI_HEAD = edict()
+2020-11-14 10:12:59,185   INFO  cfg.MODEL.ROI_HEAD.NAME: PVRCNNHead
+2020-11-14 10:12:59,185   INFO  cfg.MODEL.ROI_HEAD.CLASS_AGNOSTIC: True
+2020-11-14 10:12:59,185   INFO  cfg.MODEL.ROI_HEAD.SHARED_FC: [256, 256]
+2020-11-14 10:12:59,185   INFO  cfg.MODEL.ROI_HEAD.CLS_FC: [256, 256]
+2020-11-14 10:12:59,185   INFO  cfg.MODEL.ROI_HEAD.REG_FC: [256, 256]
+2020-11-14 10:12:59,185   INFO  cfg.MODEL.ROI_HEAD.DP_RATIO: 0.3
+2020-11-14 10:12:59,185   INFO  
+cfg.MODEL.ROI_HEAD.NMS_CONFIG = edict()
+2020-11-14 10:12:59,185   INFO  
+cfg.MODEL.ROI_HEAD.NMS_CONFIG.TRAIN = edict()
+2020-11-14 10:12:59,185   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TRAIN.NMS_TYPE: nms_gpu
+2020-11-14 10:12:59,185   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TRAIN.MULTI_CLASSES_NMS: False
+2020-11-14 10:12:59,185   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TRAIN.NMS_PRE_MAXSIZE: 9000
+2020-11-14 10:12:59,185   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TRAIN.NMS_POST_MAXSIZE: 512
+2020-11-14 10:12:59,185   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TRAIN.NMS_THRESH: 0.8
+2020-11-14 10:12:59,186   INFO  
+cfg.MODEL.ROI_HEAD.NMS_CONFIG.TEST = edict()
+2020-11-14 10:12:59,186   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TEST.NMS_TYPE: nms_gpu
+2020-11-14 10:12:59,186   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TEST.MULTI_CLASSES_NMS: False
+2020-11-14 10:12:59,186   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TEST.NMS_PRE_MAXSIZE: 1024
+2020-11-14 10:12:59,186   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TEST.NMS_POST_MAXSIZE: 100
+2020-11-14 10:12:59,186   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TEST.NMS_THRESH: 0.7
+2020-11-14 10:12:59,186   INFO  
+cfg.MODEL.ROI_HEAD.ROI_GRID_POOL = edict()
+2020-11-14 10:12:59,186   INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.GRID_SIZE: 6
+2020-11-14 10:12:59,186   INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.MLPS: [[64, 64], [64, 64]]
+2020-11-14 10:12:59,186   INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.POOL_RADIUS: [0.8, 1.6]
+2020-11-14 10:12:59,186   INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.NSAMPLE: [16, 16]
+2020-11-14 10:12:59,186   INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.POOL_METHOD: max_pool
+2020-11-14 10:12:59,186   INFO  
+cfg.MODEL.ROI_HEAD.TARGET_CONFIG = edict()
+2020-11-14 10:12:59,186   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.BOX_CODER: ResidualCoder
+2020-11-14 10:12:59,186   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.ROI_PER_IMAGE: 128
+2020-11-14 10:12:59,186   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.FG_RATIO: 0.5
+2020-11-14 10:12:59,186   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.SAMPLE_ROI_BY_EACH_CLASS: True
+2020-11-14 10:12:59,186   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.CLS_SCORE_TYPE: roi_iou
+2020-11-14 10:12:59,186   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.CLS_FG_THRESH: 0.75
+2020-11-14 10:12:59,187   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.CLS_BG_THRESH: 0.25
+2020-11-14 10:12:59,187   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.CLS_BG_THRESH_LO: 0.1
+2020-11-14 10:12:59,187   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.HARD_BG_RATIO: 0.8
+2020-11-14 10:12:59,187   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.REG_FG_THRESH: 0.55
+2020-11-14 10:12:59,187   INFO  
+cfg.MODEL.ROI_HEAD.LOSS_CONFIG = edict()
+2020-11-14 10:12:59,187   INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.CLS_LOSS: BinaryCrossEntropy
+2020-11-14 10:12:59,187   INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.REG_LOSS: smooth-l1
+2020-11-14 10:12:59,187   INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.CORNER_LOSS_REGULARIZATION: True
+2020-11-14 10:12:59,187   INFO  
+cfg.MODEL.ROI_HEAD.LOSS_CONFIG.LOSS_WEIGHTS = edict()
+2020-11-14 10:12:59,187   INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.rcnn_cls_weight: 1.0
+2020-11-14 10:12:59,187   INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.rcnn_reg_weight: 1.0
+2020-11-14 10:12:59,187   INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.rcnn_corner_weight: 1.0
+2020-11-14 10:12:59,187   INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.code_weights: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+2020-11-14 10:12:59,187   INFO  
+cfg.MODEL.POST_PROCESSING = edict()
+2020-11-14 10:12:59,187   INFO  cfg.MODEL.POST_PROCESSING.RECALL_THRESH_LIST: [0.3, 0.5, 0.7]
+2020-11-14 10:12:59,187   INFO  cfg.MODEL.POST_PROCESSING.SCORE_THRESH: 0.1
+2020-11-14 10:12:59,187   INFO  cfg.MODEL.POST_PROCESSING.OUTPUT_RAW_SCORE: False
+2020-11-14 10:12:59,187   INFO  cfg.MODEL.POST_PROCESSING.EVAL_METRIC: kitti
+2020-11-14 10:12:59,187   INFO  
+cfg.MODEL.POST_PROCESSING.NMS_CONFIG = edict()
+2020-11-14 10:12:59,188   INFO  cfg.MODEL.POST_PROCESSING.NMS_CONFIG.MULTI_CLASSES_NMS: False
+2020-11-14 10:12:59,188   INFO  cfg.MODEL.POST_PROCESSING.NMS_CONFIG.NMS_TYPE: nms_gpu
+2020-11-14 10:12:59,188   INFO  cfg.MODEL.POST_PROCESSING.NMS_CONFIG.NMS_THRESH: 0.1
+2020-11-14 10:12:59,188   INFO  cfg.MODEL.POST_PROCESSING.NMS_CONFIG.NMS_PRE_MAXSIZE: 4096
+2020-11-14 10:12:59,188   INFO  cfg.MODEL.POST_PROCESSING.NMS_CONFIG.NMS_POST_MAXSIZE: 500
+2020-11-14 10:12:59,188   INFO  
+cfg.OPTIMIZATION = edict()
+2020-11-14 10:12:59,188   INFO  cfg.OPTIMIZATION.BATCH_SIZE_PER_GPU: 2
+2020-11-14 10:12:59,188   INFO  cfg.OPTIMIZATION.NUM_EPOCHS: 2
+2020-11-14 10:12:59,188   INFO  cfg.OPTIMIZATION.OPTIMIZER: adam_onecycle
+2020-11-14 10:12:59,188   INFO  cfg.OPTIMIZATION.LR: 0.01
+2020-11-14 10:12:59,188   INFO  cfg.OPTIMIZATION.WEIGHT_DECAY: 0.01
+2020-11-14 10:12:59,188   INFO  cfg.OPTIMIZATION.MOMENTUM: 0.9
+2020-11-14 10:12:59,188   INFO  cfg.OPTIMIZATION.MOMS: [0.95, 0.85]
+2020-11-14 10:12:59,188   INFO  cfg.OPTIMIZATION.PCT_START: 0.4
+2020-11-14 10:12:59,188   INFO  cfg.OPTIMIZATION.DIV_FACTOR: 10
+2020-11-14 10:12:59,188   INFO  cfg.OPTIMIZATION.DECAY_STEP_LIST: [35, 45]
+2020-11-14 10:12:59,188   INFO  cfg.OPTIMIZATION.LR_DECAY: 0.1
+2020-11-14 10:12:59,188   INFO  cfg.OPTIMIZATION.LR_CLIP: 1e-07
+2020-11-14 10:12:59,188   INFO  cfg.OPTIMIZATION.LR_WARMUP: False
+2020-11-14 10:12:59,189   INFO  cfg.OPTIMIZATION.WARMUP_EPOCH: 1
+2020-11-14 10:12:59,189   INFO  cfg.OPTIMIZATION.GRAD_NORM_CLIP: 10
+2020-11-14 10:12:59,189   INFO  cfg.TAG: pv_rcnn_ours
+2020-11-14 10:12:59,189   INFO  cfg.EXP_GROUP_PATH: kitti_models
+2020-11-14 10:12:59,428   INFO  Database filter by min points Car: 346 => 340
+2020-11-14 10:12:59,428   INFO  Database filter by min points Pedestrian: 86 => 86
+2020-11-14 10:12:59,428   INFO  Database filter by min points Cyclist: 124 => 124
+2020-11-14 10:12:59,429   INFO  Database filter by difficulty Car: 340 => 294
+2020-11-14 10:12:59,430   INFO  Database filter by difficulty Pedestrian: 86 => 83
+2020-11-14 10:12:59,430   INFO  Database filter by difficulty Cyclist: 124 => 124
+2020-11-14 10:12:59,524   INFO  Loading KITTI tracking dataset
+2020-11-14 10:12:59,534   INFO  Total samples for KITTI dataset: 232
+2020-11-14 10:13:15,513   INFO  PVRCNN(
+  (vfe): MeanVFE()
+  (backbone_3d): VoxelBackBone8x(
+    (conv_input): SparseSequential(
+      (0): SubMConv3d()
+      (1): BatchNorm1d(16, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+    (conv1): SparseSequential(
+      (0): SparseSequential(
+        (0): SubMConv3d()
+        (1): BatchNorm1d(16, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+    )
+    (conv2): SparseSequential(
+      (0): SparseSequential(
+        (0): SparseConv3d()
+        (1): BatchNorm1d(32, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+      (1): SparseSequential(
+        (0): SubMConv3d()
+        (1): BatchNorm1d(32, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+      (2): SparseSequential(
+        (0): SubMConv3d()
+        (1): BatchNorm1d(32, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+    )
+    (conv3): SparseSequential(
+      (0): SparseSequential(
+        (0): SparseConv3d()
+        (1): BatchNorm1d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+      (1): SparseSequential(
+        (0): SubMConv3d()
+        (1): BatchNorm1d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+      (2): SparseSequential(
+        (0): SubMConv3d()
+        (1): BatchNorm1d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+    )
+    (conv4): SparseSequential(
+      (0): SparseSequential(
+        (0): SparseConv3d()
+        (1): BatchNorm1d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+      (1): SparseSequential(
+        (0): SubMConv3d()
+        (1): BatchNorm1d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+      (2): SparseSequential(
+        (0): SubMConv3d()
+        (1): BatchNorm1d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+    )
+    (conv_out): SparseSequential(
+      (0): SparseConv3d()
+      (1): BatchNorm1d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+  )
+  (map_to_bev_module): HeightCompression()
+  (pfe): VoxelSetAbstraction(
+    (SA_layers): ModuleList(
+      (0): StackSAModuleMSG(
+        (groupers): ModuleList(
+          (0): QueryAndGroup()
+          (1): QueryAndGroup()
+        )
+        (mlps): ModuleList(
+          (0): Sequential(
+            (0): Conv2d(19, 16, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+            (3): Conv2d(16, 16, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (4): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): ReLU()
+          )
+          (1): Sequential(
+            (0): Conv2d(19, 16, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+            (3): Conv2d(16, 16, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (4): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): ReLU()
+          )
+        )
+      )
+      (1): StackSAModuleMSG(
+        (groupers): ModuleList(
+          (0): QueryAndGroup()
+          (1): QueryAndGroup()
+        )
+        (mlps): ModuleList(
+          (0): Sequential(
+            (0): Conv2d(35, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+            (3): Conv2d(32, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (4): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): ReLU()
+          )
+          (1): Sequential(
+            (0): Conv2d(35, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+            (3): Conv2d(32, 32, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (4): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): ReLU()
+          )
+        )
+      )
+      (2): StackSAModuleMSG(
+        (groupers): ModuleList(
+          (0): QueryAndGroup()
+          (1): QueryAndGroup()
+        )
+        (mlps): ModuleList(
+          (0): Sequential(
+            (0): Conv2d(67, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+            (3): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (4): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): ReLU()
+          )
+          (1): Sequential(
+            (0): Conv2d(67, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+            (3): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (4): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): ReLU()
+          )
+        )
+      )
+      (3): StackSAModuleMSG(
+        (groupers): ModuleList(
+          (0): QueryAndGroup()
+          (1): QueryAndGroup()
+        )
+        (mlps): ModuleList(
+          (0): Sequential(
+            (0): Conv2d(67, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+            (3): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (4): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): ReLU()
+          )
+          (1): Sequential(
+            (0): Conv2d(67, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+            (3): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (4): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): ReLU()
+          )
+        )
+      )
+    )
+    (SA_rawpoints): StackSAModuleMSG(
+      (groupers): ModuleList(
+        (0): QueryAndGroup()
+        (1): QueryAndGroup()
+      )
+      (mlps): ModuleList(
+        (0): Sequential(
+          (0): Conv2d(4, 16, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU()
+          (3): Conv2d(16, 16, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (4): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (5): ReLU()
+        )
+        (1): Sequential(
+          (0): Conv2d(4, 16, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU()
+          (3): Conv2d(16, 16, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (4): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (5): ReLU()
+        )
+      )
+    )
+    (vsa_point_feature_fusion): Sequential(
+      (0): Linear(in_features=640, out_features=128, bias=False)
+      (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+    )
+  )
+  (backbone_2d): BaseBEVBackbone(
+    (blocks): ModuleList(
+      (0): Sequential(
+        (0): ZeroPad2d(padding=(1, 1, 1, 1), value=0.0)
+        (1): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1), bias=False)
+        (2): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (3): ReLU()
+        (4): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (5): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (6): ReLU()
+        (7): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (8): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (9): ReLU()
+        (10): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (11): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (12): ReLU()
+        (13): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (14): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (15): ReLU()
+        (16): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (17): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (18): ReLU()
+      )
+      (1): Sequential(
+        (0): ZeroPad2d(padding=(1, 1, 1, 1), value=0.0)
+        (1): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), bias=False)
+        (2): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (3): ReLU()
+        (4): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (5): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (6): ReLU()
+        (7): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (8): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (9): ReLU()
+        (10): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (11): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (12): ReLU()
+        (13): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (14): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (15): ReLU()
+        (16): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (17): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (18): ReLU()
+      )
+    )
+    (deblocks): ModuleList(
+      (0): Sequential(
+        (0): ConvTranspose2d(128, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+      (1): Sequential(
+        (0): ConvTranspose2d(256, 256, kernel_size=(2, 2), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+    )
+  )
+  (dense_head): AnchorHeadSingle(
+    (cls_loss_func): SigmoidFocalClassificationLoss()
+    (reg_loss_func): WeightedSmoothL1Loss()
+    (dir_loss_func): WeightedCrossEntropyLoss()
+    (conv_cls): Conv2d(512, 18, kernel_size=(1, 1), stride=(1, 1))
+    (conv_box): Conv2d(512, 42, kernel_size=(1, 1), stride=(1, 1))
+    (conv_dir_cls): Conv2d(512, 12, kernel_size=(1, 1), stride=(1, 1))
+  )
+  (point_head): PointHeadSimple(
+    (cls_loss_func): SigmoidFocalClassificationLoss()
+    (cls_layers): Sequential(
+      (0): Linear(in_features=640, out_features=256, bias=False)
+      (1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Linear(in_features=256, out_features=256, bias=False)
+      (4): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (5): ReLU()
+      (6): Linear(in_features=256, out_features=1, bias=True)
+    )
+  )
+  (roi_head): PVRCNNHead(
+    (proposal_target_layer): ProposalTargetLayer()
+    (reg_loss_func): WeightedSmoothL1Loss()
+    (roi_grid_pool_layer): StackSAModuleMSG(
+      (groupers): ModuleList(
+        (0): QueryAndGroup()
+        (1): QueryAndGroup()
+      )
+      (mlps): ModuleList(
+        (0): Sequential(
+          (0): Conv2d(131, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU()
+          (3): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (4): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (5): ReLU()
+        )
+        (1): Sequential(
+          (0): Conv2d(131, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (2): ReLU()
+          (3): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (4): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (5): ReLU()
+        )
+      )
+    )
+    (shared_fc_layer): Sequential(
+      (0): Conv1d(27648, 256, kernel_size=(1,), stride=(1,), bias=False)
+      (1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.3)
+      (4): Conv1d(256, 256, kernel_size=(1,), stride=(1,), bias=False)
+      (5): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+    )
+    (cls_layers): Sequential(
+      (0): Conv1d(256, 256, kernel_size=(1,), stride=(1,), bias=False)
+      (1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.3)
+      (4): Conv1d(256, 256, kernel_size=(1,), stride=(1,), bias=False)
+      (5): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Conv1d(256, 1, kernel_size=(1,), stride=(1,))
+    )
+    (reg_layers): Sequential(
+      (0): Conv1d(256, 256, kernel_size=(1,), stride=(1,), bias=False)
+      (1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU()
+      (3): Dropout(p=0.3)
+      (4): Conv1d(256, 256, kernel_size=(1,), stride=(1,), bias=False)
+      (5): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (6): ReLU()
+      (7): Conv1d(256, 7, kernel_size=(1,), stride=(1,))
+    )
+  )
+)
+2020-11-14 10:13:15,518   INFO  **********************Start training kitti_models/pv_rcnn_ours(default)**********************
+epochs:   0%|          | 0/2 [00:00<?, ?it/s]
+train:   0%|          | 0/116 [00:00<?, ?it/s][Aepochs:   0%|          | 0/2 [00:03<?, ?it/s]
+Traceback (most recent call last):
+  File "train.py", line 197, in <module>
+    main()
+  File "train.py", line 169, in main
+    merge_all_iters_to_one_epoch=args.merge_all_iters_to_one_epoch
+  File "/team1/codes/3dObjDet/OpenPCDet_ravi/tools/train_utils/train_utils.py", line 93, in train_model
+    dataloader_iter=dataloader_iter
+  File "/team1/codes/3dObjDet/OpenPCDet_ravi/tools/train_utils/train_utils.py", line 38, in train_one_epoch
+    loss, tb_dict, disp_dict = model_func(model, batch)
+  File "/team1/codes/3dObjDet/OpenPCDet_ravi/pcdet/models/__init__.py", line 30, in model_func
+    ret_dict, tb_dict, disp_dict = model(batch_dict)
+  File "/usr/local/lib/python3.6/dist-packages/torch/nn/modules/module.py", line 493, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/team1/codes/3dObjDet/OpenPCDet_ravi/pcdet/models/detectors/pv_rcnn.py", line 11, in forward
+    batch_dict = cur_module(batch_dict)
+  File "/usr/local/lib/python3.6/dist-packages/torch/nn/modules/module.py", line 493, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/team1/codes/3dObjDet/OpenPCDet_ravi/pcdet/models/backbones_3d/spconv_backbone.py", line 139, in forward
+    x = self.conv_input(input_sp_tensor)
+  File "/usr/local/lib/python3.6/dist-packages/torch/nn/modules/module.py", line 493, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/spconv/modules.py", line 127, in forward
+    input.features = module(input.features)
+  File "/usr/local/lib/python3.6/dist-packages/torch/nn/modules/module.py", line 493, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/usr/local/lib/python3.6/dist-packages/torch/nn/modules/batchnorm.py", line 83, in forward
+    exponential_average_factor, self.eps)
+  File "/usr/local/lib/python3.6/dist-packages/torch/nn/functional.py", line 1697, in batch_norm
+    training, momentum, eps, torch.backends.cudnn.enabled
+RuntimeError: cuDNN error: CUDNN_STATUS_EXECUTION_FAILED
+
+                                              [A
