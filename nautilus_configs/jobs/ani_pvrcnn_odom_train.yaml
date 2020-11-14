@@ -16,7 +16,7 @@ spec:
         command:
         - sh
         - -c
-        - cd /team1/codes/3dObjDet/OpenPCDet_ravi/ && ls -a && /bin/bash -c "python -c 'import torch;print(torch.__version__)' && pip install -r requirements.txt && python setup.py develop && ./tools/scripts/exec_training.sh"
+        - cd /team1/codes/3dObjDet/OpenPCDet_ravi/ && ls -a && export LD_LIBRARY_PATH=/usr/local/lib/python3.6/dist-packages/spconv:/usr/local/nvidia/lib:/usr/local/nvidia/lib64 && echo $LD_LIBRARY_PATH && /bin/bash -c "python -c 'import torch;print(torch.__version__)' && pip install -r requirements.txt && python setup.py develop && ./tools/scripts/exec_training.sh"
 
         resources:
         # can request and limit 8 CPUs, each 32Gi and upto 4 GPUs, I think
