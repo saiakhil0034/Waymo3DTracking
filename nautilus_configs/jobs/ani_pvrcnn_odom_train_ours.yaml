@@ -1,0 +1,74 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  # team${TEAM_ID}-${USER_NAME}-{EXP_NAME}
+  name: team1-ani-pvrcnn-train-odom-job-ours
+  namespace: ucsd-haosulab-dev
+spec:
+  # Wait one day to delete completed jobs
+  ttlSecondsAfterFinished: 86400
+  template:
+    spec:
+      containers:
+      - name: ani-gpu-container
+        # docker image: can build own and host on gitlab-registry.nautilus.optiputer.net/<USER_NAME>/<REPO_NAME> on GitLab
+        image: trn84/repo:latest
+        command:
+        - sh
+        - -c
+        - cd /team1/codes/3dObjDet/OpenPCDet_ravi/ && ls -a && export LD_LIBRARY_PATH=/usr/local/lib/python3.6/dist-packages/spconv:/usr/local/nvidia/lib:/usr/local/nvidia/lib64 && echo $LD_LIBRARY_PATH && /bin/bash -c "python -c 'import torch;print(torch.__version__)' && pip install -r requirements.txt && python setup.py develop && cd tools/scripts/ && ./exec_training_pod_pvrcnn_ours.sh"
+
+        resources:
+        # can request and limit 8 CPUs, each 32Gi and upto 4 GPUs, I think
+          requests:
+            cpu: "2"
+            memory: "8Gi"
+            nvidia.com/gpu: 1
+          limits:
+            cpu: "2"
+            memory: "8Gi"
+            nvidia.com/gpu: 1
+        # the volume names must match the volumes described below
+        # Can change the name of path mounted to inside container though
+        volumeMounts:
+        - name: dshm
+          mountPath: /dev/shm 
+        - name: cephfs-shared
+          mountPath: /shared
+        - name: cephfs-team1
+          mountPath: /team1
+        - name: cephfs-waymo-od
+          mountPath: /waymo-od
+      # can change the names below to match names of volumeMount but cannot change claimName as these are created already for us
+      volumes:
+        # shared memory
+        - name: dshm
+          emptyDir:
+            medium: Memory
+        - name: cephfs-shared
+          persistentVolumeClaim:
+            claimName: cephfs-shared
+        - name: cephfs-team1
+          persistentVolumeClaim:
+             claimName: cephfs-team1
+        - name: cephfs-waymo-od
+          persistentVolumeClaim:
+             claimName: cephfs-waymo-od
+      restartPolicy: Never
+      # may select specific GPU types if required
+      # but need to be in haosu, so additional constraint required
+      # More constraints => harder to schedule
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: nautilus.io/group
+                operator: In
+                values:
+                - haosu
+              #- key: gpu-type
+              #  operator: In # Use NotIn for other types
+              # values:
+              # - 2080Ti
+  backoffLimit: 1
