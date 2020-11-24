@@ -1,0 +1,544 @@
+.
+..
+.empty
+.git
+.gitignore
+.ipynb_checkpoints
+LICENSE
+README.md
+build
+checkpoints
+data
+demo_notebook.ipynb
+docs
+install
+kitti-dataset.ipynb
+mayavi demo.ipynb
+output
+output_wk5_res
+output_wk6_res
+pcdet
+pcdet.egg-info
+requirements.txt
+saved_pred
+setup.py
+test.png
+tools
+/usr/local/lib/python3.6/dist-packages/spconv:/usr/local/nvidia/lib:/usr/local/nvidia/lib64
+1.1.0
+Requirement already satisfied: numpy in /usr/local/lib/python3.6/dist-packages (from -r requirements.txt (line 1)) (1.18.2)
+Requirement already satisfied: torch>=1.1 in /usr/local/lib/python3.6/dist-packages (from -r requirements.txt (line 2)) (1.1.0)
+Collecting numba
+  Downloading numba-0.51.2-cp36-cp36m-manylinux2014_x86_64.whl (3.1 MB)
+Requirement already satisfied: tensorboardX in /usr/local/lib/python3.6/dist-packages (from -r requirements.txt (line 4)) (2.0)
+Requirement already satisfied: easydict in /usr/local/lib/python3.6/dist-packages (from -r requirements.txt (line 5)) (1.9)
+Requirement already satisfied: pyyaml in /usr/local/lib/python3.6/dist-packages (from -r requirements.txt (line 6)) (5.3.1)
+Requirement already satisfied: scikit-image in /usr/local/lib/python3.6/dist-packages (from -r requirements.txt (line 7)) (0.16.2)
+Requirement already satisfied: tqdm in /usr/local/lib/python3.6/dist-packages (from -r requirements.txt (line 8)) (4.45.0)
+Collecting llvmlite<0.35,>=0.34.0.dev0
+  Downloading llvmlite-0.34.0-cp36-cp36m-manylinux2010_x86_64.whl (24.6 MB)
+Requirement already satisfied: setuptools in /usr/local/lib/python3.6/dist-packages (from numba->-r requirements.txt (line 3)) (46.1.3)
+Requirement already satisfied: six in /usr/local/lib/python3.6/dist-packages (from tensorboardX->-r requirements.txt (line 4)) (1.14.0)
+Requirement already satisfied: protobuf>=3.8.0 in /usr/local/lib/python3.6/dist-packages (from tensorboardX->-r requirements.txt (line 4)) (3.11.3)
+Requirement already satisfied: imageio>=2.3.0 in /usr/local/lib/python3.6/dist-packages (from scikit-image->-r requirements.txt (line 7)) (2.8.0)
+Requirement already satisfied: matplotlib!=3.0.0,>=2.0.0 in /usr/local/lib/python3.6/dist-packages (from scikit-image->-r requirements.txt (line 7)) (3.2.1)
+Requirement already satisfied: scipy>=0.19.0 in /usr/local/lib/python3.6/dist-packages (from scikit-image->-r requirements.txt (line 7)) (1.4.1)
+Requirement already satisfied: networkx>=2.0 in /usr/local/lib/python3.6/dist-packages (from scikit-image->-r requirements.txt (line 7)) (2.4)
+Requirement already satisfied: PyWavelets>=0.4.0 in /usr/local/lib/python3.6/dist-packages (from scikit-image->-r requirements.txt (line 7)) (1.1.1)
+Requirement already satisfied: pillow>=4.3.0 in /usr/local/lib/python3.6/dist-packages (from scikit-image->-r requirements.txt (line 7)) (7.0.0)
+Requirement already satisfied: cycler>=0.10 in /usr/local/lib/python3.6/dist-packages (from matplotlib!=3.0.0,>=2.0.0->scikit-image->-r requirements.txt (line 7)) (0.10.0)
+Requirement already satisfied: python-dateutil>=2.1 in /usr/local/lib/python3.6/dist-packages (from matplotlib!=3.0.0,>=2.0.0->scikit-image->-r requirements.txt (line 7)) (2.8.1)
+Requirement already satisfied: kiwisolver>=1.0.1 in /usr/local/lib/python3.6/dist-packages (from matplotlib!=3.0.0,>=2.0.0->scikit-image->-r requirements.txt (line 7)) (1.2.0)
+Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=2.0.1 in /usr/local/lib/python3.6/dist-packages (from matplotlib!=3.0.0,>=2.0.0->scikit-image->-r requirements.txt (line 7)) (2.4.6)
+Requirement already satisfied: decorator>=4.3.0 in /usr/local/lib/python3.6/dist-packages (from networkx>=2.0->scikit-image->-r requirements.txt (line 7)) (4.4.2)
+Installing collected packages: llvmlite, numba
+Successfully installed llvmlite-0.34.0 numba-0.51.2
+WARNING: You are using pip version 20.0.2; however, version 20.2.4 is available.
+You should consider upgrading via the '/usr/bin/python3.6 -m pip install --upgrade pip' command.
+running develop
+running egg_info
+writing pcdet.egg-info/PKG-INFO
+writing dependency_links to pcdet.egg-info/dependency_links.txt
+writing requirements to pcdet.egg-info/requires.txt
+writing top-level names to pcdet.egg-info/top_level.txt
+reading manifest file 'pcdet.egg-info/SOURCES.txt'
+writing manifest file 'pcdet.egg-info/SOURCES.txt'
+running build_ext
+copying build/lib.linux-x86_64-3.6/pcdet/ops/iou3d_nms/iou3d_nms_cuda.cpython-36m-x86_64-linux-gnu.so -> pcdet/ops/iou3d_nms
+copying build/lib.linux-x86_64-3.6/pcdet/ops/roiaware_pool3d/roiaware_pool3d_cuda.cpython-36m-x86_64-linux-gnu.so -> pcdet/ops/roiaware_pool3d
+copying build/lib.linux-x86_64-3.6/pcdet/ops/roipoint_pool3d/roipoint_pool3d_cuda.cpython-36m-x86_64-linux-gnu.so -> pcdet/ops/roipoint_pool3d
+copying build/lib.linux-x86_64-3.6/pcdet/ops/pointnet2/pointnet2_stack/pointnet2_stack_cuda.cpython-36m-x86_64-linux-gnu.so -> pcdet/ops/pointnet2/pointnet2_stack
+copying build/lib.linux-x86_64-3.6/pcdet/ops/pointnet2/pointnet2_batch/pointnet2_batch_cuda.cpython-36m-x86_64-linux-gnu.so -> pcdet/ops/pointnet2/pointnet2_batch
+Creating /usr/local/lib/python3.6/dist-packages/pcdet.egg-link (link to .)
+Adding pcdet 0.3.0+fafdbd8 to easy-install.pth file
+
+Installed /team1/codes/3dObjDet/OpenPCDet_ravi
+Processing dependencies for pcdet==0.3.0+fafdbd8
+Searching for PyYAML==5.3.1
+Best match: PyYAML 5.3.1
+Adding PyYAML 5.3.1 to easy-install.pth file
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for easydict==1.9
+Best match: easydict 1.9
+Adding easydict 1.9 to easy-install.pth file
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for tensorboardX==2.0
+Best match: tensorboardX 2.0
+Adding tensorboardX 2.0 to easy-install.pth file
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for numba==0.51.2
+Best match: numba 0.51.2
+Adding numba 0.51.2 to easy-install.pth file
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for spconv==1.0
+Best match: spconv 1.0
+Adding spconv 1.0 to easy-install.pth file
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for torch==1.1.0
+Best match: torch 1.1.0
+Adding torch 1.1.0 to easy-install.pth file
+Installing convert-caffe2-to-onnx script to /usr/local/bin
+Installing convert-onnx-to-caffe2 script to /usr/local/bin
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for numpy==1.18.2
+Best match: numpy 1.18.2
+Adding numpy 1.18.2 to easy-install.pth file
+Installing f2py script to /usr/local/bin
+Installing f2py3 script to /usr/local/bin
+Installing f2py3.6 script to /usr/local/bin
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for six==1.14.0
+Best match: six 1.14.0
+Adding six 1.14.0 to easy-install.pth file
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for protobuf==3.11.3
+Best match: protobuf 3.11.3
+Adding protobuf 3.11.3 to easy-install.pth file
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for setuptools==46.1.3
+Best match: setuptools 46.1.3
+Adding setuptools 46.1.3 to easy-install.pth file
+Installing easy_install script to /usr/local/bin
+Installing easy_install-3.8 script to /usr/local/bin
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for llvmlite==0.34.0
+Best match: llvmlite 0.34.0
+Adding llvmlite 0.34.0 to easy-install.pth file
+
+Using /usr/local/lib/python3.6/dist-packages
+Finished processing dependencies for pcdet==0.3.0+fafdbd8
+Collecting mayavi
+  Downloading mayavi-4.7.2.tar.gz (7.1 MB)
+Collecting apptools
+  Downloading apptools-4.5.0.tar.gz (297 kB)
+Collecting envisage
+  Downloading envisage-4.9.2.tar.gz (518 kB)
+Requirement already satisfied: numpy in /usr/local/lib/python3.6/dist-packages (from mayavi) (1.18.2)
+Collecting pyface>=6.1.1
+  Downloading pyface-7.1.0.tar.gz (6.2 MB)
+Collecting pygments
+  Downloading Pygments-2.7.2-py3-none-any.whl (948 kB)
+Collecting traits>=6.0.0
+  Downloading traits-6.1.1.tar.gz (567 kB)
+Collecting traitsui>=7.0.0
+  Downloading traitsui-7.1.0.tar.gz (5.8 MB)
+Collecting vtk
+  Downloading vtk-9.0.1-cp36-cp36m-manylinux2010_x86_64.whl (103.4 MB)
+Collecting configobj
+  Downloading configobj-5.0.6.tar.gz (33 kB)
+Requirement already satisfied: six in /usr/local/lib/python3.6/dist-packages (from apptools->mayavi) (1.14.0)
+Requirement already satisfied: setuptools in /usr/local/lib/python3.6/dist-packages (from envisage->mayavi) (46.1.3)
+Building wheels for collected packages: mayavi, apptools, envisage, pyface, traits, traitsui, configobj
+  Building wheel for mayavi (setup.py): started
+  Building wheel for mayavi (setup.py): finished with status 'error'
+  ERROR: Command errored out with exit status 1:
+   command: /usr/bin/python3.6 -u -c 'import sys, setuptools, tokenize; sys.argv[0] = '"'"'/tmp/pip-install-rxba5vuo/mayavi/setup.py'"'"'; __file__='"'"'/tmp/pip-install-rxba5vuo/mayavi/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' bdist_wheel -d /tmp/pip-wheel-uxo1fflk
+       cwd: /tmp/pip-install-rxba5vuo/mayavi/
+  Complete output (33 lines):
+  running bdist_wheel
+  running build
+  Traceback (most recent call last):
+    File "<string>", line 1, in <module>
+    File "/tmp/pip-install-rxba5vuo/mayavi/setup.py", line 474, in <module>
+      **config
+    File "/usr/local/lib/python3.6/dist-packages/numpy/distutils/core.py", line 171, in setup
+      return old_setup(**new_attr)
+    File "/usr/local/lib/python3.6/dist-packages/setuptools/__init__.py", line 144, in setup
+      return distutils.core.setup(**attrs)
+    File "/usr/lib/python3.6/distutils/core.py", line 148, in setup
+      dist.run_commands()
+    File "/usr/lib/python3.6/distutils/dist.py", line 955, in run_commands
+      self.run_command(cmd)
+    File "/usr/lib/python3.6/distutils/dist.py", line 974, in run_command
+      cmd_obj.run()
+    File "/usr/local/lib/python3.6/dist-packages/wheel/bdist_wheel.py", line 223, in run
+      self.run_command('build')
+    File "/usr/lib/python3.6/distutils/cmd.py", line 313, in run_command
+      self.distribution.run_command(command)
+    File "/usr/lib/python3.6/distutils/dist.py", line 974, in run_command
+      cmd_obj.run()
+    File "/tmp/pip-install-rxba5vuo/mayavi/setup.py", line 268, in run
+      build_tvtk_classes_zip()
+    File "/tmp/pip-install-rxba5vuo/mayavi/setup.py", line 254, in build_tvtk_classes_zip
+      gen_tvtk_classes_zip()
+    File "tvtk/setup.py", line 83, in gen_tvtk_classes_zip
+      from tvtk.code_gen import TVTKGenerator
+    File "/tmp/pip-install-rxba5vuo/mayavi/tvtk/code_gen.py", line 10, in <module>
+      import vtk_module as vtk
+    File "tvtk/vtk_module.py", line 15, in <module>
+      from vtk import *
+  ModuleNotFoundError: No module named 'vtk'
+  ----------------------------------------
+  ERROR: Failed building wheel for mayavi
+  Running setup.py clean for mayavi
+  Building wheel for apptools (setup.py): started
+  Building wheel for apptools (setup.py): finished with status 'done'
+  Created wheel for apptools: filename=apptools-4.5.0-py3-none-any.whl size=396525 sha256=4f0edbd9382215b767c6081c5784755b867f07a2db1acc0b6c733808312623c8
+  Stored in directory: /root/.cache/pip/wheels/ff/b1/24/3e561302ea700a71351f9e216731a4ba5ceccfa309cb323d0d
+  Building wheel for envisage (setup.py): started
+  Building wheel for envisage (setup.py): finished with status 'done'
+  Created wheel for envisage: filename=envisage-4.9.2-py3-none-any.whl size=337249 sha256=9455122063705c797cc9a90a059733df87524ca3fbe6db12e1db2f452a849346
+  Stored in directory: /root/.cache/pip/wheels/92/c5/09/c9f4df6137b6418c113bd9e000d1b51b1f539bb7d43421ef1b
+  Building wheel for pyface (setup.py): started
+  Building wheel for pyface (setup.py): finished with status 'done'
+  Created wheel for pyface: filename=pyface-7.1.0-py3-none-any.whl size=1177089 sha256=080a8dc851fd0335f11b5d3c2ef92e889b9de7e96fa4b9e9fb32d8d3c2e1c72d
+  Stored in directory: /root/.cache/pip/wheels/5d/e5/78/91622a4db0b786bb22b80d44a2b3c9326def1ae5ceb9068e26
+  Building wheel for traits (setup.py): started
+  Building wheel for traits (setup.py): finished with status 'done'
+  Created wheel for traits: filename=traits-6.1.1-cp36-cp36m-linux_x86_64.whl size=526492 sha256=488c0e2b894bbd0b231b26df67f7dd25e80aff0ec2a4068ce63d5e99e4df0c2c
+  Stored in directory: /root/.cache/pip/wheels/25/73/54/c034c1b79c3bcac3102f82236ee7fe05e341cd9839ae94c07c
+  Building wheel for traitsui (setup.py): started
+  Building wheel for traitsui (setup.py): finished with status 'done'
+  Created wheel for traitsui: filename=traitsui-7.1.0-py3-none-any.whl size=1498850 sha256=309713de2869b398e5f67dc0645e2f33662a15fd6a0e50d0cf169ef9807f5da2
+  Stored in directory: /root/.cache/pip/wheels/4f/2f/4a/7936ed8e212ad767f9914528bde791512666dab410d4987948
+  Building wheel for configobj (setup.py): started
+  Building wheel for configobj (setup.py): finished with status 'done'
+  Created wheel for configobj: filename=configobj-5.0.6-py3-none-any.whl size=34546 sha256=82e1a1f894cbdbe8ea53db9dc73ebb076f6f42e5b076d3c7ff9a2f1d4af01141
+  Stored in directory: /root/.cache/pip/wheels/14/d5/8e/1a6dd2be7614b4a455867b3b5eb57054f278470a4c07564381
+Successfully built apptools envisage pyface traits traitsui configobj
+Failed to build mayavi
+Installing collected packages: configobj, traits, pyface, traitsui, apptools, envisage, pygments, vtk, mayavi
+    Running setup.py install for mayavi: started
+    Running setup.py install for mayavi: finished with status 'done'
+Successfully installed apptools-4.5.0 configobj-5.0.6 envisage-4.9.2 mayavi-4.7.2 pyface-7.1.0 pygments-2.7.2 traits-6.1.1 traitsui-7.1.0 vtk-9.0.1
+WARNING: You are using pip version 20.0.2; however, version 20.2.4 is available.
+You should consider upgrading via the '/usr/bin/python3.6 -m pip install --upgrade pip' command.
+Collecting pip
+  Downloading pip-20.2.4-py2.py3-none-any.whl (1.5 MB)
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 20.0.2
+    Uninstalling pip-20.0.2:
+      Successfully uninstalled pip-20.0.2
+Successfully installed pip-20.2.4
+Collecting waymo-open-dataset-tf-2-0-0==1.2.0
+  Downloading waymo_open_dataset_tf_2_0_0-1.2.0-cp36-cp36m-manylinux2010_x86_64.whl (2.8 MB)
+Collecting tensorflow-gpu==2.0.0
+  Downloading tensorflow_gpu-2.0.0-cp36-cp36m-manylinux2010_x86_64.whl (380.8 MB)
+Collecting wrapt>=1.11.1
+  Downloading wrapt-1.12.1.tar.gz (27 kB)
+Collecting gast==0.2.2
+  Downloading gast-0.2.2.tar.gz (10 kB)
+Requirement already satisfied: protobuf>=3.6.1 in /usr/local/lib/python3.6/dist-packages (from tensorflow-gpu==2.0.0->waymo-open-dataset-tf-2-0-0==1.2.0) (3.11.3)
+Collecting tensorboard<2.1.0,>=2.0.0
+  Downloading tensorboard-2.0.2-py3-none-any.whl (3.8 MB)
+Collecting google-pasta>=0.1.6
+  Downloading google_pasta-0.2.0-py3-none-any.whl (57 kB)
+Collecting opt-einsum>=2.3.2
+  Downloading opt_einsum-3.3.0-py3-none-any.whl (65 kB)
+Requirement already satisfied: termcolor>=1.1.0 in /usr/local/lib/python3.6/dist-packages (from tensorflow-gpu==2.0.0->waymo-open-dataset-tf-2-0-0==1.2.0) (1.1.0)
+Collecting keras-applications>=1.0.8
+  Downloading Keras_Applications-1.0.8-py3-none-any.whl (50 kB)
+Requirement already satisfied: numpy<2.0,>=1.16.0 in /usr/local/lib/python3.6/dist-packages (from tensorflow-gpu==2.0.0->waymo-open-dataset-tf-2-0-0==1.2.0) (1.18.2)
+Collecting tensorflow-estimator<2.1.0,>=2.0.0
+  Downloading tensorflow_estimator-2.0.1-py2.py3-none-any.whl (449 kB)
+Requirement already satisfied: six>=1.10.0 in /usr/local/lib/python3.6/dist-packages (from tensorflow-gpu==2.0.0->waymo-open-dataset-tf-2-0-0==1.2.0) (1.14.0)
+Collecting keras-preprocessing>=1.0.5
+  Downloading Keras_Preprocessing-1.1.2-py2.py3-none-any.whl (42 kB)
+Requirement already satisfied: wheel>=0.26 in /usr/local/lib/python3.6/dist-packages (from tensorflow-gpu==2.0.0->waymo-open-dataset-tf-2-0-0==1.2.0) (0.34.2)
+Collecting astor>=0.6.0
+  Downloading astor-0.8.1-py2.py3-none-any.whl (27 kB)
+Collecting grpcio>=1.8.6
+  Downloading grpcio-1.33.2-cp36-cp36m-manylinux2014_x86_64.whl (3.8 MB)
+Collecting absl-py>=0.7.0
+  Downloading absl_py-0.11.0-py3-none-any.whl (127 kB)
+Requirement already satisfied: setuptools in /usr/local/lib/python3.6/dist-packages (from protobuf>=3.6.1->tensorflow-gpu==2.0.0->waymo-open-dataset-tf-2-0-0==1.2.0) (46.1.3)
+Requirement already satisfied: werkzeug>=0.11.15 in /usr/local/lib/python3.6/dist-packages (from tensorboard<2.1.0,>=2.0.0->tensorflow-gpu==2.0.0->waymo-open-dataset-tf-2-0-0==1.2.0) (1.0.1)
+Collecting google-auth-oauthlib<0.5,>=0.4.1
+  Downloading google_auth_oauthlib-0.4.2-py2.py3-none-any.whl (18 kB)
+Collecting requests<3,>=2.21.0
+  Downloading requests-2.25.0-py2.py3-none-any.whl (61 kB)
+Collecting google-auth<2,>=1.6.3
+  Downloading google_auth-1.23.0-py2.py3-none-any.whl (114 kB)
+Collecting markdown>=2.6.8
+  Downloading Markdown-3.3.3-py3-none-any.whl (96 kB)
+Collecting h5py
+  Downloading h5py-3.1.0-cp36-cp36m-manylinux1_x86_64.whl (4.0 MB)
+Collecting requests-oauthlib>=0.7.0
+  Downloading requests_oauthlib-1.3.0-py2.py3-none-any.whl (23 kB)
+Collecting certifi>=2017.4.17
+  Downloading certifi-2020.11.8-py2.py3-none-any.whl (155 kB)
+Collecting chardet<4,>=3.0.2
+  Downloading chardet-3.0.4-py2.py3-none-any.whl (133 kB)
+Collecting idna<3,>=2.5
+  Downloading idna-2.10-py2.py3-none-any.whl (58 kB)
+Collecting urllib3<1.27,>=1.21.1
+  Downloading urllib3-1.26.2-py2.py3-none-any.whl (136 kB)
+Collecting cachetools<5.0,>=2.0.0
+  Downloading cachetools-4.1.1-py3-none-any.whl (10 kB)
+Collecting rsa<5,>=3.1.4; python_version >= "3.5"
+  Downloading rsa-4.6-py3-none-any.whl (47 kB)
+Collecting pyasn1-modules>=0.2.1
+  Downloading pyasn1_modules-0.2.8-py2.py3-none-any.whl (155 kB)
+Collecting importlib-metadata; python_version < "3.8"
+  Downloading importlib_metadata-3.1.0-py2.py3-none-any.whl (9.3 kB)
+Collecting cached-property; python_version < "3.8"
+  Downloading cached_property-1.5.2-py2.py3-none-any.whl (7.6 kB)
+Collecting oauthlib>=3.0.0
+  Downloading oauthlib-3.1.0-py2.py3-none-any.whl (147 kB)
+Collecting pyasn1>=0.1.3
+  Downloading pyasn1-0.4.8-py2.py3-none-any.whl (77 kB)
+Collecting zipp>=0.5
+  Downloading zipp-3.4.0-py3-none-any.whl (5.2 kB)
+Building wheels for collected packages: wrapt, gast
+  Building wheel for wrapt (setup.py): started
+  Building wheel for wrapt (setup.py): finished with status 'done'
+  Created wheel for wrapt: filename=wrapt-1.12.1-cp36-cp36m-linux_x86_64.whl size=64231 sha256=1e33d9a68177da719e59f9b1a7cf01a47632fc5d1c6aab6fc775be17f21f005c
+  Stored in directory: /root/.cache/pip/wheels/32/42/7f/23cae9ff6ef66798d00dc5d659088e57dbba01566f6c60db63
+  Building wheel for gast (setup.py): started
+  Building wheel for gast (setup.py): finished with status 'done'
+  Created wheel for gast: filename=gast-0.2.2-py3-none-any.whl size=7539 sha256=da38d365fc4570977ac2dfe3bf55cb2a719b9e2a21110fc73c5cbb3031791b26
+  Stored in directory: /root/.cache/pip/wheels/19/a7/b9/0740c7a3a7d1d348f04823339274b90de25fbcd217b2ee1fbe
+Successfully built wrapt gast
+Installing collected packages: wrapt, gast, cachetools, pyasn1, rsa, pyasn1-modules, google-auth, oauthlib, certifi, chardet, idna, urllib3, requests, requests-oauthlib, google-auth-oauthlib, grpcio, absl-py, zipp, importlib-metadata, markdown, tensorboard, google-pasta, opt-einsum, cached-property, h5py, keras-applications, tensorflow-estimator, keras-preprocessing, astor, tensorflow-gpu, waymo-open-dataset-tf-2-0-0
+  WARNING: The scripts pyrsa-decrypt, pyrsa-encrypt, pyrsa-keygen, pyrsa-priv2pub, pyrsa-sign and pyrsa-verify are installed in '/root/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script chardetect is installed in '/root/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script google-oauthlib-tool is installed in '/root/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script markdown_py is installed in '/root/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script tensorboard is installed in '/root/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The scripts saved_model_cli, tensorboard, tf_upgrade_v2, tflite_convert, toco and toco_from_protos are installed in '/root/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+Successfully installed absl-py-0.11.0 astor-0.8.1 cached-property-1.5.2 cachetools-4.1.1 certifi-2020.11.8 chardet-3.0.4 gast-0.2.2 google-auth-1.23.0 google-auth-oauthlib-0.4.2 google-pasta-0.2.0 grpcio-1.33.2 h5py-3.1.0 idna-2.10 importlib-metadata-3.1.0 keras-applications-1.0.8 keras-preprocessing-1.1.2 markdown-3.3.3 oauthlib-3.1.0 opt-einsum-3.3.0 pyasn1-0.4.8 pyasn1-modules-0.2.8 requests-2.25.0 requests-oauthlib-1.3.0 rsa-4.6 tensorboard-2.0.2 tensorflow-estimator-2.0.1 tensorflow-gpu-2.0.0 urllib3-1.26.2 waymo-open-dataset-tf-2-0-0-1.2.0 wrapt-1.12.1 zipp-3.4.0
+Starting segment-10072140764565668044_4060_000_4080_000_with_camera_labels computation
+/usr/local/lib/python3.6/dist-packages/traits/etsconfig/etsconfig.py:415: UserWarning: Environment variable "HOME" not set, setting home directory to /tmp
+  % (environment_variable, parent_directory)
+2020-11-24 05:13:17,550   INFO  -----------------Quick Demo of OpenPCDet-------------------------
+2020-11-24 05:13:17,648   INFO  Total number of samples: 	198
+2020-11-24 05:13:33,200   INFO  ==> Loading parameters from checkpoint ../output/waymo_models/pv_rcnn_no_augs/default/ckpt/checkpoint_epoch_30.pth to CPU
+2020-11-24 05:13:34,841   INFO  ==> Checkpoint trained from version: pcdet+0.3.0+fafdbd8
+2020-11-24 05:13:37,152   INFO  ==> Done (loaded 319/319)
+2020-11-24 05:13:37,643   INFO  Visualized sample index: 	1
+2020-11-24 05:13:38,424   INFO  Visualized sample index: 	2
+2020-11-24 05:13:38,983   INFO  Visualized sample index: 	3
+2020-11-24 05:13:39,604   INFO  Visualized sample index: 	4
+2020-11-24 05:13:40,257   INFO  Visualized sample index: 	5
+2020-11-24 05:13:40,875   INFO  Visualized sample index: 	6
+2020-11-24 05:13:41,418   INFO  Visualized sample index: 	7
+2020-11-24 05:13:41,973   INFO  Visualized sample index: 	8
+2020-11-24 05:13:42,678   INFO  Visualized sample index: 	9
+2020-11-24 05:13:43,310   INFO  Visualized sample index: 	10
+2020-11-24 05:13:43,916   INFO  Visualized sample index: 	11
+2020-11-24 05:13:44,529   INFO  Visualized sample index: 	12
+2020-11-24 05:13:45,101   INFO  Visualized sample index: 	13
+2020-11-24 05:13:45,718   INFO  Visualized sample index: 	14
+2020-11-24 05:13:46,217   INFO  Visualized sample index: 	15
+2020-11-24 05:13:46,674   INFO  Visualized sample index: 	16
+2020-11-24 05:13:47,204   INFO  Visualized sample index: 	17
+2020-11-24 05:13:47,816   INFO  Visualized sample index: 	18
+2020-11-24 05:13:48,343   INFO  Visualized sample index: 	19
+2020-11-24 05:13:48,888   INFO  Visualized sample index: 	20
+2020-11-24 05:13:49,369   INFO  Visualized sample index: 	21
+2020-11-24 05:13:49,878   INFO  Visualized sample index: 	22
+2020-11-24 05:13:50,397   INFO  Visualized sample index: 	23
+2020-11-24 05:13:51,080   INFO  Visualized sample index: 	24
+2020-11-24 05:13:51,608   INFO  Visualized sample index: 	25
+2020-11-24 05:13:52,202   INFO  Visualized sample index: 	26
+2020-11-24 05:13:52,695   INFO  Visualized sample index: 	27
+2020-11-24 05:13:53,169   INFO  Visualized sample index: 	28
+2020-11-24 05:13:53,732   INFO  Visualized sample index: 	29
+2020-11-24 05:13:54,266   INFO  Visualized sample index: 	30
+2020-11-24 05:13:54,847   INFO  Visualized sample index: 	31
+2020-11-24 05:13:55,384   INFO  Visualized sample index: 	32
+2020-11-24 05:13:56,004   INFO  Visualized sample index: 	33
+2020-11-24 05:13:56,654   INFO  Visualized sample index: 	34
+2020-11-24 05:13:57,261   INFO  Visualized sample index: 	35
+2020-11-24 05:13:57,910   INFO  Visualized sample index: 	36
+2020-11-24 05:13:58,434   INFO  Visualized sample index: 	37
+2020-11-24 05:13:58,904   INFO  Visualized sample index: 	38
+2020-11-24 05:13:59,359   INFO  Visualized sample index: 	39
+2020-11-24 05:13:59,847   INFO  Visualized sample index: 	40
+2020-11-24 05:14:00,661   INFO  Visualized sample index: 	41
+2020-11-24 05:14:01,216   INFO  Visualized sample index: 	42
+2020-11-24 05:14:01,790   INFO  Visualized sample index: 	43
+2020-11-24 05:14:02,262   INFO  Visualized sample index: 	44
+2020-11-24 05:14:02,922   INFO  Visualized sample index: 	45
+2020-11-24 05:14:03,521   INFO  Visualized sample index: 	46
+2020-11-24 05:14:04,137   INFO  Visualized sample index: 	47
+2020-11-24 05:14:04,723   INFO  Visualized sample index: 	48
+2020-11-24 05:14:05,194   INFO  Visualized sample index: 	49
+2020-11-24 05:14:05,690   INFO  Visualized sample index: 	50
+2020-11-24 05:14:06,203   INFO  Visualized sample index: 	51
+2020-11-24 05:14:06,748   INFO  Visualized sample index: 	52
+2020-11-24 05:14:07,274   INFO  Visualized sample index: 	53
+2020-11-24 05:14:07,769   INFO  Visualized sample index: 	54
+2020-11-24 05:14:08,411   INFO  Visualized sample index: 	55
+2020-11-24 05:14:08,894   INFO  Visualized sample index: 	56
+2020-11-24 05:14:09,401   INFO  Visualized sample index: 	57
+2020-11-24 05:14:10,001   INFO  Visualized sample index: 	58
+2020-11-24 05:14:10,484   INFO  Visualized sample index: 	59
+2020-11-24 05:14:11,034   INFO  Visualized sample index: 	60
+2020-11-24 05:14:11,509   INFO  Visualized sample index: 	61
+2020-11-24 05:14:12,105   INFO  Visualized sample index: 	62
+2020-11-24 05:14:12,598   INFO  Visualized sample index: 	63
+2020-11-24 05:14:13,175   INFO  Visualized sample index: 	64
+2020-11-24 05:14:13,758   INFO  Visualized sample index: 	65
+2020-11-24 05:14:14,293   INFO  Visualized sample index: 	66
+2020-11-24 05:14:14,916   INFO  Visualized sample index: 	67
+2020-11-24 05:14:15,400   INFO  Visualized sample index: 	68
+2020-11-24 05:14:16,011   INFO  Visualized sample index: 	69
+2020-11-24 05:14:16,589   INFO  Visualized sample index: 	70
+2020-11-24 05:14:17,145   INFO  Visualized sample index: 	71
+2020-11-24 05:14:17,714   INFO  Visualized sample index: 	72
+2020-11-24 05:14:18,168   INFO  Visualized sample index: 	73
+2020-11-24 05:14:18,806   INFO  Visualized sample index: 	74
+2020-11-24 05:14:19,273   INFO  Visualized sample index: 	75
+2020-11-24 05:14:19,770   INFO  Visualized sample index: 	76
+2020-11-24 05:14:20,295   INFO  Visualized sample index: 	77
+2020-11-24 05:14:20,744   INFO  Visualized sample index: 	78
+2020-11-24 05:14:21,544   INFO  Visualized sample index: 	79
+2020-11-24 05:14:22,097   INFO  Visualized sample index: 	80
+2020-11-24 05:14:22,599   INFO  Visualized sample index: 	81
+2020-11-24 05:14:23,058   INFO  Visualized sample index: 	82
+2020-11-24 05:14:23,743   INFO  Visualized sample index: 	83
+2020-11-24 05:14:24,296   INFO  Visualized sample index: 	84
+2020-11-24 05:14:24,812   INFO  Visualized sample index: 	85
+2020-11-24 05:14:25,336   INFO  Visualized sample index: 	86
+2020-11-24 05:14:25,783   INFO  Visualized sample index: 	87
+2020-11-24 05:14:26,251   INFO  Visualized sample index: 	88
+2020-11-24 05:14:26,884   INFO  Visualized sample index: 	89
+2020-11-24 05:14:27,588   INFO  Visualized sample index: 	90
+2020-11-24 05:14:28,072   INFO  Visualized sample index: 	91
+2020-11-24 05:14:28,776   INFO  Visualized sample index: 	92
+2020-11-24 05:14:31,184   INFO  Visualized sample index: 	93
+2020-11-24 05:14:33,768   INFO  Visualized sample index: 	94
+2020-11-24 05:14:34,408   INFO  Visualized sample index: 	95
+2020-11-24 05:14:35,045   INFO  Visualized sample index: 	96
+2020-11-24 05:14:35,784   INFO  Visualized sample index: 	97
+2020-11-24 05:14:36,459   INFO  Visualized sample index: 	98
+2020-11-24 05:14:37,026   INFO  Visualized sample index: 	99
+2020-11-24 05:14:37,524   INFO  Visualized sample index: 	100
+2020-11-24 05:14:38,112   INFO  Visualized sample index: 	101
+2020-11-24 05:14:38,752   INFO  Visualized sample index: 	102
+2020-11-24 05:14:39,319   INFO  Visualized sample index: 	103
+2020-11-24 05:14:39,892   INFO  Visualized sample index: 	104
+2020-11-24 05:14:40,721   INFO  Visualized sample index: 	105
+2020-11-24 05:14:41,248   INFO  Visualized sample index: 	106
+2020-11-24 05:14:41,865   INFO  Visualized sample index: 	107
+2020-11-24 05:14:42,439   INFO  Visualized sample index: 	108
+2020-11-24 05:14:42,963   INFO  Visualized sample index: 	109
+2020-11-24 05:14:43,536   INFO  Visualized sample index: 	110
+2020-11-24 05:14:44,035   INFO  Visualized sample index: 	111
+2020-11-24 05:14:44,544   INFO  Visualized sample index: 	112
+2020-11-24 05:14:45,302   INFO  Visualized sample index: 	113
+2020-11-24 05:14:45,936   INFO  Visualized sample index: 	114
+2020-11-24 05:14:46,366   INFO  Visualized sample index: 	115
+2020-11-24 05:14:46,921   INFO  Visualized sample index: 	116
+2020-11-24 05:14:47,458   INFO  Visualized sample index: 	117
+2020-11-24 05:14:47,958   INFO  Visualized sample index: 	118
+2020-11-24 05:14:48,500   INFO  Visualized sample index: 	119
+2020-11-24 05:14:49,007   INFO  Visualized sample index: 	120
+2020-11-24 05:14:49,463   INFO  Visualized sample index: 	121
+2020-11-24 05:14:50,068   INFO  Visualized sample index: 	122
+2020-11-24 05:14:50,722   INFO  Visualized sample index: 	123
+2020-11-24 05:14:51,189   INFO  Visualized sample index: 	124
+2020-11-24 05:14:51,753   INFO  Visualized sample index: 	125
+2020-11-24 05:14:52,297   INFO  Visualized sample index: 	126
+2020-11-24 05:14:52,862   INFO  Visualized sample index: 	127
+2020-11-24 05:14:53,499   INFO  Visualized sample index: 	128
+2020-11-24 05:14:54,363   INFO  Visualized sample index: 	129
+2020-11-24 05:14:54,859   INFO  Visualized sample index: 	130
+2020-11-24 05:14:55,366   INFO  Visualized sample index: 	131
+2020-11-24 05:14:55,937   INFO  Visualized sample index: 	132
+2020-11-24 05:14:56,401   INFO  Visualized sample index: 	133
+2020-11-24 05:14:56,878   INFO  Visualized sample index: 	134
+2020-11-24 05:14:57,357   INFO  Visualized sample index: 	135
+2020-11-24 05:14:57,841   INFO  Visualized sample index: 	136
+2020-11-24 05:14:58,703   INFO  Visualized sample index: 	137
+2020-11-24 05:14:59,155   INFO  Visualized sample index: 	138
+2020-11-24 05:14:59,720   INFO  Visualized sample index: 	139
+2020-11-24 05:15:00,192   INFO  Visualized sample index: 	140
+2020-11-24 05:15:00,658   INFO  Visualized sample index: 	141
+2020-11-24 05:15:01,192   INFO  Visualized sample index: 	142
+2020-11-24 05:15:01,649   INFO  Visualized sample index: 	143
+2020-11-24 05:15:02,273   INFO  Visualized sample index: 	144
+2020-11-24 05:15:02,794   INFO  Visualized sample index: 	145
+2020-11-24 05:15:03,304   INFO  Visualized sample index: 	146
+2020-11-24 05:15:03,805   INFO  Visualized sample index: 	147
+2020-11-24 05:15:04,432   INFO  Visualized sample index: 	148
+2020-11-24 05:15:04,884   INFO  Visualized sample index: 	149
+2020-11-24 05:15:05,487   INFO  Visualized sample index: 	150
+2020-11-24 05:15:05,975   INFO  Visualized sample index: 	151
+2020-11-24 05:15:06,496   INFO  Visualized sample index: 	152
+2020-11-24 05:15:06,972   INFO  Visualized sample index: 	153
+2020-11-24 05:15:07,488   INFO  Visualized sample index: 	154
+2020-11-24 05:15:08,208   INFO  Visualized sample index: 	155
+2020-11-24 05:15:08,673   INFO  Visualized sample index: 	156
+2020-11-24 05:15:09,198   INFO  Visualized sample index: 	157
+2020-11-24 05:15:09,714   INFO  Visualized sample index: 	158
+2020-11-24 05:15:10,257   INFO  Visualized sample index: 	159
+2020-11-24 05:15:10,796   INFO  Visualized sample index: 	160
+2020-11-24 05:15:11,377   INFO  Visualized sample index: 	161
+2020-11-24 05:15:11,895   INFO  Visualized sample index: 	162
+2020-11-24 05:15:12,381   INFO  Visualized sample index: 	163
+2020-11-24 05:15:12,878   INFO  Visualized sample index: 	164
+2020-11-24 05:15:13,388   INFO  Visualized sample index: 	165
+2020-11-24 05:15:13,912   INFO  Visualized sample index: 	166
+2020-11-24 05:15:14,504   INFO  Visualized sample index: 	167
+2020-11-24 05:15:15,299   INFO  Visualized sample index: 	168
+2020-11-24 05:15:15,793   INFO  Visualized sample index: 	169
+2020-11-24 05:15:16,276   INFO  Visualized sample index: 	170
+2020-11-24 05:15:16,959   INFO  Visualized sample index: 	171
+2020-11-24 05:15:17,564   INFO  Visualized sample index: 	172
+2020-11-24 05:15:18,057   INFO  Visualized sample index: 	173
+2020-11-24 05:15:18,617   INFO  Visualized sample index: 	174
+2020-11-24 05:15:19,071   INFO  Visualized sample index: 	175
+2020-11-24 05:15:19,730   INFO  Visualized sample index: 	176
+2020-11-24 05:15:20,187   INFO  Visualized sample index: 	177
+2020-11-24 05:15:20,887   INFO  Visualized sample index: 	178
+2020-11-24 05:15:21,469   INFO  Visualized sample index: 	179
+2020-11-24 05:15:22,019   INFO  Visualized sample index: 	180
+2020-11-24 05:15:22,504   INFO  Visualized sample index: 	181
+2020-11-24 05:15:22,959   INFO  Visualized sample index: 	182
+2020-11-24 05:15:23,730   INFO  Visualized sample index: 	183
+2020-11-24 05:15:24,239   INFO  Visualized sample index: 	184
+2020-11-24 05:15:24,762   INFO  Visualized sample index: 	185
+2020-11-24 05:15:25,398   INFO  Visualized sample index: 	186
+2020-11-24 05:15:25,886   INFO  Visualized sample index: 	187
+2020-11-24 05:15:26,441   INFO  Visualized sample index: 	188
+2020-11-24 05:15:27,969   INFO  Visualized sample index: 	189
+2020-11-24 05:15:28,815   INFO  Visualized sample index: 	190
+2020-11-24 05:15:29,434   INFO  Visualized sample index: 	191
+2020-11-24 05:15:30,719   INFO  Visualized sample index: 	192
+2020-11-24 05:15:33,135   INFO  Visualized sample index: 	193
+2020-11-24 05:15:35,276   INFO  Visualized sample index: 	194
+2020-11-24 05:15:35,807   INFO  Visualized sample index: 	195
+2020-11-24 05:15:36,307   INFO  Visualized sample index: 	196
+2020-11-24 05:15:36,776   INFO  Visualized sample index: 	197
+2020-11-24 05:15:37,504   INFO  Visualized sample index: 	198
+../output/waymo_models/pv_rcnn_no_augs/default/ckpt/checkpoint_epoch_30.pth
+Completed segment-10072140764565668044_4060_000_4080_000_with_camera_labels computation
