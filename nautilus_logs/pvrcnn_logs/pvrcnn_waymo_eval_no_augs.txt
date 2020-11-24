@@ -1,0 +1,603 @@
+.
+..
+.empty
+.git
+.gitignore
+.ipynb_checkpoints
+LICENSE
+README.md
+build
+checkpoints
+data
+demo_notebook.ipynb
+docs
+install
+kitti-dataset.ipynb
+mayavi demo.ipynb
+output
+output_wk5_res
+output_wk6_res
+pcdet
+pcdet.egg-info
+requirements.txt
+saved_pred
+setup.py
+test.png
+tools
+/usr/local/lib/python3.6/dist-packages/spconv:/usr/local/nvidia/lib:/usr/local/nvidia/lib64
+1.1.0
+Requirement already satisfied: numpy in /usr/local/lib/python3.6/dist-packages (from -r requirements.txt (line 1)) (1.18.2)
+Requirement already satisfied: torch>=1.1 in /usr/local/lib/python3.6/dist-packages (from -r requirements.txt (line 2)) (1.1.0)
+Collecting numba
+  Downloading numba-0.51.2-cp36-cp36m-manylinux2014_x86_64.whl (3.1 MB)
+Requirement already satisfied: tensorboardX in /usr/local/lib/python3.6/dist-packages (from -r requirements.txt (line 4)) (2.0)
+Requirement already satisfied: easydict in /usr/local/lib/python3.6/dist-packages (from -r requirements.txt (line 5)) (1.9)
+Requirement already satisfied: pyyaml in /usr/local/lib/python3.6/dist-packages (from -r requirements.txt (line 6)) (5.3.1)
+Requirement already satisfied: scikit-image in /usr/local/lib/python3.6/dist-packages (from -r requirements.txt (line 7)) (0.16.2)
+Requirement already satisfied: tqdm in /usr/local/lib/python3.6/dist-packages (from -r requirements.txt (line 8)) (4.45.0)
+Requirement already satisfied: setuptools in /usr/local/lib/python3.6/dist-packages (from numba->-r requirements.txt (line 3)) (46.1.3)
+Collecting llvmlite<0.35,>=0.34.0.dev0
+  Downloading llvmlite-0.34.0-cp36-cp36m-manylinux2010_x86_64.whl (24.6 MB)
+Requirement already satisfied: protobuf>=3.8.0 in /usr/local/lib/python3.6/dist-packages (from tensorboardX->-r requirements.txt (line 4)) (3.11.3)
+Requirement already satisfied: six in /usr/local/lib/python3.6/dist-packages (from tensorboardX->-r requirements.txt (line 4)) (1.14.0)
+Requirement already satisfied: PyWavelets>=0.4.0 in /usr/local/lib/python3.6/dist-packages (from scikit-image->-r requirements.txt (line 7)) (1.1.1)
+Requirement already satisfied: matplotlib!=3.0.0,>=2.0.0 in /usr/local/lib/python3.6/dist-packages (from scikit-image->-r requirements.txt (line 7)) (3.2.1)
+Requirement already satisfied: imageio>=2.3.0 in /usr/local/lib/python3.6/dist-packages (from scikit-image->-r requirements.txt (line 7)) (2.8.0)
+Requirement already satisfied: networkx>=2.0 in /usr/local/lib/python3.6/dist-packages (from scikit-image->-r requirements.txt (line 7)) (2.4)
+Requirement already satisfied: scipy>=0.19.0 in /usr/local/lib/python3.6/dist-packages (from scikit-image->-r requirements.txt (line 7)) (1.4.1)
+Requirement already satisfied: pillow>=4.3.0 in /usr/local/lib/python3.6/dist-packages (from scikit-image->-r requirements.txt (line 7)) (7.0.0)
+Requirement already satisfied: cycler>=0.10 in /usr/local/lib/python3.6/dist-packages (from matplotlib!=3.0.0,>=2.0.0->scikit-image->-r requirements.txt (line 7)) (0.10.0)
+Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=2.0.1 in /usr/local/lib/python3.6/dist-packages (from matplotlib!=3.0.0,>=2.0.0->scikit-image->-r requirements.txt (line 7)) (2.4.6)
+Requirement already satisfied: kiwisolver>=1.0.1 in /usr/local/lib/python3.6/dist-packages (from matplotlib!=3.0.0,>=2.0.0->scikit-image->-r requirements.txt (line 7)) (1.2.0)
+Requirement already satisfied: python-dateutil>=2.1 in /usr/local/lib/python3.6/dist-packages (from matplotlib!=3.0.0,>=2.0.0->scikit-image->-r requirements.txt (line 7)) (2.8.1)
+Requirement already satisfied: decorator>=4.3.0 in /usr/local/lib/python3.6/dist-packages (from networkx>=2.0->scikit-image->-r requirements.txt (line 7)) (4.4.2)
+Installing collected packages: llvmlite, numba
+Successfully installed llvmlite-0.34.0 numba-0.51.2
+WARNING: You are using pip version 20.0.2; however, version 20.2.4 is available.
+You should consider upgrading via the '/usr/bin/python3.6 -m pip install --upgrade pip' command.
+running develop
+running egg_info
+writing pcdet.egg-info/PKG-INFO
+writing dependency_links to pcdet.egg-info/dependency_links.txt
+writing requirements to pcdet.egg-info/requires.txt
+writing top-level names to pcdet.egg-info/top_level.txt
+reading manifest file 'pcdet.egg-info/SOURCES.txt'
+writing manifest file 'pcdet.egg-info/SOURCES.txt'
+running build_ext
+copying build/lib.linux-x86_64-3.6/pcdet/ops/iou3d_nms/iou3d_nms_cuda.cpython-36m-x86_64-linux-gnu.so -> pcdet/ops/iou3d_nms
+copying build/lib.linux-x86_64-3.6/pcdet/ops/roiaware_pool3d/roiaware_pool3d_cuda.cpython-36m-x86_64-linux-gnu.so -> pcdet/ops/roiaware_pool3d
+copying build/lib.linux-x86_64-3.6/pcdet/ops/roipoint_pool3d/roipoint_pool3d_cuda.cpython-36m-x86_64-linux-gnu.so -> pcdet/ops/roipoint_pool3d
+copying build/lib.linux-x86_64-3.6/pcdet/ops/pointnet2/pointnet2_stack/pointnet2_stack_cuda.cpython-36m-x86_64-linux-gnu.so -> pcdet/ops/pointnet2/pointnet2_stack
+copying build/lib.linux-x86_64-3.6/pcdet/ops/pointnet2/pointnet2_batch/pointnet2_batch_cuda.cpython-36m-x86_64-linux-gnu.so -> pcdet/ops/pointnet2/pointnet2_batch
+Creating /usr/local/lib/python3.6/dist-packages/pcdet.egg-link (link to .)
+Adding pcdet 0.3.0+fafdbd8 to easy-install.pth file
+
+Installed /team1/codes/3dObjDet/OpenPCDet_ravi
+Processing dependencies for pcdet==0.3.0+fafdbd8
+Searching for PyYAML==5.3.1
+Best match: PyYAML 5.3.1
+Adding PyYAML 5.3.1 to easy-install.pth file
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for easydict==1.9
+Best match: easydict 1.9
+Adding easydict 1.9 to easy-install.pth file
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for tensorboardX==2.0
+Best match: tensorboardX 2.0
+Adding tensorboardX 2.0 to easy-install.pth file
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for numba==0.51.2
+Best match: numba 0.51.2
+Adding numba 0.51.2 to easy-install.pth file
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for spconv==1.0
+Best match: spconv 1.0
+Adding spconv 1.0 to easy-install.pth file
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for torch==1.1.0
+Best match: torch 1.1.0
+Adding torch 1.1.0 to easy-install.pth file
+Installing convert-caffe2-to-onnx script to /usr/local/bin
+Installing convert-onnx-to-caffe2 script to /usr/local/bin
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for numpy==1.18.2
+Best match: numpy 1.18.2
+Adding numpy 1.18.2 to easy-install.pth file
+Installing f2py script to /usr/local/bin
+Installing f2py3 script to /usr/local/bin
+Installing f2py3.6 script to /usr/local/bin
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for six==1.14.0
+Best match: six 1.14.0
+Adding six 1.14.0 to easy-install.pth file
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for protobuf==3.11.3
+Best match: protobuf 3.11.3
+Adding protobuf 3.11.3 to easy-install.pth file
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for setuptools==46.1.3
+Best match: setuptools 46.1.3
+Adding setuptools 46.1.3 to easy-install.pth file
+Installing easy_install script to /usr/local/bin
+Installing easy_install-3.8 script to /usr/local/bin
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for llvmlite==0.34.0
+Best match: llvmlite 0.34.0
+Adding llvmlite 0.34.0 to easy-install.pth file
+
+Using /usr/local/lib/python3.6/dist-packages
+Finished processing dependencies for pcdet==0.3.0+fafdbd8
+Collecting pip
+  Downloading pip-20.2.4-py2.py3-none-any.whl (1.5 MB)
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 20.0.2
+    Uninstalling pip-20.0.2:
+      Successfully uninstalled pip-20.0.2
+Successfully installed pip-20.2.4
+Collecting waymo-open-dataset-tf-2-0-0==1.2.0
+  Downloading waymo_open_dataset_tf_2_0_0-1.2.0-cp36-cp36m-manylinux2010_x86_64.whl (2.8 MB)
+Collecting tensorflow-gpu==2.0.0
+  Downloading tensorflow_gpu-2.0.0-cp36-cp36m-manylinux2010_x86_64.whl (380.8 MB)
+Requirement already satisfied: termcolor>=1.1.0 in /usr/local/lib/python3.6/dist-packages (from tensorflow-gpu==2.0.0->waymo-open-dataset-tf-2-0-0==1.2.0) (1.1.0)
+Collecting grpcio>=1.8.6
+  Downloading grpcio-1.33.2-cp36-cp36m-manylinux2014_x86_64.whl (3.8 MB)
+Collecting absl-py>=0.7.0
+  Downloading absl_py-0.11.0-py3-none-any.whl (127 kB)
+Collecting opt-einsum>=2.3.2
+  Downloading opt_einsum-3.3.0-py3-none-any.whl (65 kB)
+Requirement already satisfied: protobuf>=3.6.1 in /usr/local/lib/python3.6/dist-packages (from tensorflow-gpu==2.0.0->waymo-open-dataset-tf-2-0-0==1.2.0) (3.11.3)
+Collecting tensorboard<2.1.0,>=2.0.0
+  Downloading tensorboard-2.0.2-py3-none-any.whl (3.8 MB)
+Collecting google-pasta>=0.1.6
+  Downloading google_pasta-0.2.0-py3-none-any.whl (57 kB)
+Requirement already satisfied: numpy<2.0,>=1.16.0 in /usr/local/lib/python3.6/dist-packages (from tensorflow-gpu==2.0.0->waymo-open-dataset-tf-2-0-0==1.2.0) (1.18.2)
+Collecting keras-preprocessing>=1.0.5
+  Downloading Keras_Preprocessing-1.1.2-py2.py3-none-any.whl (42 kB)
+Collecting wrapt>=1.11.1
+  Downloading wrapt-1.12.1.tar.gz (27 kB)
+Requirement already satisfied: wheel>=0.26 in /usr/local/lib/python3.6/dist-packages (from tensorflow-gpu==2.0.0->waymo-open-dataset-tf-2-0-0==1.2.0) (0.34.2)
+Collecting tensorflow-estimator<2.1.0,>=2.0.0
+  Downloading tensorflow_estimator-2.0.1-py2.py3-none-any.whl (449 kB)
+Collecting gast==0.2.2
+  Downloading gast-0.2.2.tar.gz (10 kB)
+Requirement already satisfied: six>=1.10.0 in /usr/local/lib/python3.6/dist-packages (from tensorflow-gpu==2.0.0->waymo-open-dataset-tf-2-0-0==1.2.0) (1.14.0)
+Collecting keras-applications>=1.0.8
+  Downloading Keras_Applications-1.0.8-py3-none-any.whl (50 kB)
+Collecting astor>=0.6.0
+  Downloading astor-0.8.1-py2.py3-none-any.whl (27 kB)
+Requirement already satisfied: setuptools in /usr/local/lib/python3.6/dist-packages (from protobuf>=3.6.1->tensorflow-gpu==2.0.0->waymo-open-dataset-tf-2-0-0==1.2.0) (46.1.3)
+Requirement already satisfied: werkzeug>=0.11.15 in /usr/local/lib/python3.6/dist-packages (from tensorboard<2.1.0,>=2.0.0->tensorflow-gpu==2.0.0->waymo-open-dataset-tf-2-0-0==1.2.0) (1.0.1)
+Collecting google-auth<2,>=1.6.3
+  Downloading google_auth-1.23.0-py2.py3-none-any.whl (114 kB)
+Collecting google-auth-oauthlib<0.5,>=0.4.1
+  Downloading google_auth_oauthlib-0.4.2-py2.py3-none-any.whl (18 kB)
+Collecting markdown>=2.6.8
+  Downloading Markdown-3.3.3-py3-none-any.whl (96 kB)
+Collecting requests<3,>=2.21.0
+  Downloading requests-2.25.0-py2.py3-none-any.whl (61 kB)
+Collecting h5py
+  Downloading h5py-3.1.0-cp36-cp36m-manylinux1_x86_64.whl (4.0 MB)
+Collecting cachetools<5.0,>=2.0.0
+  Downloading cachetools-4.1.1-py3-none-any.whl (10 kB)
+Collecting pyasn1-modules>=0.2.1
+  Downloading pyasn1_modules-0.2.8-py2.py3-none-any.whl (155 kB)
+Collecting rsa<5,>=3.1.4; python_version >= "3.5"
+  Downloading rsa-4.6-py3-none-any.whl (47 kB)
+Collecting requests-oauthlib>=0.7.0
+  Downloading requests_oauthlib-1.3.0-py2.py3-none-any.whl (23 kB)
+Collecting importlib-metadata; python_version < "3.8"
+  Downloading importlib_metadata-3.1.0-py2.py3-none-any.whl (9.3 kB)
+Collecting chardet<4,>=3.0.2
+  Downloading chardet-3.0.4-py2.py3-none-any.whl (133 kB)
+Collecting idna<3,>=2.5
+  Downloading idna-2.10-py2.py3-none-any.whl (58 kB)
+Collecting urllib3<1.27,>=1.21.1
+  Downloading urllib3-1.26.2-py2.py3-none-any.whl (136 kB)
+Collecting certifi>=2017.4.17
+  Downloading certifi-2020.11.8-py2.py3-none-any.whl (155 kB)
+Collecting cached-property; python_version < "3.8"
+  Downloading cached_property-1.5.2-py2.py3-none-any.whl (7.6 kB)
+Collecting pyasn1<0.5.0,>=0.4.6
+  Downloading pyasn1-0.4.8-py2.py3-none-any.whl (77 kB)
+Collecting oauthlib>=3.0.0
+  Downloading oauthlib-3.1.0-py2.py3-none-any.whl (147 kB)
+Collecting zipp>=0.5
+  Downloading zipp-3.4.0-py3-none-any.whl (5.2 kB)
+Building wheels for collected packages: wrapt, gast
+  Building wheel for wrapt (setup.py): started
+  Building wheel for wrapt (setup.py): finished with status 'done'
+  Created wheel for wrapt: filename=wrapt-1.12.1-cp36-cp36m-linux_x86_64.whl size=64231 sha256=8d1ac2a057efec4f67aeb3494f40459d4777f186114ca17d5eb1a36a68a27d7a
+  Stored in directory: /root/.cache/pip/wheels/32/42/7f/23cae9ff6ef66798d00dc5d659088e57dbba01566f6c60db63
+  Building wheel for gast (setup.py): started
+  Building wheel for gast (setup.py): finished with status 'done'
+  Created wheel for gast: filename=gast-0.2.2-py3-none-any.whl size=7539 sha256=dfd0ff3b462734ab7ccb0d251d70d38ffe87dc72071f2cc4b662d06750446bff
+  Stored in directory: /root/.cache/pip/wheels/19/a7/b9/0740c7a3a7d1d348f04823339274b90de25fbcd217b2ee1fbe
+Successfully built wrapt gast
+Installing collected packages: grpcio, absl-py, opt-einsum, cachetools, pyasn1, pyasn1-modules, rsa, google-auth, oauthlib, chardet, idna, urllib3, certifi, requests, requests-oauthlib, google-auth-oauthlib, zipp, importlib-metadata, markdown, tensorboard, google-pasta, keras-preprocessing, wrapt, tensorflow-estimator, gast, cached-property, h5py, keras-applications, astor, tensorflow-gpu, waymo-open-dataset-tf-2-0-0
+  WARNING: The scripts pyrsa-decrypt, pyrsa-encrypt, pyrsa-keygen, pyrsa-priv2pub, pyrsa-sign and pyrsa-verify are installed in '/root/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script chardetect is installed in '/root/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script google-oauthlib-tool is installed in '/root/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script markdown_py is installed in '/root/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script tensorboard is installed in '/root/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The scripts saved_model_cli, tensorboard, tf_upgrade_v2, tflite_convert, toco and toco_from_protos are installed in '/root/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+Successfully installed absl-py-0.11.0 astor-0.8.1 cached-property-1.5.2 cachetools-4.1.1 certifi-2020.11.8 chardet-3.0.4 gast-0.2.2 google-auth-1.23.0 google-auth-oauthlib-0.4.2 google-pasta-0.2.0 grpcio-1.33.2 h5py-3.1.0 idna-2.10 importlib-metadata-3.1.0 keras-applications-1.0.8 keras-preprocessing-1.1.2 markdown-3.3.3 oauthlib-3.1.0 opt-einsum-3.3.0 pyasn1-0.4.8 pyasn1-modules-0.2.8 requests-2.25.0 requests-oauthlib-1.3.0 rsa-4.6 tensorboard-2.0.2 tensorflow-estimator-2.0.1 tensorflow-gpu-2.0.0 urllib3-1.26.2 waymo-open-dataset-tf-2-0-0-1.2.0 wrapt-1.12.1 zipp-3.4.0
+2020-11-24 07:39:03,736   INFO  **********************Start logging**********************
+2020-11-24 07:39:03,736   INFO  CUDA_VISIBLE_DEVICES=ALL
+2020-11-24 07:39:03,736   INFO  cfg_file         cfgs/waymo_models/pv_rcnn_no_augs.yaml
+2020-11-24 07:39:03,736   INFO  batch_size       4
+2020-11-24 07:39:03,736   INFO  workers          4
+2020-11-24 07:39:03,736   INFO  extra_tag        default
+2020-11-24 07:39:03,736   INFO  ckpt             ../output/waymo_models/pv_rcnn_no_augs/default/ckpt/checkpoint_epoch_30.pth
+2020-11-24 07:39:03,736   INFO  launcher         none
+2020-11-24 07:39:03,736   INFO  tcp_port         18888
+2020-11-24 07:39:03,737   INFO  local_rank       0
+2020-11-24 07:39:03,737   INFO  set_cfgs         None
+2020-11-24 07:39:03,737   INFO  max_waiting_mins 30
+2020-11-24 07:39:03,737   INFO  start_epoch      0
+2020-11-24 07:39:03,737   INFO  eval_tag         default
+2020-11-24 07:39:03,737   INFO  eval_all         False
+2020-11-24 07:39:03,737   INFO  ckpt_dir         None
+2020-11-24 07:39:03,737   INFO  save_to_file     False
+2020-11-24 07:39:03,737   INFO  cfg.ROOT_DIR: /team1/codes/3dObjDet/OpenPCDet_ravi
+2020-11-24 07:39:03,737   INFO  cfg.LOCAL_RANK: 0
+2020-11-24 07:39:03,737   INFO  cfg.CLASS_NAMES: ['Vehicle', 'Pedestrian', 'Cyclist']
+2020-11-24 07:39:03,737   INFO  
+cfg.DATA_CONFIG = edict()
+2020-11-24 07:39:03,737   INFO  cfg.DATA_CONFIG.DATASET: WaymoDataset
+2020-11-24 07:39:03,737   INFO  cfg.DATA_CONFIG.DATA_PATH: ../data/waymo
+2020-11-24 07:39:03,737   INFO  cfg.DATA_CONFIG.PROCESSED_DATA_TAG: waymo_processed_data
+2020-11-24 07:39:03,737   INFO  cfg.DATA_CONFIG.POINT_CLOUD_RANGE: [-75.2, -75.2, -2, 75.2, 75.2, 4]
+2020-11-24 07:39:03,737   INFO  
+cfg.DATA_CONFIG.DATA_SPLIT = edict()
+2020-11-24 07:39:03,737   INFO  cfg.DATA_CONFIG.DATA_SPLIT.train: train
+2020-11-24 07:39:03,738   INFO  cfg.DATA_CONFIG.DATA_SPLIT.test: val
+2020-11-24 07:39:03,738   INFO  
+cfg.DATA_CONFIG.SAMPLED_INTERVAL = edict()
+2020-11-24 07:39:03,738   INFO  cfg.DATA_CONFIG.SAMPLED_INTERVAL.train: 5
+2020-11-24 07:39:03,738   INFO  cfg.DATA_CONFIG.SAMPLED_INTERVAL.test: 5
+2020-11-24 07:39:03,738   INFO  
+cfg.DATA_CONFIG.DATA_AUGMENTOR = edict()
+2020-11-24 07:39:03,738   INFO  cfg.DATA_CONFIG.DATA_AUGMENTOR.DISABLE_AUG_LIST: ['placeholder']
+2020-11-24 07:39:03,738   INFO  cfg.DATA_CONFIG.DATA_AUGMENTOR.AUG_CONFIG_LIST: [{'NAME': 'random_world_flip', 'ALONG_AXIS_LIST': ['x', 'y']}, {'NAME': 'random_world_rotation', 'WORLD_ROT_ANGLE': [-0.78539816, 0.78539816]}, {'NAME': 'random_world_scaling', 'WORLD_SCALE_RANGE': [0.95, 1.05]}]
+2020-11-24 07:39:03,738   INFO  
+cfg.DATA_CONFIG.POINT_FEATURE_ENCODING = edict()
+2020-11-24 07:39:03,738   INFO  cfg.DATA_CONFIG.POINT_FEATURE_ENCODING.encoding_type: absolute_coordinates_encoding
+2020-11-24 07:39:03,738   INFO  cfg.DATA_CONFIG.POINT_FEATURE_ENCODING.used_feature_list: ['x', 'y', 'z', 'intensity', 'elongation']
+2020-11-24 07:39:03,738   INFO  cfg.DATA_CONFIG.POINT_FEATURE_ENCODING.src_feature_list: ['x', 'y', 'z', 'intensity', 'elongation']
+2020-11-24 07:39:03,738   INFO  cfg.DATA_CONFIG.DATA_PROCESSOR: [{'NAME': 'mask_points_and_boxes_outside_range', 'REMOVE_OUTSIDE_BOXES': True}, {'NAME': 'shuffle_points', 'SHUFFLE_ENABLED': {'train': True, 'test': True}}, {'NAME': 'transform_points_to_voxels', 'VOXEL_SIZE': [0.1, 0.1, 0.15], 'MAX_POINTS_PER_VOXEL': 5, 'MAX_NUMBER_OF_VOXELS': {'train': 80000, 'test': 90000}}]
+2020-11-24 07:39:03,738   INFO  cfg.DATA_CONFIG._BASE_CONFIG_: cfgs/dataset_configs/waymo_dataset_no_augs.yaml
+2020-11-24 07:39:03,738   INFO  
+cfg.MODEL = edict()
+2020-11-24 07:39:03,738   INFO  cfg.MODEL.NAME: PVRCNN
+2020-11-24 07:39:03,738   INFO  
+cfg.MODEL.VFE = edict()
+2020-11-24 07:39:03,738   INFO  cfg.MODEL.VFE.NAME: MeanVFE
+2020-11-24 07:39:03,738   INFO  
+cfg.MODEL.BACKBONE_3D = edict()
+2020-11-24 07:39:03,738   INFO  cfg.MODEL.BACKBONE_3D.NAME: VoxelBackBone8x
+2020-11-24 07:39:03,739   INFO  
+cfg.MODEL.MAP_TO_BEV = edict()
+2020-11-24 07:39:03,739   INFO  cfg.MODEL.MAP_TO_BEV.NAME: HeightCompression
+2020-11-24 07:39:03,739   INFO  cfg.MODEL.MAP_TO_BEV.NUM_BEV_FEATURES: 256
+2020-11-24 07:39:03,739   INFO  
+cfg.MODEL.BACKBONE_2D = edict()
+2020-11-24 07:39:03,739   INFO  cfg.MODEL.BACKBONE_2D.NAME: BaseBEVBackbone
+2020-11-24 07:39:03,739   INFO  cfg.MODEL.BACKBONE_2D.LAYER_NUMS: [5, 5]
+2020-11-24 07:39:03,739   INFO  cfg.MODEL.BACKBONE_2D.LAYER_STRIDES: [1, 2]
+2020-11-24 07:39:03,739   INFO  cfg.MODEL.BACKBONE_2D.NUM_FILTERS: [128, 256]
+2020-11-24 07:39:03,739   INFO  cfg.MODEL.BACKBONE_2D.UPSAMPLE_STRIDES: [1, 2]
+2020-11-24 07:39:03,739   INFO  cfg.MODEL.BACKBONE_2D.NUM_UPSAMPLE_FILTERS: [256, 256]
+2020-11-24 07:39:03,739   INFO  
+cfg.MODEL.DENSE_HEAD = edict()
+2020-11-24 07:39:03,739   INFO  cfg.MODEL.DENSE_HEAD.NAME: AnchorHeadSingle
+2020-11-24 07:39:03,739   INFO  cfg.MODEL.DENSE_HEAD.CLASS_AGNOSTIC: False
+2020-11-24 07:39:03,739   INFO  cfg.MODEL.DENSE_HEAD.USE_DIRECTION_CLASSIFIER: True
+2020-11-24 07:39:03,739   INFO  cfg.MODEL.DENSE_HEAD.DIR_OFFSET: 0.78539
+2020-11-24 07:39:03,739   INFO  cfg.MODEL.DENSE_HEAD.DIR_LIMIT_OFFSET: 0.0
+2020-11-24 07:39:03,739   INFO  cfg.MODEL.DENSE_HEAD.NUM_DIR_BINS: 2
+2020-11-24 07:39:03,739   INFO  cfg.MODEL.DENSE_HEAD.ANCHOR_GENERATOR_CONFIG: [{'class_name': 'Vehicle', 'anchor_sizes': [[4.7, 2.1, 1.7]], 'anchor_rotations': [0, 1.57], 'anchor_bottom_heights': [0], 'align_center': False, 'feature_map_stride': 8, 'matched_threshold': 0.55, 'unmatched_threshold': 0.4}, {'class_name': 'Pedestrian', 'anchor_sizes': [[0.91, 0.86, 1.73]], 'anchor_rotations': [0, 1.57], 'anchor_bottom_heights': [0], 'align_center': False, 'feature_map_stride': 8, 'matched_threshold': 0.5, 'unmatched_threshold': 0.35}, {'class_name': 'Cyclist', 'anchor_sizes': [[1.78, 0.84, 1.78]], 'anchor_rotations': [0, 1.57], 'anchor_bottom_heights': [0], 'align_center': False, 'feature_map_stride': 8, 'matched_threshold': 0.5, 'unmatched_threshold': 0.35}]
+2020-11-24 07:39:03,739   INFO  
+cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG = edict()
+2020-11-24 07:39:03,740   INFO  cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG.NAME: AxisAlignedTargetAssigner
+2020-11-24 07:39:03,740   INFO  cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG.POS_FRACTION: -1.0
+2020-11-24 07:39:03,740   INFO  cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG.SAMPLE_SIZE: 512
+2020-11-24 07:39:03,740   INFO  cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG.NORM_BY_NUM_EXAMPLES: False
+2020-11-24 07:39:03,740   INFO  cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG.MATCH_HEIGHT: False
+2020-11-24 07:39:03,740   INFO  cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG.BOX_CODER: ResidualCoder
+2020-11-24 07:39:03,740   INFO  
+cfg.MODEL.DENSE_HEAD.LOSS_CONFIG = edict()
+2020-11-24 07:39:03,740   INFO  
+cfg.MODEL.DENSE_HEAD.LOSS_CONFIG.LOSS_WEIGHTS = edict()
+2020-11-24 07:39:03,740   INFO  cfg.MODEL.DENSE_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.cls_weight: 1.0
+2020-11-24 07:39:03,740   INFO  cfg.MODEL.DENSE_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.loc_weight: 2.0
+2020-11-24 07:39:03,740   INFO  cfg.MODEL.DENSE_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.dir_weight: 0.2
+2020-11-24 07:39:03,740   INFO  cfg.MODEL.DENSE_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.code_weights: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+2020-11-24 07:39:03,740   INFO  
+cfg.MODEL.PFE = edict()
+2020-11-24 07:39:03,740   INFO  cfg.MODEL.PFE.NAME: VoxelSetAbstraction
+2020-11-24 07:39:03,740   INFO  cfg.MODEL.PFE.POINT_SOURCE: raw_points
+2020-11-24 07:39:03,740   INFO  cfg.MODEL.PFE.NUM_KEYPOINTS: 4096
+2020-11-24 07:39:03,740   INFO  cfg.MODEL.PFE.NUM_OUTPUT_FEATURES: 128
+2020-11-24 07:39:03,740   INFO  cfg.MODEL.PFE.SAMPLE_METHOD: FPS
+2020-11-24 07:39:03,740   INFO  cfg.MODEL.PFE.FEATURES_SOURCE: ['bev', 'x_conv3', 'x_conv4', 'raw_points']
+2020-11-24 07:39:03,741   INFO  
+cfg.MODEL.PFE.SA_LAYER = edict()
+2020-11-24 07:39:03,741   INFO  
+cfg.MODEL.PFE.SA_LAYER.raw_points = edict()
+2020-11-24 07:39:03,741   INFO  cfg.MODEL.PFE.SA_LAYER.raw_points.MLPS: [[16, 16], [16, 16]]
+2020-11-24 07:39:03,741   INFO  cfg.MODEL.PFE.SA_LAYER.raw_points.POOL_RADIUS: [0.4, 0.8]
+2020-11-24 07:39:03,741   INFO  cfg.MODEL.PFE.SA_LAYER.raw_points.NSAMPLE: [16, 16]
+2020-11-24 07:39:03,741   INFO  
+cfg.MODEL.PFE.SA_LAYER.x_conv1 = edict()
+2020-11-24 07:39:03,741   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv1.DOWNSAMPLE_FACTOR: 1
+2020-11-24 07:39:03,741   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv1.MLPS: [[16, 16], [16, 16]]
+2020-11-24 07:39:03,741   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv1.POOL_RADIUS: [0.4, 0.8]
+2020-11-24 07:39:03,741   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv1.NSAMPLE: [16, 16]
+2020-11-24 07:39:03,741   INFO  
+cfg.MODEL.PFE.SA_LAYER.x_conv2 = edict()
+2020-11-24 07:39:03,741   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv2.DOWNSAMPLE_FACTOR: 2
+2020-11-24 07:39:03,741   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv2.MLPS: [[32, 32], [32, 32]]
+2020-11-24 07:39:03,741   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv2.POOL_RADIUS: [0.8, 1.2]
+2020-11-24 07:39:03,741   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv2.NSAMPLE: [16, 32]
+2020-11-24 07:39:03,741   INFO  
+cfg.MODEL.PFE.SA_LAYER.x_conv3 = edict()
+2020-11-24 07:39:03,741   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv3.DOWNSAMPLE_FACTOR: 4
+2020-11-24 07:39:03,741   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv3.MLPS: [[64, 64], [64, 64]]
+2020-11-24 07:39:03,741   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv3.POOL_RADIUS: [1.2, 2.4]
+2020-11-24 07:39:03,742   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv3.NSAMPLE: [16, 32]
+2020-11-24 07:39:03,742   INFO  
+cfg.MODEL.PFE.SA_LAYER.x_conv4 = edict()
+2020-11-24 07:39:03,742   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv4.DOWNSAMPLE_FACTOR: 8
+2020-11-24 07:39:03,742   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv4.MLPS: [[64, 64], [64, 64]]
+2020-11-24 07:39:03,742   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv4.POOL_RADIUS: [2.4, 4.8]
+2020-11-24 07:39:03,742   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv4.NSAMPLE: [16, 32]
+2020-11-24 07:39:03,742   INFO  
+cfg.MODEL.POINT_HEAD = edict()
+2020-11-24 07:39:03,742   INFO  cfg.MODEL.POINT_HEAD.NAME: PointHeadSimple
+2020-11-24 07:39:03,742   INFO  cfg.MODEL.POINT_HEAD.CLS_FC: [256, 256]
+2020-11-24 07:39:03,742   INFO  cfg.MODEL.POINT_HEAD.CLASS_AGNOSTIC: True
+2020-11-24 07:39:03,742   INFO  cfg.MODEL.POINT_HEAD.USE_POINT_FEATURES_BEFORE_FUSION: True
+2020-11-24 07:39:03,742   INFO  
+cfg.MODEL.POINT_HEAD.TARGET_CONFIG = edict()
+2020-11-24 07:39:03,742   INFO  cfg.MODEL.POINT_HEAD.TARGET_CONFIG.GT_EXTRA_WIDTH: [0.2, 0.2, 0.2]
+2020-11-24 07:39:03,742   INFO  
+cfg.MODEL.POINT_HEAD.LOSS_CONFIG = edict()
+2020-11-24 07:39:03,742   INFO  cfg.MODEL.POINT_HEAD.LOSS_CONFIG.LOSS_REG: smooth-l1
+2020-11-24 07:39:03,742   INFO  
+cfg.MODEL.POINT_HEAD.LOSS_CONFIG.LOSS_WEIGHTS = edict()
+2020-11-24 07:39:03,742   INFO  cfg.MODEL.POINT_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.point_cls_weight: 1.0
+2020-11-24 07:39:03,742   INFO  
+cfg.MODEL.ROI_HEAD = edict()
+2020-11-24 07:39:03,742   INFO  cfg.MODEL.ROI_HEAD.NAME: PVRCNNHead
+2020-11-24 07:39:03,742   INFO  cfg.MODEL.ROI_HEAD.CLASS_AGNOSTIC: True
+2020-11-24 07:39:03,743   INFO  cfg.MODEL.ROI_HEAD.SHARED_FC: [256, 256]
+2020-11-24 07:39:03,743   INFO  cfg.MODEL.ROI_HEAD.CLS_FC: [256, 256]
+2020-11-24 07:39:03,743   INFO  cfg.MODEL.ROI_HEAD.REG_FC: [256, 256]
+2020-11-24 07:39:03,743   INFO  cfg.MODEL.ROI_HEAD.DP_RATIO: 0.3
+2020-11-24 07:39:03,743   INFO  
+cfg.MODEL.ROI_HEAD.NMS_CONFIG = edict()
+2020-11-24 07:39:03,743   INFO  
+cfg.MODEL.ROI_HEAD.NMS_CONFIG.TRAIN = edict()
+2020-11-24 07:39:03,743   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TRAIN.NMS_TYPE: nms_gpu
+2020-11-24 07:39:03,743   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TRAIN.MULTI_CLASSES_NMS: False
+2020-11-24 07:39:03,743   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TRAIN.NMS_PRE_MAXSIZE: 9000
+2020-11-24 07:39:03,743   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TRAIN.NMS_POST_MAXSIZE: 512
+2020-11-24 07:39:03,743   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TRAIN.NMS_THRESH: 0.8
+2020-11-24 07:39:03,743   INFO  
+cfg.MODEL.ROI_HEAD.NMS_CONFIG.TEST = edict()
+2020-11-24 07:39:03,743   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TEST.NMS_TYPE: nms_gpu
+2020-11-24 07:39:03,743   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TEST.MULTI_CLASSES_NMS: False
+2020-11-24 07:39:03,743   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TEST.NMS_PRE_MAXSIZE: 1024
+2020-11-24 07:39:03,743   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TEST.NMS_POST_MAXSIZE: 100
+2020-11-24 07:39:03,743   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TEST.NMS_THRESH: 0.7
+2020-11-24 07:39:03,743   INFO  
+cfg.MODEL.ROI_HEAD.ROI_GRID_POOL = edict()
+2020-11-24 07:39:03,743   INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.GRID_SIZE: 6
+2020-11-24 07:39:03,744   INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.MLPS: [[64, 64], [64, 64]]
+2020-11-24 07:39:03,744   INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.POOL_RADIUS: [0.8, 1.6]
+2020-11-24 07:39:03,744   INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.NSAMPLE: [16, 16]
+2020-11-24 07:39:03,744   INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.POOL_METHOD: max_pool
+2020-11-24 07:39:03,744   INFO  
+cfg.MODEL.ROI_HEAD.TARGET_CONFIG = edict()
+2020-11-24 07:39:03,744   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.BOX_CODER: ResidualCoder
+2020-11-24 07:39:03,744   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.ROI_PER_IMAGE: 128
+2020-11-24 07:39:03,744   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.FG_RATIO: 0.5
+2020-11-24 07:39:03,744   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.SAMPLE_ROI_BY_EACH_CLASS: True
+2020-11-24 07:39:03,744   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.CLS_SCORE_TYPE: roi_iou
+2020-11-24 07:39:03,744   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.CLS_FG_THRESH: 0.75
+2020-11-24 07:39:03,744   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.CLS_BG_THRESH: 0.25
+2020-11-24 07:39:03,744   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.CLS_BG_THRESH_LO: 0.1
+2020-11-24 07:39:03,744   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.HARD_BG_RATIO: 0.8
+2020-11-24 07:39:03,744   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.REG_FG_THRESH: 0.55
+2020-11-24 07:39:03,744   INFO  
+cfg.MODEL.ROI_HEAD.LOSS_CONFIG = edict()
+2020-11-24 07:39:03,744   INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.CLS_LOSS: BinaryCrossEntropy
+2020-11-24 07:39:03,744   INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.REG_LOSS: smooth-l1
+2020-11-24 07:39:03,744   INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.CORNER_LOSS_REGULARIZATION: True
+2020-11-24 07:39:03,744   INFO  
+cfg.MODEL.ROI_HEAD.LOSS_CONFIG.LOSS_WEIGHTS = edict()
+2020-11-24 07:39:03,745   INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.rcnn_cls_weight: 1.0
+2020-11-24 07:39:03,745   INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.rcnn_reg_weight: 1.0
+2020-11-24 07:39:03,745   INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.rcnn_corner_weight: 1.0
+2020-11-24 07:39:03,745   INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.code_weights: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+2020-11-24 07:39:03,745   INFO  
+cfg.MODEL.POST_PROCESSING = edict()
+2020-11-24 07:39:03,745   INFO  cfg.MODEL.POST_PROCESSING.RECALL_THRESH_LIST: [0.3, 0.5, 0.7]
+2020-11-24 07:39:03,745   INFO  cfg.MODEL.POST_PROCESSING.SCORE_THRESH: 0.1
+2020-11-24 07:39:03,745   INFO  cfg.MODEL.POST_PROCESSING.OUTPUT_RAW_SCORE: False
+2020-11-24 07:39:03,745   INFO  cfg.MODEL.POST_PROCESSING.EVAL_METRIC: waymo
+2020-11-24 07:39:03,745   INFO  
+cfg.MODEL.POST_PROCESSING.NMS_CONFIG = edict()
+2020-11-24 07:39:03,745   INFO  cfg.MODEL.POST_PROCESSING.NMS_CONFIG.MULTI_CLASSES_NMS: False
+2020-11-24 07:39:03,745   INFO  cfg.MODEL.POST_PROCESSING.NMS_CONFIG.NMS_TYPE: nms_gpu
+2020-11-24 07:39:03,745   INFO  cfg.MODEL.POST_PROCESSING.NMS_CONFIG.NMS_THRESH: 0.1
+2020-11-24 07:39:03,745   INFO  cfg.MODEL.POST_PROCESSING.NMS_CONFIG.NMS_PRE_MAXSIZE: 4096
+2020-11-24 07:39:03,745   INFO  cfg.MODEL.POST_PROCESSING.NMS_CONFIG.NMS_POST_MAXSIZE: 500
+2020-11-24 07:39:03,745   INFO  
+cfg.OPTIMIZATION = edict()
+2020-11-24 07:39:03,745   INFO  cfg.OPTIMIZATION.BATCH_SIZE_PER_GPU: 2
+2020-11-24 07:39:03,745   INFO  cfg.OPTIMIZATION.NUM_EPOCHS: 30
+2020-11-24 07:39:03,745   INFO  cfg.OPTIMIZATION.OPTIMIZER: adam_onecycle
+2020-11-24 07:39:03,745   INFO  cfg.OPTIMIZATION.LR: 0.01
+2020-11-24 07:39:03,746   INFO  cfg.OPTIMIZATION.WEIGHT_DECAY: 0.001
+2020-11-24 07:39:03,746   INFO  cfg.OPTIMIZATION.MOMENTUM: 0.9
+2020-11-24 07:39:03,746   INFO  cfg.OPTIMIZATION.MOMS: [0.95, 0.85]
+2020-11-24 07:39:03,746   INFO  cfg.OPTIMIZATION.PCT_START: 0.4
+2020-11-24 07:39:03,746   INFO  cfg.OPTIMIZATION.DIV_FACTOR: 10
+2020-11-24 07:39:03,746   INFO  cfg.OPTIMIZATION.DECAY_STEP_LIST: [35, 45]
+2020-11-24 07:39:03,746   INFO  cfg.OPTIMIZATION.LR_DECAY: 0.1
+2020-11-24 07:39:03,746   INFO  cfg.OPTIMIZATION.LR_CLIP: 1e-07
+2020-11-24 07:39:03,746   INFO  cfg.OPTIMIZATION.LR_WARMUP: False
+2020-11-24 07:39:03,746   INFO  cfg.OPTIMIZATION.WARMUP_EPOCH: 1
+2020-11-24 07:39:03,746   INFO  cfg.OPTIMIZATION.GRAD_NORM_CLIP: 10
+2020-11-24 07:39:03,746   INFO  cfg.TAG: pv_rcnn_no_augs
+2020-11-24 07:39:03,746   INFO  cfg.EXP_GROUP_PATH: waymo_models
+2020-11-24 07:39:05,407   INFO  Loading Waymo dataset
+2020-11-24 07:39:05,693   INFO  Total skipped info 0
+2020-11-24 07:39:05,693   INFO  Total samples for Waymo dataset: 198
+2020-11-24 07:39:05,693   INFO  Total sampled samples for Waymo dataset: 40
+2020-11-24 07:39:20,994   INFO  ==> Loading parameters from checkpoint ../output/waymo_models/pv_rcnn_no_augs/default/ckpt/checkpoint_epoch_30.pth to GPU
+2020-11-24 07:39:22,800   INFO  ==> Checkpoint trained from version: pcdet+0.3.0+fafdbd8
+2020-11-24 07:39:23,729   INFO  ==> Done (loaded 319/319)
+2020-11-24 07:39:23,755   INFO  *************** EPOCH 30 EVALUATION *****************
+eval:   0%|          | 0/10 [00:00<?, ?it/s]eval:   0%|          | 0/10 [00:06<?, ?it/s, recall_0.3=(93, 93) / 217]eval:  10%|█         | 1/10 [00:06<01:01,  6.84s/it, recall_0.3=(93, 93) / 217]eval:  10%|█         | 1/10 [00:08<01:01,  6.84s/it, recall_0.3=(205, 205) / 470]eval:  20%|██        | 2/10 [00:08<00:41,  5.16s/it, recall_0.3=(205, 205) / 470]eval:  20%|██        | 2/10 [00:09<00:41,  5.16s/it, recall_0.3=(315, 315) / 727]eval:  30%|███       | 3/10 [00:09<00:27,  3.99s/it, recall_0.3=(315, 315) / 727]eval:  30%|███       | 3/10 [00:10<00:27,  3.99s/it, recall_0.3=(422, 422) / 1005]eval:  40%|████      | 4/10 [00:10<00:19,  3.17s/it, recall_0.3=(422, 422) / 1005]eval:  40%|████      | 4/10 [00:11<00:19,  3.17s/it, recall_0.3=(530, 530) / 1305]eval:  50%|█████     | 5/10 [00:11<00:13,  2.60s/it, recall_0.3=(530, 530) / 1305]eval:  50%|█████     | 5/10 [00:13<00:13,  2.60s/it, recall_0.3=(641, 642) / 1623]eval:  60%|██████    | 6/10 [00:13<00:08,  2.21s/it, recall_0.3=(641, 642) / 1623]eval:  60%|██████    | 6/10 [00:14<00:08,  2.21s/it, recall_0.3=(762, 765) / 1942]eval:  70%|███████   | 7/10 [00:14<00:05,  1.94s/it, recall_0.3=(762, 765) / 1942]eval:  70%|███████   | 7/10 [00:15<00:05,  1.94s/it, recall_0.3=(877, 881) / 2272]eval:  80%|████████  | 8/10 [00:15<00:03,  1.72s/it, recall_0.3=(877, 881) / 2272]eval:  80%|████████  | 8/10 [00:16<00:03,  1.72s/it, recall_0.3=(993, 998) / 2611]eval:  90%|█████████ | 9/10 [00:16<00:01,  1.56s/it, recall_0.3=(993, 998) / 2611]eval:  90%|█████████ | 9/10 [00:18<00:01,  1.56s/it, recall_0.3=(1107, 1111) / 2943]eval: 100%|██████████| 10/10 [00:18<00:00,  1.48s/it, recall_0.3=(1107, 1111) / 2943]eval: 100%|██████████| 10/10 [00:18<00:00,  1.83s/it, recall_0.3=(1107, 1111) / 2943]
+2020-11-24 07:39:42,038   INFO  *************** Performance of EPOCH 30 *****************
+2020-11-24 07:39:42,038   INFO  Generate label finished(sec_per_example: 0.4570 second).
+2020-11-24 07:39:42,038   INFO  recall_roi_0.3: 0.376147
+2020-11-24 07:39:42,038   INFO  recall_rcnn_0.3: 0.377506
+2020-11-24 07:39:42,038   INFO  recall_roi_0.5: 0.316004
+2020-11-24 07:39:42,038   INFO  recall_rcnn_0.5: 0.350663
+2020-11-24 07:39:42,039   INFO  recall_roi_0.7: 0.107713
+2020-11-24 07:39:42,039   INFO  recall_rcnn_0.7: 0.200136
+2020-11-24 07:39:42,039   INFO  Average predicted number of objects(40 samples): 27.525
+WARNING:tensorflow:From /root/.local/lib/python3.6/site-packages/tensorflow_core/python/ops/resource_variable_ops.py:1630: calling BaseResourceVariable.__init__ (from tensorflow.python.ops.resource_variable_ops) with constraint is deprecated and will be removed in a future version.
+Instructions for updating:
+If using Keras pass *_constraint arguments to layers.
+WARNING:tensorflow:From /usr/lib/python3.6/contextlib.py:60: TensorFlowTestCase.test_session (from tensorflow.python.framework.test_util) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `self.session()` or `self.cached_session()` instead.
+2020-11-24 07:39:43.770183: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2020-11-24 07:39:43.771669: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+name: GeForce RTX 2080 Ti major: 7 minor: 5 memoryClockRate(GHz): 1.545
+pciBusID: 0000:db:00.0
+2020-11-24 07:39:43.771906: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcudart.so.10.0'; dlerror: libcudart.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/lib/python3.6/dist-packages/spconv:/usr/local/nvidia/lib:/usr/local/nvidia/lib64
+2020-11-24 07:39:43.772001: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcublas.so.10.0'; dlerror: libcublas.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/lib/python3.6/dist-packages/spconv:/usr/local/nvidia/lib:/usr/local/nvidia/lib64
+2020-11-24 07:39:43.772087: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcufft.so.10.0'; dlerror: libcufft.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/lib/python3.6/dist-packages/spconv:/usr/local/nvidia/lib:/usr/local/nvidia/lib64
+2020-11-24 07:39:43.772168: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcurand.so.10.0'; dlerror: libcurand.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/lib/python3.6/dist-packages/spconv:/usr/local/nvidia/lib:/usr/local/nvidia/lib64
+2020-11-24 07:39:43.772249: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcusolver.so.10.0'; dlerror: libcusolver.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/lib/python3.6/dist-packages/spconv:/usr/local/nvidia/lib:/usr/local/nvidia/lib64
+2020-11-24 07:39:43.772329: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcusparse.so.10.0'; dlerror: libcusparse.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/lib/python3.6/dist-packages/spconv:/usr/local/nvidia/lib:/usr/local/nvidia/lib64
+2020-11-24 07:39:43.776826: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-11-24 07:39:43.776867: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1641] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2020-11-24 07:39:43.777227: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2020-11-24 07:39:43.793300: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2100000000 Hz
+2020-11-24 07:39:43.801863: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7114a010 executing computations on platform Host. Devices:
+2020-11-24 07:39:43.801907: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Host, Default Version
+2020-11-24 07:39:43.805792: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x711ad7b0 executing computations on platform CUDA. Devices:
+2020-11-24 07:39:43.805822: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): GeForce RTX 2080 Ti, Compute Capability 7.5
+2020-11-24 07:39:43.805926: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-11-24 07:39:43.805937: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      
+2020-11-24 07:39:43.893635: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:157] Computing detection metrics for 1101 predicted boxes.
+2020-11-24 07:39:43.893702: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:159] Parsing prediction [1101,7][1101]
+2020-11-24 07:39:43.894369: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:168] Parsing ground truth [2943,7][2943]
+2020-11-24 07:39:44.732657: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:214] Done with computing detection metrics.
+2020-11-24 07:39:44.749249: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:157] Computing detection metrics for 1101 predicted boxes.
+2020-11-24 07:39:44.749312: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:159] Parsing prediction [1101,7][1101]
+2020-11-24 07:39:44.749959: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:168] Parsing ground truth [2943,7][2943]
+2020-11-24 07:39:45.729743: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:214] Done with computing detection metrics.
+2020-11-24 07:39:45.746848: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:157] Computing detection metrics for 1101 predicted boxes.
+2020-11-24 07:39:45.746904: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:159] Parsing prediction [1101,7][1101]
+2020-11-24 07:39:45.747533: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:168] Parsing ground truth [2943,7][2943]
+2020-11-24 07:39:46.637980: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:214] Done with computing detection metrics.
+2020-11-24 07:39:46.716735: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:157] Computing detection metrics for 1101 predicted boxes.
+2020-11-24 07:39:46.716807: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:159] Parsing prediction [1101,7][1101]
+2020-11-24 07:39:46.717459: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:168] Parsing ground truth [2943,7][2943]
+2020-11-24 07:39:47.528688: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:214] Done with computing detection metrics.
+2020-11-24 07:39:47.546276: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:157] Computing detection metrics for 1101 predicted boxes.
+2020-11-24 07:39:47.546358: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:159] Parsing prediction [1101,7][1101]
+2020-11-24 07:39:47.547112: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:168] Parsing ground truth [2943,7][2943]
+2020-11-24 07:39:48.440314: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:214] Done with computing detection metrics.
+2020-11-24 07:39:48.457848: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:157] Computing detection metrics for 1101 predicted boxes.
+2020-11-24 07:39:48.457916: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:159] Parsing prediction [1101,7][1101]
+2020-11-24 07:39:48.458550: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:168] Parsing ground truth [2943,7][2943]
+2020-11-24 07:39:49.333859: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:214] Done with computing detection metrics.
+2020-11-24 07:39:49.350505: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:157] Computing detection metrics for 1101 predicted boxes.
+2020-11-24 07:39:49.350585: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:159] Parsing prediction [1101,7][1101]
+2020-11-24 07:39:49.351245: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:168] Parsing ground truth [2943,7][2943]
+2020-11-24 07:39:50.227212: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:214] Done with computing detection metrics.
+2020-11-24 07:39:50.244480: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:157] Computing detection metrics for 1101 predicted boxes.
+2020-11-24 07:39:50.244546: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:159] Parsing prediction [1101,7][1101]
+2020-11-24 07:39:50.245240: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:168] Parsing ground truth [2943,7][2943]
+2020-11-24 07:39:51.216389: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:214] Done with computing detection metrics.
+2020-11-24 07:39:51.235753: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:157] Computing detection metrics for 1101 predicted boxes.
+2020-11-24 07:39:51.235824: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:159] Parsing prediction [1101,7][1101]
+2020-11-24 07:39:51.236472: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:168] Parsing ground truth [2943,7][2943]
+2020-11-24 07:39:52.140056: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:214] Done with computing detection metrics.
+2020-11-24 07:39:52.158376: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:157] Computing detection metrics for 1101 predicted boxes.
+2020-11-24 07:39:52.158440: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:159] Parsing prediction [1101,7][1101]
+2020-11-24 07:39:52.159073: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:168] Parsing ground truth [2943,7][2943]
+2020-11-24 07:39:53.032956: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:214] Done with computing detection metrics.
+2020-11-24 07:39:53.051273: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:157] Computing detection metrics for 1101 predicted boxes.
+2020-11-24 07:39:53.051304: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:159] Parsing prediction [1101,7][1101]
+2020-11-24 07:39:53.051784: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:168] Parsing ground truth [2943,7][2943]
+2020-11-24 07:39:53.923552: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:214] Done with computing detection metrics.
+2020-11-24 07:39:53.943601: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:157] Computing detection metrics for 1101 predicted boxes.
+2020-11-24 07:39:53.943651: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:159] Parsing prediction [1101,7][1101]
+2020-11-24 07:39:53.944286: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:168] Parsing ground truth [2943,7][2943]
+2020-11-24 07:39:54.830087: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:214] Done with computing detection metrics.
+2020-11-24 07:39:54.848195: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:157] Computing detection metrics for 1101 predicted boxes.
+2020-11-24 07:39:54.848245: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:159] Parsing prediction [1101,7][1101]
+2020-11-24 07:39:54.848751: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:168] Parsing ground truth [2943,7][2943]
+2020-11-24 07:39:55.724046: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:214] Done with computing detection metrics.
+2020-11-24 07:39:55.742477: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:157] Computing detection metrics for 1101 predicted boxes.
+2020-11-24 07:39:55.742521: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:159] Parsing prediction [1101,7][1101]
+2020-11-24 07:39:55.743020: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:168] Parsing ground truth [2943,7][2943]
+2020-11-24 07:39:56.626201: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:214] Done with computing detection metrics.
+2020-11-24 07:39:56.644606: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:157] Computing detection metrics for 1101 predicted boxes.
+2020-11-24 07:39:56.644663: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:159] Parsing prediction [1101,7][1101]
+2020-11-24 07:39:56.645166: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:168] Parsing ground truth [2943,7][2943]
+2020-11-24 07:39:57.527136: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:214] Done with computing detection metrics.
+2020-11-24 07:39:57.543796: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:157] Computing detection metrics for 1101 predicted boxes.
+2020-11-24 07:39:57.543839: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:159] Parsing prediction [1101,7][1101]
+2020-11-24 07:39:57.544325: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:168] Parsing ground truth [2943,7][2943]
+2020-11-24 07:39:58.420226: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:214] Done with computing detection metrics.
+2020-11-24 07:39:58,426   INFO  
+OBJECT_TYPE_TYPE_VEHICLE_LEVEL_1/AP: 0.1903 
+OBJECT_TYPE_TYPE_VEHICLE_LEVEL_1/APH: 0.1212 
+OBJECT_TYPE_TYPE_VEHICLE_LEVEL_2/AP: 0.1533 
+OBJECT_TYPE_TYPE_VEHICLE_LEVEL_2/APH: 0.0976 
+OBJECT_TYPE_TYPE_PEDESTRIAN_LEVEL_1/AP: 0.0000 
+OBJECT_TYPE_TYPE_PEDESTRIAN_LEVEL_1/APH: 0.0000 
+OBJECT_TYPE_TYPE_PEDESTRIAN_LEVEL_2/AP: 0.0000 
+OBJECT_TYPE_TYPE_PEDESTRIAN_LEVEL_2/APH: 0.0000 
+OBJECT_TYPE_TYPE_SIGN_LEVEL_1/AP: 0.0000 
+OBJECT_TYPE_TYPE_SIGN_LEVEL_1/APH: 0.0000 
+OBJECT_TYPE_TYPE_SIGN_LEVEL_2/AP: 0.0000 
+OBJECT_TYPE_TYPE_SIGN_LEVEL_2/APH: 0.0000 
+OBJECT_TYPE_TYPE_CYCLIST_LEVEL_1/AP: 0.0000 
+OBJECT_TYPE_TYPE_CYCLIST_LEVEL_1/APH: 0.0000 
+OBJECT_TYPE_TYPE_CYCLIST_LEVEL_2/AP: 0.0000 
+OBJECT_TYPE_TYPE_CYCLIST_LEVEL_2/APH: 0.0000 
+
+2020-11-24 07:39:58,427   INFO  Result is save to /team1/codes/3dObjDet/OpenPCDet_ravi/output/waymo_models/pv_rcnn_no_augs/default/eval/epoch_30/val/default
+2020-11-24 07:39:58,427   INFO  ****************Evaluation done.*****************
+Start the waymo evaluation...
+Number: (pd, 1101) VS. (gt, 2943)
+Level 1: 0, Level2: 659)
