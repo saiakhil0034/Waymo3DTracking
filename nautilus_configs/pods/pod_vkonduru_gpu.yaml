@@ -3,7 +3,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   # team${TEAM_ID}-${USER_NAME}-{EXP_NAME}
-  name: team1-vkonduru-ppillarsandpvrcnn-gpu-1
+  name: team1-vkonduru-explore
 spec:
   containers:
   - name: vkonduru-gpu-container
@@ -13,12 +13,12 @@ spec:
     args: ["sleep", "infinity"]
     resources:
       requests:
-        cpu: "1"
-        memory: "8Gi"
+        cpu: "2"
+        memory: "12Gi"
         nvidia.com/gpu: 1
       limits:
         cpu: "2"
-        memory: "8Gi"
+        memory: "12Gi"
         nvidia.com/gpu: 1
     volumeMounts:
     - name: dshm
@@ -43,16 +43,17 @@ spec:
     - name: cephfs-waymo-od
       persistentVolumeClaim:
         claimName: cephfs-waymo-od        
-  # affinity:
-  #   nodeAffinity:
-  #     requiredDuringSchedulingIgnoredDuringExecution:
-  #       nodeSelectorTerms:
-  #       - matchExpressions:
-          # - key: nautilus.io/group
-          #   operator: In
-          #   values:
-          #   - haosu
-       #  - key: gpu-type
-       #    operator: In # Use NotIn for other types
-       #    values:
-       #    - 2080Tis
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+        #   - key: nautilus.io/group
+        #     operator: In
+        #     values:
+        #     - haosu
+          - key: gpu-type
+            operator: In # Use NotIn for other types
+            values:
+            - 2080Ti
+            - 1080Ti
