@@ -22,105 +22,133 @@ from waymo_open_dataset.protos import metrics_pb2
 import os
 import numpy as np
 
-def _create_pd_file_example():
-  """Creates a prediction objects file."""
+import tensorflow as tf
+from waymo_open_dataset.utils import frame_utils, transform_utils, range_image_utils
+
+try:
+    tf.enable_eager_execution()
+except:
+    pass
+
+def _create_gt_file_example():
+  """Creates a GT objects file."""
   objects = metrics_pb2.Objects()
 
-  o = metrics_pb2.Object()
-  # The following 3 fields are used to uniquely identify a frame a prediction
-  # is predicted at. Make sure you set them to values exactly the same as what
-  # we provided in the raw data. Otherwise your prediction is considered as a
-  # false negative.
-  o.context_name = ('context_name for the prediction. See Frame::context::name '
-                    'in  dataset.proto.')
-  # The frame timestamp for the prediction. See Frame::timestamp_micros in
-  # dataset.proto.
-  invalid_ts = -1
-  o.frame_timestamp_micros = invalid_ts
-  # This is only needed for 2D detection or tracking tasks.
-  # Set it to the camera name the prediction is for.
-  o.camera_name = dataset_pb2.CameraName.FRONT
-
-  # Store all the object classes as a list
   # Store all sequence names from val.txt
-  classes = ["CYCLIST", "PEDESTRIAN", "SIGN", "VEHICLE"]
   val_seq_list = list()
   val_path = "/team1/codes/3dObjDet/OpenPCDet_ravi/data/waymo/ImageSets/val_25.txt"
   with open(val_path, "r") as f:
     val_seq_list = f.readlines()
   val_seq_list = [v.split(".")[0] for v in val_seq_list]
 
-  # this is the input to the algo
-  tracking_output_base_pth = "/team1/codes/individual/vkonduru/AB3DMOT/results/waymo_25_5/"
-  # print(val_seq_list)
-  # Loop through each class
-  for cl in classes:
-    cl_pth = tracking_output_base_pth + cl + "/trk_withid/"
-    if not os.path.isdir(cl_pth):
-      print("Outputs for the class {} are not present in this folder".format(cl))
-      continue
-    # Loop through each sequence waymo_25_5_val/VEHICLE/trk_withid/{$SEGMENT}
-    for seq in val_seq_list:
-      seq_pth = cl_pth + seq
-      seq_dir = os.fsencode(seq_pth)
-      # loop through all frames in each segment
-      for fi in os.listdir(seq_dir):
-        frame_no_txt = os.fsdecode(fi)
-        objs = np.loadtxt(seq_pth + "/" + frame_no_txt, dtype=str)
-        objs = objs.reshape(-1, 17)
-        print("Processing class: {}; sequence: {}; file {}".format(cl, seq, frame_no_txt))
-        nobj = objs.shape[0]
-        # loop through all objects in given frame
-        for i in range(nobj):
-          print(i, nobj, objs.shape)
-          curr_obj = objs[i, :]
-          # extract x, y, z, l, w, h, ry, score, object_id, type
-          # Populating box and score.
-          box = label_pb2.Label.Box()
-          box.center_x = float(curr_obj[11])
-          box.center_y = float(curr_obj[12])
-          box.center_z = float(curr_obj[13])
-          box.length = float(curr_obj[10])
-          box.width = float(curr_obj[9])
-          box.height = float(curr_obj[8])
-          box.heading = float(curr_obj[14])
-          o.object.box.CopyFrom(box)
-          # This must be within [0.0, 1.0]. It is better to filter those boxes with
-          # small scores to speed up metrics computation.
-          o.score = float(curr_obj[15])
-          # For tracking, this must be set and it must be unique for each tracked
-          # sequence.
-          o.object.id = curr_obj[16]
-          # Use correct type.
-          """
-          enum Type {
-            TYPE_UNKNOWN = 0;
-            TYPE_VEHICLE = 1;
-            TYPE_PEDESTRIAN = 2;
-            TYPE_SIGN = 3;
-            TYPE_CYCLIST = 4;
-          }
-          """
-          # o.object.type = label_pb2.Label.TYPE_PEDESTRIAN
-          if cl == "CYCLIST":
-            o.object.type = label_pb2.Label.TYPE_CYCLIST
-          elif cl == "VEHICLE":
-            o.object.type = label_pb2.Label.TYPE_VEHICLE
-          elif cl == "SIGN":
-            o.object.type = label_pb2.Label.TYPE_SIGN
-          elif cl == "PEDESTRIAN":
-            o.object.type = label_pb2.Label.TYPE_PEDESTRIAN
-          else:
-            o.object.type = label_pb2.Label.TYPE_UNKNOWN
+  # tfrecord base
+  tf_base_pth = "/waymo-od/training/"
+  # gt annos base
+  anno_base_pth = "/team1/codes/3dObjDet/OpenPCDet_ravi/data/waymo/waymo_processed_data_25/"
 
-          objects.objects.append(o)
+  # Loop through each sequence
+  for seq in val_seq_list:
+    tf_pth = tf_base_pth + "{}.tfrecord".format(seq)
+    anno_pth = anno_base_pth + "{}/{}.pkl".format(seq, seq)
+    if not os.path.exists(tf_pth):
+      print("Sequence {} is a validation sequence!".format(seq))
+      tf_pth = "/waymo-od/validation/{}.tfrecord".format(seq)
+
+    # load into memory
+    dataset = tf.data.TFRecordDataset(str(tf_pth), compression_type='')
+    gt_dset = np.load(anno_pth, allow_pickle=True)
+
+    # loop through all frames in each segment
+    tot = 0
+    for cnt, data in enumerate(dataset):
+      tot += 1
+      print("Processing sequence: {}; frame: {}".format(seq, cnt))
+
+      frame = dataset_pb2.Frame()
+      frame.ParseFromString(bytearray(data.numpy()))
+      annos = gt_dset[cnt]
+
+      # x, y, z
+      locs = annos['annos']['location']
+      # l, w, h
+      dims = annos['annos']['dimensions']
+      # ry
+      ry = annos['annos']['heading_angles']
+      # obj_id
+      objs = annos['annos']['obj_ids']
+      # class
+      clss = annos['annos']['name']
+      nobj = objs.shape[0]
+      # loop through all objects in given frame
+      for i in range(nobj):
+        o = metrics_pb2.Object()
+        # The following 3 fields are used to uniquely identify a frame a prediction
+        # is predicted at. Make sure you set them to values exactly the same as what
+        # we provided in the raw data. Otherwise your prediction is considered as a
+        # false negative.
+        #o.context_name = ('context_name for the prediction. See Frame::context::name '
+        #                  'in  dataset.proto.')
+        o.context_name = frame.context.name
+        # The frame timestamp for the prediction. See Frame::timestamp_micros in
+        # dataset.proto.
+        invalid_ts = -1
+        # o.frame_timestamp_micros = invalid_ts
+        o.frame_timestamp_micros = frame.timestamp_micros
+        # This is only needed for 2D detection or tracking tasks.
+        # Set it to the camera name the prediction is for.
+        # o.camera_name = dataset_pb2.CameraName.FRONT
+        o.camera_name = frame.camera_labels[0].name
+        # extract x, y, z, l, w, h, ry, score, object_id, type
+        # Populating box and score.
+        box = label_pb2.Label.Box()
+        box.center_x = locs[i, 0]
+        box.center_y = locs[i, 1]
+        box.center_z = locs[i, 2]
+        box.length = dims[i, 0]
+        box.width = dims[i, 1]
+        box.height = dims[i, 2]
+        box.heading = ry[i]
+        o.object.box.CopyFrom(box)
+        # This must be within [0.0, 1.0]. It is better to filter those boxes with
+        # small scores to speed up metrics computation.
+        o.score = 1.0
+        # For tracking, this must be set and it must be unique for each tracked
+        # sequence.
+        o.object.id = objs[i]
+        # Use correct type.
+        """
+        enum Type {
+          TYPE_UNKNOWN = 0;
+          TYPE_VEHICLE = 1;
+          TYPE_PEDESTRIAN = 2;
+          TYPE_SIGN = 3;
+          TYPE_CYCLIST = 4;
+        }
+
+        WAYMO_CLASSES = ['unknown', 'Vehicle', 'Pedestrian', 'Sign', 'Cyclist']
+        """
+        # o.object.type = label_pb2.Label.TYPE_PEDESTRIAN
+        cl = clss[i]
+        if cl == "Cyclist":
+          o.object.type = label_pb2.Label.TYPE_CYCLIST
+        elif cl == "Vehicle":
+          o.object.type = label_pb2.Label.TYPE_VEHICLE
+        elif cl == "Sign":
+          o.object.type = label_pb2.Label.TYPE_SIGN
+        elif cl == "Pedestrian":
+          o.object.type = label_pb2.Label.TYPE_PEDESTRIAN
+        else:
+          o.object.type = label_pb2.Label.TYPE_UNKNOWN
+
+        objects.objects.append(o)
+    assert(tot == len(gt_dset))
 
   # Add more objects. Note that a reasonable detector should limit its maximum
   # number of boxes predicted per frame. A reasonable value is around 400. A
   # huge number of boxes can slow down metrics computation.
 
   # file to save the preds.bin to
-  save_pth = "/team1/codes/3dObjDet/OpenPCDet_ravi/output/tracking_bins/waymo_25_5/preds.bin"
+  save_pth = "/team1/codes/3dObjDet/OpenPCDet_ravi/output/tracking_bins/waymo_25_5/gt.bin"
   # Write objects to a file.
   f = open(save_pth, 'wb')
   f.write(objects.SerializeToString())
@@ -128,7 +156,7 @@ def _create_pd_file_example():
 
 
 def main():
-  _create_pd_file_example()
+  _create_gt_file_example()
 
 
 if __name__ == '__main__':
