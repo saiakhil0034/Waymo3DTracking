@@ -66,6 +66,8 @@ def _create_pd_file_example():
         frame.ParseFromString(bytearray(data.numpy()))
         names.append(frame.context.name)
         cams.append(frame.camera_labels[0].name)
+        if tot > 1:
+          assert(tss[-1] <= frame.timestamp_micros)
         tss.append(frame.timestamp_micros)
     # print("Total Entries: {}".format(tot))
     # Loop through each class
@@ -87,7 +89,7 @@ def _create_pd_file_example():
         nobj = objs.shape[0]
         # loop through all objects in given frame
         for i in range(nobj):
-          print(i, nobj, objs.shape)
+          #print(i, nobj, objs.shape)
           curr_obj = objs[i, :]
           o = metrics_pb2.Object()
           # The following 3 fields are used to uniquely identify a frame a prediction
