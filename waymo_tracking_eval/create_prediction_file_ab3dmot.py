@@ -83,6 +83,9 @@ def _create_pd_file_example():
       idx = 0
       for fi in os.listdir(seq_dir):
         frame_no_txt = os.fsdecode(fi)
+        fid = int(frame_no_txt.split(".")[0])
+        #print(fid, idx)
+        #assert(fid == idx)
         objs = np.loadtxt(seq_pth + "/" + frame_no_txt, dtype=str)
         objs = objs.reshape(-1, 17)
         print("Processing class: {}; sequence: {}; file {}".format(cl, seq, frame_no_txt))
@@ -98,16 +101,16 @@ def _create_pd_file_example():
           # false negative.
           #o.context_name = ('context_name for the prediction. See Frame::context::name '
           #                  'in  dataset.proto.')
-          o.context_name = names[idx]
+          o.context_name = names[fid]
           # The frame timestamp for the prediction. See Frame::timestamp_micros in
           # dataset.proto.
           invalid_ts = -1
           # o.frame_timestamp_micros = invalid_ts
-          o.frame_timestamp_micros = tss[idx]
+          o.frame_timestamp_micros = tss[fid]
           # This is only needed for 2D detection or tracking tasks.
           # Set it to the camera name the prediction is for.
           # o.camera_name = dataset_pb2.CameraName.FRONT
-          o.camera_name = cams[idx]
+          o.camera_name = cams[fid]
           if dataset_pb2.CameraName.FRONT != cams[idx]:
             print("Different camera!!")
           # extract x, y, z, l, w, h, ry, score, object_id, type
