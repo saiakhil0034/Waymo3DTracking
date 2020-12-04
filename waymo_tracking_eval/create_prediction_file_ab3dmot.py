@@ -22,6 +22,14 @@ from waymo_open_dataset.protos import metrics_pb2
 import os
 import numpy as np
 
+import tensorflow as tf
+from waymo_open_dataset.utils import frame_utils, transform_utils, range_image_utils
+
+try:
+    tf.enable_eager_execution()
+except:
+    pass
+
 def _create_pd_file_example():
   """Creates a prediction objects file."""
   objects = metrics_pb2.Objects()
@@ -38,17 +46,39 @@ def _create_pd_file_example():
   # this is the input to the algo
   tracking_output_base_pth = "/team1/codes/individual/vkonduru/AB3DMOT/results/waymo_25_5/"
   # print(val_seq_list)
-  # Loop through each class
-  for cl in classes:
-    cl_pth = tracking_output_base_pth + cl + "/trk_withid/"
-    if not os.path.isdir(cl_pth):
-      print("Outputs for the class {} are not present in this folder".format(cl))
-      continue
-    # Loop through each sequence waymo_25_5_val/VEHICLE/trk_withid/{$SEGMENT}
-    for seq in val_seq_list:
+  
+  # Loop through each sequence waymo_25_5_val/VEHICLE/trk_withid/{$SEGMENT}
+  for seq in val_seq_list:
+    # obtain the groundtruth sequence context name, timestamp and camera
+    gt_seq_file = "/waymo-od/training/{}.tfrecord".format(seq)
+    if not os.path.exists(gt_seq_file):
+      gt_seq_file = "/waymo-od/validation/{}.tfrecord".format(seq)
+    dataset = tf.data.TFRecordDataset(str(gt_seq_file), compression_type='')
+    tot = 0
+    names = list()
+    tss = list()
+    cams = list()
+    for cnt, data in enumerate(dataset):
+        tot += 1
+        # if cnt > 2:
+        #     break
+        frame = dataset_pb2.Frame()
+        frame.ParseFromString(bytearray(data.numpy()))
+        names.append(frame.context.name)
+        cams.append(frame.camera_labels[0].name)
+        tss.append(frame.timestamp_micros)
+    # print("Total Entries: {}".format(tot))
+    # Loop through each class
+    for cl in classes:
+      cl_pth = tracking_output_base_pth + cl + "/trk_withid/"
+      if not os.path.isdir(cl_pth):
+        print("Outputs for the class {} are not present in this folder".format(cl))
+        continue
+      # loop through all frames in each segment
+        
       seq_pth = cl_pth + seq
       seq_dir = os.fsencode(seq_pth)
-      # loop through all frames in each segment
+      idx = 0
       for fi in os.listdir(seq_dir):
         frame_no_txt = os.fsdecode(fi)
         objs = np.loadtxt(seq_pth + "/" + frame_no_txt, dtype=str)
@@ -64,15 +94,20 @@ def _create_pd_file_example():
           # is predicted at. Make sure you set them to values exactly the same as what
           # we provided in the raw data. Otherwise your prediction is considered as a
           # false negative.
-          o.context_name = ('context_name for the prediction. See Frame::context::name '
-                            'in  dataset.proto.')
+          #o.context_name = ('context_name for the prediction. See Frame::context::name '
+          #                  'in  dataset.proto.')
+          o.context_name = names[idx]
           # The frame timestamp for the prediction. See Frame::timestamp_micros in
           # dataset.proto.
           invalid_ts = -1
-          o.frame_timestamp_micros = invalid_ts
+          # o.frame_timestamp_micros = invalid_ts
+          o.frame_timestamp_micros = tss[idx]
           # This is only needed for 2D detection or tracking tasks.
           # Set it to the camera name the prediction is for.
-          o.camera_name = dataset_pb2.CameraName.FRONT
+          # o.camera_name = dataset_pb2.CameraName.FRONT
+          o.camera_name = cams[idx]
+          if dataset_pb2.CameraName.FRONT != cams[idx]:
+            print("Different camera!!")
           # extract x, y, z, l, w, h, ry, score, object_id, type
           # Populating box and score.
           box = label_pb2.Label.Box()
@@ -113,6 +148,10 @@ def _create_pd_file_example():
             o.object.type = label_pb2.Label.TYPE_UNKNOWN
 
           objects.objects.append(o)
+        # increase the frame index now
+        idx += 1
+      #print(idx, tot)
+      assert(idx == tot)
 
   # Add more objects. Note that a reasonable detector should limit its maximum
   # number of boxes predicted per frame. A reasonable value is around 400. A
