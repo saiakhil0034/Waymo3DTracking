@@ -1,0 +1,943 @@
+.
+..
+.empty
+.git
+.gitignore
+.ipynb_checkpoints
+LICENSE
+README.md
+backups
+build
+checkpoints
+data
+demo_notebook.ipynb
+docs
+install
+kitti-dataset.ipynb
+mayavi demo.ipynb
+output
+output_wk5_res
+output_wk6_res
+pcdet
+pcdet.egg-info
+requirements.txt
+saved_pred
+setup.py
+test.png
+tools
+/usr/local/lib/python3.6/dist-packages/spconv:/usr/local/nvidia/lib:/usr/local/nvidia/lib64
+1.1.0
+Requirement already satisfied: numpy in /usr/local/lib/python3.6/dist-packages (from -r requirements.txt (line 1)) (1.18.2)
+Requirement already satisfied: torch>=1.1 in /usr/local/lib/python3.6/dist-packages (from -r requirements.txt (line 2)) (1.1.0)
+Collecting numba
+  Downloading numba-0.52.0-cp36-cp36m-manylinux2014_x86_64.whl (3.1 MB)
+Requirement already satisfied: tensorboardX in /usr/local/lib/python3.6/dist-packages (from -r requirements.txt (line 4)) (2.0)
+Requirement already satisfied: easydict in /usr/local/lib/python3.6/dist-packages (from -r requirements.txt (line 5)) (1.9)
+Requirement already satisfied: pyyaml in /usr/local/lib/python3.6/dist-packages (from -r requirements.txt (line 6)) (5.3.1)
+Requirement already satisfied: scikit-image in /usr/local/lib/python3.6/dist-packages (from -r requirements.txt (line 7)) (0.16.2)
+Requirement already satisfied: tqdm in /usr/local/lib/python3.6/dist-packages (from -r requirements.txt (line 8)) (4.45.0)
+Collecting llvmlite<0.36,>=0.35.0
+  Downloading llvmlite-0.35.0-cp36-cp36m-manylinux2010_x86_64.whl (25.3 MB)
+Requirement already satisfied: setuptools in /usr/local/lib/python3.6/dist-packages (from numba->-r requirements.txt (line 3)) (46.1.3)
+Requirement already satisfied: protobuf>=3.8.0 in /usr/local/lib/python3.6/dist-packages (from tensorboardX->-r requirements.txt (line 4)) (3.11.3)
+Requirement already satisfied: six in /usr/local/lib/python3.6/dist-packages (from tensorboardX->-r requirements.txt (line 4)) (1.14.0)
+Requirement already satisfied: PyWavelets>=0.4.0 in /usr/local/lib/python3.6/dist-packages (from scikit-image->-r requirements.txt (line 7)) (1.1.1)
+Requirement already satisfied: matplotlib!=3.0.0,>=2.0.0 in /usr/local/lib/python3.6/dist-packages (from scikit-image->-r requirements.txt (line 7)) (3.2.1)
+Requirement already satisfied: scipy>=0.19.0 in /usr/local/lib/python3.6/dist-packages (from scikit-image->-r requirements.txt (line 7)) (1.4.1)
+Requirement already satisfied: networkx>=2.0 in /usr/local/lib/python3.6/dist-packages (from scikit-image->-r requirements.txt (line 7)) (2.4)
+Requirement already satisfied: pillow>=4.3.0 in /usr/local/lib/python3.6/dist-packages (from scikit-image->-r requirements.txt (line 7)) (7.0.0)
+Requirement already satisfied: imageio>=2.3.0 in /usr/local/lib/python3.6/dist-packages (from scikit-image->-r requirements.txt (line 7)) (2.8.0)
+Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=2.0.1 in /usr/local/lib/python3.6/dist-packages (from matplotlib!=3.0.0,>=2.0.0->scikit-image->-r requirements.txt (line 7)) (2.4.6)
+Requirement already satisfied: kiwisolver>=1.0.1 in /usr/local/lib/python3.6/dist-packages (from matplotlib!=3.0.0,>=2.0.0->scikit-image->-r requirements.txt (line 7)) (1.2.0)
+Requirement already satisfied: python-dateutil>=2.1 in /usr/local/lib/python3.6/dist-packages (from matplotlib!=3.0.0,>=2.0.0->scikit-image->-r requirements.txt (line 7)) (2.8.1)
+Requirement already satisfied: cycler>=0.10 in /usr/local/lib/python3.6/dist-packages (from matplotlib!=3.0.0,>=2.0.0->scikit-image->-r requirements.txt (line 7)) (0.10.0)
+Requirement already satisfied: decorator>=4.3.0 in /usr/local/lib/python3.6/dist-packages (from networkx>=2.0->scikit-image->-r requirements.txt (line 7)) (4.4.2)
+Installing collected packages: llvmlite, numba
+Successfully installed llvmlite-0.35.0 numba-0.52.0
+WARNING: You are using pip version 20.0.2; however, version 20.3.1 is available.
+You should consider upgrading via the '/usr/bin/python3.6 -m pip install --upgrade pip' command.
+running develop
+running egg_info
+writing pcdet.egg-info/PKG-INFO
+writing dependency_links to pcdet.egg-info/dependency_links.txt
+writing requirements to pcdet.egg-info/requires.txt
+writing top-level names to pcdet.egg-info/top_level.txt
+reading manifest file 'pcdet.egg-info/SOURCES.txt'
+writing manifest file 'pcdet.egg-info/SOURCES.txt'
+running build_ext
+copying build/lib.linux-x86_64-3.6/pcdet/ops/iou3d_nms/iou3d_nms_cuda.cpython-36m-x86_64-linux-gnu.so -> pcdet/ops/iou3d_nms
+copying build/lib.linux-x86_64-3.6/pcdet/ops/roiaware_pool3d/roiaware_pool3d_cuda.cpython-36m-x86_64-linux-gnu.so -> pcdet/ops/roiaware_pool3d
+copying build/lib.linux-x86_64-3.6/pcdet/ops/roipoint_pool3d/roipoint_pool3d_cuda.cpython-36m-x86_64-linux-gnu.so -> pcdet/ops/roipoint_pool3d
+copying build/lib.linux-x86_64-3.6/pcdet/ops/pointnet2/pointnet2_stack/pointnet2_stack_cuda.cpython-36m-x86_64-linux-gnu.so -> pcdet/ops/pointnet2/pointnet2_stack
+copying build/lib.linux-x86_64-3.6/pcdet/ops/pointnet2/pointnet2_batch/pointnet2_batch_cuda.cpython-36m-x86_64-linux-gnu.so -> pcdet/ops/pointnet2/pointnet2_batch
+Creating /usr/local/lib/python3.6/dist-packages/pcdet.egg-link (link to .)
+Adding pcdet 0.3.0+fafdbd8 to easy-install.pth file
+
+Installed /team1/codes/3dObjDet/OpenPCDet_ravi
+Processing dependencies for pcdet==0.3.0+fafdbd8
+Searching for PyYAML==5.3.1
+Best match: PyYAML 5.3.1
+Adding PyYAML 5.3.1 to easy-install.pth file
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for easydict==1.9
+Best match: easydict 1.9
+Adding easydict 1.9 to easy-install.pth file
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for tensorboardX==2.0
+Best match: tensorboardX 2.0
+Adding tensorboardX 2.0 to easy-install.pth file
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for numba==0.52.0
+Best match: numba 0.52.0
+Adding numba 0.52.0 to easy-install.pth file
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for spconv==1.0
+Best match: spconv 1.0
+Adding spconv 1.0 to easy-install.pth file
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for torch==1.1.0
+Best match: torch 1.1.0
+Adding torch 1.1.0 to easy-install.pth file
+Installing convert-caffe2-to-onnx script to /usr/local/bin
+Installing convert-onnx-to-caffe2 script to /usr/local/bin
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for numpy==1.18.2
+Best match: numpy 1.18.2
+Adding numpy 1.18.2 to easy-install.pth file
+Installing f2py script to /usr/local/bin
+Installing f2py3 script to /usr/local/bin
+Installing f2py3.6 script to /usr/local/bin
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for six==1.14.0
+Best match: six 1.14.0
+Adding six 1.14.0 to easy-install.pth file
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for protobuf==3.11.3
+Best match: protobuf 3.11.3
+Adding protobuf 3.11.3 to easy-install.pth file
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for setuptools==46.1.3
+Best match: setuptools 46.1.3
+Adding setuptools 46.1.3 to easy-install.pth file
+Installing easy_install script to /usr/local/bin
+Installing easy_install-3.8 script to /usr/local/bin
+
+Using /usr/local/lib/python3.6/dist-packages
+Searching for llvmlite==0.35.0
+Best match: llvmlite 0.35.0
+Adding llvmlite 0.35.0 to easy-install.pth file
+
+Using /usr/local/lib/python3.6/dist-packages
+Finished processing dependencies for pcdet==0.3.0+fafdbd8
+Collecting waymo-open-dataset-tf-2-0-0==1.2.0
+  Downloading waymo_open_dataset_tf_2_0_0-1.2.0-cp36-cp36m-manylinux2010_x86_64.whl (2.8 MB)
+Collecting tensorflow-gpu==2.0.0
+  Downloading tensorflow_gpu-2.0.0-cp36-cp36m-manylinux2010_x86_64.whl (380.8 MB)
+Collecting google-pasta>=0.1.6
+  Downloading google_pasta-0.2.0-py3-none-any.whl (57 kB)
+Collecting opt-einsum>=2.3.2
+  Downloading opt_einsum-3.3.0-py3-none-any.whl (65 kB)
+Collecting absl-py>=0.7.0
+  Downloading absl_py-0.11.0-py3-none-any.whl (127 kB)
+Requirement already satisfied: protobuf>=3.6.1 in /usr/local/lib/python3.6/dist-packages (from tensorflow-gpu==2.0.0->waymo-open-dataset-tf-2-0-0==1.2.0) (3.11.3)
+Collecting tensorboard<2.1.0,>=2.0.0
+  Downloading tensorboard-2.0.2-py3-none-any.whl (3.8 MB)
+Collecting astor>=0.6.0
+  Downloading astor-0.8.1-py2.py3-none-any.whl (27 kB)
+Collecting tensorflow-estimator<2.1.0,>=2.0.0
+  Downloading tensorflow_estimator-2.0.1-py2.py3-none-any.whl (449 kB)
+Collecting grpcio>=1.8.6
+  Downloading grpcio-1.34.0-cp36-cp36m-manylinux2014_x86_64.whl (4.0 MB)
+Requirement already satisfied: six>=1.10.0 in /usr/local/lib/python3.6/dist-packages (from tensorflow-gpu==2.0.0->waymo-open-dataset-tf-2-0-0==1.2.0) (1.14.0)
+Collecting keras-applications>=1.0.8
+  Downloading Keras_Applications-1.0.8-py3-none-any.whl (50 kB)
+Requirement already satisfied: termcolor>=1.1.0 in /usr/local/lib/python3.6/dist-packages (from tensorflow-gpu==2.0.0->waymo-open-dataset-tf-2-0-0==1.2.0) (1.1.0)
+Requirement already satisfied: wheel>=0.26 in /usr/local/lib/python3.6/dist-packages (from tensorflow-gpu==2.0.0->waymo-open-dataset-tf-2-0-0==1.2.0) (0.34.2)
+Collecting gast==0.2.2
+  Downloading gast-0.2.2.tar.gz (10 kB)
+Requirement already satisfied: numpy<2.0,>=1.16.0 in /usr/local/lib/python3.6/dist-packages (from tensorflow-gpu==2.0.0->waymo-open-dataset-tf-2-0-0==1.2.0) (1.18.2)
+Collecting wrapt>=1.11.1
+  Downloading wrapt-1.12.1.tar.gz (27 kB)
+Collecting keras-preprocessing>=1.0.5
+  Downloading Keras_Preprocessing-1.1.2-py2.py3-none-any.whl (42 kB)
+Requirement already satisfied: setuptools in /usr/local/lib/python3.6/dist-packages (from protobuf>=3.6.1->tensorflow-gpu==2.0.0->waymo-open-dataset-tf-2-0-0==1.2.0) (46.1.3)
+Collecting google-auth<2,>=1.6.3
+  Downloading google_auth-1.23.0-py2.py3-none-any.whl (114 kB)
+Requirement already satisfied: werkzeug>=0.11.15 in /usr/local/lib/python3.6/dist-packages (from tensorboard<2.1.0,>=2.0.0->tensorflow-gpu==2.0.0->waymo-open-dataset-tf-2-0-0==1.2.0) (1.0.1)
+Collecting google-auth-oauthlib<0.5,>=0.4.1
+  Downloading google_auth_oauthlib-0.4.2-py2.py3-none-any.whl (18 kB)
+Collecting requests<3,>=2.21.0
+  Downloading requests-2.25.0-py2.py3-none-any.whl (61 kB)
+Collecting markdown>=2.6.8
+  Downloading Markdown-3.3.3-py3-none-any.whl (96 kB)
+Collecting h5py
+  Downloading h5py-3.1.0-cp36-cp36m-manylinux1_x86_64.whl (4.0 MB)
+Collecting rsa<5,>=3.1.4; python_version >= "3.5"
+  Downloading rsa-4.6-py3-none-any.whl (47 kB)
+Collecting pyasn1-modules>=0.2.1
+  Downloading pyasn1_modules-0.2.8-py2.py3-none-any.whl (155 kB)
+Collecting cachetools<5.0,>=2.0.0
+  Downloading cachetools-4.1.1-py3-none-any.whl (10 kB)
+Collecting requests-oauthlib>=0.7.0
+  Downloading requests_oauthlib-1.3.0-py2.py3-none-any.whl (23 kB)
+Collecting certifi>=2017.4.17
+  Downloading certifi-2020.11.8-py2.py3-none-any.whl (155 kB)
+Collecting chardet<4,>=3.0.2
+  Downloading chardet-3.0.4-py2.py3-none-any.whl (133 kB)
+Collecting urllib3<1.27,>=1.21.1
+  Downloading urllib3-1.26.2-py2.py3-none-any.whl (136 kB)
+Collecting idna<3,>=2.5
+  Downloading idna-2.10-py2.py3-none-any.whl (58 kB)
+Collecting importlib-metadata; python_version < "3.8"
+  Downloading importlib_metadata-3.1.1-py3-none-any.whl (9.6 kB)
+Collecting cached-property; python_version < "3.8"
+  Downloading cached_property-1.5.2-py2.py3-none-any.whl (7.6 kB)
+Collecting pyasn1>=0.1.3
+  Downloading pyasn1-0.4.8-py2.py3-none-any.whl (77 kB)
+Collecting oauthlib>=3.0.0
+  Downloading oauthlib-3.1.0-py2.py3-none-any.whl (147 kB)
+Collecting zipp>=0.5
+  Downloading zipp-3.4.0-py3-none-any.whl (5.2 kB)
+Building wheels for collected packages: gast, wrapt
+  Building wheel for gast (setup.py): started
+  Building wheel for gast (setup.py): finished with status 'done'
+  Created wheel for gast: filename=gast-0.2.2-py3-none-any.whl size=7539 sha256=22fc4fae990a7e1f49f32b62389b0ed64a610933763154fe9619ace3b5177696
+  Stored in directory: /root/.cache/pip/wheels/19/a7/b9/0740c7a3a7d1d348f04823339274b90de25fbcd217b2ee1fbe
+  Building wheel for wrapt (setup.py): started
+  Building wheel for wrapt (setup.py): finished with status 'done'
+  Created wheel for wrapt: filename=wrapt-1.12.1-cp36-cp36m-linux_x86_64.whl size=64241 sha256=4f3244fb6d25087341441f8259f6c4dd914ae4e32662123c35363e279d51b28c
+  Stored in directory: /root/.cache/pip/wheels/32/42/7f/23cae9ff6ef66798d00dc5d659088e57dbba01566f6c60db63
+Successfully built gast wrapt
+Installing collected packages: google-pasta, opt-einsum, absl-py, grpcio, pyasn1, rsa, pyasn1-modules, cachetools, google-auth, certifi, chardet, urllib3, idna, requests, oauthlib, requests-oauthlib, google-auth-oauthlib, zipp, importlib-metadata, markdown, tensorboard, astor, tensorflow-estimator, cached-property, h5py, keras-applications, gast, wrapt, keras-preprocessing, tensorflow-gpu, waymo-open-dataset-tf-2-0-0
+  WARNING: The scripts pyrsa-decrypt, pyrsa-encrypt, pyrsa-keygen, pyrsa-priv2pub, pyrsa-sign and pyrsa-verify are installed in '/root/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script chardetect is installed in '/root/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script google-oauthlib-tool is installed in '/root/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script markdown_py is installed in '/root/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script tensorboard is installed in '/root/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The scripts saved_model_cli, tensorboard, tf_upgrade_v2, tflite_convert, toco and toco_from_protos are installed in '/root/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+Successfully installed absl-py-0.11.0 astor-0.8.1 cached-property-1.5.2 cachetools-4.1.1 certifi-2020.11.8 chardet-3.0.4 gast-0.2.2 google-auth-1.23.0 google-auth-oauthlib-0.4.2 google-pasta-0.2.0 grpcio-1.34.0 h5py-3.1.0 idna-2.10 importlib-metadata-3.1.1 keras-applications-1.0.8 keras-preprocessing-1.1.2 markdown-3.3.3 oauthlib-3.1.0 opt-einsum-3.3.0 pyasn1-0.4.8 pyasn1-modules-0.2.8 requests-2.25.0 requests-oauthlib-1.3.0 rsa-4.6 tensorboard-2.0.2 tensorflow-estimator-2.0.1 tensorflow-gpu-2.0.0 urllib3-1.26.2 waymo-open-dataset-tf-2-0-0-1.2.0 wrapt-1.12.1 zipp-3.4.0
+WARNING: You are using pip version 20.0.2; however, version 20.3.1 is available.
+You should consider upgrading via the '/usr/bin/python3.6 -m pip install --upgrade pip' command.
++ NGPUS=4
++ PY_ARGS='--cfg_file cfgs/waymo_models/pv_rcnn_100_25.yaml'
++ python -m torch.distributed.launch --nproc_per_node=4 train.py --launcher pytorch --cfg_file cfgs/waymo_models/pv_rcnn_100_25.yaml
+torch cudnn version : 7501
+torch cudnn version : 7501
+torch cudnn version : 7501
+torch cudnn version : 7501
+2020-12-05 08:39:28,841   INFO  **********************Start logging**********************
+2020-12-05 08:39:28,842   INFO  CUDA_VISIBLE_DEVICES=ALL
+2020-12-05 08:39:28,842   INFO  total_batch_size: 4
+2020-12-05 08:39:28,842   INFO  cfg_file         cfgs/waymo_models/pv_rcnn_100_25.yaml
+2020-12-05 08:39:28,842   INFO  batch_size       1
+2020-12-05 08:39:28,842   INFO  epochs           50
+2020-12-05 08:39:28,842   INFO  workers          2
+2020-12-05 08:39:28,842   INFO  extra_tag        default
+2020-12-05 08:39:28,842   INFO  ckpt             None
+2020-12-05 08:39:28,842   INFO  pretrained_model None
+2020-12-05 08:39:28,842   INFO  launcher         pytorch
+2020-12-05 08:39:28,842   INFO  tcp_port         18888
+2020-12-05 08:39:28,842   INFO  sync_bn          False
+2020-12-05 08:39:28,842   INFO  fix_random_seed  False
+2020-12-05 08:39:28,842   INFO  ckpt_save_interval 1
+2020-12-05 08:39:28,842   INFO  local_rank       0
+2020-12-05 08:39:28,842   INFO  max_ckpt_save_num 30
+2020-12-05 08:39:28,843   INFO  merge_all_iters_to_one_epoch False
+2020-12-05 08:39:28,843   INFO  set_cfgs         None
+2020-12-05 08:39:28,843   INFO  max_waiting_mins 0
+2020-12-05 08:39:28,843   INFO  start_epoch      0
+2020-12-05 08:39:28,843   INFO  save_to_file     False
+2020-12-05 08:39:28,843   INFO  cfg.ROOT_DIR: /team1/codes/3dObjDet/OpenPCDet_ravi
+2020-12-05 08:39:28,843   INFO  cfg.LOCAL_RANK: 0
+2020-12-05 08:39:28,843   INFO  cfg.CLASS_NAMES: ['Vehicle', 'Pedestrian', 'Cyclist']
+2020-12-05 08:39:28,843   INFO  
+cfg.DATA_CONFIG = edict()
+2020-12-05 08:39:28,843   INFO  cfg.DATA_CONFIG.DATASET: WaymoDataset
+2020-12-05 08:39:28,843   INFO  cfg.DATA_CONFIG.DATA_PATH: ../data/waymo
+2020-12-05 08:39:28,843   INFO  cfg.DATA_CONFIG.PROCESSED_DATA_TAG: waymo_processed_data_100
+2020-12-05 08:39:28,843   INFO  cfg.DATA_CONFIG.POINT_CLOUD_RANGE: [-75.2, -75.2, -2, 75.2, 75.2, 4]
+2020-12-05 08:39:28,843   INFO  
+cfg.DATA_CONFIG.DATA_SPLIT = edict()
+2020-12-05 08:39:28,843   INFO  cfg.DATA_CONFIG.DATA_SPLIT.train: train
+2020-12-05 08:39:28,843   INFO  cfg.DATA_CONFIG.DATA_SPLIT.test: val
+2020-12-05 08:39:28,843   INFO  
+cfg.DATA_CONFIG.SAMPLED_INTERVAL = edict()
+2020-12-05 08:39:28,843   INFO  cfg.DATA_CONFIG.SAMPLED_INTERVAL.train: 5
+2020-12-05 08:39:28,844   INFO  cfg.DATA_CONFIG.SAMPLED_INTERVAL.test: 5
+2020-12-05 08:39:28,844   INFO  
+cfg.DATA_CONFIG.DATA_AUGMENTOR = edict()
+2020-12-05 08:39:28,844   INFO  cfg.DATA_CONFIG.DATA_AUGMENTOR.DISABLE_AUG_LIST: ['placeholder']
+2020-12-05 08:39:28,844   INFO  cfg.DATA_CONFIG.DATA_AUGMENTOR.AUG_CONFIG_LIST: [{'NAME': 'gt_sampling', 'USE_ROAD_PLANE': False, 'DB_INFO_PATH': ['/waymo-od/pcdet_processed/pcdet_waymo_100_dbinfos_train_sampled_10.pkl'], 'PREPARE': {'filter_by_min_points': ['Vehicle:5', 'Pedestrian:5', 'Cyclist:5'], 'filter_by_difficulty': [-1]}, 'SAMPLE_GROUPS': ['Vehicle:15', 'Pedestrian:10', 'Cyclist:10'], 'NUM_POINT_FEATURES': 5, 'REMOVE_EXTRA_WIDTH': [0.0, 0.0, 0.0], 'LIMIT_WHOLE_SCENE': True}, {'NAME': 'random_world_flip', 'ALONG_AXIS_LIST': ['x', 'y']}, {'NAME': 'random_world_rotation', 'WORLD_ROT_ANGLE': [-0.78539816, 0.78539816]}, {'NAME': 'random_world_scaling', 'WORLD_SCALE_RANGE': [0.95, 1.05]}]
+2020-12-05 08:39:28,844   INFO  
+cfg.DATA_CONFIG.POINT_FEATURE_ENCODING = edict()
+2020-12-05 08:39:28,844   INFO  cfg.DATA_CONFIG.POINT_FEATURE_ENCODING.encoding_type: absolute_coordinates_encoding
+2020-12-05 08:39:28,844   INFO  cfg.DATA_CONFIG.POINT_FEATURE_ENCODING.used_feature_list: ['x', 'y', 'z', 'intensity', 'elongation']
+2020-12-05 08:39:28,844   INFO  cfg.DATA_CONFIG.POINT_FEATURE_ENCODING.src_feature_list: ['x', 'y', 'z', 'intensity', 'elongation']
+2020-12-05 08:39:28,844   INFO  cfg.DATA_CONFIG.DATA_PROCESSOR: [{'NAME': 'mask_points_and_boxes_outside_range', 'REMOVE_OUTSIDE_BOXES': True}, {'NAME': 'shuffle_points', 'SHUFFLE_ENABLED': {'train': True, 'test': True}}, {'NAME': 'transform_points_to_voxels', 'VOXEL_SIZE': [0.1, 0.1, 0.15], 'MAX_POINTS_PER_VOXEL': 5, 'MAX_NUMBER_OF_VOXELS': {'train': 80000, 'test': 90000}}]
+2020-12-05 08:39:28,844   INFO  cfg.DATA_CONFIG._BASE_CONFIG_: cfgs/dataset_configs/waymo_dataset_100.yaml
+2020-12-05 08:39:28,844   INFO  
+cfg.MODEL = edict()
+2020-12-05 08:39:28,844   INFO  cfg.MODEL.NAME: PVRCNN
+2020-12-05 08:39:28,844   INFO  
+cfg.MODEL.VFE = edict()
+2020-12-05 08:39:28,844   INFO  cfg.MODEL.VFE.NAME: MeanVFE
+2020-12-05 08:39:28,844   INFO  
+cfg.MODEL.BACKBONE_3D = edict()
+2020-12-05 08:39:28,844   INFO  cfg.MODEL.BACKBONE_3D.NAME: VoxelBackBone8x
+2020-12-05 08:39:28,845   INFO  
+cfg.MODEL.MAP_TO_BEV = edict()
+2020-12-05 08:39:28,845   INFO  cfg.MODEL.MAP_TO_BEV.NAME: HeightCompression
+2020-12-05 08:39:28,845   INFO  cfg.MODEL.MAP_TO_BEV.NUM_BEV_FEATURES: 256
+2020-12-05 08:39:28,845   INFO  
+cfg.MODEL.BACKBONE_2D = edict()
+2020-12-05 08:39:28,845   INFO  cfg.MODEL.BACKBONE_2D.NAME: BaseBEVBackbone
+2020-12-05 08:39:28,845   INFO  cfg.MODEL.BACKBONE_2D.LAYER_NUMS: [5, 5]
+2020-12-05 08:39:28,845   INFO  cfg.MODEL.BACKBONE_2D.LAYER_STRIDES: [1, 2]
+2020-12-05 08:39:28,845   INFO  cfg.MODEL.BACKBONE_2D.NUM_FILTERS: [128, 256]
+2020-12-05 08:39:28,845   INFO  cfg.MODEL.BACKBONE_2D.UPSAMPLE_STRIDES: [1, 2]
+2020-12-05 08:39:28,845   INFO  cfg.MODEL.BACKBONE_2D.NUM_UPSAMPLE_FILTERS: [256, 256]
+2020-12-05 08:39:28,845   INFO  
+cfg.MODEL.DENSE_HEAD = edict()
+2020-12-05 08:39:28,845   INFO  cfg.MODEL.DENSE_HEAD.NAME: AnchorHeadSingle
+2020-12-05 08:39:28,845   INFO  cfg.MODEL.DENSE_HEAD.CLASS_AGNOSTIC: False
+2020-12-05 08:39:28,845   INFO  cfg.MODEL.DENSE_HEAD.USE_DIRECTION_CLASSIFIER: True
+2020-12-05 08:39:28,845   INFO  cfg.MODEL.DENSE_HEAD.DIR_OFFSET: 0.78539
+2020-12-05 08:39:28,845   INFO  cfg.MODEL.DENSE_HEAD.DIR_LIMIT_OFFSET: 0.0
+2020-12-05 08:39:28,846   INFO  cfg.MODEL.DENSE_HEAD.NUM_DIR_BINS: 2
+2020-12-05 08:39:28,846   INFO  cfg.MODEL.DENSE_HEAD.ANCHOR_GENERATOR_CONFIG: [{'class_name': 'Vehicle', 'anchor_sizes': [[4.7, 2.1, 1.7]], 'anchor_rotations': [0, 1.57], 'anchor_bottom_heights': [0], 'align_center': False, 'feature_map_stride': 8, 'matched_threshold': 0.55, 'unmatched_threshold': 0.4}, {'class_name': 'Pedestrian', 'anchor_sizes': [[0.91, 0.86, 1.73]], 'anchor_rotations': [0, 1.57], 'anchor_bottom_heights': [0], 'align_center': False, 'feature_map_stride': 8, 'matched_threshold': 0.5, 'unmatched_threshold': 0.35}, {'class_name': 'Cyclist', 'anchor_sizes': [[1.78, 0.84, 1.78]], 'anchor_rotations': [0, 1.57], 'anchor_bottom_heights': [0], 'align_center': False, 'feature_map_stride': 8, 'matched_threshold': 0.5, 'unmatched_threshold': 0.35}]
+2020-12-05 08:39:28,846   INFO  
+cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG = edict()
+2020-12-05 08:39:28,846   INFO  cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG.NAME: AxisAlignedTargetAssigner
+2020-12-05 08:39:28,846   INFO  cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG.POS_FRACTION: -1.0
+2020-12-05 08:39:28,846   INFO  cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG.SAMPLE_SIZE: 512
+2020-12-05 08:39:28,846   INFO  cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG.NORM_BY_NUM_EXAMPLES: False
+2020-12-05 08:39:28,846   INFO  cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG.MATCH_HEIGHT: False
+2020-12-05 08:39:28,846   INFO  cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG.BOX_CODER: ResidualCoder
+2020-12-05 08:39:28,846   INFO  
+cfg.MODEL.DENSE_HEAD.LOSS_CONFIG = edict()
+2020-12-05 08:39:28,846   INFO  
+cfg.MODEL.DENSE_HEAD.LOSS_CONFIG.LOSS_WEIGHTS = edict()
+2020-12-05 08:39:28,846   INFO  cfg.MODEL.DENSE_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.cls_weight: 1.0
+2020-12-05 08:39:28,846   INFO  cfg.MODEL.DENSE_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.loc_weight: 2.0
+2020-12-05 08:39:28,846   INFO  cfg.MODEL.DENSE_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.dir_weight: 0.2
+2020-12-05 08:39:28,846   INFO  cfg.MODEL.DENSE_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.code_weights: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+2020-12-05 08:39:28,846   INFO  
+cfg.MODEL.PFE = edict()
+2020-12-05 08:39:28,846   INFO  cfg.MODEL.PFE.NAME: VoxelSetAbstraction
+2020-12-05 08:39:28,847   INFO  cfg.MODEL.PFE.POINT_SOURCE: raw_points
+2020-12-05 08:39:28,847   INFO  cfg.MODEL.PFE.NUM_KEYPOINTS: 4096
+2020-12-05 08:39:28,847   INFO  cfg.MODEL.PFE.NUM_OUTPUT_FEATURES: 128
+2020-12-05 08:39:28,847   INFO  cfg.MODEL.PFE.SAMPLE_METHOD: FPS
+2020-12-05 08:39:28,847   INFO  cfg.MODEL.PFE.FEATURES_SOURCE: ['bev', 'x_conv3', 'x_conv4', 'raw_points']
+2020-12-05 08:39:28,847   INFO  
+cfg.MODEL.PFE.SA_LAYER = edict()
+2020-12-05 08:39:28,847   INFO  
+cfg.MODEL.PFE.SA_LAYER.raw_points = edict()
+2020-12-05 08:39:28,847   INFO  cfg.MODEL.PFE.SA_LAYER.raw_points.MLPS: [[16, 16], [16, 16]]
+2020-12-05 08:39:28,847   INFO  cfg.MODEL.PFE.SA_LAYER.raw_points.POOL_RADIUS: [0.4, 0.8]
+2020-12-05 08:39:28,847   INFO  cfg.MODEL.PFE.SA_LAYER.raw_points.NSAMPLE: [16, 16]
+2020-12-05 08:39:28,847   INFO  
+cfg.MODEL.PFE.SA_LAYER.x_conv1 = edict()
+2020-12-05 08:39:28,847   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv1.DOWNSAMPLE_FACTOR: 1
+2020-12-05 08:39:28,847   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv1.MLPS: [[16, 16], [16, 16]]
+2020-12-05 08:39:28,847   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv1.POOL_RADIUS: [0.4, 0.8]
+2020-12-05 08:39:28,847   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv1.NSAMPLE: [16, 16]
+2020-12-05 08:39:28,847   INFO  
+cfg.MODEL.PFE.SA_LAYER.x_conv2 = edict()
+2020-12-05 08:39:28,848   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv2.DOWNSAMPLE_FACTOR: 2
+2020-12-05 08:39:28,848   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv2.MLPS: [[32, 32], [32, 32]]
+2020-12-05 08:39:28,848   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv2.POOL_RADIUS: [0.8, 1.2]
+2020-12-05 08:39:28,848   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv2.NSAMPLE: [16, 32]
+2020-12-05 08:39:28,848   INFO  
+cfg.MODEL.PFE.SA_LAYER.x_conv3 = edict()
+2020-12-05 08:39:28,848   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv3.DOWNSAMPLE_FACTOR: 4
+2020-12-05 08:39:28,848   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv3.MLPS: [[64, 64], [64, 64]]
+2020-12-05 08:39:28,848   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv3.POOL_RADIUS: [1.2, 2.4]
+2020-12-05 08:39:28,848   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv3.NSAMPLE: [16, 32]
+2020-12-05 08:39:28,848   INFO  
+cfg.MODEL.PFE.SA_LAYER.x_conv4 = edict()
+2020-12-05 08:39:28,848   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv4.DOWNSAMPLE_FACTOR: 8
+2020-12-05 08:39:28,848   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv4.MLPS: [[64, 64], [64, 64]]
+2020-12-05 08:39:28,848   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv4.POOL_RADIUS: [2.4, 4.8]
+2020-12-05 08:39:28,848   INFO  cfg.MODEL.PFE.SA_LAYER.x_conv4.NSAMPLE: [16, 32]
+2020-12-05 08:39:28,848   INFO  
+cfg.MODEL.POINT_HEAD = edict()
+2020-12-05 08:39:28,848   INFO  cfg.MODEL.POINT_HEAD.NAME: PointHeadSimple
+2020-12-05 08:39:28,849   INFO  cfg.MODEL.POINT_HEAD.CLS_FC: [256, 256]
+2020-12-05 08:39:28,849   INFO  cfg.MODEL.POINT_HEAD.CLASS_AGNOSTIC: True
+2020-12-05 08:39:28,849   INFO  cfg.MODEL.POINT_HEAD.USE_POINT_FEATURES_BEFORE_FUSION: True
+2020-12-05 08:39:28,849   INFO  
+cfg.MODEL.POINT_HEAD.TARGET_CONFIG = edict()
+2020-12-05 08:39:28,849   INFO  cfg.MODEL.POINT_HEAD.TARGET_CONFIG.GT_EXTRA_WIDTH: [0.2, 0.2, 0.2]
+2020-12-05 08:39:28,849   INFO  
+cfg.MODEL.POINT_HEAD.LOSS_CONFIG = edict()
+2020-12-05 08:39:28,849   INFO  cfg.MODEL.POINT_HEAD.LOSS_CONFIG.LOSS_REG: smooth-l1
+2020-12-05 08:39:28,849   INFO  
+cfg.MODEL.POINT_HEAD.LOSS_CONFIG.LOSS_WEIGHTS = edict()
+2020-12-05 08:39:28,849   INFO  cfg.MODEL.POINT_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.point_cls_weight: 1.0
+2020-12-05 08:39:28,849   INFO  
+cfg.MODEL.ROI_HEAD = edict()
+2020-12-05 08:39:28,849   INFO  cfg.MODEL.ROI_HEAD.NAME: PVRCNNHead
+2020-12-05 08:39:28,849   INFO  cfg.MODEL.ROI_HEAD.CLASS_AGNOSTIC: True
+2020-12-05 08:39:28,849   INFO  cfg.MODEL.ROI_HEAD.SHARED_FC: [256, 256]
+2020-12-05 08:39:28,849   INFO  cfg.MODEL.ROI_HEAD.CLS_FC: [256, 256]
+2020-12-05 08:39:28,849   INFO  cfg.MODEL.ROI_HEAD.REG_FC: [256, 256]
+2020-12-05 08:39:28,849   INFO  cfg.MODEL.ROI_HEAD.DP_RATIO: 0.3
+2020-12-05 08:39:28,850   INFO  
+cfg.MODEL.ROI_HEAD.NMS_CONFIG = edict()
+2020-12-05 08:39:28,850   INFO  
+cfg.MODEL.ROI_HEAD.NMS_CONFIG.TRAIN = edict()
+2020-12-05 08:39:28,850   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TRAIN.NMS_TYPE: nms_gpu
+2020-12-05 08:39:28,850   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TRAIN.MULTI_CLASSES_NMS: False
+2020-12-05 08:39:28,850   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TRAIN.NMS_PRE_MAXSIZE: 9000
+2020-12-05 08:39:28,850   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TRAIN.NMS_POST_MAXSIZE: 512
+2020-12-05 08:39:28,850   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TRAIN.NMS_THRESH: 0.8
+2020-12-05 08:39:28,850   INFO  
+cfg.MODEL.ROI_HEAD.NMS_CONFIG.TEST = edict()
+2020-12-05 08:39:28,850   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TEST.NMS_TYPE: nms_gpu
+2020-12-05 08:39:28,850   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TEST.MULTI_CLASSES_NMS: False
+2020-12-05 08:39:28,850   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TEST.NMS_PRE_MAXSIZE: 1024
+2020-12-05 08:39:28,850   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TEST.NMS_POST_MAXSIZE: 100
+2020-12-05 08:39:28,850   INFO  cfg.MODEL.ROI_HEAD.NMS_CONFIG.TEST.NMS_THRESH: 0.7
+2020-12-05 08:39:28,850   INFO  
+cfg.MODEL.ROI_HEAD.ROI_GRID_POOL = edict()
+2020-12-05 08:39:28,851   INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.GRID_SIZE: 6
+2020-12-05 08:39:28,851   INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.MLPS: [[64, 64], [64, 64]]
+2020-12-05 08:39:28,851   INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.POOL_RADIUS: [0.8, 1.6]
+2020-12-05 08:39:28,851   INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.NSAMPLE: [16, 16]
+2020-12-05 08:39:28,851   INFO  cfg.MODEL.ROI_HEAD.ROI_GRID_POOL.POOL_METHOD: max_pool
+2020-12-05 08:39:28,851   INFO  
+cfg.MODEL.ROI_HEAD.TARGET_CONFIG = edict()
+2020-12-05 08:39:28,851   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.BOX_CODER: ResidualCoder
+2020-12-05 08:39:28,851   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.ROI_PER_IMAGE: 128
+2020-12-05 08:39:28,851   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.FG_RATIO: 0.5
+2020-12-05 08:39:28,851   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.SAMPLE_ROI_BY_EACH_CLASS: True
+2020-12-05 08:39:28,851   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.CLS_SCORE_TYPE: roi_iou
+2020-12-05 08:39:28,851   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.CLS_FG_THRESH: 0.75
+2020-12-05 08:39:28,851   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.CLS_BG_THRESH: 0.25
+2020-12-05 08:39:28,851   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.CLS_BG_THRESH_LO: 0.1
+2020-12-05 08:39:28,851   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.HARD_BG_RATIO: 0.8
+2020-12-05 08:39:28,851   INFO  cfg.MODEL.ROI_HEAD.TARGET_CONFIG.REG_FG_THRESH: 0.55
+2020-12-05 08:39:28,852   INFO  
+cfg.MODEL.ROI_HEAD.LOSS_CONFIG = edict()
+2020-12-05 08:39:28,852   INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.CLS_LOSS: BinaryCrossEntropy
+2020-12-05 08:39:28,852   INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.REG_LOSS: smooth-l1
+2020-12-05 08:39:28,852   INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.CORNER_LOSS_REGULARIZATION: True
+2020-12-05 08:39:28,852   INFO  
+cfg.MODEL.ROI_HEAD.LOSS_CONFIG.LOSS_WEIGHTS = edict()
+2020-12-05 08:39:28,852   INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.rcnn_cls_weight: 1.0
+2020-12-05 08:39:28,852   INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.rcnn_reg_weight: 1.0
+2020-12-05 08:39:28,852   INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.rcnn_corner_weight: 1.0
+2020-12-05 08:39:28,852   INFO  cfg.MODEL.ROI_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.code_weights: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+2020-12-05 08:39:28,852   INFO  
+cfg.MODEL.POST_PROCESSING = edict()
+2020-12-05 08:39:28,852   INFO  cfg.MODEL.POST_PROCESSING.RECALL_THRESH_LIST: [0.3, 0.5, 0.7]
+2020-12-05 08:39:28,852   INFO  cfg.MODEL.POST_PROCESSING.SCORE_THRESH: 0.1
+2020-12-05 08:39:28,852   INFO  cfg.MODEL.POST_PROCESSING.OUTPUT_RAW_SCORE: False
+2020-12-05 08:39:28,852   INFO  cfg.MODEL.POST_PROCESSING.EVAL_METRIC: waymo
+2020-12-05 08:39:28,852   INFO  
+cfg.MODEL.POST_PROCESSING.NMS_CONFIG = edict()
+2020-12-05 08:39:28,853   INFO  cfg.MODEL.POST_PROCESSING.NMS_CONFIG.MULTI_CLASSES_NMS: False
+2020-12-05 08:39:28,853   INFO  cfg.MODEL.POST_PROCESSING.NMS_CONFIG.NMS_TYPE: nms_gpu
+2020-12-05 08:39:28,853   INFO  cfg.MODEL.POST_PROCESSING.NMS_CONFIG.NMS_THRESH: 0.1
+2020-12-05 08:39:28,853   INFO  cfg.MODEL.POST_PROCESSING.NMS_CONFIG.NMS_PRE_MAXSIZE: 4096
+2020-12-05 08:39:28,853   INFO  cfg.MODEL.POST_PROCESSING.NMS_CONFIG.NMS_POST_MAXSIZE: 500
+2020-12-05 08:39:28,853   INFO  
+cfg.OPTIMIZATION = edict()
+2020-12-05 08:39:28,853   INFO  cfg.OPTIMIZATION.BATCH_SIZE_PER_GPU: 1
+2020-12-05 08:39:28,853   INFO  cfg.OPTIMIZATION.NUM_EPOCHS: 50
+2020-12-05 08:39:28,853   INFO  cfg.OPTIMIZATION.OPTIMIZER: adam_onecycle
+2020-12-05 08:39:28,853   INFO  cfg.OPTIMIZATION.LR: 0.01
+2020-12-05 08:39:28,853   INFO  cfg.OPTIMIZATION.WEIGHT_DECAY: 0.001
+2020-12-05 08:39:28,853   INFO  cfg.OPTIMIZATION.MOMENTUM: 0.9
+2020-12-05 08:39:28,853   INFO  cfg.OPTIMIZATION.MOMS: [0.95, 0.85]
+2020-12-05 08:39:28,853   INFO  cfg.OPTIMIZATION.PCT_START: 0.4
+2020-12-05 08:39:28,853   INFO  cfg.OPTIMIZATION.DIV_FACTOR: 10
+2020-12-05 08:39:28,854   INFO  cfg.OPTIMIZATION.DECAY_STEP_LIST: [35, 45]
+2020-12-05 08:39:28,854   INFO  cfg.OPTIMIZATION.LR_DECAY: 0.1
+2020-12-05 08:39:28,854   INFO  cfg.OPTIMIZATION.LR_CLIP: 1e-07
+2020-12-05 08:39:28,854   INFO  cfg.OPTIMIZATION.LR_WARMUP: False
+2020-12-05 08:39:28,854   INFO  cfg.OPTIMIZATION.WARMUP_EPOCH: 1
+2020-12-05 08:39:28,854   INFO  cfg.OPTIMIZATION.GRAD_NORM_CLIP: 10
+2020-12-05 08:39:28,854   INFO  cfg.TAG: pv_rcnn_100_25
+2020-12-05 08:39:28,854   INFO  cfg.EXP_GROUP_PATH: waymo_models
+2020-12-05 08:39:29,141   INFO  Database filter by min points Vehicle: 15918 => 13659
+2020-12-05 08:39:29,143   INFO  Database filter by min points Pedestrian: 8810 => 6984
+2020-12-05 08:39:29,143   INFO  Database filter by min points Cyclist: 123 => 110
+2020-12-05 08:39:29,149   INFO  Database filter by difficulty Vehicle: 13659 => 13659
+2020-12-05 08:39:29,152   INFO  Database filter by difficulty Pedestrian: 6984 => 6984
+2020-12-05 08:39:29,152   INFO  Database filter by difficulty Cyclist: 110 => 110
+2020-12-05 08:39:29,252   INFO  Loading Waymo dataset
+2020-12-05 08:39:45,179   INFO  Total skipped info 0
+2020-12-05 08:39:45,179   INFO  Total samples for Waymo dataset: 19818
+2020-12-05 08:39:45,180   INFO  Total sampled samples for Waymo dataset: 3964
+2020-12-05 08:40:04,070   INFO  ==> Loading parameters from checkpoint /team1/codes/3dObjDet/OpenPCDet_ravi/output/waymo_models/pv_rcnn_100_25/default/ckpt/checkpoint_epoch_50.pth to CPU
+2020-12-05 08:40:05,834   INFO  ==> Loading optimizer parameters from checkpoint /team1/codes/3dObjDet/OpenPCDet_ravi/output/waymo_models/pv_rcnn_100_25/default/ckpt/checkpoint_epoch_50.pth to CPU
+==> Checkpoint trained from version: pcdet+0.3.0+fafdbd8
+2020-12-05 08:40:05,942   INFO  ==> Done
+==> Checkpoint trained from version: pcdet+0.3.0+fafdbd8
+==> Checkpoint trained from version: pcdet+0.3.0+fafdbd8
+==> Checkpoint trained from version: pcdet+0.3.0+fafdbd8
+2020-12-05 08:40:06,555   INFO  DistributedDataParallel(
+  (module): PVRCNN(
+    (vfe): MeanVFE()
+    (backbone_3d): VoxelBackBone8x(
+      (conv_input): SparseSequential(
+        (0): SubMConv3d()
+        (1): BatchNorm1d(16, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+      (conv1): SparseSequential(
+        (0): SparseSequential(
+          (0): SubMConv3d()
+          (1): BatchNorm1d(16, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU()
+        )
+      )
+      (conv2): SparseSequential(
+        (0): SparseSequential(
+          (0): SparseConv3d()
+          (1): BatchNorm1d(32, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU()
+        )
+        (1): SparseSequential(
+          (0): SubMConv3d()
+          (1): BatchNorm1d(32, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU()
+        )
+        (2): SparseSequential(
+          (0): SubMConv3d()
+          (1): BatchNorm1d(32, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU()
+        )
+      )
+      (conv3): SparseSequential(
+        (0): SparseSequential(
+          (0): SparseConv3d()
+          (1): BatchNorm1d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU()
+        )
+        (1): SparseSequential(
+          (0): SubMConv3d()
+          (1): BatchNorm1d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU()
+        )
+        (2): SparseSequential(
+          (0): SubMConv3d()
+          (1): BatchNorm1d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU()
+        )
+      )
+      (conv4): SparseSequential(
+        (0): SparseSequential(
+          (0): SparseConv3d()
+          (1): BatchNorm1d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU()
+        )
+        (1): SparseSequential(
+          (0): SubMConv3d()
+          (1): BatchNorm1d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU()
+        )
+        (2): SparseSequential(
+          (0): SubMConv3d()
+          (1): BatchNorm1d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU()
+        )
+      )
+      (conv_out): SparseSequential(
+        (0): SparseConv3d()
+        (1): BatchNorm1d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+    )
+    (map_to_bev_module): HeightCompression()
+    (pfe): VoxelSetAbstraction(
+      (SA_layers): ModuleList(
+        (0): StackSAModuleMSG(
+          (groupers): ModuleList(
+            (0): QueryAndGroup()
+            (1): QueryAndGroup()
+          )
+          (mlps): ModuleList(
+            (0): Sequential(
+              (0): Conv2d(67, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): ReLU()
+              (3): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (4): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (5): ReLU()
+            )
+            (1): Sequential(
+              (0): Conv2d(67, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): ReLU()
+              (3): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (4): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (5): ReLU()
+            )
+          )
+        )
+        (1): StackSAModuleMSG(
+          (groupers): ModuleList(
+            (0): QueryAndGroup()
+            (1): QueryAndGroup()
+          )
+          (mlps): ModuleList(
+            (0): Sequential(
+              (0): Conv2d(67, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): ReLU()
+              (3): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (4): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (5): ReLU()
+            )
+            (1): Sequential(
+              (0): Conv2d(67, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (2): ReLU()
+              (3): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+              (4): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+              (5): ReLU()
+            )
+          )
+        )
+      )
+      (SA_rawpoints): StackSAModuleMSG(
+        (groupers): ModuleList(
+          (0): QueryAndGroup()
+          (1): QueryAndGroup()
+        )
+        (mlps): ModuleList(
+          (0): Sequential(
+            (0): Conv2d(5, 16, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+            (3): Conv2d(16, 16, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (4): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): ReLU()
+          )
+          (1): Sequential(
+            (0): Conv2d(5, 16, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+            (3): Conv2d(16, 16, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (4): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): ReLU()
+          )
+        )
+      )
+      (vsa_point_feature_fusion): Sequential(
+        (0): Linear(in_features=544, out_features=128, bias=False)
+        (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+    )
+    (backbone_2d): BaseBEVBackbone(
+      (blocks): ModuleList(
+        (0): Sequential(
+          (0): ZeroPad2d(padding=(1, 1, 1, 1), value=0.0)
+          (1): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1), bias=False)
+          (2): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (3): ReLU()
+          (4): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (5): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (6): ReLU()
+          (7): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (8): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (9): ReLU()
+          (10): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (11): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (12): ReLU()
+          (13): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (14): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (15): ReLU()
+          (16): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (17): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (18): ReLU()
+        )
+        (1): Sequential(
+          (0): ZeroPad2d(padding=(1, 1, 1, 1), value=0.0)
+          (1): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), bias=False)
+          (2): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (3): ReLU()
+          (4): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (5): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (6): ReLU()
+          (7): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (8): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (9): ReLU()
+          (10): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (11): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (12): ReLU()
+          (13): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (14): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (15): ReLU()
+          (16): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (17): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (18): ReLU()
+        )
+      )
+      (deblocks): ModuleList(
+        (0): Sequential(
+          (0): ConvTranspose2d(128, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU()
+        )
+        (1): Sequential(
+          (0): ConvTranspose2d(256, 256, kernel_size=(2, 2), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU()
+        )
+      )
+    )
+    (dense_head): AnchorHeadSingle(
+      (cls_loss_func): SigmoidFocalClassificationLoss()
+      (reg_loss_func): WeightedSmoothL1Loss()
+      (dir_loss_func): WeightedCrossEntropyLoss()
+      (conv_cls): Conv2d(512, 18, kernel_size=(1, 1), stride=(1, 1))
+      (conv_box): Conv2d(512, 42, kernel_size=(1, 1), stride=(1, 1))
+      (conv_dir_cls): Conv2d(512, 12, kernel_size=(1, 1), stride=(1, 1))
+    )
+    (point_head): PointHeadSimple(
+      (cls_loss_func): SigmoidFocalClassificationLoss()
+      (cls_layers): Sequential(
+        (0): Linear(in_features=544, out_features=256, bias=False)
+        (1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU()
+        (3): Linear(in_features=256, out_features=256, bias=False)
+        (4): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (5): ReLU()
+        (6): Linear(in_features=256, out_features=1, bias=True)
+      )
+    )
+    (roi_head): PVRCNNHead(
+      (proposal_target_layer): ProposalTargetLayer()
+      (reg_loss_func): WeightedSmoothL1Loss()
+      (roi_grid_pool_layer): StackSAModuleMSG(
+        (groupers): ModuleList(
+          (0): QueryAndGroup()
+          (1): QueryAndGroup()
+        )
+        (mlps): ModuleList(
+          (0): Sequential(
+            (0): Conv2d(131, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+            (3): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (4): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): ReLU()
+          )
+          (1): Sequential(
+            (0): Conv2d(131, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (2): ReLU()
+            (3): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (4): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (5): ReLU()
+          )
+        )
+      )
+      (shared_fc_layer): Sequential(
+        (0): Conv1d(27648, 256, kernel_size=(1,), stride=(1,), bias=False)
+        (1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU()
+        (3): Dropout(p=0.3)
+        (4): Conv1d(256, 256, kernel_size=(1,), stride=(1,), bias=False)
+        (5): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (6): ReLU()
+      )
+      (cls_layers): Sequential(
+        (0): Conv1d(256, 256, kernel_size=(1,), stride=(1,), bias=False)
+        (1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU()
+        (3): Dropout(p=0.3)
+        (4): Conv1d(256, 256, kernel_size=(1,), stride=(1,), bias=False)
+        (5): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (6): ReLU()
+        (7): Conv1d(256, 1, kernel_size=(1,), stride=(1,))
+      )
+      (reg_layers): Sequential(
+        (0): Conv1d(256, 256, kernel_size=(1,), stride=(1,), bias=False)
+        (1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (2): ReLU()
+        (3): Dropout(p=0.3)
+        (4): Conv1d(256, 256, kernel_size=(1,), stride=(1,), bias=False)
+        (5): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (6): ReLU()
+        (7): Conv1d(256, 7, kernel_size=(1,), stride=(1,))
+      )
+    )
+  )
+)
+2020-12-05 08:40:06,559   INFO  **********************Start training waymo_models/pv_rcnn_100_25(default)**********************
+epochs: 0it [00:00, ?it/s]epochs: 0it [00:00, ?it/s]epochs: 0it [00:00, ?it/s]epochs: 0it [00:00, ?it/s]                                                    epochs: 0it [00:08, ?it/s]
+                          2020-12-05 08:40:17,350   INFO  **********************End training waymo_models/pv_rcnn_100_25(default)**********************
+
+
+
+2020-12-05 08:40:17,350   INFO  **********************Start evaluation waymo_models/pv_rcnn_100_25(default)**********************
+2020-12-05 08:40:20,622   INFO  Loading Waymo dataset
+2020-12-05 08:40:20,888   INFO  Total skipped info 0
+2020-12-05 08:40:20,888   INFO  Total samples for Waymo dataset: 4955
+2020-12-05 08:40:20,889   INFO  Total sampled samples for Waymo dataset: 991
+2020-12-05 08:40:20,941   INFO  ==> Loading parameters from checkpoint /team1/codes/3dObjDet/OpenPCDet_ravi/output/waymo_models/pv_rcnn_100_25/default/ckpt/checkpoint_epoch_43.pth to CPU
+2020-12-05 08:40:21,838   INFO  ==> Checkpoint trained from version: pcdet+0.3.0+fafdbd8
+2020-12-05 08:40:22,675   INFO  ==> Done (loaded 319/319)
+2020-12-05 08:40:22,680   INFO  *************** EPOCH 43 EVALUATION *****************
+eval:   0%|          | 0/248 [00:00<?, ?it/s]eval:   0%|          | 0/248 [00:08<?, ?it/s, recall_0.3=(70, 70) / 83]eval:   0%|          | 1/248 [00:08<34:27,  8.37s/it, recall_0.3=(70, 70) / 83]eval:   0%|          | 1/248 [00:08<34:27,  8.37s/it, recall_0.3=(138, 138) / 169]eval:   1%|          | 2/248 [00:08<24:29,  5.97s/it, recall_0.3=(138, 138) / 169]eval:   1%|          | 2/248 [00:09<24:29,  5.97s/it, recall_0.3=(204, 204) / 256]eval:   1%|          | 3/248 [00:09<17:34,  4.30s/it, recall_0.3=(204, 204) / 256]eval:   1%|          | 3/248 [00:09<17:34,  4.30s/it, recall_0.3=(273, 273) / 341]eval:   2%|▏         | 4/248 [00:09<12:43,  3.13s/it, recall_0.3=(273, 273) / 341]eval:   2%|▏         | 4/248 [00:09<12:43,  3.13s/it, recall_0.3=(345, 345) / 427]eval:   2%|▏         | 5/248 [00:09<09:23,  2.32s/it, recall_0.3=(345, 345) / 427]eval:   2%|▏         | 5/248 [00:10<09:23,  2.32s/it, recall_0.3=(413, 414) / 508]eval:   2%|▏         | 6/248 [00:10<07:01,  1.74s/it, recall_0.3=(413, 414) / 508]eval:   2%|▏         | 6/248 [00:10<07:01,  1.74s/it, recall_0.3=(483, 485) / 588]eval:   3%|▎         | 7/248 [00:10<05:21,  1.34s/it, recall_0.3=(483, 485) / 588]eval:   3%|▎         | 7/248 [00:11<05:21,  1.34s/it, recall_0.3=(550, 552) / 667]eval:   3%|▎         | 8/248 [00:11<04:12,  1.05s/it, recall_0.3=(550, 552) / 667]eval:   3%|▎         | 8/248 [00:11<04:12,  1.05s/it, recall_0.3=(617, 620) / 745]eval:   4%|▎         | 9/248 [00:11<03:24,  1.17it/s, recall_0.3=(617, 620) / 745]eval:   4%|▎         | 9/248 [00:11<03:24,  1.17it/s, recall_0.3=(684, 687) / 824]eval:   4%|▍         | 10/248 [00:11<02:53,  1.38it/s, recall_0.3=(684, 687) / 824]eval:   4%|▍         | 10/248 [00:12<02:53,  1.38it/s, recall_0.3=(731, 734) / 893]eval:   4%|▍         | 11/248 [00:12<02:39,  1.49it/s, recall_0.3=(731, 734) / 893]eval:   4%|▍         | 11/248 [00:12<02:39,  1.49it/s, recall_0.3=(784, 786) / 961]eval:   5%|▍         | 12/248 [00:12<02:18,  1.70it/s, recall_0.3=(784, 786) / 961]eval:   5%|▍         | 12/248 [00:13<02:18,  1.70it/s, recall_0.3=(837, 839) / 1038]eval:   5%|▌         | 13/248 [00:13<02:05,  1.87it/s, recall_0.3=(837, 839) / 1038]eval:   5%|▌         | 13/248 [00:13<02:05,  1.87it/s, recall_0.3=(894, 896) / 1116]eval:   6%|▌         | 14/248 [00:13<01:55,  2.03it/s, recall_0.3=(894, 896) / 1116]eval:   6%|▌         | 14/248 [00:14<01:55,  2.03it/s, recall_0.3=(953, 955) / 1195]eval:   6%|▌         | 15/248 [00:14<01:47,  2.17it/s, recall_0.3=(953, 955) / 1195]eval:   6%|▌         | 15/248 [00:14<01:47,  2.17it/s, recall_0.3=(1012, 1015) / 1270]eval:   6%|▋         | 16/248 [00:14<01:43,  2.23it/s, recall_0.3=(1012, 1015) / 1270]eval:   6%|▋         | 16/248 [00:14<01:43,  2.23it/s, recall_0.3=(1070, 1073) / 1346]eval:   7%|▋         | 17/248 [00:14<01:41,  2.28it/s, recall_0.3=(1070, 1073) / 1346]eval:   7%|▋         | 17/248 [00:15<01:41,  2.28it/s, recall_0.3=(1129, 1132) / 1422]eval:   7%|▋         | 18/248 [00:15<01:38,  2.34it/s, recall_0.3=(1129, 1132) / 1422]eval:   7%|▋         | 18/248 [00:15<01:38,  2.34it/s, recall_0.3=(1188, 1191) / 1499]eval:   8%|▊         | 19/248 [00:15<01:37,  2.35it/s, recall_0.3=(1188, 1191) / 1499]eval:   8%|▊         | 19/248 [00:16<01:37,  2.35it/s, recall_0.3=(1244, 1247) / 1575]eval:   8%|▊         | 20/248 [00:16<01:35,  2.39it/s, recall_0.3=(1244, 1247) / 1575]eval:   8%|▊         | 20/248 [00:16<01:35,  2.39it/s, recall_0.3=(1253, 1256) / 1585]eval:   8%|▊         | 21/248 [00:16<01:34,  2.40it/s, recall_0.3=(1253, 1256) / 1585]eval:   8%|▊         | 21/248 [00:17<01:34,  2.40it/s, recall_0.3=(1261, 1264) / 1593]eval:   9%|▉         | 22/248 [00:17<01:37,  2.33it/s, recall_0.3=(1261, 1264) / 1593]eval:   9%|▉         | 22/248 [00:17<01:37,  2.33it/s, recall_0.3=(1269, 1272) / 1601]eval:   9%|▉         | 23/248 [00:17<01:34,  2.39it/s, recall_0.3=(1269, 1272) / 1601]eval:   9%|▉         | 23/248 [00:17<01:34,  2.39it/s, recall_0.3=(1276, 1279) / 1609]eval:  10%|▉         | 24/248 [00:17<01:31,  2.45it/s, recall_0.3=(1276, 1279) / 1609]eval:  10%|▉         | 24/248 [00:18<01:31,  2.45it/s, recall_0.3=(1283, 1286) / 1616]eval:  10%|█         | 25/248 [00:18<01:29,  2.50it/s, recall_0.3=(1283, 1286) / 1616]eval:  10%|█         | 25/248 [00:18<01:29,  2.50it/s, recall_0.3=(1288, 1291) / 1624]eval:  10%|█         | 26/248 [00:18<01:28,  2.50it/s, recall_0.3=(1288, 1291) / 1624]eval:  10%|█         | 26/248 [00:19<01:28,  2.50it/s, recall_0.3=(1297, 1300) / 1634]eval:  11%|█         | 27/248 [00:19<01:31,  2.42it/s, recall_0.3=(1297, 1300) / 1634]eval:  11%|█         | 27/248 [00:19<01:31,  2.42it/s, recall_0.3=(1307, 1310) / 1645]eval:  11%|█▏        | 28/248 [00:19<01:29,  2.46it/s, recall_0.3=(1307, 1310) / 1645]eval:  11%|█▏        | 28/248 [00:19<01:29,  2.46it/s, recall_0.3=(1318, 1321) / 1660]eval:  12%|█▏        | 29/248 [00:19<01:28,  2.48it/s, recall_0.3=(1318, 1321) / 1660]eval:  12%|█▏        | 29/248 [00:20<01:28,  2.48it/s, recall_0.3=(1334, 1337) / 1677]eval:  12%|█▏        | 30/248 [00:20<01:26,  2.52it/s, recall_0.3=(1334, 1337) / 1677]eval:  12%|█▏        | 30/248 [00:20<01:26,  2.52it/s, recall_0.3=(1375, 1378) / 1728]eval:  12%|█▎        | 31/248 [00:20<01:28,  2.45it/s, recall_0.3=(1375, 1378) / 1728]eval:  12%|█▎        | 31/248 [00:21<01:28,  2.45it/s, recall_0.3=(1419, 1423) / 1785]eval:  13%|█▎        | 32/248 [00:21<01:30,  2.38it/s, recall_0.3=(1419, 1423) / 1785]eval:  13%|█▎        | 32/248 [00:21<01:30,  2.38it/s, recall_0.3=(1462, 1466) / 1850]eval:  13%|█▎        | 33/248 [00:21<01:31,  2.34it/s, recall_0.3=(1462, 1466) / 1850]eval:  13%|█▎        | 33/248 [00:21<01:31,  2.34it/s, recall_0.3=(1509, 1513) / 1913]eval:  14%|█▎        | 34/248 [00:21<01:30,  2.36it/s, recall_0.3=(1509, 1513) / 1913]eval:  14%|█▎        | 34/248 [00:22<01:30,  2.36it/s, recall_0.3=(1558, 1562) / 1983]eval:  14%|█▍        | 35/248 [00:22<01:30,  2.36it/s, recall_0.3=(1558, 1562) / 1983]eval:  14%|█▍        | 35/248 [00:22<01:30,  2.36it/s, recall_0.3=(1605, 1609) / 2055]eval:  15%|█▍        | 36/248 [00:22<01:28,  2.38it/s, recall_0.3=(1605, 1609) / 2055]eval:  15%|█▍        | 36/248 [00:23<01:28,  2.38it/s, recall_0.3=(1642, 1646) / 2125]eval:  15%|█▍        | 37/248 [00:23<01:27,  2.41it/s, recall_0.3=(1642, 1646) / 2125]eval:  15%|█▍        | 37/248 [00:23<01:27,  2.41it/s, recall_0.3=(1678, 1682) / 2184]eval:  15%|█▌        | 38/248 [00:23<01:28,  2.36it/s, recall_0.3=(1678, 1682) / 2184]eval:  15%|█▌        | 38/248 [00:24<01:28,  2.36it/s, recall_0.3=(1713, 1717) / 2240]eval:  16%|█▌        | 39/248 [00:24<01:27,  2.38it/s, recall_0.3=(1713, 1717) / 2240]eval:  16%|█▌        | 39/248 [00:24<01:27,  2.38it/s, recall_0.3=(1747, 1751) / 2294]eval:  16%|█▌        | 40/248 [00:24<01:26,  2.40it/s, recall_0.3=(1747, 1751) / 2294]eval:  16%|█▌        | 40/248 [00:24<01:26,  2.40it/s, recall_0.3=(1797, 1801) / 2365]eval:  17%|█▋        | 41/248 [00:24<01:26,  2.41it/s, recall_0.3=(1797, 1801) / 2365]eval:  17%|█▋        | 41/248 [00:25<01:26,  2.41it/s, recall_0.3=(1837, 1841) / 2444]eval:  17%|█▋        | 42/248 [00:25<01:24,  2.43it/s, recall_0.3=(1837, 1841) / 2444]eval:  17%|█▋        | 42/248 [00:25<01:24,  2.43it/s, recall_0.3=(1894, 1898) / 2531]eval:  17%|█▋        | 43/248 [00:25<01:23,  2.46it/s, recall_0.3=(1894, 1898) / 2531]eval:  17%|█▋        | 43/248 [00:26<01:23,  2.46it/s, recall_0.3=(1950, 1954) / 2622]eval:  18%|█▊        | 44/248 [00:26<01:21,  2.51it/s, recall_0.3=(1950, 1954) / 2622]eval:  18%|█▊        | 44/248 [00:26<01:21,  2.51it/s, recall_0.3=(2016, 2020) / 2723]eval:  18%|█▊        | 45/248 [00:26<01:20,  2.51it/s, recall_0.3=(2016, 2020) / 2723]eval:  18%|█▊        | 45/248 [00:26<01:20,  2.51it/s, recall_0.3=(2092, 2097) / 2839]eval:  19%|█▊        | 46/248 [00:26<01:20,  2.51it/s, recall_0.3=(2092, 2097) / 2839]eval:  19%|█▊        | 46/248 [00:27<01:20,  2.51it/s, recall_0.3=(2169, 2175) / 2960]eval:  19%|█▉        | 47/248 [00:27<01:18,  2.55it/s, recall_0.3=(2169, 2175) / 2960]eval:  19%|█▉        | 47/248 [00:27<01:18,  2.55it/s, recall_0.3=(2249, 2255) / 3081]eval:  19%|█▉        | 48/248 [00:27<01:17,  2.57it/s, recall_0.3=(2249, 2255) / 3081]eval:  19%|█▉        | 48/248 [00:27<01:17,  2.57it/s, recall_0.3=(2332, 2338) / 3204]eval:  20%|█▉        | 49/248 [00:27<01:17,  2.57it/s, recall_0.3=(2332, 2338) / 3204]eval:  20%|█▉        | 49/248 [00:28<01:17,  2.57it/s, recall_0.3=(2398, 2405) / 3295]eval:  20%|██        | 50/248 [00:28<01:16,  2.58it/s, recall_0.3=(2398, 2405) / 3295]eval:  20%|██        | 50/248 [00:28<01:16,  2.58it/s, recall_0.3=(2450, 2457) / 3414]eval:  21%|██        | 51/248 [00:28<01:16,  2.57it/s, recall_0.3=(2450, 2457) / 3414]eval:  21%|██        | 51/248 [00:29<01:16,  2.57it/s, recall_0.3=(2517, 2524) / 3552]eval:  21%|██        | 52/248 [00:29<01:15,  2.61it/s, recall_0.3=(2517, 2524) / 3552]eval:  21%|██        | 52/248 [00:29<01:15,  2.61it/s, recall_0.3=(2587, 2595) / 3693]eval:  21%|██▏       | 53/248 [00:29<01:13,  2.65it/s, recall_0.3=(2587, 2595) / 3693]eval:  21%|██▏       | 53/248 [00:29<01:13,  2.65it/s, recall_0.3=(2653, 2661) / 3796]eval:  22%|██▏       | 54/248 [00:29<01:17,  2.51it/s, recall_0.3=(2653, 2661) / 3796]eval:  22%|██▏       | 54/248 [00:30<01:17,  2.51it/s, recall_0.3=(2700, 2708) / 3872]eval:  22%|██▏       | 55/248 [00:30<01:18,  2.47it/s, recall_0.3=(2700, 2708) / 3872]eval:  22%|██▏       | 55/248 [00:30<01:18,  2.47it/s, recall_0.3=(2730, 2738) / 3924]eval:  23%|██▎       | 56/248 [00:30<01:18,  2.43it/s, recall_0.3=(2730, 2738) / 3924]eval:  23%|██▎       | 56/248 [00:31<01:18,  2.43it/s, recall_0.3=(2749, 2757) / 3950]eval:  23%|██▎       | 57/248 [00:31<01:18,  2.42it/s, recall_0.3=(2749, 2757) / 3950]eval:  23%|██▎       | 57/248 [00:31<01:18,  2.42it/s, recall_0.3=(2768, 2776) / 3972]eval:  23%|██▎       | 58/248 [00:31<01:18,  2.43it/s, recall_0.3=(2768, 2776) / 3972]eval:  23%|██▎       | 58/248 [00:32<01:18,  2.43it/s, recall_0.3=(2787, 2795) / 3996]eval:  24%|██▍       | 59/248 [00:32<01:16,  2.46it/s, recall_0.3=(2787, 2795) / 3996]eval:  24%|██▍       | 59/248 [00:32<01:16,  2.46it/s, recall_0.3=(2803, 2811) / 4015]eval:  24%|██▍       | 60/248 [00:32<01:16,  2.46it/s, recall_0.3=(2803, 2811) / 4015]eval:  24%|██▍       | 60/248 [00:32<01:16,  2.46it/s, recall_0.3=(2896, 2904) / 4184]eval:  25%|██▍       | 61/248 [00:32<01:15,  2.48it/s, recall_0.3=(2896, 2904) / 4184]eval:  25%|██▍       | 61/248 [00:33<01:15,  2.48it/s, recall_0.3=(2989, 2997) / 4357]eval:  25%|██▌       | 62/248 [00:33<01:15,  2.48it/s, recall_0.3=(2989, 2997) / 4357]eval:  25%|██▌       | 62/248 [00:33<01:15,  2.48it/s, recall_0.3=(3083, 3091) / 4533]eval:  25%|██▌       | 63/248 [00:33<01:14,  2.47it/s, recall_0.3=(3083, 3091) / 4533]eval:  25%|██▌       | 63/248 [00:34<01:14,  2.47it/s, recall_0.3=(3176, 3184) / 4706]eval:  26%|██▌       | 64/248 [00:34<01:13,  2.49it/s, recall_0.3=(3176, 3184) / 4706]eval:  26%|██▌       | 64/248 [00:34<01:13,  2.49it/s, recall_0.3=(3268, 3276) / 4877]eval:  26%|██▌       | 65/248 [00:34<01:12,  2.52it/s, recall_0.3=(3268, 3276) / 4877]eval:  26%|██▌       | 65/248 [00:34<01:12,  2.52it/s, recall_0.3=(3362, 3371) / 5048]eval:  27%|██▋       | 66/248 [00:34<01:12,  2.52it/s, recall_0.3=(3362, 3371) / 5048]eval:  27%|██▋       | 66/248 [00:35<01:12,  2.52it/s, recall_0.3=(3450, 3460) / 5224]eval:  27%|██▋       | 67/248 [00:35<01:12,  2.50it/s, recall_0.3=(3450, 3460) / 5224]eval:  27%|██▋       | 67/248 [00:35<01:12,  2.50it/s, recall_0.3=(3538, 3550) / 5396]eval:  27%|██▋       | 68/248 [00:35<01:15,  2.39it/s, recall_0.3=(3538, 3550) / 5396]eval:  27%|██▋       | 68/248 [00:36<01:15,  2.39it/s, recall_0.3=(3629, 3641) / 5570]eval:  28%|██▊       | 69/248 [00:36<01:27,  2.06it/s, recall_0.3=(3629, 3641) / 5570]eval:  28%|██▊       | 69/248 [00:36<01:27,  2.06it/s, recall_0.3=(3723, 3735) / 5730]eval:  28%|██▊       | 70/248 [00:36<01:31,  1.94it/s, recall_0.3=(3723, 3735) / 5730]eval:  28%|██▊       | 70/248 [00:37<01:31,  1.94it/s, recall_0.3=(3792, 3804) / 5848]eval:  29%|██▊       | 71/248 [00:37<01:25,  2.08it/s, recall_0.3=(3792, 3804) / 5848]eval:  29%|██▊       | 71/248 [00:37<01:25,  2.08it/s, recall_0.3=(3860, 3873) / 5968]eval:  29%|██▉       | 72/248 [00:37<01:20,  2.20it/s, recall_0.3=(3860, 3873) / 5968]eval:  29%|██▉       | 72/248 [00:38<01:20,  2.20it/s, recall_0.3=(3927, 3940) / 6091]eval:  29%|██▉       | 73/248 [00:38<01:15,  2.31it/s, recall_0.3=(3927, 3940) / 6091]eval:  29%|██▉       | 73/248 [00:38<01:15,  2.31it/s, recall_0.3=(3992, 4005) / 6215]eval:  30%|██▉       | 74/248 [00:38<01:17,  2.24it/s, recall_0.3=(3992, 4005) / 6215]eval:  30%|██▉       | 74/248 [00:39<01:17,  2.24it/s, recall_0.3=(4054, 4067) / 6342]eval:  30%|███       | 75/248 [00:39<01:28,  1.95it/s, recall_0.3=(4054, 4067) / 6342]eval:  30%|███       | 75/248 [00:39<01:28,  1.95it/s, recall_0.3=(4116, 4129) / 6468]eval:  31%|███       | 76/248 [00:39<01:34,  1.82it/s, recall_0.3=(4116, 4129) / 6468]eval:  31%|███       | 76/248 [00:40<01:34,  1.82it/s, recall_0.3=(4179, 4192) / 6592]eval:  31%|███       | 77/248 [00:40<01:41,  1.69it/s, recall_0.3=(4179, 4192) / 6592]eval:  31%|███       | 77/248 [00:41<01:41,  1.69it/s, recall_0.3=(4246, 4259) / 6719]eval:  31%|███▏      | 78/248 [00:41<01:40,  1.69it/s, recall_0.3=(4246, 4259) / 6719]eval:  31%|███▏      | 78/248 [00:41<01:40,  1.69it/s, recall_0.3=(4318, 4331) / 6844]eval:  32%|███▏      | 79/248 [00:41<01:40,  1.67it/s, recall_0.3=(4318, 4331) / 6844]eval:  32%|███▏      | 79/248 [00:42<01:40,  1.67it/s, recall_0.3=(4379, 4392) / 6939]eval:  32%|███▏      | 80/248 [00:42<01:35,  1.76it/s, recall_0.3=(4379, 4392) / 6939]eval:  32%|███▏      | 80/248 [00:42<01:35,  1.76it/s, recall_0.3=(4400, 4413) / 6962]eval:  33%|███▎      | 81/248 [00:42<01:26,  1.93it/s, recall_0.3=(4400, 4413) / 6962]eval:  33%|███▎      | 81/248 [00:43<01:26,  1.93it/s, recall_0.3=(4421, 4434) / 6986]eval:  33%|███▎      | 82/248 [00:43<01:19,  2.09it/s, recall_0.3=(4421, 4434) / 6986]eval:  33%|███▎      | 82/248 [00:43<01:19,  2.09it/s, recall_0.3=(4439, 4452) / 7010]eval:  33%|███▎      | 83/248 [00:43<01:14,  2.21it/s, recall_0.3=(4439, 4452) / 7010]eval:  33%|███▎      | 83/248 [00:43<01:14,  2.21it/s, recall_0.3=(4456, 4469) / 7034]eval:  34%|███▍      | 84/248 [00:43<01:12,  2.26it/s, recall_0.3=(4456, 4469) / 7034]eval:  34%|███▍      | 84/248 [00:44<01:12,  2.26it/s, recall_0.3=(4473, 4486) / 7059]eval:  34%|███▍      | 85/248 [00:44<01:14,  2.20it/s, recall_0.3=(4473, 4486) / 7059]eval:  34%|███▍      | 85/248 [00:44<01:14,  2.20it/s, recall_0.3=(4492, 4506) / 7084]eval:  35%|███▍      | 86/248 [00:44<01:11,  2.27it/s, recall_0.3=(4492, 4506) / 7084]eval:  35%|███▍      | 86/248 [00:45<01:11,  2.27it/s, recall_0.3=(4514, 4528) / 7115]eval:  35%|███▌      | 87/248 [00:45<01:10,  2.29it/s, recall_0.3=(4514, 4528) / 7115]eval:  35%|███▌      | 87/248 [00:45<01:10,  2.29it/s, recall_0.3=(4540, 4554) / 7148]eval:  35%|███▌      | 88/248 [00:45<01:08,  2.35it/s, recall_0.3=(4540, 4554) / 7148]eval:  35%|███▌      | 88/248 [00:46<01:08,  2.35it/s, recall_0.3=(4572, 4586) / 7186]eval:  36%|███▌      | 89/248 [00:46<01:12,  2.20it/s, recall_0.3=(4572, 4586) / 7186]eval:  36%|███▌      | 89/248 [00:46<01:12,  2.20it/s, recall_0.3=(4604, 4618) / 7224]eval:  36%|███▋      | 90/248 [00:46<01:10,  2.23it/s, recall_0.3=(4604, 4618) / 7224]eval:  36%|███▋      | 90/248 [00:46<01:10,  2.23it/s, recall_0.3=(4624, 4639) / 7246]eval:  37%|███▋      | 91/248 [00:46<01:10,  2.21it/s, recall_0.3=(4624, 4639) / 7246]eval:  37%|███▋      | 91/248 [00:47<01:10,  2.21it/s, recall_0.3=(4645, 4660) / 7271]eval:  37%|███▋      | 92/248 [00:47<01:08,  2.28it/s, recall_0.3=(4645, 4660) / 7271]eval:  37%|███▋      | 92/248 [00:47<01:08,  2.28it/s, recall_0.3=(4665, 4680) / 7293]eval:  38%|███▊      | 93/248 [00:47<01:07,  2.30it/s, recall_0.3=(4665, 4680) / 7293]eval:  38%|███▊      | 93/248 [00:48<01:07,  2.30it/s, recall_0.3=(4686, 4701) / 7317]eval:  38%|███▊      | 94/248 [00:48<01:06,  2.30it/s, recall_0.3=(4686, 4701) / 7317]eval:  38%|███▊      | 94/248 [00:48<01:06,  2.30it/s, recall_0.3=(4708, 4723) / 7341]eval:  38%|███▊      | 95/248 [00:48<01:04,  2.36it/s, recall_0.3=(4708, 4723) / 7341]eval:  38%|███▊      | 95/248 [00:49<01:04,  2.36it/s, recall_0.3=(4728, 4743) / 7364]eval:  39%|███▊      | 96/248 [00:49<01:04,  2.34it/s, recall_0.3=(4728, 4743) / 7364]eval:  39%|███▊      | 96/248 [00:49<01:04,  2.34it/s, recall_0.3=(4757, 4772) / 7401]eval:  39%|███▉      | 97/248 [00:49<01:05,  2.32it/s, recall_0.3=(4757, 4772) / 7401]eval:  39%|███▉      | 97/248 [00:49<01:05,  2.32it/s, recall_0.3=(4787, 4802) / 7443]eval:  40%|███▉      | 98/248 [00:49<01:04,  2.34it/s, recall_0.3=(4787, 4802) / 7443]eval:  40%|███▉      | 98/248 [00:50<01:04,  2.34it/s, recall_0.3=(4814, 4829) / 7486]eval:  40%|███▉      | 99/248 [00:50<01:03,  2.34it/s, recall_0.3=(4814, 4829) / 7486]eval:  40%|███▉      | 99/248 [00:50<01:03,  2.34it/s, recall_0.3=(4816, 4831) / 7488]eval:  40%|████      | 100/248 [00:50<01:04,  2.31it/s, recall_0.3=(4816, 4831) / 7488]eval:  40%|████      | 100/248 [00:51<01:04,  2.31it/s, recall_0.3=(4819, 4834) / 7491]eval:  41%|████      | 101/248 [00:51<01:04,  2.28it/s, recall_0.3=(4819, 4834) / 7491]eval:  41%|████      | 101/248 [00:51<01:04,  2.28it/s, recall_0.3=(4821, 4836) / 7494]eval:  41%|████      | 102/248 [00:51<01:06,  2.21it/s, recall_0.3=(4821, 4836) / 7494]eval:  41%|████      | 102/248 [00:52<01:06,  2.21it/s, recall_0.3=(4823, 4838) / 7496]eval:  42%|████▏     | 103/248 [00:52<01:03,  2.29it/s, recall_0.3=(4823, 4838) / 7496]eval:  42%|████▏     | 103/248 [00:52<01:03,  2.29it/s, recall_0.3=(4825, 4840) / 7498]eval:  42%|████▏     | 104/248 [00:52<01:02,  2.31it/s, recall_0.3=(4825, 4840) / 7498]eval:  42%|████▏     | 104/248 [00:53<01:02,  2.31it/s, recall_0.3=(4827, 4842) / 7500]eval:  42%|████▏     | 105/248 [00:53<01:03,  2.25it/s, recall_0.3=(4827, 4842) / 7500]eval:  42%|████▏     | 105/248 [00:53<01:03,  2.25it/s, recall_0.3=(4829, 4844) / 7502]eval:  43%|████▎     | 106/248 [00:53<01:10,  2.01it/s, recall_0.3=(4829, 4844) / 7502]eval:  43%|████▎     | 106/248 [00:54<01:10,  2.01it/s, recall_0.3=(4831, 4846) / 7504]eval:  43%|████▎     | 107/248 [00:54<01:07,  2.09it/s, recall_0.3=(4831, 4846) / 7504]eval:  43%|████▎     | 107/248 [00:54<01:07,  2.09it/s, recall_0.3=(4833, 4848) / 7506]eval:  44%|████▎     | 108/248 [00:54<01:06,  2.10it/s, recall_0.3=(4833, 4848) / 7506]eval:  44%|████▎     | 108/248 [00:55<01:06,  2.10it/s, recall_0.3=(4835, 4850) / 7508]eval:  44%|████▍     | 109/248 [00:55<01:05,  2.11it/s, recall_0.3=(4835, 4850) / 7508]eval:  44%|████▍     | 109/248 [00:55<01:05,  2.11it/s, recall_0.3=(4862, 4877) / 7540]eval:  44%|████▍     | 110/248 [00:55<01:02,  2.20it/s, recall_0.3=(4862, 4877) / 7540]eval:  44%|████▍     | 110/248 [00:55<01:02,  2.20it/s, recall_0.3=(4890, 4905) / 7573]eval:  45%|████▍     | 111/248 [00:55<00:58,  2.35it/s, recall_0.3=(4890, 4905) / 7573]eval:  45%|████▍     | 111/248 [00:56<00:58,  2.35it/s, recall_0.3=(4918, 4933) / 7607]eval:  45%|████▌     | 112/248 [00:56<00:55,  2.44it/s, recall_0.3=(4918, 4933) / 7607]eval:  45%|████▌     | 112/248 [00:56<00:55,  2.44it/s, recall_0.3=(4946, 4961) / 7641]eval:  46%|████▌     | 113/248 [00:56<00:55,  2.45it/s, recall_0.3=(4946, 4961) / 7641]eval:  46%|████▌     | 113/248 [00:56<00:55,  2.45it/s, recall_0.3=(4974, 4989) / 7675]eval:  46%|████▌     | 114/248 [00:56<00:54,  2.48it/s, recall_0.3=(4974, 4989) / 7675]eval:  46%|████▌     | 114/248 [00:57<00:54,  2.48it/s, recall_0.3=(5003, 5018) / 7710]eval:  46%|████▋     | 115/248 [00:57<00:53,  2.48it/s, recall_0.3=(5003, 5018) / 7710]eval:  46%|████▋     | 115/248 [00:57<00:53,  2.48it/s, recall_0.3=(5034, 5049) / 7746]eval:  47%|████▋     | 116/248 [00:57<00:52,  2.52it/s, recall_0.3=(5034, 5049) / 7746]eval:  47%|████▋     | 116/248 [00:58<00:52,  2.52it/s, recall_0.3=(5068, 5083) / 7787]eval:  47%|████▋     | 117/248 [00:58<00:52,  2.52it/s, recall_0.3=(5068, 5083) / 7787]eval:  47%|████▋     | 117/248 [00:58<00:52,  2.52it/s, recall_0.3=(5101, 5116) / 7829]eval:  48%|████▊     | 118/248 [00:58<00:50,  2.56it/s, recall_0.3=(5101, 5116) / 7829]eval:  48%|████▊     | 118/248 [00:59<00:50,  2.56it/s, recall_0.3=(5138, 5153) / 7874]eval:  48%|████▊     | 119/248 [00:59<00:58,  2.19it/s, recall_0.3=(5138, 5153) / 7874]eval:  48%|████▊     | 119/248 [00:59<00:58,  2.19it/s, recall_0.3=(5166, 5181) / 7914]eval:  48%|████▊     | 120/248 [00:59<00:56,  2.28it/s, recall_0.3=(5166, 5181) / 7914]eval:  48%|████▊     | 120/248 [00:59<00:56,  2.28it/s, recall_0.3=(5198, 5213) / 7957]eval:  49%|████▉     | 121/248 [00:59<00:53,  2.39it/s, recall_0.3=(5198, 5213) / 7957]eval:  49%|████▉     | 121/248 [01:00<00:53,  2.39it/s, recall_0.3=(5228, 5243) / 8000]eval:  49%|████▉     | 122/248 [01:00<00:51,  2.46it/s, recall_0.3=(5228, 5243) / 8000]eval:  49%|████▉     | 122/248 [01:00<00:51,  2.46it/s, recall_0.3=(5263, 5278) / 8043]eval:  50%|████▉     | 123/248 [01:00<00:56,  2.22it/s, recall_0.3=(5263, 5278) / 8043]eval:  50%|████▉     | 123/248 [01:01<00:56,  2.22it/s, recall_0.3=(5297, 5312) / 8085]eval:  50%|█████     | 124/248 [01:01<00:54,  2.28it/s, recall_0.3=(5297, 5312) / 8085]eval:  50%|█████     | 124/248 [01:01<00:54,  2.28it/s, recall_0.3=(5330, 5345) / 8125]eval:  50%|█████     | 125/248 [01:01<00:53,  2.31it/s, recall_0.3=(5330, 5345) / 8125]eval:  50%|█████     | 125/248 [01:02<00:53,  2.31it/s, recall_0.3=(5363, 5378) / 8165]eval:  51%|█████     | 126/248 [01:02<00:51,  2.35it/s, recall_0.3=(5363, 5378) / 8165]eval:  51%|█████     | 126/248 [01:02<00:51,  2.35it/s, recall_0.3=(5397, 5412) / 8204]eval:  51%|█████     | 127/248 [01:02<00:51,  2.34it/s, recall_0.3=(5397, 5412) / 8204]eval:  51%|█████     | 127/248 [01:02<00:51,  2.34it/s, recall_0.3=(5430, 5445) / 8241]eval:  52%|█████▏    | 128/248 [01:02<00:49,  2.42it/s, recall_0.3=(5430, 5445) / 8241]eval:  52%|█████▏    | 128/248 [01:03<00:49,  2.42it/s, recall_0.3=(5461, 5476) / 8274]eval:  52%|█████▏    | 129/248 [01:03<00:48,  2.44it/s, recall_0.3=(5461, 5476) / 8274]eval:  52%|█████▏    | 129/248 [01:03<00:48,  2.44it/s, recall_0.3=(5470, 5485) / 8284]eval:  52%|█████▏    | 130/248 [01:03<00:50,  2.32it/s, recall_0.3=(5470, 5485) / 8284]eval:  52%|█████▏    | 130/248 [01:04<00:50,  2.32it/s, recall_0.3=(5483, 5498) / 8299]eval:  53%|█████▎    | 131/248 [01:04<00:50,  2.34it/s, recall_0.3=(5483, 5498) / 8299]eval:  53%|█████▎    | 131/248 [01:04<00:50,  2.34it/s, recall_0.3=(5494, 5509) / 8314]eval:  53%|█████▎    | 132/248 [01:04<00:51,  2.24it/s, recall_0.3=(5494, 5509) / 8314]eval:  53%|█████▎    | 132/248 [01:05<00:51,  2.24it/s, recall_0.3=(5506, 5521) / 8330]eval:  54%|█████▎    | 133/248 [01:05<00:54,  2.10it/s, recall_0.3=(5506, 5521) / 8330]eval:  54%|█████▎    | 133/248 [01:05<00:54,  2.10it/s, recall_0.3=(5518, 5533) / 8348]eval:  54%|█████▍    | 134/248 [01:05<00:54,  2.09it/s, recall_0.3=(5518, 5533) / 8348]eval:  54%|█████▍    | 134/248 [01:06<00:54,  2.09it/s, recall_0.3=(5529, 5544) / 8366]eval:  54%|█████▍    | 135/248 [01:06<00:55,  2.04it/s, recall_0.3=(5529, 5544) / 8366]eval:  54%|█████▍    | 135/248 [01:06<00:55,  2.04it/s, recall_0.3=(5540, 5555) / 8383]eval:  55%|█████▍    | 136/248 [01:06<00:52,  2.15it/s, recall_0.3=(5540, 5555) / 8383]eval:  55%|█████▍    | 136/248 [01:07<00:52,  2.15it/s, recall_0.3=(5558, 5573) / 8402]eval:  55%|█████▌    | 137/248 [01:07<00:51,  2.17it/s, recall_0.3=(5558, 5573) / 8402]eval:  55%|█████▌    | 137/248 [01:07<00:51,  2.17it/s, recall_0.3=(5576, 5591) / 8420]eval:  56%|█████▌    | 138/248 [01:07<00:53,  2.06it/s, recall_0.3=(5576, 5591) / 8420]eval:  56%|█████▌    | 138/248 [01:08<00:53,  2.06it/s, recall_0.3=(5590, 5605) / 8438]eval:  56%|█████▌    | 139/248 [01:08<00:51,  2.11it/s, recall_0.3=(5590, 5605) / 8438]eval:  56%|█████▌    | 139/248 [01:08<00:51,  2.11it/s, recall_0.3=(5668, 5683) / 8567]eval:  56%|█████▋    | 140/248 [01:08<00:50,  2.14it/s, recall_0.3=(5668, 5683) / 8567]eval:  56%|█████▋    | 140/248 [01:08<00:50,  2.14it/s, recall_0.3=(5746, 5762) / 8709]eval:  57%|█████▋    | 141/248 [01:08<00:48,  2.19it/s, recall_0.3=(5746, 5762) / 8709]eval:  57%|█████▋    | 141/248 [01:09<00:48,  2.19it/s, recall_0.3=(5830, 5846) / 8843]eval:  57%|█████▋    | 142/248 [01:09<00:48,  2.17it/s, recall_0.3=(5830, 5846) / 8843]eval:  57%|█████▋    | 142/248 [01:09<00:48,  2.17it/s, recall_0.3=(5895, 5911) / 8946]eval:  58%|█████▊    | 143/248 [01:09<00:51,  2.03it/s, recall_0.3=(5895, 5911) / 8946]eval:  58%|█████▊    | 143/248 [01:10<00:51,  2.03it/s, recall_0.3=(5957, 5974) / 9044]eval:  58%|█████▊    | 144/248 [01:10<00:49,  2.09it/s, recall_0.3=(5957, 5974) / 9044]eval:  58%|█████▊    | 144/248 [01:10<00:49,  2.09it/s, recall_0.3=(6017, 6036) / 9142]eval:  58%|█████▊    | 145/248 [01:10<00:46,  2.24it/s, recall_0.3=(6017, 6036) / 9142]eval:  58%|█████▊    | 145/248 [01:11<00:46,  2.24it/s, recall_0.3=(6075, 6094) / 9242]eval:  59%|█████▉    | 146/248 [01:11<00:43,  2.36it/s, recall_0.3=(6075, 6094) / 9242]eval:  59%|█████▉    | 146/248 [01:11<00:43,  2.36it/s, recall_0.3=(6131, 6150) / 9343]eval:  59%|█████▉    | 147/248 [01:11<00:47,  2.12it/s, recall_0.3=(6131, 6150) / 9343]eval:  59%|█████▉    | 147/248 [01:12<00:47,  2.12it/s, recall_0.3=(6200, 6219) / 9444]eval:  60%|█████▉    | 148/248 [01:12<00:44,  2.27it/s, recall_0.3=(6200, 6219) / 9444]eval:  60%|█████▉    | 148/248 [01:12<00:44,  2.27it/s, recall_0.3=(6264, 6283) / 9546]eval:  60%|██████    | 149/248 [01:12<00:40,  2.43it/s, recall_0.3=(6264, 6283) / 9546]eval:  60%|██████    | 149/248 [01:12<00:40,  2.43it/s, recall_0.3=(6291, 6310) / 9577]eval:  60%|██████    | 150/248 [01:12<00:42,  2.28it/s, recall_0.3=(6291, 6310) / 9577]eval:  60%|██████    | 150/248 [01:13<00:42,  2.28it/s, recall_0.3=(6319, 6338) / 9608]eval:  61%|██████    | 151/248 [01:13<00:47,  2.05it/s, recall_0.3=(6319, 6338) / 9608]eval:  61%|██████    | 151/248 [01:14<00:47,  2.05it/s, recall_0.3=(6346, 6365) / 9640]eval:  61%|██████▏   | 152/248 [01:14<00:45,  2.12it/s, recall_0.3=(6346, 6365) / 9640]eval:  61%|██████▏   | 152/248 [01:14<00:45,  2.12it/s, recall_0.3=(6373, 6392) / 9672]eval:  62%|██████▏   | 153/248 [01:14<00:48,  1.95it/s, recall_0.3=(6373, 6392) / 9672]eval:  62%|██████▏   | 153/248 [01:15<00:48,  1.95it/s, recall_0.3=(6403, 6422) / 9706]eval:  62%|██████▏   | 154/248 [01:15<00:44,  2.09it/s, recall_0.3=(6403, 6422) / 9706]eval:  62%|██████▏   | 154/248 [01:15<00:44,  2.09it/s, recall_0.3=(6432, 6451) / 9739]eval:  62%|██████▎   | 155/248 [01:15<00:44,  2.10it/s, recall_0.3=(6432, 6451) / 9739]eval:  62%|██████▎   | 155/248 [01:15<00:44,  2.10it/s, recall_0.3=(6459, 6479) / 9773]eval:  63%|██████▎   | 156/248 [01:15<00:41,  2.21it/s, recall_0.3=(6459, 6479) / 9773]eval:  63%|██████▎   | 156/248 [01:16<00:41,  2.21it/s, recall_0.3=(6489, 6510) / 9808]eval:  63%|██████▎   | 157/248 [01:16<00:41,  2.22it/s, recall_0.3=(6489, 6510) / 9808]eval:  63%|██████▎   | 157/248 [01:16<00:41,  2.22it/s, recall_0.3=(6519, 6540) / 9842]eval:  64%|██████▎   | 158/248 [01:16<00:42,  2.14it/s, recall_0.3=(6519, 6540) / 9842]eval:  64%|██████▎   | 158/248 [01:17<00:42,  2.14it/s, recall_0.3=(6553, 6574) / 9880]eval:  64%|██████▍   | 159/248 [01:17<00:41,  2.13it/s, recall_0.3=(6553, 6574) / 9880]eval:  64%|██████▍   | 159/248 [01:17<00:41,  2.13it/s, recall_0.3=(6558, 6579) / 9885]eval:  65%|██████▍   | 160/248 [01:17<00:38,  2.30it/s, recall_0.3=(6558, 6579) / 9885]eval:  65%|██████▍   | 160/248 [01:18<00:38,  2.30it/s, recall_0.3=(6563, 6584) / 9890]eval:  65%|██████▍   | 161/248 [01:18<00:36,  2.36it/s, recall_0.3=(6563, 6584) / 9890]eval:  65%|██████▍   | 161/248 [01:18<00:36,  2.36it/s, recall_0.3=(6569, 6590) / 9896]eval:  65%|██████▌   | 162/248 [01:18<00:35,  2.39it/s, recall_0.3=(6569, 6590) / 9896]eval:  65%|██████▌   | 162/248 [01:18<00:35,  2.39it/s, recall_0.3=(6577, 6598) / 9904]eval:  66%|██████▌   | 163/248 [01:18<00:36,  2.32it/s, recall_0.3=(6577, 6598) / 9904]eval:  66%|██████▌   | 163/248 [01:19<00:36,  2.32it/s, recall_0.3=(6585, 6606) / 9912]eval:  66%|██████▌   | 164/248 [01:19<00:37,  2.25it/s, recall_0.3=(6585, 6606) / 9912]eval:  66%|██████▌   | 164/248 [01:19<00:37,  2.25it/s, recall_0.3=(6594, 6615) / 9921]eval:  67%|██████▋   | 165/248 [01:19<00:36,  2.24it/s, recall_0.3=(6594, 6615) / 9921]eval:  67%|██████▋   | 165/248 [01:20<00:36,  2.24it/s, recall_0.3=(6604, 6625) / 9932]eval:  67%|██████▋   | 166/248 [01:20<00:36,  2.24it/s, recall_0.3=(6604, 6625) / 9932]eval:  67%|██████▋   | 166/248 [01:20<00:36,  2.24it/s, recall_0.3=(6615, 6636) / 9943]eval:  67%|██████▋   | 167/248 [01:20<00:34,  2.36it/s, recall_0.3=(6615, 6636) / 9943]eval:  67%|██████▋   | 167/248 [01:21<00:34,  2.36it/s, recall_0.3=(6626, 6647) / 9954]eval:  68%|██████▊   | 168/248 [01:21<00:33,  2.38it/s, recall_0.3=(6626, 6647) / 9954]eval:  68%|██████▊   | 168/248 [01:21<00:33,  2.38it/s, recall_0.3=(6641, 6662) / 9969]eval:  68%|██████▊   | 169/248 [01:21<00:33,  2.38it/s, recall_0.3=(6641, 6662) / 9969]eval:  68%|██████▊   | 169/248 [01:21<00:33,  2.38it/s, recall_0.3=(6709, 6730) / 10099]eval:  69%|██████▊   | 170/248 [01:21<00:33,  2.33it/s, recall_0.3=(6709, 6730) / 10099]eval:  69%|██████▊   | 170/248 [01:22<00:33,  2.33it/s, recall_0.3=(6776, 6799) / 10235]eval:  69%|██████▉   | 171/248 [01:22<00:36,  2.12it/s, recall_0.3=(6776, 6799) / 10235]eval:  69%|██████▉   | 171/248 [01:22<00:36,  2.12it/s, recall_0.3=(6841, 6866) / 10372]eval:  69%|██████▉   | 172/248 [01:22<00:34,  2.22it/s, recall_0.3=(6841, 6866) / 10372]eval:  69%|██████▉   | 172/248 [01:23<00:34,  2.22it/s, recall_0.3=(6906, 6931) / 10510]eval:  70%|██████▉   | 173/248 [01:23<00:34,  2.20it/s, recall_0.3=(6906, 6931) / 10510]eval:  70%|██████▉   | 173/248 [01:23<00:34,  2.20it/s, recall_0.3=(6976, 7002) / 10648]eval:  70%|███████   | 174/248 [01:23<00:36,  2.04it/s, recall_0.3=(6976, 7002) / 10648]eval:  70%|███████   | 174/248 [01:24<00:36,  2.04it/s, recall_0.3=(7046, 7072) / 10785]eval:  71%|███████   | 175/248 [01:24<00:35,  2.07it/s, recall_0.3=(7046, 7072) / 10785]eval:  71%|███████   | 175/248 [01:24<00:35,  2.07it/s, recall_0.3=(7111, 7137) / 10924]eval:  71%|███████   | 176/248 [01:24<00:35,  2.05it/s, recall_0.3=(7111, 7137) / 10924]eval:  71%|███████   | 176/248 [01:25<00:35,  2.05it/s, recall_0.3=(7184, 7210) / 11063]eval:  71%|███████▏  | 177/248 [01:25<00:34,  2.09it/s, recall_0.3=(7184, 7210) / 11063]eval:  71%|███████▏  | 177/248 [01:25<00:34,  2.09it/s, recall_0.3=(7249, 7276) / 11199]eval:  72%|███████▏  | 178/248 [01:25<00:35,  1.95it/s, recall_0.3=(7249, 7276) / 11199]eval:  72%|███████▏  | 178/248 [01:26<00:35,  1.95it/s, recall_0.3=(7319, 7345) / 11330]eval:  72%|███████▏  | 179/248 [01:26<00:38,  1.78it/s, recall_0.3=(7319, 7345) / 11330]eval:  72%|███████▏  | 179/248 [01:27<00:38,  1.78it/s, recall_0.3=(7329, 7355) / 11344]eval:  73%|███████▎  | 180/248 [01:27<00:35,  1.90it/s, recall_0.3=(7329, 7355) / 11344]eval:  73%|███████▎  | 180/248 [01:27<00:35,  1.90it/s, recall_0.3=(7334, 7360) / 11357]eval:  73%|███████▎  | 181/248 [01:27<00:33,  2.02it/s, recall_0.3=(7334, 7360) / 11357]eval:  73%|███████▎  | 181/248 [01:27<00:33,  2.02it/s, recall_0.3=(7342, 7368) / 11371]eval:  73%|███████▎  | 182/248 [01:27<00:31,  2.12it/s, recall_0.3=(7342, 7368) / 11371]eval:  73%|███████▎  | 182/248 [01:28<00:31,  2.12it/s, recall_0.3=(7351, 7377) / 11384]eval:  74%|███████▍  | 183/248 [01:28<00:30,  2.16it/s, recall_0.3=(7351, 7377) / 11384]eval:  74%|███████▍  | 183/248 [01:28<00:30,  2.16it/s, recall_0.3=(7361, 7387) / 11397]eval:  74%|███████▍  | 184/248 [01:28<00:31,  2.05it/s, recall_0.3=(7361, 7387) / 11397]eval:  74%|███████▍  | 184/248 [01:29<00:31,  2.05it/s, recall_0.3=(7371, 7397) / 11410]eval:  75%|███████▍  | 185/248 [01:29<00:31,  1.98it/s, recall_0.3=(7371, 7397) / 11410]eval:  75%|███████▍  | 185/248 [01:29<00:31,  1.98it/s, recall_0.3=(7381, 7407) / 11423]eval:  75%|███████▌  | 186/248 [01:29<00:30,  2.01it/s, recall_0.3=(7381, 7407) / 11423]eval:  75%|███████▌  | 186/248 [01:30<00:30,  2.01it/s, recall_0.3=(7390, 7416) / 11437]eval:  75%|███████▌  | 187/248 [01:30<00:28,  2.11it/s, recall_0.3=(7390, 7416) / 11437]eval:  75%|███████▌  | 187/248 [01:30<00:28,  2.11it/s, recall_0.3=(7400, 7426) / 11451]eval:  76%|███████▌  | 188/248 [01:30<00:28,  2.14it/s, recall_0.3=(7400, 7426) / 11451]eval:  76%|███████▌  | 188/248 [01:31<00:28,  2.14it/s, recall_0.3=(7408, 7434) / 11462]eval:  76%|███████▌  | 189/248 [01:31<00:26,  2.22it/s, recall_0.3=(7408, 7434) / 11462]eval:  76%|███████▌  | 189/248 [01:31<00:26,  2.22it/s, recall_0.3=(7427, 7453) / 11490]eval:  77%|███████▋  | 190/248 [01:31<00:26,  2.21it/s, recall_0.3=(7427, 7453) / 11490]eval:  77%|███████▋  | 190/248 [01:32<00:26,  2.21it/s, recall_0.3=(7434, 7460) / 11501]eval:  77%|███████▋  | 191/248 [01:32<00:24,  2.29it/s, recall_0.3=(7434, 7460) / 11501]eval:  77%|███████▋  | 191/248 [01:32<00:24,  2.29it/s, recall_0.3=(7441, 7467) / 11509]eval:  77%|███████▋  | 192/248 [01:32<00:24,  2.32it/s, recall_0.3=(7441, 7467) / 11509]eval:  77%|███████▋  | 192/248 [01:32<00:24,  2.32it/s, recall_0.3=(7447, 7473) / 11516]eval:  78%|███████▊  | 193/248 [01:32<00:22,  2.44it/s, recall_0.3=(7447, 7473) / 11516]eval:  78%|███████▊  | 193/248 [01:33<00:22,  2.44it/s, recall_0.3=(7455, 7481) / 11525]eval:  78%|███████▊  | 194/248 [01:33<00:21,  2.47it/s, recall_0.3=(7455, 7481) / 11525]eval:  78%|███████▊  | 194/248 [01:33<00:21,  2.47it/s, recall_0.3=(7460, 7486) / 11534]eval:  79%|███████▊  | 195/248 [01:33<00:22,  2.36it/s, recall_0.3=(7460, 7486) / 11534]eval:  79%|███████▊  | 195/248 [01:34<00:22,  2.36it/s, recall_0.3=(7466, 7492) / 11540]eval:  79%|███████▉  | 196/248 [01:34<00:21,  2.40it/s, recall_0.3=(7466, 7492) / 11540]eval:  79%|███████▉  | 196/248 [01:34<00:21,  2.40it/s, recall_0.3=(7474, 7500) / 11548]eval:  79%|███████▉  | 197/248 [01:34<00:21,  2.37it/s, recall_0.3=(7474, 7500) / 11548]eval:  79%|███████▉  | 197/248 [01:35<00:21,  2.37it/s, recall_0.3=(7482, 7508) / 11556]eval:  80%|███████▉  | 198/248 [01:35<00:21,  2.36it/s, recall_0.3=(7482, 7508) / 11556]eval:  80%|███████▉  | 198/248 [01:35<00:21,  2.36it/s, recall_0.3=(7491, 7517) / 11565]eval:  80%|████████  | 199/248 [01:35<00:22,  2.18it/s, recall_0.3=(7491, 7517) / 11565]eval:  80%|████████  | 199/248 [01:36<00:22,  2.18it/s, recall_0.3=(7506, 7531) / 11581]eval:  81%|████████  | 200/248 [01:36<00:22,  2.10it/s, recall_0.3=(7506, 7531) / 11581]eval:  81%|████████  | 200/248 [01:36<00:22,  2.10it/s, recall_0.3=(7521, 7546) / 11597]eval:  81%|████████  | 201/248 [01:36<00:22,  2.09it/s, recall_0.3=(7521, 7546) / 11597]eval:  81%|████████  | 201/248 [01:36<00:22,  2.09it/s, recall_0.3=(7537, 7562) / 11615]eval:  81%|████████▏ | 202/248 [01:36<00:21,  2.15it/s, recall_0.3=(7537, 7562) / 11615]eval:  81%|████████▏ | 202/248 [01:37<00:21,  2.15it/s, recall_0.3=(7555, 7580) / 11634]eval:  82%|████████▏ | 203/248 [01:37<00:21,  2.09it/s, recall_0.3=(7555, 7580) / 11634]eval:  82%|████████▏ | 203/248 [01:37<00:21,  2.09it/s, recall_0.3=(7572, 7597) / 11653]eval:  82%|████████▏ | 204/248 [01:37<00:21,  2.07it/s, recall_0.3=(7572, 7597) / 11653]eval:  82%|████████▏ | 204/248 [01:38<00:21,  2.07it/s, recall_0.3=(7588, 7613) / 11671]eval:  83%|████████▎ | 205/248 [01:38<00:20,  2.05it/s, recall_0.3=(7588, 7613) / 11671]eval:  83%|████████▎ | 205/248 [01:38<00:20,  2.05it/s, recall_0.3=(7602, 7627) / 11689]eval:  83%|████████▎ | 206/248 [01:38<00:20,  2.06it/s, recall_0.3=(7602, 7627) / 11689]eval:  83%|████████▎ | 206/248 [01:39<00:20,  2.06it/s, recall_0.3=(7615, 7640) / 11707]eval:  83%|████████▎ | 207/248 [01:39<00:19,  2.12it/s, recall_0.3=(7615, 7640) / 11707]eval:  83%|████████▎ | 207/248 [01:39<00:19,  2.12it/s, recall_0.3=(7630, 7655) / 11726]eval:  84%|████████▍ | 208/248 [01:39<00:19,  2.04it/s, recall_0.3=(7630, 7655) / 11726]eval:  84%|████████▍ | 208/248 [01:40<00:19,  2.04it/s, recall_0.3=(7643, 7668) / 11741]eval:  84%|████████▍ | 209/248 [01:40<00:19,  2.00it/s, recall_0.3=(7643, 7668) / 11741]eval:  84%|████████▍ | 209/248 [01:40<00:19,  2.00it/s, recall_0.3=(7678, 7703) / 11785]eval:  85%|████████▍ | 210/248 [01:40<00:18,  2.02it/s, recall_0.3=(7678, 7703) / 11785]eval:  85%|████████▍ | 210/248 [01:41<00:18,  2.02it/s, recall_0.3=(7718, 7743) / 11827]eval:  85%|████████▌ | 211/248 [01:41<00:17,  2.15it/s, recall_0.3=(7718, 7743) / 11827]eval:  85%|████████▌ | 211/248 [01:41<00:17,  2.15it/s, recall_0.3=(7759, 7784) / 11869]eval:  85%|████████▌ | 212/248 [01:41<00:16,  2.14it/s, recall_0.3=(7759, 7784) / 11869]eval:  85%|████████▌ | 212/248 [01:42<00:16,  2.14it/s, recall_0.3=(7801, 7826) / 11917]eval:  86%|████████▌ | 213/248 [01:42<00:16,  2.10it/s, recall_0.3=(7801, 7826) / 11917]eval:  86%|████████▌ | 213/248 [01:42<00:16,  2.10it/s, recall_0.3=(7843, 7868) / 11969]eval:  86%|████████▋ | 214/248 [01:42<00:16,  2.11it/s, recall_0.3=(7843, 7868) / 11969]eval:  86%|████████▋ | 214/248 [01:43<00:16,  2.11it/s, recall_0.3=(7891, 7916) / 12022]eval:  87%|████████▋ | 215/248 [01:43<00:15,  2.09it/s, recall_0.3=(7891, 7916) / 12022]eval:  87%|████████▋ | 215/248 [01:43<00:15,  2.09it/s, recall_0.3=(7938, 7963) / 12075]eval:  87%|████████▋ | 216/248 [01:43<00:15,  2.10it/s, recall_0.3=(7938, 7963) / 12075]eval:  87%|████████▋ | 216/248 [01:44<00:15,  2.10it/s, recall_0.3=(7984, 8010) / 12129]eval:  88%|████████▊ | 217/248 [01:44<00:15,  1.95it/s, recall_0.3=(7984, 8010) / 12129]eval:  88%|████████▊ | 217/248 [01:44<00:15,  1.95it/s, recall_0.3=(8031, 8057) / 12183]eval:  88%|████████▊ | 218/248 [01:44<00:15,  1.97it/s, recall_0.3=(8031, 8057) / 12183]eval:  88%|████████▊ | 218/248 [01:45<00:15,  1.97it/s, recall_0.3=(8036, 8062) / 12189]eval:  88%|████████▊ | 219/248 [01:45<00:14,  2.03it/s, recall_0.3=(8036, 8062) / 12189]eval:  88%|████████▊ | 219/248 [01:45<00:14,  2.03it/s, recall_0.3=(8043, 8069) / 12197]eval:  89%|████████▊ | 220/248 [01:45<00:13,  2.13it/s, recall_0.3=(8043, 8069) / 12197]eval:  89%|████████▊ | 220/248 [01:46<00:13,  2.13it/s, recall_0.3=(8051, 8077) / 12205]eval:  89%|████████▉ | 221/248 [01:46<00:11,  2.27it/s, recall_0.3=(8051, 8077) / 12205]eval:  89%|████████▉ | 221/248 [01:46<00:11,  2.27it/s, recall_0.3=(8060, 8086) / 12214]eval:  90%|████████▉ | 222/248 [01:46<00:11,  2.23it/s, recall_0.3=(8060, 8086) / 12214]eval:  90%|████████▉ | 222/248 [01:46<00:11,  2.23it/s, recall_0.3=(8069, 8095) / 12223]eval:  90%|████████▉ | 223/248 [01:46<00:11,  2.24it/s, recall_0.3=(8069, 8095) / 12223]eval:  90%|████████▉ | 223/248 [01:47<00:11,  2.24it/s, recall_0.3=(8077, 8103) / 12231]eval:  90%|█████████ | 224/248 [01:47<00:10,  2.24it/s, recall_0.3=(8077, 8103) / 12231]eval:  90%|█████████ | 224/248 [01:47<00:10,  2.24it/s, recall_0.3=(8084, 8110) / 12238]eval:  91%|█████████ | 225/248 [01:47<00:10,  2.23it/s, recall_0.3=(8084, 8110) / 12238]eval:  91%|█████████ | 225/248 [01:48<00:10,  2.23it/s, recall_0.3=(8090, 8116) / 12245]eval:  91%|█████████ | 226/248 [01:48<00:09,  2.22it/s, recall_0.3=(8090, 8116) / 12245]eval:  91%|█████████ | 226/248 [01:48<00:09,  2.22it/s, recall_0.3=(8097, 8123) / 12252]eval:  92%|█████████▏| 227/248 [01:48<00:08,  2.35it/s, recall_0.3=(8097, 8123) / 12252]eval:  92%|█████████▏| 227/248 [01:49<00:08,  2.35it/s, recall_0.3=(8104, 8130) / 12260]eval:  92%|█████████▏| 228/248 [01:49<00:08,  2.43it/s, recall_0.3=(8104, 8130) / 12260]eval:  92%|█████████▏| 228/248 [01:49<00:08,  2.43it/s, recall_0.3=(8105, 8131) / 12262]eval:  92%|█████████▏| 229/248 [01:49<00:08,  2.20it/s, recall_0.3=(8105, 8131) / 12262]eval:  92%|█████████▏| 229/248 [01:50<00:08,  2.20it/s, recall_0.3=(8106, 8132) / 12263]eval:  93%|█████████▎| 230/248 [01:50<00:08,  2.18it/s, recall_0.3=(8106, 8132) / 12263]eval:  93%|█████████▎| 230/248 [01:50<00:08,  2.18it/s, recall_0.3=(8107, 8133) / 12264]eval:  93%|█████████▎| 231/248 [01:50<00:07,  2.25it/s, recall_0.3=(8107, 8133) / 12264]eval:  93%|█████████▎| 231/248 [01:51<00:07,  2.25it/s, recall_0.3=(8112, 8138) / 12269]eval:  94%|█████████▎| 232/248 [01:51<00:07,  2.09it/s, recall_0.3=(8112, 8138) / 12269]eval:  94%|█████████▎| 232/248 [01:51<00:07,  2.09it/s, recall_0.3=(8115, 8141) / 12275]eval:  94%|█████████▍| 233/248 [01:51<00:07,  2.11it/s, recall_0.3=(8115, 8141) / 12275]eval:  94%|█████████▍| 233/248 [01:52<00:07,  2.11it/s, recall_0.3=(8123, 8149) / 12290]eval:  94%|█████████▍| 234/248 [01:52<00:06,  2.10it/s, recall_0.3=(8123, 8149) / 12290]eval:  94%|█████████▍| 234/248 [01:52<00:06,  2.10it/s, recall_0.3=(8136, 8162) / 12307]eval:  95%|█████████▍| 235/248 [01:52<00:06,  2.13it/s, recall_0.3=(8136, 8162) / 12307]eval:  95%|█████████▍| 235/248 [01:52<00:06,  2.13it/s, recall_0.3=(8143, 8169) / 12318]eval:  95%|█████████▌| 236/248 [01:52<00:05,  2.10it/s, recall_0.3=(8143, 8169) / 12318]eval:  95%|█████████▌| 236/248 [01:53<00:05,  2.10it/s, recall_0.3=(8150, 8176) / 12330]eval:  96%|█████████▌| 237/248 [01:53<00:05,  2.10it/s, recall_0.3=(8150, 8176) / 12330]eval:  96%|█████████▌| 237/248 [01:53<00:05,  2.10it/s, recall_0.3=(8164, 8190) / 12356]eval:  96%|█████████▌| 238/248 [01:53<00:04,  2.16it/s, recall_0.3=(8164, 8190) / 12356]eval:  96%|█████████▌| 238/248 [01:54<00:04,  2.16it/s, recall_0.3=(8182, 8208) / 12377]eval:  96%|█████████▋| 239/248 [01:54<00:04,  2.23it/s, recall_0.3=(8182, 8208) / 12377]eval:  96%|█████████▋| 239/248 [01:54<00:04,  2.23it/s, recall_0.3=(8200, 8226) / 12398]eval:  97%|█████████▋| 240/248 [01:54<00:03,  2.27it/s, recall_0.3=(8200, 8226) / 12398]eval:  97%|█████████▋| 240/248 [01:55<00:03,  2.27it/s, recall_0.3=(8218, 8244) / 12421]eval:  97%|█████████▋| 241/248 [01:55<00:03,  2.28it/s, recall_0.3=(8218, 8244) / 12421]eval:  97%|█████████▋| 241/248 [01:55<00:03,  2.28it/s, recall_0.3=(8237, 8263) / 12444]eval:  98%|█████████▊| 242/248 [01:55<00:02,  2.29it/s, recall_0.3=(8237, 8263) / 12444]eval:  98%|█████████▊| 242/248 [01:55<00:02,  2.29it/s, recall_0.3=(8257, 8283) / 12467]eval:  98%|█████████▊| 243/248 [01:55<00:02,  2.35it/s, recall_0.3=(8257, 8283) / 12467]eval:  98%|█████████▊| 243/248 [01:56<00:02,  2.35it/s, recall_0.3=(8278, 8304) / 12494]eval:  98%|█████████▊| 244/248 [01:56<00:01,  2.40it/s, recall_0.3=(8278, 8304) / 12494]eval:  98%|█████████▊| 244/248 [01:56<00:01,  2.40it/s, recall_0.3=(8304, 8330) / 12525]eval:  99%|█████████▉| 245/248 [01:56<00:01,  2.45it/s, recall_0.3=(8304, 8330) / 12525]eval:  99%|█████████▉| 245/248 [01:57<00:01,  2.45it/s, recall_0.3=(8331, 8357) / 12555]eval:  99%|█████████▉| 246/248 [01:57<00:00,  2.44it/s, recall_0.3=(8331, 8357) / 12555]eval:  99%|█████████▉| 246/248 [01:57<00:00,  2.44it/s, recall_0.3=(8358, 8384) / 12585]eval: 100%|█████████▉| 247/248 [01:57<00:00,  2.48it/s, recall_0.3=(8358, 8384) / 12585]eval: 100%|█████████▉| 247/248 [01:57<00:00,  2.48it/s, recall_0.3=(8385, 8411) / 12616]eval: 100%|██████████| 248/248 [01:57<00:00,  2.50it/s, recall_0.3=(8385, 8411) / 12616]eval: 100%|██████████| 248/248 [01:58<00:00,  2.10it/s, recall_0.3=(8385, 8411) / 12616]
+2020-12-05 08:42:21,327   INFO  *************** Performance of EPOCH 43 *****************
+2020-12-05 08:42:21,327   INFO  Generate label finished(sec_per_example: 0.1197 second).
+2020-12-05 08:42:21,327   INFO  recall_roi_0.3: 0.665005
+2020-12-05 08:42:21,327   INFO  recall_rcnn_0.3: 0.666845
+2020-12-05 08:42:21,327   INFO  recall_roi_0.5: 0.600938
+2020-12-05 08:42:21,327   INFO  recall_rcnn_0.5: 0.619378
+2020-12-05 08:42:21,328   INFO  recall_roi_0.7: 0.338379
+2020-12-05 08:42:21,328   INFO  recall_rcnn_0.7: 0.407768
+2020-12-05 08:42:21,329   INFO  Average predicted number of objects(991 samples): 40.209
+Start the waymo evaluation...
+Number: (pd, 39847) VS. (gt, 50458)
+Level 1: 0, Level2: 3746)
+WARNING:tensorflow:From /root/.local/lib/python3.6/site-packages/tensorflow_core/python/ops/resource_variable_ops.py:1630: calling BaseResourceVariable.__init__ (from tensorflow.python.ops.resource_variable_ops) with constraint is deprecated and will be removed in a future version.
+Instructions for updating:
+If using Keras pass *_constraint arguments to layers.
+WARNING:tensorflow:From /usr/lib/python3.6/contextlib.py:60: TensorFlowTestCase.test_session (from tensorflow.python.framework.test_util) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `self.session()` or `self.cached_session()` instead.
+2020-12-05 08:42:24.479970: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2020-12-05 08:42:24.482100: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+name: GeForce RTX 2080 Ti major: 7 minor: 5 memoryClockRate(GHz): 1.545
+pciBusID: 0000:3d:00.0
+2020-12-05 08:42:24.483944: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 1 with properties: 
+name: GeForce RTX 2080 Ti major: 7 minor: 5 memoryClockRate(GHz): 1.545
+pciBusID: 0000:3e:00.0
+2020-12-05 08:42:24.485755: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 2 with properties: 
+name: GeForce RTX 2080 Ti major: 7 minor: 5 memoryClockRate(GHz): 1.545
+pciBusID: 0000:60:00.0
+2020-12-05 08:42:24.487497: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 3 with properties: 
+name: GeForce RTX 2080 Ti major: 7 minor: 5 memoryClockRate(GHz): 1.545
+pciBusID: 0000:61:00.0
+2020-12-05 08:42:24.487795: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcudart.so.10.0'; dlerror: libcudart.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/lib/python3.6/dist-packages/spconv:/usr/local/nvidia/lib:/usr/local/nvidia/lib64
+2020-12-05 08:42:24.487907: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcublas.so.10.0'; dlerror: libcublas.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/lib/python3.6/dist-packages/spconv:/usr/local/nvidia/lib:/usr/local/nvidia/lib64
+2020-12-05 08:42:24.487999: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcufft.so.10.0'; dlerror: libcufft.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/lib/python3.6/dist-packages/spconv:/usr/local/nvidia/lib:/usr/local/nvidia/lib64
+2020-12-05 08:42:24.488093: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcurand.so.10.0'; dlerror: libcurand.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/lib/python3.6/dist-packages/spconv:/usr/local/nvidia/lib:/usr/local/nvidia/lib64
+2020-12-05 08:42:24.488182: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcusolver.so.10.0'; dlerror: libcusolver.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/lib/python3.6/dist-packages/spconv:/usr/local/nvidia/lib:/usr/local/nvidia/lib64
+2020-12-05 08:42:24.488269: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcusparse.so.10.0'; dlerror: libcusparse.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/lib/python3.6/dist-packages/spconv:/usr/local/nvidia/lib:/usr/local/nvidia/lib64
+2020-12-05 08:42:24.566223: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2020-12-05 08:42:24.566287: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1641] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2020-12-05 08:42:24.566833: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2020-12-05 08:42:24.595847: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2100000000 Hz
+2020-12-05 08:42:24.605505: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7ed35100 executing computations on platform Host. Devices:
+2020-12-05 08:42:24.605562: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Host, Default Version
+2020-12-05 08:42:25.381501: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x779e5fd0 executing computations on platform CUDA. Devices:
+2020-12-05 08:42:25.381549: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): GeForce RTX 2080 Ti, Compute Capability 7.5
+2020-12-05 08:42:25.381558: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (1): GeForce RTX 2080 Ti, Compute Capability 7.5
+2020-12-05 08:42:25.381564: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (2): GeForce RTX 2080 Ti, Compute Capability 7.5
+2020-12-05 08:42:25.381572: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (3): GeForce RTX 2080 Ti, Compute Capability 7.5
+2020-12-05 08:42:25.382062: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-12-05 08:42:25.382088: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      
+2020-12-05 08:42:25.532334: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:157] Computing detection metrics for 39847 predicted boxes.
+2020-12-05 08:42:25.532401: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:159] Parsing prediction [39847,7][39847]
+2020-12-05 08:42:25.560216: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:168] Parsing ground truth [50458,7][50458]
+2020-12-05 08:42:32.243299: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:214] Done with computing detection metrics.
+2020-12-05 08:42:32.320007: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:157] Computing detection metrics for 39847 predicted boxes.
+2020-12-05 08:42:32.320075: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:159] Parsing prediction [39847,7][39847]
+2020-12-05 08:42:32.343212: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:168] Parsing ground truth [50458,7][50458]
+2020-12-05 08:42:38.883306: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:214] Done with computing detection metrics.
+2020-12-05 08:42:38.951567: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:157] Computing detection metrics for 39847 predicted boxes.
+2020-12-05 08:42:38.951656: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:159] Parsing prediction [39847,7][39847]
+2020-12-05 08:42:38.974484: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:168] Parsing ground truth [50458,7][50458]
+2020-12-05 08:42:45.723371: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:214] Done with computing detection metrics.
+2020-12-05 08:42:45.942480: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:157] Computing detection metrics for 39847 predicted boxes.
+2020-12-05 08:42:45.942527: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:159] Parsing prediction [39847,7][39847]
+2020-12-05 08:42:45.958940: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:168] Parsing ground truth [50458,7][50458]
+2020-12-05 08:42:52.335773: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:214] Done with computing detection metrics.
+2020-12-05 08:42:52.402080: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:157] Computing detection metrics for 39847 predicted boxes.
+2020-12-05 08:42:52.402122: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:159] Parsing prediction [39847,7][39847]
+2020-12-05 08:42:52.418811: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:168] Parsing ground truth [50458,7][50458]
+2020-12-05 08:42:58.995786: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:214] Done with computing detection metrics.
+2020-12-05 08:42:59.069089: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:157] Computing detection metrics for 39847 predicted boxes.
+2020-12-05 08:42:59.069180: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:159] Parsing prediction [39847,7][39847]
+2020-12-05 08:42:59.093416: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:168] Parsing ground truth [50458,7][50458]
+2020-12-05 08:43:05.749098: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:214] Done with computing detection metrics.
+2020-12-05 08:43:05.817270: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:157] Computing detection metrics for 39847 predicted boxes.
+2020-12-05 08:43:05.817324: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:159] Parsing prediction [39847,7][39847]
+2020-12-05 08:43:05.834072: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:168] Parsing ground truth [50458,7][50458]
+2020-12-05 08:43:12.532632: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:214] Done with computing detection metrics.
+2020-12-05 08:43:12.602424: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:157] Computing detection metrics for 39847 predicted boxes.
+2020-12-05 08:43:12.602479: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:159] Parsing prediction [39847,7][39847]
+2020-12-05 08:43:12.620124: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:168] Parsing ground truth [50458,7][50458]
+2020-12-05 08:43:19.129655: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:214] Done with computing detection metrics.
+2020-12-05 08:43:19.198228: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:157] Computing detection metrics for 39847 predicted boxes.
+2020-12-05 08:43:19.198301: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:159] Parsing prediction [39847,7][39847]
+2020-12-05 08:43:19.221540: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:168] Parsing ground truth [50458,7][50458]
+2020-12-05 08:43:25.785276: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:214] Done with computing detection metrics.
+2020-12-05 08:43:25.853388: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:157] Computing detection metrics for 39847 predicted boxes.
+2020-12-05 08:43:25.853450: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:159] Parsing prediction [39847,7][39847]
+2020-12-05 08:43:25.870458: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:168] Parsing ground truth [50458,7][50458]
+2020-12-05 08:43:32.323696: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:214] Done with computing detection metrics.
+2020-12-05 08:43:32.394480: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:157] Computing detection metrics for 39847 predicted boxes.
+2020-12-05 08:43:32.394536: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:159] Parsing prediction [39847,7][39847]
+2020-12-05 08:43:32.412231: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:168] Parsing ground truth [50458,7][50458]
+2020-12-05 08:43:38.999553: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:214] Done with computing detection metrics.
+2020-12-05 08:43:39.081667: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:157] Computing detection metrics for 39847 predicted boxes.
+2020-12-05 08:43:39.081724: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:159] Parsing prediction [39847,7][39847]
+2020-12-05 08:43:39.101436: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:168] Parsing ground truth [50458,7][50458]
+2020-12-05 08:43:45.631404: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:214] Done with computing detection metrics.
+2020-12-05 08:43:45.702777: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:157] Computing detection metrics for 39847 predicted boxes.
+2020-12-05 08:43:45.702856: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:159] Parsing prediction [39847,7][39847]
+2020-12-05 08:43:45.725751: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:168] Parsing ground truth [50458,7][50458]
+2020-12-05 08:43:52.174544: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:214] Done with computing detection metrics.
+2020-12-05 08:43:52.251850: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:157] Computing detection metrics for 39847 predicted boxes.
+2020-12-05 08:43:52.251924: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:159] Parsing prediction [39847,7][39847]
+2020-12-05 08:43:52.274804: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:168] Parsing ground truth [50458,7][50458]
+2020-12-05 08:43:58.875382: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:214] Done with computing detection metrics.
+2020-12-05 08:43:58.946378: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:157] Computing detection metrics for 39847 predicted boxes.
+2020-12-05 08:43:58.946440: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:159] Parsing prediction [39847,7][39847]
+2020-12-05 08:43:58.969516: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:168] Parsing ground truth [50458,7][50458]
+2020-12-05 08:44:05.496583: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:214] Done with computing detection metrics.
+2020-12-05 08:44:05.575390: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:157] Computing detection metrics for 39847 predicted boxes.
+2020-12-05 08:44:05.575450: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:159] Parsing prediction [39847,7][39847]
+2020-12-05 08:44:05.592358: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:168] Parsing ground truth [50458,7][50458]
+2020-12-05 08:44:12.171768: I waymo_open_dataset/metrics/ops/detection_metrics_ops.cc:214] Done with computing detection metrics.
+2020-12-05 08:44:12,237   INFO  
+OBJECT_TYPE_TYPE_VEHICLE_LEVEL_1/AP: 0.5654 
+OBJECT_TYPE_TYPE_VEHICLE_LEVEL_1/APH: 0.5580 
+OBJECT_TYPE_TYPE_VEHICLE_LEVEL_2/AP: 0.5387 
+OBJECT_TYPE_TYPE_VEHICLE_LEVEL_2/APH: 0.5312 
+OBJECT_TYPE_TYPE_PEDESTRIAN_LEVEL_1/AP: 0.4524 
+OBJECT_TYPE_TYPE_PEDESTRIAN_LEVEL_1/APH: 0.2329 
+OBJECT_TYPE_TYPE_PEDESTRIAN_LEVEL_2/AP: 0.4196 
+OBJECT_TYPE_TYPE_PEDESTRIAN_LEVEL_2/APH: 0.2160 
+OBJECT_TYPE_TYPE_SIGN_LEVEL_1/AP: 0.0000 
+OBJECT_TYPE_TYPE_SIGN_LEVEL_1/APH: 0.0000 
+OBJECT_TYPE_TYPE_SIGN_LEVEL_2/AP: 0.0000 
+OBJECT_TYPE_TYPE_SIGN_LEVEL_2/APH: 0.0000 
+OBJECT_TYPE_TYPE_CYCLIST_LEVEL_1/AP: 0.4038 
+OBJECT_TYPE_TYPE_CYCLIST_LEVEL_1/APH: 0.2286 
+OBJECT_TYPE_TYPE_CYCLIST_LEVEL_2/AP: 0.4038 
+OBJECT_TYPE_TYPE_CYCLIST_LEVEL_2/APH: 0.2286 
+
+2020-12-05 08:44:12,263   INFO  Result is save to /team1/codes/3dObjDet/OpenPCDet_ravi/output/waymo_models/pv_rcnn_100_25/default/eval/eval_with_train/epoch_43/val
+2020-12-05 08:44:12,263   INFO  ****************Evaluation done.*****************
+2020-12-05 08:44:12,448   INFO  Epoch 43 has been evaluated
+2020-12-05 08:44:12,449   INFO  ==> Loading parameters from checkpoint /team1/codes/3dObjDet/OpenPCDet_ravi/output/waymo_models/pv_rcnn_100_25/default/ckpt/checkpoint_epoch_44.pth to CPU
+2020-12-05 08:44:12,561   INFO  ==> Checkpoint trained from version: pcdet+0.3.0+fafdbd8
+2020-12-05 08:44:13,484   INFO  ==> Done (loaded 319/319)
+2020-12-05 08:44:19,341   INFO  *************** EPOCH 44 EVALUATION *****************
