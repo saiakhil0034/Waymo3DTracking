@@ -114,15 +114,17 @@ def _create_pd_file_example():
           if dataset_pb2.CameraName.FRONT != cams[idx]:
             print("Different camera!!")
           # extract x, y, z, l, w, h, ry, score, object_id, type
+          # OLD: x - 11, y - 12, z - 13, l - 10, w - 9, h - 8, ry - 14
+          # NEW: x- 13, y- -11, z- -12+9/2, l- 9, w- 10, h- 8, ry- -14
           # Populating box and score.
           box = label_pb2.Label.Box()
-          box.center_x = float(curr_obj[11])
-          box.center_y = float(curr_obj[12])
-          box.center_z = float(curr_obj[13])
-          box.length = float(curr_obj[10])
-          box.width = float(curr_obj[9])
+          box.center_x = float(curr_obj[13])
+          box.center_y = float(-1.0*curr_obj[11])
+          box.center_z = float(-1.0*curr_obj[12] + curr_obj[10]/2.0)
+          box.length = float(curr_obj[9])
+          box.width = float(curr_obj[10])
           box.height = float(curr_obj[8])
-          box.heading = float(curr_obj[14])
+          box.heading = float(-1.0*curr_obj[14])
           o.object.box.CopyFrom(box)
           # This must be within [0.0, 1.0]. It is better to filter those boxes with
           # small scores to speed up metrics computation.
