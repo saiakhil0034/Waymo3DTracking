@@ -120,7 +120,7 @@ def _create_pd_file_example():
           box = label_pb2.Label.Box()
           box.center_x = float(curr_obj[13])
           box.center_y = -1.0*float(curr_obj[11])
-          box.center_z = -1.0*float(curr_obj[12]) + float(curr_obj[10])/2.0
+          box.center_z = -1.0*float(curr_obj[12]) + float(curr_obj[8])/2.0
           box.length = float(curr_obj[9])
           box.width = float(curr_obj[10])
           box.height = float(curr_obj[8])
