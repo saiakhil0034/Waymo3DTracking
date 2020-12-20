@@ -36,7 +36,7 @@ def _create_gt_file_example():
 
   # Store all sequence names from val.txt
   val_seq_list = list()
-  val_path = "/team1/codes/3dObjDet/OpenPCDet_ravi/data/waymo/ImageSets/val_25.txt"
+  val_path = "/team1/codes/3dObjDet/OpenPCDet_ravi/data/waymo/ImageSets/val_100b.txt"
   with open(val_path, "r") as f:
     val_seq_list = f.readlines()
   val_seq_list = [v.split(".")[0] for v in val_seq_list]
@@ -44,7 +44,7 @@ def _create_gt_file_example():
   # tfrecord base
   tf_base_pth = "/waymo-od/training/"
   # gt annos base
-  anno_base_pth = "/team1/codes/3dObjDet/OpenPCDet_ravi/data/waymo/waymo_processed_data_25/"
+  anno_base_pth = "/team1/codes/3dObjDet/OpenPCDet_ravi/data/waymo/waymo_processed_data_100/"
 
   # Loop through each sequence
   for seq in val_seq_list:
@@ -148,7 +148,7 @@ def _create_gt_file_example():
   # huge number of boxes can slow down metrics computation.
 
   # file to save the preds.bin to
-  save_pth = "/team1/codes/3dObjDet/OpenPCDet_ravi/output/tracking_bins/waymo_25_5/gt.bin"
+  save_pth = "/team1/codes/3dObjDet/OpenPCDet_ravi/output/tracking_bins/waymo_100_25/gtb.bin"
   # Write objects to a file.
   f = open(save_pth, 'wb')
   f.write(objects.SerializeToString())

@@ -38,13 +38,13 @@ def _create_pd_file_example():
   # Store all sequence names from val.txt
   classes = ["CYCLIST", "PEDESTRIAN", "SIGN", "VEHICLE"]
   val_seq_list = list()
-  val_path = "/team1/codes/3dObjDet/OpenPCDet_ravi/data/waymo/ImageSets/val_25.txt"
+  val_path = "/team1/codes/3dObjDet/OpenPCDet_ravi/data/waymo/ImageSets/val_100b.txt"
   with open(val_path, "r") as f:
     val_seq_list = f.readlines()
   val_seq_list = [v.split(".")[0] for v in val_seq_list]
 
   # this is the input to the algo
-  tracking_output_base_pth = "/team1/codes/individual/vkonduru/AB3DMOT/results/waymo_25_5/"
+  tracking_output_base_pth = "/team1/codes/individual/vkonduru/AB3DMOT/results/waymo_100_25/"
   # print(val_seq_list)
   
   # Loop through each sequence waymo_25_5_val/VEHICLE/trk_withid/{$SEGMENT}
@@ -158,14 +158,14 @@ def _create_pd_file_example():
         # increase the frame index now
         idx += 1
       #print(idx, tot)
-      assert(idx == tot)
+      #assert(idx == tot)
 
   # Add more objects. Note that a reasonable detector should limit its maximum
   # number of boxes predicted per frame. A reasonable value is around 400. A
   # huge number of boxes can slow down metrics computation.
 
   # file to save the preds.bin to
-  save_pth = "/team1/codes/3dObjDet/OpenPCDet_ravi/output/tracking_bins/waymo_25_5/preds.bin"
+  save_pth = "/team1/codes/3dObjDet/OpenPCDet_ravi/output/tracking_bins/waymo_100_25/preds.bin"
   # Write objects to a file.
   f = open(save_pth, 'wb')
   f.write(objects.SerializeToString())
